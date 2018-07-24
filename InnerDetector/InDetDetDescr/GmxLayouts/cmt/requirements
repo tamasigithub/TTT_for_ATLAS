@@ -1,0 +1,18 @@
+package GmxLayouts
+
+private
+
+macro DOXYGEN_IMAGE_PATH "../doc/images"
+
+public
+
+use AtlasPolicy          AtlasPolicy-*
+
+apply_pattern install_xmls
+
+# Don't do the following: you get out-of-date geomodel.dtd; get it from GeoModelXML instead.
+# apply_pattern declare_runtime files="-s=../data/ *.dtd"
+
+# Choose which layout to use:
+apply_pattern declare_runtime files="-s=../data/ITk/Strip/LTFwithCMOS/ *.gmx"
+#apply_pattern declare_runtime files="-s=../data/ITk/Strip/LTF/ *.gmx"

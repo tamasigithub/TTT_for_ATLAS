@@ -1,0 +1,563 @@
+2016-06-30 Nathan Readioff
+	* Added new material colours for ITK
+	
+2016-10-19 Shaun Roe
+  * Fix coverity defect:
+16286 09/07/2014 (Medium) Logically dead code :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/VP1GeometrySystem.cxx in function "buildSystem"
+  * tag as VP1GeometrySystems-00-16-07
+  
+2016-10-05 Shaun Roe
+	* Fix coverity defects:
+16475 09/07/2014 (Low) Missing copy constructor :/graphics/VP1/VP1Systems/VP1GeometrySystems/VP1GeometrySystems/VisAttributes.h in function ""
+16467 09/07/2014 (Low) Missing assignment operator :/graphics/VP1/VP1Systems/VP1GeometrySystems/VP1GeometrySystems/VisAttributes.h in function ""
+16428 09/07/2014 (Medium) Unchecked dynamic_cast :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/DumpShape.cxx in function "shapeToStringList"
+16429 09/07/2014 (Medium) Unchecked dynamic_cast :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/DumpShape.cxx in function "shapeToStringList"
+16272 09/07/2014 (Medium) Logically dead code :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/PhiSectorManager.cxx in function "getVolumeType"
+16286 09/07/2014 (Medium) Logically dead code :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/VP1GeometrySystem.cxx in function "buildSystem"
+16287 09/07/2014 (Medium) Logically dead code :/graphics/VP1/VP1Systems/VP1GeometrySystems/src/VP1GeometrySystem.cxx in function "userPickedNode"
+	* tag as VP1GeometrySystems-00-16-06
+
+2016-03-24 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Adding a hand-written CMakeLists.txt file to the package,
+	  to build it correctly with CMake.
+	* Removed the executable flag from all source files of the
+	  package.
+	* Made the code work correctly in "Default mode" against
+	  the coin3d headers.
+	* Tagging as VP1GeometrySystems-00-16-05
+
+2015-11-06 Riccardo.Maria.Bianchi@cern.ch 
+    * Removing transparent Ether material for 'Ether'. 
+	  Details: https://its.cern.ch/jira/browse/ATLASVPONE-166
+	* new tag: VP1GeometrySystems-00-16-04
+
+2015-08-28 Edward.Moyse@cern.ch
+    * Another attempt to fix the weird cylinder problem: ATLASVPONE-166
+    * tagged as VP1GeometrySystems-00-16-03
+
+2015-04-27 Edward.Moyse@cern.ch
+    * Fix for new version of VP1Base 
+    * tagged as VP1GeometrySystems-00-16-02
+
+2015-02-24 Riccardo.Maria.Bianchi@cern.ch 
+    * fixed the issue with the "weird cylinder" when showing the muon material volumes.
+      Details: https://its.cern.ch/jira/browse/ATLASVPONE-166
+    * tagged as VP1GeometrySystems-00-16-01
+    
+2013-10-21 Riccardo.Maria.Bianchi@cern.ch 
+     * new tag for a big bundle with FWD visualization (https://its.cern.ch/jira/browse/ATLASVPONE-138)
+       + event display editor (https://its.cern.ch/jira/browse/ATLASVPONE-1)
+       + stereo editor (https://its.cern.ch/jira/browse/ATLASVPONE-137)
+     * tagging as VP1GeometrySystems-00-16-00
+     
+2013-06-04 Riccardo.Maria.Bianchi@cern.ch
+	* Commented a couple of verbose debug messages
+	* VP1GeometrySystems-00-15-04
+
+2013-04-30 Edward.Moyse@cern.ch
+	* Fixes (from Jochen) for NSW, shielding etc
+	* VP1GeometrySystems-00-15-02
+
+2013-03-28 Edward.Moyse@cern.ch
+	* Adding Ric's latest changes to turn off toroid, feet, NSW etc independently.
+	* VP1GeometrySystems-00-15-00
+
+2012-11-01  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Migrate to CLHEP v21
+
+2012-06-27  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Dump for the GeoGenericTrap (OBO Nika Valencic)
+
+2012-05-22  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Drop dependency on GeoModelSvc
+
+2011-11-24 Edward.Moyse@cern.ch
+	* src/VolumeHandle.cxx: coverity fix 29800
+	* Tagging as VP1GeometrySystems-00-14-09
+
+2011-11-24 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* A few more coverity fixes.
+	* Tagging as VP1GeometrySystems-00-14-08
+
+2011-10-24 Edward.Moyse@cern.ch
+    * Fixed saving for labels.
+    M       src/GeoSysController.cxx
+    * Tagged VP1GeometrySystems-00-14-07
+
+2011-02-18  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Add support for tessellated solids
+
+2010-08-16 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fixes for chamber T0s.
+	* Tagging as VP1GeometrySystems-00-14-03
+
+2010-08-16 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* A few fixes based on coverity reports.
+	* Tagging as VP1GeometrySystems-00-14-02
+
+2010-06-29 Edward.Moyse@cern.ch
+  * Modified MuonChamberVolume to remove default values to fix comp. problem under Linux
+  * Tagging VP1GeometrySystems-00-14-01
+
+2010-06-25 Edward.Moyse@cern.ch
+  * Show chamber t0s
+  M       src/settings_display_form.ui
+  M       src/VolumeHandle.cxx
+  M       src/VP1GeometrySystem.cxx
+  M       src/GeoSysController.cxx
+  M       VP1GeometrySystems/GeoSysController.h
+  M       VP1GeometrySystems/MuonVolumeHandle.h
+  M       VP1GeometrySystems/VolumeHandle.h
+  M       VP1GeometrySystems/VolumeHandleSharedData.h
+  M       VP1GeometrySystems/VP1GeometrySystem.h
+  * Tagging VP1GeometrySystems-00-14-00
+
+2010-06-15 Edward.Moyse@cern.ch
+  * Fix for comp problem under linux
+  M       VP1GeometrySystems/MuonVolumeHandle.h
+  * Tagging VP1GeometrySystems-00-13-02
+
+  2010-06-4 Edward.Moyse@cern.ch
+  * Show more useful names for Muon handles + some fixes for labels 
+  M       src/VolumeHandle.cxx
+  M       src/VP1GeometrySystem.cxx
+  M       src/GeoSysController.cxx
+  A       VP1GeometrySystems/MuonVolumeHandle.h
+  M       VP1GeometrySystems/GeoSysController.h
+  M       VP1GeometrySystems/VolumeHandle.h
+  * Tagging VP1GeometrySystems-00-13-01
+
+2010-05-18 Edward.Moyse@cern.ch
+  * First attempt to label Muon chambers (some problems remain with what is printed
+   - not complete enough - and updating consistently - you might need to toggle labels a few times) 
+  M       src/settings_display_form.ui
+  M       src/VolumeHandle.cxx
+  M       src/VP1GeometrySystem.cxx
+  M       src/PhiSectorManager.cxx
+  M       src/VolumeHandleSharedData.cxx
+  M       src/GeoSysController.cxx
+  M       VP1GeometrySystems/PhiSectorManager.h
+  M       VP1GeometrySystems/GeoSysController.h
+  M       VP1GeometrySystems/VolumeHandle.h
+  M       VP1GeometrySystems/VolumeHandleSharedData.h
+  M       VP1GeometrySystems/VP1GeometrySystem.h
+  * Tagging VP1GeometrySystems-00-13-00
+
+2010-04-10 Edward.Moyse@cern.ch
+        * Keep outline settings when updating shown geometry:
+        M       src/PhiSectorManager.cxx
+        * Tagging VP1GeometrySystems-00-12-01
+
+2010-04-10 Edward.Moyse@cern.ch
+        * Control outlines for SoPcons:
+        M       src/VolumeHandleSharedData.cxx
+        * Tagging VP1GeometrySystems-00-12-00
+
+2010-04-08 Edward.Moyse@cern.ch
+	* Control outlines for SoTubs:
+	M       src/VolumeHandleSharedData.cxx
+	* Tagging VP1GeometrySystems-00-11-00
+
+2009-10-23  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Fix Geometry-PartSpect system communication (Joe)
+
+2009-10-14  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Fix signal emission for the PartSpectSystem
+
+2009-09-30  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Emit a signal for the PartSpectSystem when some volume gets selected  
+
+2009-09-24 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Enable material display and muon station info by default.
+	* Tagging as VP1GeometrySystems-00-10-04
+
+2009-05-07  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Migrate to MuonReadoutGeometry
+
+2009-02-12 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Enable BCM gui elements.
+
+2009-01-30 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Experimental BCM support.
+
+2009-01-21 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use new PhiSectionWidget.
+
+2008-12-17 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Hide CSCspacers when adapting to data.
+	* Correctly update the last-sel button when loading material maps.
+
+2008-12-14 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix memory leak.
+
+2008-12-10 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix outline options and support SoGenericBox.
+	* Proper initClass calls.
+
+2008-12-06 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Add support for saving/loading material maps.
+
+2008-12-06 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Persistify material changes!
+
+2008-12-05 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Option in GUI to turn on volume outlines.
+
+2008-11-14 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Print transformation part of GeoShapeShift's.
+
+2008-11-12 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Update for dumping standard scenes.
+	* Remove backwards compatibility.
+	* Don't autoexpand muon chambers with ether material.
+
+2008-10-30 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix for older releases.
+
+2008-10-29 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Updated dialog buttons tooltips, system information and disable
+	chambers button when running without muons.
+
+2008-10-27 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Remove debug output.
+
+2008-10-26 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix signal signature for changing muon chamber style.
+
+2008-10-24 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Refactor controller into separate class.
+	* Dialog based interface.
+
+2008-09-15 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix compilation. Cleanup includes and requirements.
+
+2008-09-02 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Print correct copy numbers for replicas.
+
+2008-08-11 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix regression which stopped volume state persistification from
+	working.
+
+2008-08-01 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Updates for on-demand system create.
+
+2008-07-28 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Optimise volume state persistified size in case of adaptive muon
+	geometry.
+	* Latest Pixel/SCT colouring from Ben and Troels.
+
+2008-07-28 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Persistify volume states as well.
+	* Ability to interactively modify materials.
+
+2008-07-18 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Improve colouring of Pixel (B. Zastovnik) and SCT
+	(T. K. Jacobsen) volumes. Le grand bleu is no more.
+
+2008-07-15 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Put instructions for volume actions inside the GUI.
+
+2008-07-02 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Move SbPolyhedrizeAction and SoVisualizeAction to VP1Utils.
+
+2008-06-19 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Initial expansion of ether mothers.
+
+2008-06-17 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Migrate to new persistification helper classes.
+
+2008-06-04 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Added gui elements for automatic display if silicon modules.
+
+2008-06-03 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Remove define private public hack.
+	* Only do an update of muon chambers actually needing one when
+	adapting to data.
+	* Reduce verbosity of printouts.
+
+2008-05-15 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix 13.0.x build.
+
+2008-05-09 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Dump boolean volumes.
+	* phiFromXY from utils
+
+2008-05-08 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Move PhiSectionWidget to VP1Base.
+
+2008-05-07 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Option to print out information for muon stations.
+
+2008-05-07 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Added catch-all pseudo subsystem where all unrecognised
+	tree-tops will be associated.
+
+2008-04-22 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Make system name overridable, in order to enable 2 similar
+	systems.
+
+2008-04-15 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use VP1LinAlgUtils.
+
+2008-04-11 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use new general method for updating selection path.
+
+2008-04-10 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Default material name for automatic expansion set to
+	special::Ether.
+	* Slightly better performance under automatic expansions.
+
+2008-04-09 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Automatic expansion of visible volumes by name or material.
+
+2008-03-12 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Update to new camera helper interface.
+
+2008-03-03 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use VP1JobConfigInfo to hide gui parts as applicable.
+	* Use VP1SGAccessHelper instead of StoreGate directly.
+
+2008-02-19 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix a few minor bugs related to initial controller settings.
+
+2008-02-18 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use SoCylinders instead of SoTubs where appropriate, for
+	tremendous performance gains when rendering e.g. drift-tubes.
+	* Display material of volumes (just the name for now).
+
+2008-01-29 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Add ALFA as new sub-system.
+
+2008-01-25 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fixes for focus problem where the ctrl/shift/z key was not
+	always registered correctly as being held down.
+
+2008-01-22 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Rearranged display options gui.
+
+2008-01-21 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Emit signal with the appropriate MDT projection mode, according
+	to the settings of the adaptable geometry.
+
+2008-01-17 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Introduced open CSC and TGC chambers for the adaptable muon geometry.
+
+2008-01-16 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Made all settings persistifiable.
+	* Made a few settings overrideable in channel constructor.
+	* Fix initialisation bug in PhiSectorManager.cxx.
+
+2008-01-16 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Removed obsolete deiconizeAllSpecificMuonChambers slot.
+
+2008-01-15 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Add interface for controlling automatic display of muon
+	chambers.
+	* Zapped volumes grayed out in tree browser, and number of
+	children shown in brackets.
+
+2008-01-14 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Automatic showing of touched muon chambers now works with more
+	than one sender.
+	* Made camera reorientation now work even with muon systems
+	switched off.
+	* Deiconization of muon chambers now works recursively on daughters.
+	* Automatic alignment for TGC chambers as well.
+
+2008-01-11 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Automatic alignment now can align rotation around camera view as
+	well, using intuitive click interface.
+	* Automatic alignment for CSC chambers as well.
+
+2008-01-10 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Automatically align to end of mdt chambers upon click.
+
+2007-11-29 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Use new sephelper features to place nodes/materials more
+	optimally in the scenegraph. Result is significant performance
+	improvements everywhere.
+	* Represent Trd's that are really just boxes with SoCube's instead
+	of SoTrd's. This gives incredible performance improvements for the
+	barrel muon chambers. A similar optimisation replacing SoTube's
+	with SoCylinders is postponed for now due to problems of
+	difference in axis.
+
+2007-11-14 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Move VP1ExtraSepLayerHelper to VP1Base.
+
+2007-10-30 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Fix bad code inside assert for dbg build.
+
+2007-10-23 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Finished major rewrite. Did not implement all new features made
+	possible by new framework yet, but already hav all previous
+	features as well as much improved performance when e.g. showing
+	touched muon chambers, and features a volume tree browser as well.
+
+2007-10-17 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* First step in major rewrite: VolumeHandle tree and a corresponding tree browser.
+
+2007-10-09 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Temporarily hardcoded caching behaviour until we can get rid of
+	the treekits.
+
+2007-09-25 Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+	* Add possibility for track/prd systems to automatically display
+	requested muon chambers.
+        * Fix bug in phisector cutaways present in face of misalignments.
+        * Made muon barrel stations blue instead of horrible pink.
+
+2007-09-20  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Remove explicit caching instructions (new VP1HEPVis takes care automatically).
+        * Dont apply action on node with ref count of zero.
+
+2007-09-12  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Add caching separators making rendering of muon systems much faster.
+
+2007-09-12  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Turning on muon parts and calculation of volume masses much faster.
+
+2007-09-11  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Reduce number of notifications when changing scenegraph.
+        * Slightly faster building of muon geometry.
+	* Remove redundant SoResetTransforms.
+	* Remove obsolete cutaway dragger checkbox.
+
+2007-09-11  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Remove use of SoLevelOfDetail nodes due to cache invalidation.
+        * Temporary performance hack ensuring render caching.
+
+2007-09-07  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Major update adding phi sector switching.
+	* GeoShapeShifts deconstructed into transform and volume rather	than polyhedronized.
+	* DumpShape prints info of GeoShapeshifts.
+	* Proper zapping with SoLevelOfDetail nodes.
+
+2007-08-10  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Color for Zdc
+
+2007-08-09  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Add support for the Zero Degree Calorimeter.
+
+2007-08-08  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Add support for LUCID.
+
+2007-08-07  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Introduced use of SoLevelOfDetail for curved surfaces.
+        * Introduced possibility to set complexity of curved surfaces.
+        * Introduced possibility for wireframe and transparency.
+	* Introduced option for making geometry unpickable.
+        * Added missing LAr volume names.
+        * Save/restore state of new options implemented, but still need to
+	make new options setable from channel code.
+
+2007-07-25  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Cleanup includes and requirements. Renamed Changelog to ChangeLog.
+
+2007-07-23  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Guard against possible crash when restoring state from .vp1 file.
+
+2007-07-03  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Persistify state.
+
+2007-06-29  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Use VP1HEPVis manager for initClass() calls.
+
+2007-06-15  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Shortened system name.
+
+2007-06-12  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Simplified requirements. Now uses a single apply_pattern.
+
+2007-05-29  Thomas Kittelmann <Thomas.Kittelmann@cern.ch>
+
+        * Creating package.

@@ -1,0 +1,10 @@
+libSCT_Digitization.so:SCT_Amp
+libSCT_Digitization.so:SCT_DetailedSurfaceChargesGenerator
+libSCT_Digitization.so:SCT_Digitization
+libSCT_Digitization.so:SCT_DigitizationTool
+libSCT_Digitization.so:SCT_FrontEnd
+libSCT_Digitization.so:SCT_FrontEndDev
+libSCT_Digitization.so:SCT_RandomDisabledCellGenerator
+libSCT_Digitization.so:SCT_StripDiscriminator
+libSCT_Digitization.so:SCT_SurfaceChargesGenerator
+libSCT_Digitization.so:SCT_TimeWalkGenerator

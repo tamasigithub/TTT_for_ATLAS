@@ -1,0 +1,3 @@
+libPixelCabling.so:PixelCablingSvc
+libPixelCabling.so:PixelFillCablingData
+libPixelCabling.so:PixelFillCablingData_Final

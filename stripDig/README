@@ -1,0 +1,6 @@
+Try to get a compiled version of stripDig.C going
+
+You need to set up athena to get root before doing a make (or presumably install root directly).
+And set the target directory in the makefile.
+
+May 2015

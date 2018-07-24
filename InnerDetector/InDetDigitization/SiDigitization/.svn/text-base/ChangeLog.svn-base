@@ -1,0 +1,551 @@
+2016-08-26 Nick Styles
+	* Add (optional) nextInCluster to SiChargedDiode to allow navigation within strip clusters
+	* ATLITKSW-26
+	* Tagged as SiDigitization-04-10-01
+
+2013-11-01  Matthew Klein <matthew.henry.klein@cern.ch>
+	* Removed files unused by PixelDigitization-01-*
+	  and SCT_Digitization-01-*
+	* Tagging as SiDigitization-04-10-00
+
+2013-04-24  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SiDigitization.cxx - remove initialization of
+	m_diodesProcsTool (list of pointers) as NULL - fixes gcc46
+	compilation warning.
+	* tagging SiDigitization-04-00-02	
+
+2012-08-06  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SiCellNoiseGenerator.cxx,
+	src/SiThermalDiodeNoiseGenerator.cxx, src/SiCellDiscriminator.cxx,
+	src/SiDigitization.cxx, src/SiRandomDisabledCellGenerator.cxx -
+	CLHEP 2.1.2.3 compatibility updates.
+	* tagging SiDigitization-04-00-01	
+	
+2012-05-14  John Chapman  <John.Chapman@cern.ch>
+
+	* SiDigitization/SiChargedDiodeCollection.h,
+	src/SiChargedDiodeCollection.cxx - SiChargedDiodeMap now sorted
+	using InDetDD::SiCellId rather than Identifiers (necessary for
+	compatibility with 64-bit Identifier builds. (obo Andreas Korn)
+	* src/SiDigitization.cxx - adaptions to addSDO and addSCT_SDO
+	methods for the above changes.
+	* tagging SiDigitization-04-00-00
+
+2012-03-02  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - add public use statements for CxxUtils and
+	DataModel (checkreq fix).
+	* tagging SiDigitization-03-07-02
+
+2012-03-02  John Chapman  <John.Chapman@cern.ch>
+
+	* SiDigitization/SiDigitizationTool.h,
+	SiDigitization/SiDigitizationTool.icc - revert changes made in SiDigitization-03-07-00.
+	* SiDigitization/SiChargedDiodeCollection.h - a better fix is to
+	make sure that m_allocator is declared before m_chargedDiodes in
+	the SiChargedDiodeCollection class declaration. This is explained
+	fully in the comments in this file.
+	* tagging SiDigitization-03-07-01
+
+2012-03-01  John Chapman  <John.Chapman@cern.ch>
+
+	* SiDigitization/SiDigitizationTool.h,
+	SiDigitization/SiDigitizationTool.icc - attempt to fix segfault
+	when running PileUpTools with DataPools.
+	* tagging SiDigitization-03-07-00
+
+2012-02-17  F. Djama (Patch from Sc. Snyder)
+
+	* Fix for Savannah bug 67423
+	* tagging SiDigitization-03-06-08
+
+2011-11-24  John Chapman  <John.Chapman@cern.ch>
+
+	* SiDigitization/SiDigitizationTool.icc - initialize member
+	variables in SiDigitizationTool constructor. (Coverity Defect
+	19802)
+	* SiDigitization/SiWaferCache.h remove include of SiWaferCache.h
+	(Coverity Defect 54130)
+	* src/SiDigitization.cxx - initialize member variables in
+	SiDigitization constructor. (Coverity Defect 19800)
+	* tagging SiDigitization-03-06-07
+
+2011-10-10  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SiDigitization.cxx - reserve TimedHitCollection size before
+	filling it.  
+	* SiDigitization/NonHitWaferRetriever.h - remove include of
+	SiDigitization/SiWaferCache.h (which itself includes
+	SiDigitization/NonHitWaferRetriever.h). (Coverity Defect 19580)
+	* SiDigitization/SubEventHitsLooper.cxx - remove include of
+	SiDigitization/SubEventHitsLooper.h. In fact this file is included
+	by SiDigitization/SubEventHitsLooper.h. (Coverity Defect 19579)
+	* tagging SiDigitization-03-06-06
+
+2010-05-19  Per Daniel Conny Johansson
+	* Added set/get timebin method in SiHelper.h for use in SCT expanded any hit mode
+	* tagging SiDigitization-03-06-05
+
+2010-04-23 John chapman
+	* SiDigitization/SiWaferCache.icc - commented out std::cout usage
+	* tagging SiDigitization-03-06-04
+	
+2010-04-22  Per Daniel Conny Johansson
+	* Fixed checkreq problems
+	* tagging SiDigitization-03-06-03
+
+2010-04-19  David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements: Use the named_installed_library pattern for the SiTemplateInstantiate library
+	* tagging SiDigitization-03-06-02
+	
+2010-04-18  John Chapman
+	* SiDigitization/SiWaferCache.h, SiDigitization/SiWaferCache.icc - remove build warnings/errors
+	* tagging SiDigitization-03-06-01
+	
+2010-03-16  John Chapman
+	* merging SiDigitization-03-05-15-branch into trunk version
+	* tagging SiDigitization-03-06-00
+	
+2009-12-09  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+        * removing dead code, renaming files
+	M      cmt/requirements
+	A      SiDigitization/SiWaferCache.icc
+	A      SiDigitization/SiDigitizationTool.icc
+	D      SiDigitization/SiWaferCache.cxx
+	D      SiDigitization/SiDigitizationTool.cxx
+	M      SiDigitization/SiWaferCache.h
+	M      SiDigitization/SiDigitizationTool.h
+
+	
+	*  The common functions in the Pixel and SCT digitization tools
+	that forward calls to SiWaferCache have been growing in complexity.
+	They have been moved to SiDigitization tool, a class template
+	used to provide base classes for these tools.
+	
+
+	A      SiDigitization/SiDigitizationTool.cxx
+
+	M      cmt/requirements
+	M      SiDigitization/SiWaferCache.cxx
+	M      SiDigitization/SiWaferCache.h
+	M      SiDigitization/SiDigitizationTool.h
+
+	D      src/SiDigitizationTool.cxx
+
+2009-12-02  Peter Sherwood  <sherwood@lxplus254.cern.ch>
+
+	* improve handling of diode collection tools
+	M      SiDigitization/SiWaferCache.cxx
+	M      SiDigitization/SiWaferCache.h
+	M      SiDigitization/WaferCache.h
+
+
+2009-11-27  Peter Sherwood  <sherwood@lxplus255.cern.ch>
+
+	* reinstate some shared_ptrs removed incorrectly to solve a 
+	genconf problem
+	* add some diagnostic methods nHitsInCache, nHitsInCache to 
+	SiWaferCache
+	
+	M      src/SubEventHitsLooperInstantiator.cxx
+	M      SiDigitization/HitIndexAndTimeMaker.h
+	M      SiDigitization/SiWaferCache.cxx
+	M      SiDigitization/SubEventHitsLooper.h
+	M      SiDigitization/HitIndexAndTimeMaker.cxx
+	M      SiDigitization/SubEventHitsLooper.cxx
+	M      SiDigitization/SiWaferCache.h
+	
+2009-11-27  Peter Sherwood  <sherwood@lxplus243.cern.ch>
+
+	* Introduce new class SiWaferCache thar has functionality related to
+	hit caching, to nbe used by the SCT and Pixels
+	
+	A      src/getIDHash.cxx
+	A      src/HitToDiodeConverter.cxx
+	A      SiDigitization/SiWaferCache.cxx
+	A      SiDigitization/getIDHash.h
+	A      SiDigitization/SiWaferCache.h
+	A      SiDigitization/HitToDiodeConverter.h
+	
+	M      cmt/requirements
+	M      src/SubEventHitsLooperInstantiator.cxx
+	M      src/SiChargedDiodeCollection.cxx
+	M      src/SiDigitization.cxx
+	M      SiDigitization/HitIndexAndTimeMaker.h
+	M      SiDigitization/SubEventHitsLooper.h
+	M      SiDigitization/HitIndexAndTimeMaker.cxx
+	M      SiDigitization/SiChargedDiodeCollection.h
+	M      SiDigitization/SubEventHitsLooper.cxx
+	
+	D      SiDigitization/countHitsInCache.h
+
+2009-11-18  Peter Sherwood  <sherwood@lxplus248.cern.ch>
+
+	* Moved accross code used by SCT_DigitizationTool from the
+	SCT_Digitization package and templated it so it it can be used both by Pixels
+	and the SCT.
+
+	* Added a line to cmt/requirements to instantiate the temlated classes
+	* to ensure the class templates contain ompilable code.
+	
+	M      cmt/requirements
+	A      src/SubEventHitsLooperInstantiator.cxx
+	A      SiDigitization/countHitsInCache.h
+	A      SiDigitization/HitIndexAndTimeMaker.h
+	A      SiDigitization/SubEventHitsLooper.h
+	A      SiDigitization/HitIndexAndTimeMaker.cxx
+	A      SiDigitization/HitIndexAndTime.h
+	A      SiDigitization/SubEventHitsLooper.cxx
+	A      SiDigitization/WaferCache.h
+
+2009-10-01  Peter Sherwood  <sherwood@lxplus316.cern.ch>
+
+	* Adding in John Chapman's "V3" Changes. Includes PileUpTool
+
+	A      SiDigitization/SiDigitizationTool.h
+	A      src/SiDigitizationTool.cxx
+
+	M      cmt/requirements
+	M      src/SiDigitization.cxx
+	M      SiDigitization/SiDigitization.h
+	M      SiDigitization/ISiSurfaceChargesGeneratorTool.h
+
+
+2009-04-30  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Hit Container Migration, changing from AthenaHitsVector to AtlasHitsVector
+	* Tagged as SiDigitization-03-05-15 (14 failed)
+
+2009-03-05  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed bug #47649: Problem accessing "SCT_RDOs" and PixelRDOs" in InDetOverlay: release 15
+	* Removed the m_StoreGate variable, update handler function, and SG from SiDigitization
+	* Tagged as SiDigitization-03-05-13
+	
+2009-02-06  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Some more cleaning and fixes
+	* UseStoreTool activated for Pixel
+	* Tagged as SiDigitization-03-05-12
+
+2009-01-22  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Clean-up of messageSvc in SiRandomDisabledCellGenerator
+	* Tagged as SiDigitization-03-05-11
+
+2009-01-20  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* setStoreGateSvc removed from AthAlgorithm, use modified local one
+	* Tagged as SiDigitization-03-05-10
+
+2009-01-20  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Clean-up of the requirement file, public/private use
+	* Tagged as SiDigitization-03-05-09
+	
+2008-12-23  David Quarrie <David.Quarrie@cern.ch>
+	* SiDigitization/SiRandomDisabledCellGenerator.h: Add gcc 4.3 compatibility
+	* Tagged as SiDigitization-03-05-08
+	
+2008-12-21  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* 'Improving Quality of Our Software' drive changes
+	Tagged as SiDigitization-03-05-07
+
+2008-12-11  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Removed reference to old and now deleted SCT_ConditionsData class NPtGainSummaryData from ISiChargedDiodesProcessorTool.h
+	* Tagged as SiDigitization-03-05-06
+	
+2008-09-29  John Chapman  <John.Chapman@cern.ch>
+	* Fixed bug #43725: Silicon SDO making bug (changes to SiDigitization::addSDO and SiDigitization::addSCT_SDO)
+	* Tagged as SiDigitization-03-05-05
+
+2008-09-29  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Adressing bug #38675: SCT_Digitization: CPU, Vmem and Malloc usage in pileup
+	* Tagged as SiDigitization-03-05-04
+
+2008-09-06  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed bug #40848 (SCT_Digitization DEBUG printout is way too VERBOSE)
+	* Tagged as SiDigitization-03-05-03
+	
+2008-08-20  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* New safer CPU optimization, improves both the SCT and pixel digitization (bugs #38675 and #38676)
+	* Tagged as SiDigitization-03-05-02
+
+2008-07-15  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* CPU optimization, improves both the SCT and pixel digitization (bugs #38675 and #38676)
+	* Tagged as SiDigitization-03-05-01
+
+2008-06-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Replace use of deprecated methods. Replace use of SiDiode
+	  and SiReadoutCell with SiCellId and SiReadoutCellId.
+	* Tagged as SiDigitization-03-05-00
+	
+2008-04-25  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* SiDigitization.cxx: small clean-up, removed obsolete line (re-definition of barrel ID)
+	Tagged as SiDigitization-03-04-18
+	
+2008-04-09  Andrei Gaponenko <agaponenko@lbl.gov>
+	* SiDigitization.cxx: declare properties for service
+	handles. Overlaying jobs need to configure event store name.
+
+2008-03-19  Attilio Andreazza  <Attilio.Andreazza@mi.infn.it>
+	* src/SiRandomDisabledCellGenerator.cxx: removed calls to
+	  RandFlat::shoot(), added error message if random service is
+	  not initialized (Savannah bug #34544)
+	  Tagged as SiDigitiZation-03-04-16
+
+2008-02-08  Patricia Ward  <patricia.ward@cern.ch>
+	* src/SiDigitization.cxx: reverse inner loop in addSDO
+	  (Savannah bug #33324)
+	  Tagged as SiDigitiZation-03-04-15
+
+2007-11-21 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* SiDigitization.cxx : delete all processors in the desctructor
+	  Also reordered the items in the contructor in order to fix compilation warnings
+	  (Savannah bug #30965)
+	* Tagged as SiDigitization-03-04-14 
+
+2007-11-05 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements: Rename the two libraries for compatibility with asNeeded tag. This should be backwards compatible
+	* Tagged as SiDigitization-03-04-13
+
+2007-10-16 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements: Setup library dependency macros for parallel builds
+	* Tagged as SiDigitization-03-04-11
+
+2007-08-23 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* Conversions of the processors code in to AlgTool done for the SCT Digitization
+	* Add new AlgTool interfaces: 
+	      ISiChargedDiodesProcessorTool
+	      ISiRelativeBunchCalculatorTool
+              ISiSurfaceChargesGeneratorTool
+	* Add SiDigitization: storeTool method to store the AlgTool and appropriate updates 
+	* Codes is compatible with the new SCT_Digitization as well as the unchanged Pixeligitization
+	* SiDigitization will be cleaned up when PixelDigitization convert its processors into AlgTool
+	* Tagged as SiDigitization-03-04-10
+	
+2007-06-12 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Fixed bug in SiRandomDisabledCellGenerator.{h,cxx}
+	  failed previously to incorporate the change in SiHelper functions in previous tag
+	* tagged as SiDigitization-03-04-10
+
+2007-06-04 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added mask out possibility for SiHelper::noise() etc
+	  Backward compatible.
+	* tagged as SiDigitization-03-04-09
+
+2007-04-19 David Quarrie <David.Quarrie@cern.ch>
+	* Use standard multi-library patterns for make -j<n> support
+
+2007-03-28 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* moved to ServiceHandle<IAtRndmGenSvc> - should be backward compatible
+	* tagged as SiDigitization-03-04-07
+	
+2007-03-24 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Tagged as SiDigitization-03-04-06
+	
+2007-03-22 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* SiHelper - added new status: maskOut
+	* Removal of std::cout statements
+	
+2007-03-16 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* rndm svc name now controlled through jobO
+	
+2007-03-13 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* cleanup of SiHelper
+	
+2007-02-26 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* removed ERROR diode not found message
+	* accessors to rndm service and engine
+	* tag SiDigitization-03-04-05
+	
+2006-12-12 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* fix to retain compatability with SCT_Digitization
+	  in SiRandomDisabledCellGenerator.
+	  to be removed when SCT_Digitization has migrated to
+	  IAtRndmGenSvc.
+	* tag SiDigitization-03-04-04
+	
+2006-12-12 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* SiDigitization
+	  Moved to IAtRndmGenSvc
+	  In digitizeHits() : now prints an error if no sielement is found for the given id
+	* SiCellDiscriminator.cxx/h
+	  Added HepRandomEngine
+	* SiCellNoiseGenerator.cxx/h
+	  Added HepRandomEngine
+	* SiRandomDisabledCellGenerator.cxx/h
+	  Added HepRandomEngine
+	* SiThermalDiodeNoiseGenerator.cxx/h
+	  Added HepRandomEngine
+	* cmt/requirements
+	  added AthenaKernel
+	* tagging as SiDigitization-03-04-03
+	
+2006-06-09  Andrei Gaponenko  <agaponenko@lbl.gov>
+
+	* Follow the new policy to completely wildcard required package versions.
+
+2006-04-18  Andrei Gaponenko  <agaponenko@lbl.gov>
+
+	* Clean up for gcc344.
+
+2006-04-04 Andrei Gaponenko <agaponenko@lbl.gov>
+	* Don't create SDOs for noise.
+
+2005-05-01 Thijs Cornelissen
+	* Remove Identifier32.h
+
+2004-08-05 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirements: CLHEP migration
+
+2004-04-30 Davide Costanzo <DCostanzo@lbl.gov>
+        * Bug fix. Set the flag for noisy channels.
+
+2004-06-09 Thijs Cornelissen <tgcornel@nikhef.nl>
+        * Use SiDetectorManager
+
+2004-05-06 Davide Costanzo <DCostanzo@lbl.gov>
+	* SiDigitization/SiSurfaceChargesGenerator.h  Change process
+	* src/SiDigitization.cxx Use HepMcParticleLink.
+
+2004-04-30 Davide Costanzo <DCostanzo@lbl.gov>
+        * fix a memory leak
+
+2004-04-07  Markus Elsing  <markuse@lxplus033.cern.ch>
+
+	* replace Identifier32 with Identifier
+
+2004-04-02 Grant Gorfine <gorfine@nikhef.nl>
+	* SiSurfaceChargesGenerator.h, SiDigitization.cxx: Use TimedHitPtr
+
+2004-03-25 Davide Costanzo <DCostanzo@lbl.gov>
+	* changes to get InDetSimDataCollection 
+
+2004-03-23 Grant Gorfine <gorfine@nikhef.nl>
+	* SiChargedDiodeCollection.h, SiDigitization.h,
+	  SiDigitization.cxx: Process elements without hits.   
+
+2004-03-13 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Mod for req file
+
+2004-02-23 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Add SiDetectorElement member to SiSurfaceChargesGenerator
+
+2004-02-19 Davide Costanzo <DCostanzo@lbl.gov>
+	* skip hits with time > 10us	
+
+2004-02-10 Davide Costanzo <DCostanzo@lbl.gov>
+        * cleanup req
+
+2004-01-26 Davide Costanzo <DCostanzo@lbl.gov>
+        * Updates for pile-up
+
+2003-12-19  Steven Goldfarb  <Steven.Goldfarb@cern.ch>
+
+	* tagging SiDigitization-03-00-02
+	* cmt/requirements: commented out SiDigitization_libraries pattern
+
+2003-11-17 Thijs Cornelissen <tgcornel@nikhef.nl>
+        * Move to InDetReadoutGeometry
+
+2003-10-23 Frederick Luehring <luehring@indiana.edu>
+        * Move tag SiDigitization-03-00-00 because of old tags from David Calvet.
+
+2003-10-23 Frederick Luehring <luehring@indiana.edu>
+        * Move package back into InDetDigitization
+        * Tag as SiDigitization-00-03-04
+
+2003-10-21 Davide Costanzo <DCostanzo@lbl.gov>
+	* Use SiHitConstIterator to iterate thru the Hit collection
+2003-10-16 Davide Costanzo <DCostanzo@lbl.gov>
+	* Include SiHitCollection
+
+2003-08-18 Davide Costanzo <DCostanzo@lbl.gov>
+	* Use a std::list<SiHit*> for the hits in a wafer
+
+2003-08-18 Davide Costanzo <DCostanzo@lbl.gov>
+	* SiChargedDiodeCollection pass the SiElement instead of teh design
+	* SiSurfaceChargesGenerator idem
+
+
+2003-07-22 Davide Costanzo <DCostanzo@lbl.gov>
+	* Add find() method to SiChargedDiodeCollection
+
+2003-07-10 Davide Costanzo <DCostanzo@lbl.gov>
+	* SiHelper: fix the shift operators
+        * SiChargedDiodeCollections: add(SiTotalCharge)
+
+2003-06-17 Davide Costanzo <DCostanzo@lbl.gov>
+	* Moving to the new hits
+
+2003-05-26 Davide Costanzo <DCostanzo@lbl.gov>
+	* Changes needed fo rthe SCT_Digitization
+
+2003-05-02 Davide Costanzo <DCostanzo@lbl.gov>
+	* new tag. add SiReadOutCell to SiChargedDiode
+
+2003-04-07 Davide Costanzo <DCostanzo@lbl.gov>
+	* restructuring of the package
+
+2003-02-09  David Candlin  <candlin@lxplus042.cern.ch>
+
+	* cmt/requirements: Change use for new major version of
+	SiTrackerDetDescr 
+
+2003-01-15  David Candlin  <candlin@lxplus025.cern.ch>
+
+	* src/SiPreDigitCollection.cxx (create): Modify
+	SitrackerDigitCollection iterator
+
+2002-05-21  David Candlin  <candlin@lxplus035.cern.ch>
+
+	* cmt/requirements: Remove version number in requirements
+
+2001-12-12  David Calvet  <calvet@in2p3.fr>
+
+	* Update of the requirements file
+
+2001-11-09  David Calvet  <calvet@in2p3.fr>
+
+	* Redigitization classes (Jessica Leveque)
+
+2001-10-30  David Calvet  <calvet@in2p3.fr>
+
+	* Use of the new container classes
+
+2001-09-24  David Calvet  <calvet@in2p3.fr>
+
+	* Update of requirements file
+	* New tagging convention
+
+2001-09-17  David Calvet  <calvet@in2p3.fr>
+
+	* Bug fix in requirements file
+
+2001-09-04  David Calvet  <calvet@in2p3.fr>
+
+	* Update of the cmt/requirements file
+
+2001-07-09  David Calvet  <calvet@in2p3.fr>
+
+	* Use of StoreGate and the of the new SiTrackerEvent::SiTrackerHit
+	* New class SiDigitizationBase
+
+2001-06-13  David Calvet  <calvet@in2p3.fr>
+
+	* Compilation on Sun, new Gaudi include path
+
+2001-05-07  David Calvet  <calvet@in2p3.fr>
+
+	* Exclusive use of the SiDetectorDesign object associated to the
+	given SiDetectorElement during digitization
+	Use of the new class SiDetectorDesignCollection
+	New linkset [alone] for digitization without Athena
+
+2001-04-19  David Calvet  <calvet@in2p3.fr>
+
+	* Use of the new class SiDetectorElement
+	in the new package SiTrackerDetDescr
+
+2001-03-30  David Calvet  <calvet@in2p3.fr>
+
+	* First commit of package
+

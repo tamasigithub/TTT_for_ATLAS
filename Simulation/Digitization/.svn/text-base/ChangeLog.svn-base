@@ -1,0 +1,2932 @@
+2016-10-27 Noemi Calace <Noemi.Calace@cern.ch>
+	* python/DigiAlgConfig.py: hook for SiSmearedDigitizationTool
+	* Tagging Digitization-02-00-12-00
+
+2016-09-07  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationWriteMetaData.py (writeDigitizationMetadata):
+	downgrade warning message to info.
+	* Tagging Digitization-02-00-12
+
+2016-09-07  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py: add doBichselSimulation
+	digitization flag - False by default. ATLPHYSVAL-430
+	* Tagging Digitization-02-00-11
+
+2016-07-29  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py (getStandardInDetPileUpTools): fix typo. ATLASSIM-3022
+	* Tagging Digitization-02-00-10
+
+2016-07-28  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py (getStandardInDetPileUpTools): add hook
+	for PixelLightDigitizationTool obo Noemi Calace. ATLASSIM-3022.
+	* Tagging Digitization-02-00-09
+
+2016-07-07  Peter van Gemmeren  <gemmeren@anl.gov>
+
+	* share/ConfigDigitization.py: Add setting to prevent automatic input
+	file closing.
+	* Tagging Digitization-02-00-08
+
+2016-07-07  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PileUpMergeSvcConfig.py (getPileUpMergeSvc): Fix the name
+	of the HGTD PileUpXingFolderTool. ATLASSIM-2908
+	* Tagging Digitization-02-00-07
+
+2016-07-06  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py, python/DigitizationConfigDb.py - add
+	CfgGetter methods for TestPileUpTool and Algorithm CfgGetter
+	methods for using TestPileUpTool and MergeTruthJetsTool (with
+	filtering switched on). ATLASSIM-1621
+	* python/DigiAlgConfig.py - tidy up syntax for Algorithm CfgGetter
+	methods.
+	* Tagging Digitization-02-00-06
+
+2016-06-20  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PileUpMergeSvcConfig.py (getPileUpMergeSvc): fix typo. ATLASSIM-2908
+	* Tagging Digitization-02-00-05
+
+2016-06-20  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py, python/DigiOutput.py - fix typos in
+	previous tag. ATLASSIM-2908
+	* Tagging Digitization-02-00-04
+
+2016-06-17  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationWriteMetaData.py,
+	python/DigitizationReadMetaData.py, python/DigiOutput.py,
+	python/PileUpMergeSvcConfig.py, python/DigiAlgConfig.py,
+	share/Digitization.py - add hooks for HGTD
+	Digitization. ATLASSIM-2908
+	* Tagging Digitization-02-00-03
+
+2016-06-03  John Chapman  <John.Chapman@cern.ch>
+
+	* share/jobOpts/DigitizationRTT_all_noLVL1.py,
+	share/jobOpts/NightlyPileUp.py: update job options used by ATN
+	jobs to MC15 geo and conditions. ATLASRECTS-3180
+	* Tagging Digitization-02-00-02
+
+2016-06-01  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py (getStreamRDO_ItemList): further tidying to
+	ensure that the correct containsers are in the output
+	file. ATLASSIM-2158, ATLPHYSVAL-395
+	* Tagging Digitization-02-00-01
+
+2016-04-14  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DetectorDigitization.py - always use digiSteeringConf to
+	set the main Digitization Algorithm name. ATLASSIM-2158
+	* python/DigiAlgConfig.py - FastPileUpToolsAlg now always uses the
+	ID fast digi code. The experimentalDigi flags can now be used to
+	switch on fast digi for any combination of Pixel/SCT/TRT when
+	running StandardPileUpToolsAlg. ATLASSIM-2158
+	* python/DigiOutput.py - lots of tidying to ensure that the
+	correct containers are in the output file for each digitization
+	configuration. ATLASSIM-2158
+	* Tagging Digitization-02-00-00
+
+2016-03-18  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py: add new doRadiationDamage
+	jobproperty (False by default). ATLASSIM-2663
+	* Tagging: Digitization-01-18-01
+
+2015-11-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py (finalBunchCrossing): update the
+	default value from 32 to 6. ATLASSIM-2317
+	* Tagging: Digitization-01-18-00
+
+2015-11-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py (getStreamRDO_ItemList): Update
+	configuration so that sTGC SDOs will also be written out to the
+	RDO file when available. ATLASSIM-2208
+	* Tagging: Digitization-01-17-03
+
+2015-11-10  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py (getStreamRDO_ItemList): add logic to write
+	out PRD_MultiTruthCollection for Fast Digitization
+	jobs. ATLASSIM-2367
+	* Tagging: Digitization-01-17-02
+
+2015-10-20  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py (getStandardForwardPileUpTools): Rename
+	ZDC_DigitizationTool to ZDC_PileUpTool. ATLASSIM-2289
+	* Tagging: Digitization-01-17-01
+
+2015-09-28  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py: add TRTRangeCut property (default
+	is 0.05). ATLASSIM-2224
+	* python/DigitizationReadMetaData.py: set
+	digitizationFlags.TRTRangeCut based on HITS file
+	metadata. ATLASSIM-2224.
+	* Tagging: Digitization-01-17-00
+
+2015-08-14  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py (rndmSeedList): add
+	checkForExistingSeed method (as in simFlags) to allow checks on
+	whether a seed already exists.
+	* python/DigitizationConfigDb.py, python/DigiAlgConfig.py - added
+	configuration of variations of SplitNoMergePileUpToolsAlg with all
+	combinations of full and fast digitization. ATLASSIM-2071
+	* Tagging: Digitization-01-16-00
+
+2015-08-07  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - switch off overlay task in DetFlags if
+	present.
+
+	* Tagging: Digitization-01-15-00
+
+2015-06-22  Robert Harrington <roberth@cern.ch>
+
+	* python/DigitizationConfigDb.py, python/DigiAlgConfig.py - added
+	configuration of SplitNoMergePileUpToolsAlg. ATLASSIM-2071
+
+	* Tagging: Digitization-01-14-05
+
+2015-06-16  David Bjergaard <David.Bjergaard@cern.ch>
+
+	* python/RunDependentMCTaskIterator.py - fix for maxEvents=1
+	case. ATLASSIM-2059
+
+	* Tagging: Digitization-01-14-04
+
+2015-03-23  John Chapman  <John.Chapman@cern.ch>
+
+	* python/RunDependentConfig.py, share/RunNumberOverride.py -
+	tweaks to EvtIdModifierSvc configuration.  Second try at also
+	setting the timestamp in digitization jobs when the the run number
+	is overridden. ATCONDDB-21
+
+	* Tagging: Digitization-01-14-03
+
+2015-03-19  John Chapman  <John.Chapman@cern.ch>
+
+	* share/RunNumberOverride.py - set both
+	EventSelector.OverrideRunNumberFromInput and
+	EventSelector.OverrideRunNumber both to be true. As suggested by
+	RD in ATLASSIM-1891. First go at setting the timestamp based on
+	looking up the run number (ATCONDDB-21), there will be further
+	iterations.
+
+	* Tagging: Digitization-01-14-02
+
+2015-03-19  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - update local versions of
+	print_JobProperty method to return JobProperty.print_JobProperty
+	when mode=print_v, rather than just calling it as is correct for
+	other modes. ATLASSIM-1893
+
+	* Tagging: Digitization-01-14-01
+
+2015-03-03  John Chapman  <John.Chapman@cern.ch>
+
+	* share/RunNumberOverride.py - switch to setting
+	EventSelector.OverrideRunNumber rather than
+	EventSelector.OverrideRunNumberFromInput to be True, as
+	recommended by RD in ATLASSIM-1845. This fixes conditions related
+	warnings from the TRT during initialization.
+
+	* Tagging: Digitization-01-14-00
+
+2015-01-27  John Chapman  <John.Chapman@cern.ch>
+	* Merging in changes from Digitization-01-12-01-branch.
+
+	* python/DigitizationWriteMetaData.py, share/RunNumberOverride.py,
+	share/ConfigDigitization.py - tweak config based on
+	athenaCommonFlags.DoFullChain. Changes for ATLASSIM-1596. obo
+	Richard Hawkings. Requires AthenaCommon-03-02-02 or later.
+
+	* share/ConfigDigitization.py - only create ChronoAuditor and
+	MemStatAuditor if they do not already exist. ATLASSIM-1596
+
+	* Tagging: Digitization-01-13-02
+
+2015-01-20  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationReadMetaData.py (doSpecialConfiguration) -
+	Adding missing import of include from
+	AthenaCommon.Include. ATLASSIM-1780.
+
+	* Tagging: Digitization-01-13-01
+
+2014-12-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - update to use to the versionless
+	xAOD::Jet type names. ATLASSIM-1739. Only compatible with 20.0.0
+	onwards.
+
+	* Tagging: Digitization-01-13-00
+
+2014-11-25  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py - add missing import of
+	digitizationFlags to getFastInDetPileupTools method.
+
+	* Tagging: Digitization-01-12-01
+
+2014-11-13  David Bjergaard <David.Bjergaard@cern.ch>
+
+	* python/RunDependentMCTaskIterator.py - sort entries in RunDMC
+	Task for a given job by run number. ATLASSIM-1688.
+
+	* Tagging: Digitization-01-12-00
+
+2014-11-12  Malcolm Skinner <malcolm.bruce.skinner@cern.ch>
+
+	* python/DigiAlgConfig.py - added configurations which write
+	out only the signal GenEvent info and only the in-time pile-up
+	GenEvent info
+
+	* Tagging: Digitization-01-11-01
+
+2014-10-29  David Bjergaard <David.Bjergaard@cern.ch>
+
+	* python/RunDependentMCTaskIterator.py - modified to utilize
+	CPU/Cache resources more evenly. ATLASSIM-132.
+
+	* Tagging: Digitization-01-11-00
+	
+2014-10-08  Zach Marshall <ZLMarshall@lbl.gov>
+
+	* share/Digitization.py: Add output veto on an alg
+	filter. ATLASSIM-1622.
+
+	* Tagging: Digitization-01-10-05
+
+2014-10-02  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add digiSteeringConf
+	digitizationFlag to specify the named version of PileUpToolsAlg or
+	DigiAlg to run. Default value StandardPileUpToolsAlg. ATLASSIM-64
+	
+	* share/DetectorDigitization.py - use digiSteeringConf to specify
+	the named version of PileUpToolsAlg or DigiAlg to run by
+	default. ATLASSIM-64
+
+	* Tagging: Digitization-01-10-04
+
+2014-09-04  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - save
+	InDet::PixelGangedClusterAmbiguities#PixelClusterAmbiguitiesMap to
+	the RDO file when running fast pixel digitization, as this is
+	required by the reconstruction. ATLASSIM-580, ATLASRECTS-1014.
+
+	* Tagging: Digitization-01-10-03
+
+2014-07-28  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationReadMetaData.py - tweak code to check if
+	GeoModelSvc has already been created before trying to check its
+	properties. ATLASRECT-841
+
+	* Tagging: Digitization-01-10-02
+
+2014-07-18  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PileUpMergeSvcConfig.py - adjust config to support running
+	of Fast Pixel, SCT and TRT digitization, separately or all at the
+	same time. obo Tina Sfiligoj.
+
+	* tagging: Digitization-01-10-01
+
+2014-07-18  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py, python/DigiOutput.py,
+	share/DetectorDigitization.py - adjust config to support running
+	of Fast Pixel, SCT and TRT digitization, separately or all at the
+	same time. obo Tina Sfiligoj.
+
+	* tagging: Digitization-01-10-00
+
+2014-07-18  John Chapman  <John.Chapman@cern.ch>
+
+	* share/jobOpts/NightlyPileUp.py - add TestPileUpTool as a
+	PublicToolHandle in order to work with the updates in
+	PileUpComps-00-12-06. ATLASSIM-565.
+
+	* Tagging: Digitization-01-09-06
+
+2014-06-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigDigitization.py - add fallback to old magnetic field
+	configuration removed in Digitization-01-09-03, to preserve
+	compatibility with 19.0.X releases.
+
+	* Tagging: Digitization-01-09-05
+
+2014-06-09  Zach Marshall <ZLMarshall@lbl.gov>
+
+	* python/DigitizationReadMetaData.py - Adding import of digi flags
+	to read meta data functions
+	
+	* Tagging: Digitization-01-09-04
+
+2014-06-05 Walter Lampl <walter.lampl@ cern.ch>
+	* share/ConfigDigitization.py - switch to new MagFieldService
+	* tag Digitization-01-09-03
+
+2014-06-02  Zach Marshall <ZLMarshall@lbl.gov>
+
+	* python/DigiAlgConfig.py: Changing LucidDigitizationTool to LUCID_PileUpTool
+	 obo A. Sbrizzi
+
+	* Tagging: Digitization-01-09-02
+
+2014-05-29  Zach Marshall <ZLMarshall@lbl.gov>
+
+	* share/jobOpts/NightlyPileUp.py: using jobproperties.print_JobProperties()
+	 instead of print jobproperties, which is causing problems in nightlies
+	 because the string conversion is stupid.
+
+	* Trying to tag: Digitization-01-09-01
+
+2014-05-15  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationWriteMetaData.py - remove redunant check on
+	digitizationFlags.dataRunNumber.
+
+	* python/DigitizationFlags.py - overload the print_JobProperty
+	method for the following jobproperties: RunAndLumiOverrideList,
+	BeamIntensityPattern, SignalPatternForSteppingCache. This prints
+	out the arrays/dictionaries all on one line, rather than using one
+	line per element! Add lockMostFlags method to
+	jobproperties.Digitization. This locks all digitization
+	jobproperties except rndmSeedList which still needs to be modified
+	during configuration. (Having separate set of Random jobproperties
+	seems like a good future direction - ATLASSIM-503.)
+
+	* python/DigiConfigCheckers.py - rename checkPileUpConfiguration
+	method to syncDetFlagsAndDigitizationJobProperties. Add
+	syncBeamAndDigitizationJobProperties method created from code in
+	ConfigDigitization.py. ATLASSIM-64
+
+	* share/ConfigDigitization.py use
+	syncDetFlagsAndDigitizationJobProperties rather than
+	checkPileUpConfiguration. Use syncBeamAndDigitizationJobProperties
+	method from DigiConfigCheckers.py. Call
+	digitizationFlags.lockMostFlags just before the include of
+	DetectorDigitization.py. ATLASSIM-64
+
+	* tag as Digitization-01-09-00
+	
+2014-05-14  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - always create out digitization metadata,
+	even if no RDO file is being written. This will be required for
+	the case where we run sim+digi+reco in a single job.
+
+	* tag as Digitization-01-08-01
+
+2014-05-13  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/DigitizationWriteMetaData.py,
+	python/DigitizationReadMetaData.py - migrate job options files to
+	modules. Adapt run number setting to use the fact that the
+	EvtIdModifierSvc is used when specifying a DataRunNumber on the
+	command-line. ATLASSIM-64
+	
+	* remove share/DigitizationReadMetaData.py,
+	share/DigitizationWriteMetaData.py - migrate job options files to
+	modules. ATLASSIM-64
+
+	* share/Digitization.py - switch to importing
+	DigitizationReadMetaData and DigitizationWriteMetaData. Move input
+	file configuration and include of RunNumberOverride.py to
+	ConfigDigitization.py. ATLASSIM-64
+
+	* share/ConfigDigitization.py - add input file configuration and
+	include of RunNumberOverride.py. ATLASSIM-64
+
+	* tag as Digitization-01-08-00
+
+2014-04-30  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/RunDependentConfig.py - a module for CfgGetter
+	methods related to RunDMC. Move CfgGetter methods for
+	LumProfileSvc and NoProfileSvc here. Add CfgGetter method for
+	EvtIdModifierSvc. ATLASSIM-64
+
+	* python/PileUpConfig.py - CfgGetter methods for LumiProfileSvc
+	and NoProfileSvc moved to RunDependentConfig.py. ATLASSIM-64
+
+	* python/DigitizationConfigDb.py - alter location of CfgGetter
+	methods for LumiProfileSvc and NoProfileSvc. Add CfgGetter method
+	for EvtIdModifierSvc. ATLASSIM-64
+
+	* share/LumiBlockOverrides.py, share/RunNumberOverride.py -
+	replace local configuration of EvtIdModifierSvc with a call to the
+	CfgGetter method. ATLASSIM-64
+
+	* tag as Digitization-01-07-00
+
+2014-04-29  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PileUpConfig.py - add CfgGetter method for
+	LumiProfileSvc. ATLASSIM-64
+
+	* share/LumiBlockOverrides.py - remove call to CfgGetter method
+	for LumiProfileSvc, as this is now called within the
+	PileUpEventLoopMgr CfgGetter method. ATLASSIM-64
+
+2014-04-29  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/DigiConfigCheckers.py - new module to collect methods
+	for sanity checking jobproperties/flags. ATLASSIM-64
+
+	* python/DigitizationFlags.py - add a new methods to print the
+	RunAndLumiOverrideList and generate the RunLumiList and
+	ScaleFactorList used by the LumiProfileSvc from it. Adapt
+	RunAndLumiOverrideList.SetLumiProfileSvcProps to use the new
+	getRunLumiListAndScaleFactorLists method. ATLASSIM-64
+
+	* python/DigitizationConfigDb.py - add CfgGetter methods for
+	LumProfileSvc and NoProfileSvc. ATLASSIM-64
+
+	* python/PileUpConfig.py - add CfgGetter method NoProfileSvc. Add
+	RunDMC configuration to getPileUpEventLoopMgr method. ATLASSIM-64
+
+	* share/InDetDigitization.py - move code for checking TRTLVL1
+	emulation into DigiConfigCheckers.py. ATLASSIM-64
+
+	* share/ConfigDigitization.py - move code for checking DetFlag
+	sanity and part of pile-up-related digitizationFlag settings into
+	DigiConfigCheckers.py. ATLASSIM-64
+
+	* share/ConfigPileUpEventLoopMgr.py - remove RunDMC configuration,
+	now in the PileUpEventLoopMgr CfgGetter method. ATLASSIM-64
+
+	* share/LumiBlockOverrides.py - switch to use the new
+	digitizationFlags.RunAndLumiOverrideList.Print method and
+	LumiProfileSvc CfgGetter method. ATLASSIM-64
+
+	* tag as Digitization-01-06-00
+	
+2014-04-03  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - add back support for writing out
+	MmDigitContainer and sTgcDigitContainer objects, which was lost
+	during the migration. ATLASSIM-64
+
+	* tag as Digitization-01-05-02
+
+2014-04-01  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - support writing out
+	TRT_DrifCircleContainers when running fast TRT
+	digitiziation. ATLASSIM-64.
+
+	* tag as Digitization-01-05-01
+
+2014-03-27  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - move code to handle overriding the run
+	number into share/RunNumberOverride.py.
+
+	* add share/RunNumberOverride.py - update code to override the run
+	number during digitization, such that setting
+	digitizationFlags.dataRunNumber actually overrides the run number
+	with and without pile-up. ATLASSIM-464
+
+	* tag as Digitization-01-05-00
+
+2014-03-26  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationConfigDb.py, share/DetectorDigitization.py -
+	add support for running fast TRT digitization. ATLASSIM-64.
+
+	* python/DigiAlgConfig.py - simplify syntax and add support for
+	running fast TRT digitization. ATLASSIM-64.
+
+	* tag as Digitization-01-04-00
+
+2014-03-13  John Chapman  <John.Chapman@cern.ch>
+
+	* share/LVL1Digitization.py, python/DigiOutput.py - add support
+	for simulation of Tile muon trigger board obo Sanya
+	Solodkov. ATLASSIM-445
+
+	* tag as Digitization-01-03-00
+
+2014-03-12  John Chapman  <John.Chapman@cern.ch>
+
+	* share/jobOpts/NightlyPileUp.py - update to the fact that the
+	instance of PileUpToolsAlg used in the job is now called
+	StandardPileUpToolsAlg. ATLASSIM-443.
+
+	* tag as Digitization-01-02-01
+
+2014-03-11  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - switch to writing out
+	xAOD::JetContainer_v1 and xAOD::JetAuxContainer_v1 rather than
+	JetCollection and JetMomentMap for the Truth Jets. ATLASSIM-431.
+
+	* tag as Digitization-01-02-00
+
+2014-03-03  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiOutput.py - fix AFP DetFlag syntax add JetMomentMaps
+	to the list produced by getStreamRDO_ItemList
+	method. ATLASSIM-231, ATLASSIM-64.
+	
+	* share/DetectorDigitization.py - includes to TruthDigitization.py
+	and FwdDetDigitization.py no longer required. Remove lines which
+	populate StreamRDO_ItemList.
+
+	* share/TruthDigitization.py, share/FwdDetDigitization.py -
+	StreamRDO_ItemList now populated by python/DigiOutput.py, so these
+	files are now empty.
+
+	* share/CaloDigitization.py, share/ConfigDigitization.py,
+	share/ConfigPileUpEventLoopMgr.py, share/InDetDigitization.py,
+	share/LVL1Digitization.py, share/MuonDigitization.py - remove
+	lines which populate StreamRDO_ItemList.
+
+	* share/Digitization.py - use getStreamRDO_ItemList to set
+	streamRDO.ItemList. Remove lines which print out errors if
+	old-style digitization flags are used, as these are no longer
+	present in the release.
+
+	* tag as Digitization-01-01-00
+
+2014-03-03  John Chapman  <John.Chapman@cern.ch>
+
+	* Merging changes from devbranches/DigitizationNewConfig.
+
+	* python/DigitizationConfigDb.py - add CfgGetter DB entries for
+	StandardPileUpToolsAlg, SplitPileUpToolsAlg and PileUpMergeSvc.
+
+	* python/PileUpMergeSvcConfig.py - fix syntax for PileUpXingFolder
+	configuration in getPileUpMergeSvc method.
+
+	* python/DigiAlgConfig.py - add CfgGetter methods for
+	StandardPileUpToolsAlg and SplitPileUpToolsAlg, which will either
+	set up DigitizationAlg, using the old Algorithm-based approach to
+	pile-up digitization, or PileUpToolsAlg, using the current default
+	approach, depending on
+	digitizationFlags.doXingByXingPileUp. SplitPileUpToolsAlg
+	digitizes the hard-scatter separately from the pile-up for Pixels,
+	SCT and TRT so that the output can be used for Truth-seeded
+	reconstruction of pile-up.
+
+	* share/DetectorDigitization.py - remove configuration of
+	PileUpMergeSvc. Add configuration of StandardPileUpToolsAlg or
+	SplitPileUpToolsAlg depending on the doSplitDigi flag as
+	previously. Remove configuration of RecoTimingObj merging code.
+
+	* share/FwdDetDigitization.py, share/CaloDigitization.py,
+	share/MuonDigitization.py, share/InDetDigitization.py,
+	share/TruthDigitization.py - remove configuration of PileUpTools
+	and PileUpXingFolders.
+
+	* share/ConfigDigitization.py - use CfgGetter method to configure
+	PileUpMergeSvc.
+
+	* tag as Digitization-01-00-00
+
+2014-02-20  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py - adapt to
+	use TRTDigitizationTool directly. Requires
+	TRT_Digitization-01-00-01 or later.
+
+	* share/InDetDigitization.py - drop include of PartPropSvc.py as
+	this is now done directly in the ConfGetter function for
+	TRTDigitizationTool.
+
+	* python/DigitizationConfigDb.py, python/PileUpMergeSvcConfig.py -
+	remove definition of TRTRange as it is defined in
+	TRT_Digitization for TRT_Digitization-01-00-01
+	onwards. ATLASSIM-229.
+
+	* tag as Digitization-00-48-00
+
+2014-02-19  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigiAlgConfig.py,
+	share/FwdDetDigitization.py - adapt to use new
+	ALFA_PileUpTool. Requires ALFA_Digitization-00-00-15 or later.
+
+	* python/DigitizationConfigDb.py, python/PileUpMergeSvcConfig.py -
+	remove definition of ALFARange as it is defined in
+	ALFA_Digitization for ALFA_Digitization-00-00-15
+	onwards. ATLASSIM-230.
+
+	* tag as Digitization-00-47-00
+
+2014-02-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/CaloDigitization.py - remove most additional includes for
+	LAr and Tile Digitization. Requires LArDigitization-03-82-30 or
+	later and TileSimAlgs-00-11-03 or later. ATLASSIM-233.
+
+	* tag as Digitization-00-46-00
+
+2014-02-03  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py,
+	share/DetectorDigitization.py, share/CaloDigitization.py,
+	share/LVL1Digitization.py, share/Digitization.py,
+	share/ConfigDigitization.py, python/DigitizationFlags.py - clean-up whitespace - not tagged yet.
+
+	* share/DigitizationReadMetaData.py: Force pileupMetaDataCheck to
+	throw an exception in the case that there are some sub-detectors
+	simulated in the signal sample which are missing from the
+	background samples. This check can be overridden, if
+	necessary. ATLASSIM-169
+
+	* tag as Digitization-00-45-03
+
+2013-12-13  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/DigiOutput.py - in preparation for further
+	configuration tidying. This file groups together all the
+	configuration for StreamRDO. Not used yet.
+
+	* add python/DigiAlgConfig.py - in preparation for further
+	configuration tidying. This file adds a confGetter method for
+	PileUpToolsAlg. Not used yet.
+
+	* share/InDetDigitization.py, share/TruthDigitization.py,
+	python/PileUpConfig.py - whitespace cleanup.
+
+	* python/PileUpMergeSvcConfig.py - remove unused functions which
+	are now defined in other packages.
+
+	* tag as Digitization-00-45-02
+
+2013-11-11  John Chapman  <John.Chapman@cern.ch>
+
+	* share/FwdDetDigitization.py - fix syntax for checking AFP
+	DetFlag exists.
+
+	* share/InDetDigitization.py - udpate to respond to splitDigi
+	flag.
+
+	* tag as Digitization-00-45-01
+
+2013-10-01  John Chapman  <John.Chapman@cern.ch>
+
+	* share/CaloDigitization.py - switch to using confGetter for
+	LArDigitization.
+
+	* tag as Digitization-00-45-00
+
+2013-09-30  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - save MmDigitContainer and
+	sTgcDigitContainer to the RDO file for now. Until Digit-to-RDO
+	converters are ready.
+
+	* tag as Digitization-00-44-07
+
+2013-09-30  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationConfigDb.py - remove lines which have been
+	commented out for a while. Comment out lines for sTgcRange and
+	MmRange, as these are now defined in the sTGC_Digitization and
+	MM_Digitization packages.
+
+	* python/PileUpMergeSvcConfig.py - remove lines which have been
+	commented out for a while. Comment out definitions of sTgcRange
+	and MmRange, as these are now defined in the sTGC_Digitization and
+	MM_Digitization packages. Add line to pick up AFPRange to
+	getPileUpMergeSvc method.
+
+	* share/FwdDetDigitization.py - whitespace cleanup and add
+	configuration for AFP Digitization code.
+
+	* tag as Digitization-00-44-06
+
+2013-08-15  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py,
+	share/DigitizationReadMetaData.py, share/Digitization.py - updates
+	to deal with new AFP and FwdRegion DetFlags, with added protection
+	for builds where these flags are not supported.
+
+	* tag as Digitization-00-44-05
+
+2013-08-13  John Chapman  <John.Chapman@cern.ch>
+
+	* share/FwdDetDigitization.py - update configuration for LUCID and
+	ZDC Digitization code.
+
+	* tag as Digitization-00-44-04
+
+2013-08-07  John Chapman  <John.Chapman@cern.ch>
+
+	* python/RunDependentMCTaskIterator.py - fix for ATLASSIM-43 from
+	Ayana. The configuration should now keep cycling over the task
+	definition until it has sufficient events for a given job.
+
+	* share/MuonDigitization.py - Tidy up Digit to RDO
+	configuration. Requires MuonByteStreamCnvTest-02-09-20 or
+	later. Part of work for ATLASSIM-64.
+
+	* tag as Digitization-00-44-03
+
+2013-07-11  John Chapman  <John.Chapman@cern.ch>
+
+	* share/TruthDigitization.py - add JetMomentMaps to the list of
+	collections to be saved.
+
+	* tag as Digitization-00-44-02
+
+2013-06-21  John Chapman  <John.Chapman@cern.ch>
+
+	* share/TruthDigitization.py, share/InDetDigitization.py,
+	share/MuonDigitization.py, share/CaloDigitization.py,
+	share/FwdDetDigitization.py - tidy up boiler-plate
+	includes/imports. This will prevent config crashes in the case
+	that not all standard sub-detectors are being digitized.
+
+	* python/PileUpConfig.py - fix Occupation fraction configuration
+	in getCavernCache method.
+
+	* tag as Digitization-00-44-01
+
+2013-06-17  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires TileSimAlgs-00-10-19, LUCID_Digitization-00-08-00 and
+	ZDC_SimuDigitization-00-02-00.
+
+	* python/PileUpMergeSvcConfig.py, python/DigitizationConfigDb.py -
+	comment out PileUpXingFolder configuration methods for
+	TileCalorimeter, LUCID and ZDC, as they are now defined in the
+	sub-detector pacakges.
+
+	* tag as Digitization-00-44-00
+
+2013-06-13  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires TGC_Digitization-01-10-00, RPC_Digitization-01-04-00,
+	MDT_Digitization-01-08-00 and CSC_Digitization-01-14-00.
+
+	* python/PileUpMergeSvcConfig.py, python/DigitizationConfigDb.py -
+	comment out PileUpXingFolder configuration methods for CSC, MDT,
+	RPC and TGC, as they are now defined in the sub-detector pacakges.
+
+	* tag as Digitization-00-43-00
+
+2013-06-06  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires MCTruthSimAlgs-00-06-03, BCM_Digitization-01-01-00,
+	PixelDigitization-00-12-04 and SCT_Digitization-00-13-11 or later.
+
+	* add python/PileUpMergeSvcConfig.py - temporary file holding
+	confGetter methods for PileUpXingFolders not yet in sub-detector
+	packages.
+
+	* python/DigitizationConfigDb.py - register confGetter methods
+	from PileUpMergeSvcConfig.py.
+
+	* share/DetectorDigitization.py - add PileUpXingFolder for
+	RecoTimingObj.
+
+	* share/FwdDetDigitization.py - use confGetter to configure
+	PileUpXingFolders for LUCID, ALFA and ZDC.
+
+	* share/CaloDigitization.py - use confGetter to configure
+	PileUpXingFolder for Tile.
+
+	* share/MuonDigitization.py - use confGetter to configure
+	PileUpXingFolders for CSC, MDT, RPC, TGC, sTGC and MM.
+
+	* share/InDetDigitization.py - switch to using confGetter for
+	Pixel and SCT configuration. (NB It is just a wrapper in this
+	case.) Use confGetter to configure PileUpXingFolders for BCM,
+	Pixels, SCT and TRT.
+
+	* share/TruthDigitization.py - use confGetter to configure
+	PileUpXingFolders for Truth Jet, TrackRecord and
+	CaloCalibrationHit merging code.
+
+	* tag as Digitization-00-42-00
+	
+2013-06-03  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires PileUpComps-00-11-00 or later.
+
+	* add python/PileUpConfig.py, python/DigitizationConfigDb.py - add
+	confGetter methods for StepArrayBM, FixedArrayBM, ArrayBM,
+	LowPtMinBiasEventSelector, HighPtMinBiasEventSelector,
+	cavernEventSelector, BeamGasEventSelector, BeamHaloEventSelector,
+	MinBiasCache, LowPtMinBiasCache, HighPtMinBiasCache, CavernCache,
+	BeamGasCache, BeamHaloCache and PileUpEventLoopMgr.
+
+	* share/ConfigPileUpEventLoopMgr.py - adapt to use the above
+	confGetter methods.
+
+	* tag as Digitization-00-41-00
+
+2013-04-30  John Chapman  <John.Chapman@cern.ch>
+
+	* share/InDetDigitization.py - update BCM_Digitization config to
+	use CfgGetter. Requires BCM_Digitization-01-00-00 or later.
+
+	* tag as Digitization-00-40-03
+
+2013-04-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/jobOpts/DigitizationRTT_all_pileup35_leakcheck.py - update
+	to run using PileUpTools and mc12a inputs.
+
+	* share/jobOpts/DigitizationRTT_all_leakcheck.py - update to run
+	using mc12a inputs.
+
+	* tag as Digitization-00-40-02
+
+2013-04-17  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - avoid overwriting
+	digitizationFlags.specialConfiguration when running pile-up.
+
+	* tag as Digitization-00-40-01
+
+2013-03-27  John Chapman  <John.Chapman@cern.ch>
+
+	* share/TruthDigitization.py - add TruthJets range for
+	MergeTruthJets Algorithm with FirstXing and LastXing from
+	[-1000,1000] to [-500,100].
+
+	* tag as Digitization-00-40-00
+
+2013-03-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - minor comment clean up.
+
+	* share/DigitizationReadMetaData.py - MicroMegas -> Micromegas
+
+	* share/DigitizationWriteMetaData.py - check whether sTGC and
+	Micromegas were digitized when writing DigitizedDetectors
+	metadata.
+
+	* tag as Digitization-00-39-01
+
+2013-03-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - add configuration code for sTGC and
+	Micromegas digitization (for NSW).
+
+	* share/DigitizationReadMetaData.py - check whether sTGC and
+	Micromegas were simulated when configuring DetFlags.
+
+	* tag as Digitization-00-39-00
+
+2013-02-06  Sanya Solodkov + John Chapman  <John.Chapman@cern.ch>
+
+	* share/TruthDigitization.py - use new names for TileCal CalibHit
+	containers if OldTileCalibHitContainers isn't in
+	digitizationFlags.experimentalDigi.
+
+	* share/DigitizationReadMetaData.py - added
+	checkTileCalibrationHitFormat method to check whether the old or
+	new names for the TileCalo CalibHit containers are used in the
+	signal input file. If the old names are used add
+	OldTileCalibHitContainers to digitizationFlags.experimentalDigi.
+
+	* tag as Digitization-00-38-00
+
+2013-01-23  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add
+	BeamIntensityPattern.createConstBunchSpacingPattern(int) function
+	to create a beam intensity pattern to match the constant bunch
+	spacing scenario specified in the argument.
+
+	* tag as Digitization-00-37-01
+
+2012-08-22  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - remove creation of
+	StreamRDO_FH. The metadata stream will now add
+	IOVMetaDataContainer#* to its itemlist automatically.
+
+	* This tag is for 18.0.0 onwards only: requires
+	AthenaPoolCnvSvc-00-23-01, OutputStreamAthenaPool-00-02-57 and
+	AthenaServices-01-56-19
+	
+	* tag as Digitization-00-37-00
+	
+2012-08-08  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - fix misleading log
+	message. This has no effect on output.
+
+	* tag as Digitization-00-36-02
+
+2012-07-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DetectorDigitization.py - add code to save RecoTimingObj
+	objects for sim and digi timing to the RDO file.
+
+	* requires MCTruthSimAlgs-00-01-13 or later
+
+	* tag as Digitization-00-36-01
+	
+2012-07-05  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - update configuration now that
+	MDT_PileUpTool has been merged into MdtDigitizationTool.
+
+	* requires MDT_Digitization-01-05-00 or later.
+
+	* tag as Digitization-00-36-00
+
+2012-06-18  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - switch to using AtDSFMTGenSvc by
+	default.
+
+	* tag as Digitization-00-35-07
+
+2012-05-08  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - set maxEvents to 25
+	rather than -25 for the following jobs: all_LVL1_RDOs,
+	mc08_full_atlas_no_pileup, pileup3_5E33_all_LVL1_RDOs. Should
+	prevent perfmon crashes.
+
+	* tag as Digitization-00-35-06
+
+2012-04-30  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - optimize RDO file storage layout. These
+	changes should primarily help to reduce the storage cost for the
+	output RDO file, but also slightly lower the memory cost of the
+	writer and the reader. In addition the new format should make
+	single event access (such as done by AthenaMP) more
+	efficient. (obo Peter Van Gemmeren)
+
+	* tag as Digitization-00-35-05
+
+2012-04-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/CaloDigitization.py - tweak to save all LArDigitContainers
+	and TileDigitsContainers in the case that AddCaloDigi is in the
+	experimentalDigi DigitizationFlags. Fix for bug #93951.
+
+	* tag as Digitization-00-35-04
+
+2012-04-23  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - add new xml tags to
+	remove CheckFileRunner test from per-domain jobs.
+
+	* tag as Digitization-00-35-03
+
+2012-04-05  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - update non-pile-up per
+	domain jobs to use mc11 inputs. Need to get a filtered cavern
+	background sample on afs to do the same for pile-up jobs.
+
+	* remove scripts/ directory as that code is completely deprecated.
+
+	* move add job options to share/jobOpts - this should be invisible
+	to clients.
+
+	* tag as Digitization-00-35-02
+
+2012-04-05  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - remove all jobs except
+	those used in per domain performance tests.
+
+	* tag as Digitization-00-35-01
+
+2012-03-28  John Chapman  <John.Chapman@cern.ch>
+	* share/InDetDigitization.py, share/TruthDigitization.py,
+	share/DetectorDigitization.py, share/LVL1Digitization.py,
+	share/MuonDigitization.py, share/ConfigDigitization.py,
+	share/ConfigPileUpEventLoopMgr.py, share/FwdDetDigitization.py,
+	share/CaloDigitization.py, share/Digitization.py - switch
+	AthenaPoolOutputStream to be an algorithm - changes for AthenaMP
+	compatibility (obo Vakho Tsulaia).
+
+	* tag as Digitization-00-35-00
+
+2012-03-26  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - add method to determine the
+	list of simulated detectors from f.infos[eventdata_items].
+
+	* tag as Digitization-00-34-10
+
+2012-03-21  John Chapman  <John.Chapman@cern.ch>
+
+	* share/TruthDigitization.py - add configuration for TruthJet
+	merging Algorithm/PileUpTool + switch MergeMcEventCollection,
+	MergeCalibHits and MergeTrackRecords to use CfgGetter (requires
+	new tags of HepMCTools and MCTruthSimAlgs).
+
+	* tag as Digitization-00-34-09
+
+2012-03-12  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationRTT_*.py - switch to using OFLCOND-SDR-05-14,
+	switch to using AtDSFMTGenSvc for the per domain jobs.
+
+	* test/Digitization_TestConfiguration.xml - switch to using OFLCOND-SDR-05-14,
+	switch to using AtDSFMTGenSvc for the per domain jobs.
+
+	* tag as Digitizization-00-34-08
+	
+2012-02-27  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - set RandomSvc property for
+	ArrayBM to match digitizationflag. Requires PileUpComps-00-10-11.
+
+	* tag as Digitization-00-34-07
+	
+2011-11-23  John Chapman  <John.Chapman@cern.ch>
+
+	* share/LVL1Digitization.py - fix for LVL1 simulation during
+	digitization.
+
+	* tag as Digitization-00-34-06
+	
+2011-10-27  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - add hooks for using
+	SplitBkgStreamsCache for Low/HighPtMinBias backgrounds. Currently
+	requires SplitCacheForMinbias key to be in
+	jobproperties.Digitization.experimentalDigi().
+
+	* tag as Digitization-00-34-05
+
+2011-10-04  John Chapman  <John.Chapman@cern.ch>
+
+	* share/*.py, test/Digitization_TestConfiguration.xml,
+	data/digitization-afcache.ascii - migrate to using eos inputs rather than castor.
+
+	* cmt/requirements - add validate_xml pattern
+
+	* tag as Digitization-00-34-04
+
+2011-09-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/FwdDigitization.py - uncomment hooks for ZDC Digitization
+	OBO Matteo Negrini.
+
+	* tag as Digitization-00-34-03
+	
+2011-09-05  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - switch to using new MuonDigitization
+	configuration scheme from Martin Woudstra directly. Requires
+	CSC_Digitization-01-11-02 and RPC_Digitization-01-00-45 or later.
+
+	* tag as Digitization-00-34-02
+
+2011-08-29  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - Fix for bug #85900. Only
+	store the following keys in the metadata when we're not using the
+	run-dependent conditions code: numberOfCollisions,
+	numberOfLowPtMinBias, numberOfHighPtMinBias, numberOfCavern,
+	numberOfBeamGas, numberOfBeamHalo, rndmSeedOffset1,
+	rndmSeedOffset2, rndmSeedList.
+
+	* tag as Digitization-00-34-01
+
+2011-08-18  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - switch to new random seed syntax
+	to be able to use offset random numbers with reseeding.
+
+	* tag as Digitization-00-34-00
+
+2011-08-12  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - set BkgStreamCache OccupationFraction configurable
+	property. The OccupationFraction is the maximum fraction of
+	bunch-crossings which will be occupied (Set in the Digitization
+	python to be (bunch slot size)/(intra-train bunch spacing).) This
+	should reduce the memory footprint of pile-up jobs with bunch
+	structure. (Requires PileUpComps-00-09-04-08 or later.)
+
+	* tag as Digitization-00-33-06
+
+2011-07-25  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - For MC11 the cavern
+	background will use a different physics list to the signal
+	samples, so it is necessary to override the requirement that the
+	PhysicsLists match.
+
+	* tag as Digitization-00-33-05
+
+2011-07-21  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - add Heavy Ion
+	Digitization RTT job
+
+	* tag as Digitization-00-33-04
+	
+2011-07-07  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - update
+	VariablePileUpDigiTrf RTT job syntax.
+
+	* tag as Digitization-00-33-03
+
+2011-07-04  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - remove attempt to create
+	duplicate BkgStreamCaches for LowPtMinBias and HighPtMinBias
+	inputs.
+
+	* tag as Digitization-00-33-02
+
+2011-07-03  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - add missing import of athenaCommonFlags,
+	as we can't assume this will have been imported already by the
+	user's job options.
+
+	* tag as Digitization-00-33-01
+
+2011-07-01  John Chapman  <John.Chapman@cern.ch>
+
+	* remove share/beamGasFiles.py, share/beamHaloFiles.py - as no longer used
+
+	* test/Digitization_TestConfiguration.xml - update pile-up RTT
+	jobs to use new syntax (requires SimuJobTransforms-00-18-00 and
+	SimulationJobOptions-00-03-00 or later).
+
+	* python/DigitizationFlags.py - remove deprecated jobproperties
+
+	* share/DigitizationRTT*.py, share/MC*PileUpLumi*.py,
+	share/DigitizationConfig.py, share/NightlyPileUp.py - update to
+	use new jobproperties and to import/use digitizationFlags.
+
+	* share/mc09cavernfiles.py, share/mc10cavernfiles.py,
+	share/cavernfiles.py - update to import/use digitizationFlags.
+
+	* share/mc10Bminbiasfiles.py, share/mc10minbiasfiles.py,
+	share/mc09minbiasfiles.py, share/minbiasfiles.py - update to
+	import/use digitizationFlags and to use LowPtMinBias input
+	collection.
+
+	* share/InDetDigitization.py, share/TruthDigitization.py,
+	share/DetectorDigitization.py, share/MuonDigitization.py,
+	share/LVL1Digitization.py, share/FwdDetDigitization.py,
+	share/CaloDigitization.py, share/LumiBlockOverrides.py,
+	share/ForceUseOfPileUpTools.py, share/ForceUseOfAlgorithms.py -
+	update to import/use digitizationFlags and ensure that no imports
+	are assumed to be picked up from earlier includes. (Prerequisite
+	before moving these files to be python modules.)
+
+	* share/ConfigDigitization.py, share/ConfigPileUpEventLoopMgr.py,
+	share/DigitizationWriteMetaData.py,
+	share/DigitizationReadMetaData.py, share/Digitization.py - update
+	to use new pile-up jobproperties and remove usage of all
+	deprecated jobproperties and ensure that no imports are assumed to
+	be picked up from earlier includes. (Prerequisite before moving
+	these files to be python modules.)
+
+	* tag as Digitization-00-33-00
+
+2011-06-30  Ayana Arce  <ayana@cern.ch>
+
+	* python/DigitizationFlags.py - update ScaleNumberOfCollisions for
+	new job properties.
+
+2011-06-30  John Chapman  <John.Chapman@cern.ch>
+
+	* This is intended to be the last trunk tag which should could be
+	collected for 16.6.X, all later trunk tags are only for 17.X.Y
+	releases onwards.
+	
+	* share/ConfigDigitization.py - minor bugfix to check new pilep-up flags
+	
+	* tag as Digitization-00-32-09
+	
+	* test/Digitization_TestConfiguration.xml - add in RTT jobs
+	removed from SimuJobTransforms RTT.
+	
+	* tag as Digitization-00-32-08
+
+2011-06-29  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add new jobproperties
+	doLowPtMinBias, numberOfLowPtMinBias, LowPtMinBiasInputCols,
+	doHighPtMinBias, numberOfHighPtMinBias, HighPtMinBiasInputCols
+
+	* share/ConfigDigitization.py, share/ConfigPileUpEventLoopMgr.py -
+	respond to new jobproperties.
+
+	* tag as Digitization-00-32-07
+	
+2011-06-24  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - switch to use
+	ATHENA_PYCINTEX_MINVMEM=150 rather than ATHENA_PYCINTEX_MINVMEM=120
+	to account for the large mem requirements of 64-bit PYCINTEX.
+
+	* tag as Digitization-00-32-06
+
+2011-06-23  John Chapman  <John.Chapman@cern.ch>
+
+	* add share/mc10Bminbiasfiles.py - list of mixed ND+SD+DD minbias input files
+
+	* share/MC10PileUpLumi1.0E34_50ns.py,
+	share/MC10PileUpLumi5.0E34_50ns.py,
+	share/MC10PileUpLumi2.0E34_50ns.py,
+	share/MC10PileUpLumi3.0E34_50ns.py,
+	share/MC10PileUpLumi0.5E34_50ns.py,
+	share/MC10PileUpLumi4.0E34_50ns.py - update to use
+	mc10Bminbiasfiles.py
+
+	* test/Digitization_TestConfiguration.xml - switch to use
+	ATHENA_PYCINTEX_MINVMEM=120 rather than ATHENA_PYCINTEX_MINVMEM=80
+	to account for the large mem requirements of 64-bit PYCINTEX.
+
+	* tag as Digitization-00-32-05
+
+2011-06-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigDigitization.py - tidy up warnings about setting
+	Beam jobproperties.
+
+	* share/ConfigPileUpEventLoopMgr.py - use the NoProfileSvc rather
+	than the LumiProfileSvc when
+	jobproperties.Digitization.RunAndLumiOverrideList is not set.
+	
+	* share/Digitization.py - combine two warning lines into one.
+
+	* tag as Digitization-00-32-04
+
+2011-06-02  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add SetPileUpEventLoopMgrProps
+	method to RunAndLumiOverrideList.
+
+	* share/ConfigPileUpEventLoopMgr.py - set
+	pileUpEventLoopMgr.MaxMinBiasCollPerXing, will allow
+	AverageInteractionsPerCrossing and ActualInteractionsPerCrossing
+	properties of EventInfo to be set. OBO Ayana.
+
+	* tag as Digitization-00-32-03
+	
+2011-05-27  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigDigitization.py - bugfix for setting
+	numberOfCollisions=numberOfNDMinBias+numberOfSDMinBias+numberOfDDMinBias
+	when mixed pileup is not being run.
+
+	* python/DigitizationFlags.py - add new specialConfiguration
+	jobproperty, which contains information on configuring digi for
+	special physics models.  Populated, if possible, by evgen file
+	metadata.
+
+	* share/DigitizationReadMetaData.py - store special configuration
+	from evgen metadata in digitizationFlags.specialConfiguration.
+
+	* tag as Digitization-00-32-02
+	
+2011-05-25  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - added experimentalDigi property
+	(list of strings) to avoid having global flags when trying to
+	switch on experimental code. First use-case is the MDT.
+
+	* tag as Digitization-00-32-01
+	
+2011-05-25  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add doNDMinimumBias,
+	numberOfNDMinBias and NDMinBiasInputCols job properties. So that
+	they are distinct from doMinimumBias, numberOfCollisions and
+	MinBiasInputCols.
+	
+	* share/DigitizationWriteMetaData.py - write out new job
+	properties in digitization metadata.
+
+	* share/ConfigPileUpEventLoopMgr.py - add code for making new
+	NDMinBiasCache, if required.
+
+	* share/ConfigDigitization.py - add new NDMinimumBias
+	jobproperties to those to be checked when determining whether
+	pile-up is being run. If mixed pileup is not being run, set
+	numberOfCollisions=numberOfNDMinBias+numberOfSDMinBias+numberOfDDMinBias
+	(if any of those are switched on, or otherwise zero).
+
+	* tag as Digitization-00-32-00
+	
+2011-05-19  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - Protecting
+	specialConfiguration handling from when the param is set to the
+	"NONE" string by the evgen step.
+
+	* tag as Digitization-00-31-05
+	
+2011-05-17  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - add code for reading EvGen
+	specialConfiguration metada and using this information to
+	configure the job.
+
+	* share/TruthDigitization.py - only bother reading TrackRecords
+	for in-time pile-up as only the signal TrackRecord is copied
+	anyway.
+
+	* tag as Digitization-00-31-04
+
+2011-04-20  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - check that BeamIntensityPattern has been set before using it.
+
+	* tag as Digitization-00-31-03
+
+2011-04-19  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add some extra output for
+	RunAndLumiOverrideList.ScaleNumberOfCollisions method
+
+	* tag as Digitization-00-31-02
+	
+2011-04-13  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - switch to importing globalflags, remove back compatibility configuration of old GlobalFlags
+
+	* share/DigitizationReadMetaData.py, share/DigitizationWriteMetaData.py - switch to importing globalflags
+
+	* tag as Digitization-00-31-01
+	
+2011-04-13  John Chapman  <John.Chapman@cern.ch>
+
+	* requires Control/PileUpComps-00-09-04-03 or later
+
+	* python/DigitizationFlags.py - add SignalPatternForSteppingCache
+	property. Triggers use of StepArrayBM and BkgStreamsStepCache,
+	which allow conveyor belt pile-up simulation (Will Buttinger)
+	
+	* share/ConfigDigitization.py - check that incompatible
+	SteppinCache and PileUpTools options are not both switched on
+	
+	* share/ConfigPileUpEventLoopMgr.py - add configuration for
+	StepArrayBM and BkgStreamsStepCache in the case that
+	SignalPatternForSteppingCache is switched on.
+
+	* tag as Digitization-00-31-00
+	
+2011-04-07  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - bugfix replace raise Error with raise RuntimeError 
+
+	* share/MC09PileUpLumi3.5E33_25ns.py - add additional background files to input lists
+
+	* tag as Digitization-00-30-11
+
+2011-03-24  John Chapman  <John.Chapman@cern.ch>
+
+	* remove Testing/Digitization_pretest.sh, Testing - no longer used
+
+	* cmt/requirements - remove deprecated syntax
+
+	* tag as Digitization-00-30-10
+
+2011-03-16  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - add Lucid to the default
+	list of SimulatedDetectors used in the case that this metadata key
+	is missing from the HITS file.
+
+	* tag as Digitization-00-30-09
+
+2011-03-10  John Chapman  <John.Chapman@cern.ch>
+
+	* share/LumiBlockOverride.py - bugfix so that the mean #(evts. per
+	crossing) is no longer hard-coded.
+
+	* tag as Digitization-00-30-08
+
+2011-02-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - switch to writing out BeamIntensityPattern metadata as a 64k string, 
+	rather than the default 4k string. This allows the maximum 3564 element array size to be written out.
+
+	* tag as Digitization-00-30-07
+
+2011-02-10  John Chapman  <John.Chapman@cern.ch>
+
+	* share/LVL1Digitization.py - switch to including TrigT1CaloSim/TrigT1CaloSimJobOptions_TTL1_NoCalib.py rather
+	than TrigT1CaloSim/TrigT1CaloSimJobOptions_TTL1.py to be consistent with the default behaviour of LVL1 emulation
+	in the reco step.
+
+	* tag as Digitization-00-30-06
+	
+
+2011-01-28  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py, share/DigitizationReadMetaData.py - changes so that Lucid is now on by default. If the HITS file does not
+	contain Lucid HITS then Lucid Digitization will be switched off automatically. This is checked by looking at the SimulatedDetectors 
+	metadata.
+
+	* tag as Digitization-00-30-05
+
+
+2010-11-25  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationRTT_*.py, share/NightlyPileUp.py, test/Digitization_TestConfiguration.xml - update tests
+	using mc10 inputs to use OLFCOND-SDR-BS7T-04-02
+
+	* tag as Digitization-00-30-04
+
+2010-11-17  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - added BEAMINT random stream seeds to rndmSeedList in the case of using
+	the ArrayBM BeamIntensity service.
+
+	* tag as Digitization-00-30-03
+
+	
+2010-11-08  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - simplify TGC_Digitization configuration
+
+	* tag as Digitization-00-30-02
+
+	
+2010-11-03  John Chapman  <John.Chapman@cern.ch>
+
+	* add share/MC09PileUpLumi3.5E33_25ns.py - deleted rather than renamed in last tag..
+
+	* tag as Digitization-00-30-01
+
+	
+2010-11-03  John Chapman  <John.Chapman@cern.ch>
+
+	* rename share/PileUpLumi*.py to share/MC09PileUpLumi*.py
+
+	* share/DigitizationRTT_*.py, share/NightlyPileUp.py - switch to mc10 inputs
+
+	* remove share/DigitizationRTT_all_beamgas_beamhalo.py
+
+	* test/Digitization_TestConfiguration.xml - switch mc08 jobs to use mc10 inputs and rename some job options
+
+	* share/DigitizationWriteMetaData.py - bugfix for intraTrainBunchSpacing metadata property
+	
+	* tag as Digitization-00-30-00
+
+	
+2010-10-29  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigDigitization.py - only force Beam.bunchSpacing==Digitization.bunchSpacing when 
+	bunch structure is not being used. When bunch structure is used then:
+	Beam.bunchSpacing = the spacing between filled bunch-crossings within trains.
+	Digitization.bunchSpacing = the length of the slots in each beam (25ns by default).
+
+	* share/DigitizationWriteMetaData.py - write out intraTrainBunchSpacing (Beam.bunchSpacing) also
+
+	* add share/MC10PileUpLumi0.0_50ns.py, share/MC10PileUpLumi0.5E34_50ns.py, 
+	share/MC10PileUpLumi1.0E34_50ns.py, share/MC10PileUpLumi2.0E34_50ns.py, 
+	share/MC10PileUpLumi3.0E34_50ns.py, share/MC10PileUpLumi4.0E34_50ns.py,
+ 	share/MC10PileUpLumi5.0E34_50ns.py, 
+	share/mc10minbiasfiles.py, share/mc10cavernfiles.py - job options for MC10 pile-up performance tests
+
+	* add share/MC08PileUpLumi1.0E34_50ns.py - job options for MC08 pile-up performance tests
+
+	* share/PileUpLumi0.0_50ns.py, share/PileUpLumi0.5E34_50ns.py, share/PileUpLumi1.0E34_50ns.py,
+	share/PileUpLumi2.0E34_50ns.py, share/PileUpLumi3.0E34_50ns.py, share/PileUpLumi4.0E34_50ns.py,
+	share/PileUpLumi5.0E34_50ns.py - updated job options for MC09 pile-up performance tests
+
+	* tag as Digitization-00-29-00
+	
+
+2010-10-19  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - add new metadata key for runDMC to Digitization MetaData. (OBO Ayana Arce)
+
+	* share/cavernfiles.py - remove corrupt HITS file from list. (Remove mc08 datasets from castor soon.)
+	
+	* tag as Digitization-00-28-09
+	
+2010-10-14  John Chapman  <John.Chapman@cern.ch>
+
+	* add share/PileUpLumi0.0_50ns.py - for pile-up testing
+
+	* tag as Digitization-00-28-08
+
+2010-10-12  John Chapman  <John.Chapman@cern.ch>
+
+	* remove unused job options: DigitizationRTT_calo_muon_noRDO.py,DigitizationRTT_calo_noRDO.py,
+	DigitizationRTT_calo_nolar_noRDO.py,DigitizationRTT_calo_notile_noRDO.py,DigitizationRTT_core.py,
+	DigitizationRTT_id_calo_muon_noRDO.py,DigitizationRTT_id_calo_noRDO.py,DigitizationRTT_id_muon_noRDO.py,
+	DigitizationRTT_id_noRDO.py,DigitizationRTT_id_nobcm_noRDO.py,DigitizationRTT_id_nopixel_noRDO.py,
+	DigitizationRTT_id_nosct_noRDO.py,DigitizationRTT_id_notrt_noRDO.py,DigitizationRTT_muon_noRDO.py,
+	DigitizationRTT_muon_nocsc_noRDO.py,DigitizationRTT_muon_nomdt_noRDO.py,DigitizationRTT_muon_norpc_noRDO.py,
+	DigitizationRTT_muon_notgc_noRDO.py
+
+	* remove executable permissions from files in share/
+
+	* add job options for high luminosity testing:
+	share/mc09cavernfiles.py, share/mc09minbiasfiles.py,share/ForceUseOfAlgorithms.py,
+	share/ForceUseOfPileUpTools.py,share/PileUpLumi0.5E34_50ns.py,share/PileUpLumi1.0E34_50ns.py,
+	share/PileUpLumi2.0E34_50ns.py,share/PileUpLumi3.0E34_50ns.py,share/PileUpLumi4.0E34_50ns.py,
+	share/PileUpLumi5.0E34_50ns.py
+
+	* tag as Digitization-00-28-07
+
+2010-10-08  John Chapman  <John.Chapman@cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py - switch off metadata processing in background event selectors
+	fixes bug #73616 (along with new EventSelectorAthenaPool tag)
+
+	* tag as Digitization-00-28-06
+
+2010-09-30  John Chapman  <John.Chapman@cern.ch>
+
+	* test/TestPileUp.xml - udpate successMessage
+
+	* tag as Digitization-00-28-05
+
+2010-09-23  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py, share/ConfigPileUpEventLoopMgr.py - Beam Gas and Beam Halo backgrounds ignore
+	LumiProfileSvc for now.
+
+	* tag as Digitization-00-28-04
+	
+2010-09-21  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml, share/PileUpLumi3.5E33_25ns.py - update Per Domain jobs to use
+	MC09 inputs on afs - a few were missed last time...
+
+	* share/ConfigPileUpEventLoopMgr.py - backoff change in Digitization-00-27-11 - caused problems for high 
+	lumi PileUpTools jobs (for me at least).
+
+	* tag as Digitization-00-28-03
+
+2010-09-17  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml, share/PileUpLumi3.5E33_25ns.py - update Per Domain jobs to use
+	MC09 inputs on afs rather than castor (will hopefully cure vmem fluctuations).
+
+	* tag as Digitization-00-28-02
+
+
+2010-09-09  John Chapman  <John.Chapman@cern.ch>
+
+	* share/LVL1Digitization.py - fix bug #72263
+
+	* tag as Digitization-00-28-01
+
+2010-09-06  John Chapman  <John.Chapman@cern.ch>
+
+	* Changes for Overriding Run, LumiBlock and pile-up lumi on an event by event basis. (Thanks to Ayana Arce.)
+	
+	* add python/RunDependentMCTaskIterator.py, share/LumiBlockOverrides.py - configure the
+	overrides based on job options.
+	
+	* python/DigitizationFlags.py - add RunAndLumiOverrideList property.
+	
+	* share/DigitizationWriteMetaData.py - if we're using the new override services pick-up run number from
+	IOVDbMetaDataTool
+	
+	* share/ConfigDigitization.py - hook to include share/LumiBlockOverrides.py
+
+	* tag as Digitization-00-28-00
+
+
+2010-09-03  Paolo Calafiura  <calaf@calaf-laptop>
+
+	* share/ConfigPileUpEventLoopMgr.py: do not keep input files open when
+	doing xing by xing pileup.
+	* tag as Digitization-00-27-11
+
+2010-08-31  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitiziation_TestConfiguration.xml - put athena jobs before transform jobs (required by DTD)
+
+	* tag as Digitization-00-27-10
+
+2010-08-25  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitiziation_TestConfiguration.xml - switch to using Digi_trf.py for all per domain tests.
+
+	* tag as Digitization-00-27-09
+
+2010-08-25  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitiziation_TestConfiguration.xml - switch to using Digi_trf.py in DigiJobTrfTest job.
+
+	* tag as Digitization-00-27-08
+
+2010-08-24  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/InDetDigitization.py - switch off LVL1 TRT simulation based on a modified DetFlags.simulateLVL1.TRT
+	
+	* share/LVL1Digitization.py - removed code for LVL1 TRT case, as now handled by default
+
+	* tag as Digitization-00-27-07
+
+2010-08-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/MuonDigitization.py - expanded the range of bunch crossings sent to the CSC 
+	from [-3,+3] to [-15,+7] at the request of the CSC group.
+
+	* tag as Digitization-00-27-06
+
+2010-08-16  John Chapman  <John.Chapman@cern.ch>
+
+	* share/Digitization.py - added an extra info log line
+
+	* share/DigitizationReadMetaData.py - fix for 'LucidOn' flag comparison between signal
+	and pile-up metadata. Bug #71432
+
+	* share/LVL1Digitization.py - LVL1::TrigT1TRT is switched on by default for cosmics digitization, 
+	but not for collision events. This can be overridden by setting RUNTRTLVL1=True in a preExec.
+
+	* tag as Digitization-00-27-05
+
+2010-08-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add cavernIgnoresBeamInt property - previously only in DigitConfig.py
+	
+	* share/ConfigPileUpEventLoopMgr.py - CavernCache responds to cavernIgnoresBeamInt jobproperty
+
+	* tag as Digitization-00-27-04
+
+2010-08-04  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationWriteMetaData.py - add list of 'DigitizedDetectors' to Digitization Meta Data.
+
+	* share/DigitizationReadMetaData.py - remove ZDC and ALFA from the dummy list of SimulatedDetectors
+
+	* share/LVL1Digitization.py - temporary hack to remove warnings from CTPSimulation about TrigT1TRT
+
+	* tag as Digitization-00-27-03
+	
+2010-07-27  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - added a new jobproperty to toggle Forward Detector 
+	noise simulation (not used yet)
+
+	* share/DetectorDigitization.py - include FwdDetDigitization.py if DetFlags.Forward_on rather
+	than just DetFlags.Lucid_on
+
+	* share/FwdDetDigitization.py - enable ALFA Digitization
+
+	* share/DigitizationReadMetaData.py - renamed mytempdict to metadatadict
+
+	* tag as Digitization-00-27-02
+
+
+2010-07-23  John Chapman  <John.Chapman@cern.ch>
+
+	* share/DigitizationReadMetaData.py - fix exception handling in the case that
+	IOVDbGlobalTag is missing from Sim MetaData.
+
+	* tag as Digitization-00-27-01
+
+2010-07-22  John Chapman  <John.Chapman@cern.ch>
+
+	* share/FwdDetDigitization.py - placeholders for ALFA and ZDC 
+	Digitization job option includes (commented out)
+
+	* python/DigitizationFlags.py - changed overrideMetadata property to be a list of checks to override.
+	E.g. overrideMetaData=['ALL'] reproduces the old behaviour.
+	     overrideMetaData=['G4Version'] will skip all checks on the G4 Version
+	     overrideMetaData=['cavern_PhysicsList'] will skip the consistency check on the physics list
+	                                             for cavern background only.
+	* share/DigitizationReadMetaData.py, share/Digitization.py, share/NightlyPileUp.py - adaptions to
+	use the new list over property checks to override.
+
+	* tag as Digitization-00-27-00
+
+
+2010-06-29  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - correct logic error when checking for repeated entries in 
+	rndmSeedList.addSeed method (thanks to Sebastian Schaetzel). Fixes bug#69299
+
+	* tag as Digitization-00-26-04
+
+2010-06-21  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitiziation_TestConfiguration.xml - add root://castoratlas/ to
+	DiffPoolFilesRunner refFileName paths - as AthFile uses rfio by default
+
+	* tag as Digitization-00-26-03
+
+2010-06-17  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - comment out second RandomNumberTest until 
+	new syntax is available in RTT. Add userJobId and doMonitoring tags where appropriate.
+
+	* tag as Digitization-00-26-02
+
+2010-06-14  John Chapman  <John.Chapman@cern.ch>
+
+	* test/Digitization_TestConfiguration.xml - remove references to PerfMonRunner as it seems to be deprecated.
+
+	* tag as Digitization-00-26-01
+
+2010-06-11  John Chapman  <John.Chapman@cern.ch>
+
+	* python/DigitizationFlags.py - add BeamIntensityPattern and FixedT0BunchCrossing
+	digitization jobproperties for bunch structure simulation.
+
+	* share/ConfigPileUpEventLoopMgr.py - switch on bunch structure simulation depending
+	on the BeamIntensityPattern and FixedT0BunchCrossing digitization jobproperties. 
+	Cavern background is ignores bunch structure by default - this can be switched off 
+	in the job transforms.
+
+	* share/DigitizationReadMetaData.py - check if DetDescrVersion needs to be unlocked 
+	before 	attempting to correct it (new transforms lock this property).
+
+	* share/DigitizationWriteMetaData.py - write out the BeamIntensityPattern and 
+	FixedT0BunchCrossing digitization jobproperties.
+
+	* share/NightlyPileUp.py - test the new jobproperties.
+
+	* tag as Digitization-00-26-00
+
+
+2010-06-08 John Chapman
+
+	* share/Digitization.py, share/DigitizationReadMetaData.py - switch on 
+	Lucid Digitization if SimMetaData flag 'LucidOn'==True. Once it can be
+	guaranteed that all HIT files have this flag Lucid DetFlag will be on by
+	default and switched off if SimMetaData flag 'LucidOn'==False.
+
+	* test/Digitization_TestConfiguration.xml - change email to atlas-simulation-testreports list
+
+	* tag as Digitization-00-25-12
+	
+2010-05-25 John Chapman
+
+	* cmt/requirements - remove unnecessary use statements
+
+	* tag as Digitization-00-25-11
+
+2010-05-07 John Chapman
+	* share/Digitization.py - switch from setting old style GlobalFlags to new jobproperties.Global
+	* tag as Digitization-00-25-10
+	
+2010-05-06 John Chapman
+	* share/DigitizationRTT_*.py - update 'per domain' RTT jobs to include malloc monitoring
+	* tag as Digitization-00-25-09
+	
+2010-05-03 John Chapman
+	* share/Digitization.py - make sure AthenaCommonFlags.FilesInput=AthenaCommonFlags.PoolHitsInput
+	* tag as Digitization-00-25-08
+	
+2010-04-26 John Chapman
+	* share/InDetDigitization.py - switch from using Beam.estimatedLuminosity to Digitization.numberOfCollisions
+	* test/TestDigitization.xml - change success message as output has changed.
+	* tag as Digitization-00-25-07
+	
+2010-04-13 John Chapman
+	* python/DigitizationFlags.py - add a call to af.server.load_cache in getHitFileRunNumber.
+	* share/DigitizationReadMetaData.py - clean up error message.
+	* tag as Digitization-00-25-06
+	
+2010-04-12 John Chapman
+	* share/ConfigDigitization.py, share/DetectorDigitization.py, share/InDetDigitization.py, share/CaloDigitization.py, share/MuonDigitization.py, share/FwdDetDigitization.py, share/TruthDigitization.py - tidying up sub-detector configuration for PileUpTools.
+	* tag as Digitization-00-25-05
+
+2010-04-01 John Chapman
+	* share/FwdDetDigitization.py add include for LUCID PileUpTool job options
+	* cmt/requirements add missing use statement for TileSimAlgs
+	* tag as Digitization-00-25-04
+	
+2010-03-30  Paolo Calafiura  <calaf@calaf-laptop>
+
+	* share/NightlyPileUp.py: reduced verbosity (hope this is OK John),
+	introduced example of SubtractBC0 usage
+	* tag as Digitization-00-25-03
+
+2010-03-22 John Chapman
+	* share/NightlyPileUp.py - begin testing PileUpTools
+	* tag as Digitization-00-25-02
+	
+2010-03-15 John Chapman
+	* share/CaloDigitization.py, share/MuonDigitization.py - add in hooks for PileUpTools under development
+	* share/ConfigPileUpEventLoopMgr.py - switch to using BkgStreamsCache by default as BkgStreamsConcentricCache is not PileUpTools compatible.
+	* tag as Digitization-00-25-01
+	
+2010-03-03 John Chapman
+	* python/DigitizationFlags.py - add jobproperties for single and double diffractive minbias pile-up
+	* share/ConfigDigitization.py - include single and double diffractive minbias in checks for any pile-up
+	* share/ConfigPileUpEventLoopMgr.py - add possibility of single and double diffractive minbias pile-up
+	* share/DigitizationReadMetaData.py - include checks on single and double diffractive minbias pile-up input file metadata
+	* share/DigitizationWriteMetaData.py - include single and double diffractive minbias pile-up jobproperties in Digitization metadata
+	* tag as Digitization-00-25-00
+
+2010-02-25 John Chapman
+	* test/TestDigitization.xml - change successMessage to look for 25 rather than 50 records to reflect the number of events digitized..
+	* tag as Digitization-00-24-02
+
+2010-02-11 John Chapman
+	* python/DigitizationFlags.py - moved getHitFileRunNumber function here for ease of use
+	* share/DigitizationWriteMetaData.py - use getHitFileRunNumber from jobproperties
+	* share/DigitizationReadMetaData.py - use getHitFileRunNumber from jobproperties
+	* share/Digitization.py - when skipping metadata checks print info message to confirm this.
+	* tag as Digitization-00-24-01
+
+2010-02-09 John Chapman
+	* share/DigitizationReadMetaData.py - add protection against evt_type being set incorrectly i.e. not 'IS_SIMULATION' bug#62605
+	* share/ConfigDigitization.py - Change AthenaPoolOutputStream name to StreamRDO (object still referred to as Stream1 though) - will fix this later, as changes to other packages are also needed.
+	* share/DigitizationWriteMetaData.py - rename AthenaOutputStream from Stream1_FH to StreamRDO_FH
+	* tag as Digitization-00-24-00
+
+2010-02-08 John Chapman
+	* python/DigitizationFlags.py - add back doXingByXingPileUp property - accidentally lost in Digitization-00-23-12
+	* share/DigitizationRTT_all_noLVL1.py - changed job to run over 25 events rather than 50 to prevent ATN timeouts.
+	* tag as Digitization-00-23-14
+
+2010-02-05 John Chapman
+	* share/Digitization.py - set EventSelector.FirstLB=1 when overriding the run number
+	* tag as Digitization-00-23-13
+
+2010-02-04 John Chapman
+	* python/DigitizationFlags.py - added simRunNumber job property to store the MC run number when it is overridden by one from data (off by default, default value =-1)
+	* share/Digitization.py - extra settings for the EventSelector to allow override  of the IOV for sim metadata
+	* share/DigitizationReadMetaData.py - add hooks to store simRunNumber (if dataRunNumber active) to allow override  of the IOV for sim metadata + some re-indenting.
+	* share/DigitizationWriteMetaData.py - add hooks to store simRunNumber, in case DigitizationReadMetaData.py was skipped.
+	* tag as Digitization-00-23-12
+	
+2010-02-01 John Chapman
+	* test/Digitization_TestConfiguration.xml - switched pile-up per domain jobs to AthenaPileUpDigiTrends JobGroup, to make JobNames Unique within a JobGroup
+	* tag as Digitization-00-23-11
+
+2010-01-26 John Chapman
+	* share/Digitization.py - fix typo in info statement introduced in last tag
+	* tag as Digitization-00-23-10
+	
+2010-01-25 John Chapman
+	* python/DigitizationFlags.py - added dataRunNumber job property to allow MC run number to be overridden by one from data in order to pick up data conditions information (off by default, default value =-1)
+	* share/Digitization.py - add hooks to use dataRunNumber (if active) to set the EventSelectorRunNumber
+	* share/DigitizationWriteMetaData.py - add hooks to use dataRunNumber (if active) to set the IOV for digi metadata
+	* tag as Digitization-00-23-09
+
+2010-01-20 John Chapman
+	* share/DigitizationReadMetaData.py - adding protection for multiple sets of simulation metadata in the HIT file.
+	* share/TruthDigitization.py - adding hocks for MergeTrackRecord and MergeCalibHits PileUpTools
+	* tag as Digitization-00-23-08
+
+2010-01-08 John Chapman
+	* share/DigitizationReadMetaData.py - protect af.fopen line
+	* data/digitization-afcache.ascii - updated with xroot paths
+	* share/InDetDigitization.py - added PileUpTools support for BCM and TRT
+	* tag as Digitization-00-23-07
+	
+2009-12-17 John Chapman
+	* share/DigitizationReadMetaData.py - add in alternate methods of obtaining IOVDbGlobalTag from HIT file MetaData.
+	* tag as Digitization-00-23-06
+	
+2009-12-14 John Chapman
+	* test/TestDigitization.xml - tweaked successMessage
+	* tag as Digitization-00-23-05
+	
+2009-12-09 John Chapman
+	* test/TestDigitization.xml - switch off LVL1 Simulation in digi (w/o pile-up) ATN job
+	* share/InDetDigitization.py - added hooks for Pixel PileUpTool
+	* test/Digitization_TestConfiguration.xml - removed some RTT jobs that we can do without
+	* tag as Digitization-00-23-04
+	
+2009-12-03 John Chapman
+	* share/DigitizationWriteMetaData.py, share/ConfigDigitization.py - update MetaData output configuration syntax
+	* share/InDetDigitization.py - BCM PileUpXingFolder with range [-25,0] added. TRT PileUpXingFolder range altered to [-50,50]
+	* share/MuonDigitization.py - TGC PileUpXingFolder range altered to [-50,75]
+	* cmt/requirements - tidy up use statements
+	* tag as Digitization-00-23-03
+	
+2009-11-23 John Chapman
+	* (RTT is now xrootd friendly)
+	* share/*.py, test/Digitization_TestConfiguration.xml - update ATN and RTT jobs to use atlascerngroupdisk
+	* tag as Digitization-00-23-02
+	
+2009-11-16 John Chapman
+	* share/*.py, test/Digitization_TestConfiguration.xml - revert ATN and RTT jobs to use atlasgroupdisk
+	* tag as Digitization-00-23-01
+	
+2009-11-13  Paolo Calafiura  <calaf@calaf-laptop>
+
+	* share/ConfigPileUpEventLoopMgr.py: use BkgStreamsConcentricCaches
+	* share/NightlyPileUp.py: test concentric caches
+	* tag as Digitization-00-23-00
+
+2009-11-02 John Chapman
+	* share/*.py, test/Digitization_TestConfiguration.xml - update ATN and RTT jobs to use atlascerngroupdisk
+	* tag as Digitization-00-22-02
+	
+2009-10-29 John Chapman
+	* share/MuonDigitization.py - Amended TGC PileUpXingFolder time window from [-3,+3]*bunchSpacing to [-25,+75]ns as requested by TGC group.
+	* tag as Digitization-00-22-01
+
+2009-10-28 John Chapman
+	* share/MuonDigitization.py - Muon digit To RDO conversion (required for LVL1 sim) now done if muon digitization is on, rather than just if muon RDOs are written out.
+	* share/DigitizationReadMetaData.py - fix for comparison of integer hitFileMagicNumber values in Simulation MetaData (had previously assumed they were strings)
+	* share/PileUpLumi1.0E33_25ns.py, share/PileUpLumi3.5E33_25ns.py - add for ease of configuration of Per Domain jobs with pile-up.
+	* test/Digitization_TestConfiguration.xml - add Per Domain jobs for 3.5E33 pile-up
+	* tag as Digitization-00-22-00
+
+2009-10-21 John Chapman
+	* share/FwdDetDigitization.py - switched off the writing out of LUCID_RawDataContainer, as this will now be produced in the reco step instead (requested by Lucid offline software group).
+	* tag as Digitization-00-21-00
+	
+2009-10-16 John Chapman
+	* share/MuonDigitization.py - fix PileUpXingFolders for muon sub-detectors (actually fixed now)...
+	* share/DigitizationRTT_all_pileup01_450ns_perfmon.py - overall range to be [-3,+3] required by the TGC.
+	* tag as Digitization-00-20-11
+	
+2009-10-12 John Chapman
+	* test/Digitization_TestConfiguration.xml - fix broken leak-check jobs
+	* python/DigitizationFlags.py - add doXingByXingPileUp property for easier PileUpTools testing (NB TESTING ONLY)
+	* share/InDetDigitization.py, share/TruthDigitization.py, share/DetectorDigitization.py, share/MuonDigitization.py, share/ConfigPileUpEventLoopMgr.py, share/FwdDetDigitization.py, share/CaloDigitization.py - change so they respond to doXingByXingPileUp 
+	* update share/minbiasfiles.py, share/cavernfiles.py - for easier High Lumi pile-up testing
+	* tag as Digitization-00-20-10
+
+2009-09-23 Paolo Calafiura
+	* share/NightlyPileUp.py: remove PileUpToolsAlg that only works in XingByXing mode
+	* tag as Digitization-00-20-09
+
+2009-09-18 Paolo Calafiura
+	* cmt/requirements: remove use of obsolete AthenaSealSvc
+	* tag as Digitization-00-20-08
+
+2009-09-16 John Chapman
+	* add share/DigitizationRTT_calo_noRDO.py, share/DigitizationRTT_id_calo_noRDO.py, share/DigitizationRTT_calo_muon_noRDO.py, share/DigitizationRTT_id_calo_muon_noRDO.py, DigitizationRTT_id_no*_noRDO.py, DigitizationRTT_calo_no*_noRDO.py, DigitizationRTT_muon_no*_noRDO.py
+	- new job options for per domain performance monitoring RTT jobs
+	* test/Digitization_TestConfiguration.xml added calo_noRDOs, id_calo_noRDOs, calo_muon_noRDOs, id_calo_muon_noRDOs, id_no*_noRDOs, calo_no*_noRDOs and muon_no*_noRDOs RTT jobs, removed single sub-det jobs
+	* tag as Digitization-00-20-07
+	
+2009-08-27 John Chapman
+	* share/DigitizationReadMetaData.py - fix for bug #53599
+	* add share/minbiasfiles.py, share/cavernfiles.py - list of minbias and cavern background files on afs
+	* tag as Digitization-00-20-06
+	
+2009-08-25 John Chapman
+	* share/DigitizationRTT_core.py - switch from using pixels to bcm
+	* test/Digitization_TestConfiguration.xml - add new RTT jobs (id, muon, id+muon) forogt in last tag...
+	* share/ConfigDigitization.py - added lines for altering pool buffer size (commented out)
+	* tag as Digitization-00-20-05
+
+2009-08-24 John Chapman
+	* share/DigitizationRTT_id_noRDO.py added for 'per subsystem' plots
+	* share/DigitizationRTT_muon_noRDO.py added for 'per subsystem' plots
+	* share/DigitizationRTT_id_muon_noRDO.py added for 'per subsystem' plots
+	* tag as Digitization-00-20-04
+
+2009-08-20 John Chapman
+	* share/DigitizationRTT_core.py - fix typo in DetFlags settings
+	* tag as Digitization-00-20-03
+	
+2009-08-17 John Chapman
+	* RTT changes to use as input for 'per subsystem' plots
+	* added share/DigitizationRTT_mdt.py share/DigitizationRTT_rpc.py share/DigitizationRTT_core.py share/DigitizationRTT_all_noLVL1_noRDO.py share/DigitizationRTT_csc.py share/DigitizationRTT_truth.py share/DigitizationRTT_all_noRDO.py share/DigitizationRTT_tgc.py
+	* switched off writing RDOs in share/DigitizationRTT_bcm.py share/DigitizationRTT_sct.py share/DigitizationRTT_trt.py share/DigitizationRTT_lar.py share/DigitizationRTT_tile.py
+	* share/DigitizationRTT_all_perfmon.py - runs over 25 events rather than 50
+	* test/Digitization_TestConfiguration.xml - added new job group DigiTrends and added some addition jobs to this group
+	* tag as Digitization-00-20-02
+	
+2009-08-05 John Chapman
+	* cmt/requirements - small fix to remove build warning
+	* share/DigitizationRTT_all_pileup10_75ns_perfmon.py - changed BC range to [-10,+10]. BC +-11 occurs outside largest sensitive time window at +-825ns.
+	* share/DigitizationRTT_all_pileup05_75ns_perfmon.py - changed BC range to [-10,+10]. As above.
+	* share/DigitizationRTT_all_pileup01_450ns_perfmon.py - changed BC range to [-1,+1]. BC +-2 occurs outside largest sensitive time window at +-900ns.
+	* tag as Digitization-00-20-01
+
+2009-07-20 John Chapman
+	* python/DigitizationFlags.py - changed default value for initialBunchCrossing to -32
+	* share/MuonDigitization.py - changed PileUpXingFolder range for MDT to [-800,+800]ns (recommendation from MDT experts).
+	* share/DigitizationRTT_all_pileup.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup10_perfmon.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup20_25ns_perfmon.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup35_perfmon.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup35_leakcheck.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup100_perfmon.py - changed setting of initialBunchCrossing to -32
+	* share/DigitizationRTT_all_pileup05_75ns_perfmon.py - changed setting of initialBunchCrossing to -11
+	* share/DigitizationRTT_all_pileup10_75ns_perfmon.py - changed setting of initialBunchCrossing to -32
+	* test/Digitization_TestConfiguration.xml - further fix to FileGrepper test configuration
+	* tag as Digitization-00-20-00
+
+2009-07-15 John Chapman
+	* test/Digitization_TestConfiguration.xml - fixed FileGrepper test configuration, added Dhiman Chakraborty to mailto list
+	* tag as Digitization-00-19-02
+
+2009-07-03  Paolo Calafiura  <calaf@lxcalaf.cern.ch>
+	* share/NightlyPileUp.py (job): test the IPileUpTool callback mechanism	
+	* tag as Digitization-00-19-01
+	
+2009-07-09 John Chapman
+	* share/DigitizationReadMetaData.py - switch to using AthFile to read metadata (Thanks to Sebastien Binet)
+	* share/DigitizationWriteMetaData.py - tidy up syntax
+	* add data/digitization-afcache.ascii - AthFile cache file to speed up test jobs
+	* add data/UpdateAthFileCache.py - script for updating cache file
+	* cmt/requirements - add line refering to AthFile cache file
+	* tag as Digitization-00-18-01
+	
+2009-06-08 John Chapman
+	* share/ConfigDigitization.py - change GeoModel to load reco version of Calo Geometry - saves 30MB
+	* share/FwdDetDigitization.py - add LUCID_RawDataContainer to RDO file
+	* share/TruthDigitization.py - remove Lucid SimHits from RDO file (debugging finished)
+	* tag as Digitization-00-18-00
+	
+2009-05-05 John Chapman
+	* share/DigitizationWriteMetaData.py - change to cope with altered AthFile response to release 12 hit files
+	* tag as Digitization-00-17-15
+	
+2009-05-05 John Chapman
+	* share/DigitizationWriteMetaData.py - added beamType to MetaData + use AthFile to peek at input file
+	* tag as Digitization-00-17-14
+	
+2009-04-27 John Chapman
+	* test/TestPileUp.xml - remove debug prescript line - which triggers false warning from ATN
+	* tag as Digitization-00-17-13
+	
+2009-04-24 John Chapman
+	* test/TestPileUp.xml - added prescript lines to ensure STAGE_SVCCLASS=atlasgroupdisk
+	* tag as Digitization-00-17-12
+	
+2009-04-06 John Chapman
+	* share/MuonDigitization.py - separate PileUpXingFolders added in Digitization-00-17-01 had no effect. Fixed Hit Collection names to remedy this.
+	* tag as Digitization-00-17-11
+	
+2009-04-03 John Chapman
+	* share/CaloDigitization.py - added TileHitVector#MBTSHits to Tile Calorimeter PileUpXingFolder (previous un-restricted)
+	* tag as Digitization-00-17-10
+
+2009-03-31 John Chapman
+	* share/CaloDigitization.py - Reduced Tile Calorimeter PileupXingFolder range from [-200,+200] to [-200,+150]
+	* share/DigitizationReadMetaData.py - Made DetDescrVersion check sensitive to GeoModelSvc.IgnoreTagDifference
+	* tag as Digitization-00-17-09
+
+2009-03-11 John Chapman
+	* python/DigitizationFlags.py - added SimG4VersionUsed property to pass the G4version used to digitization algorithms
+	* share/DigitizationReadMetaData.py - added checks consistency checks for pileup hits files + check G4version
+	* test/Digitization_TestConfiguration.xml - run leakcheck and perfmon jobs with --stdcmalloc flag
+	* tag as Digitization-00-17-08
+	
+2009-02-25 John Chapman
+	* share/DigitizationWriteMetaData.py protection against TriggerFlags being used when LVL1 digitization is turned off.
+	* tag as Digitization-00-17-07
+
+2009-02-19 John Chapman
+	* share/LVL1Digitization.py tweaked syntax in the case that TriggerFlags have not already been configured.
+	* tag as Digitization-00-17-06
+
+2009-02-19 John Chapman
+	* share/LVL1Digitization.py changes by Paul Bell to allow trigger simulation to use database rather than xml files
+	* share/DigitizationWriteMetaData.py change to use TriggerJobOpts.TriggerFlags rather than TrigT1ConfigVersion
+	* tag as Digitization-00-17-05
+	
+2009-02-13 John Chapman
+	* share/Digitization.py, share/DetectorDigitization.py Changes for integration of cosmics digitization
+	* tag as Digitization-00-17-04
+	
+2009-01-20 John Chapman
+	* test/Digitization_TestConfiguration.xml fixed input dataset names for DigitizationRTT_bcm job
+	* tag as Digitization-00-17-03
+		
+2008-12-15 John Chapman
+	* test/Digitization_TestConfiguration.xml switched all RTT jobs to run on mc08 HITS files
+	* added share/DigitizationRTT_all_pileup01_450ns_perfmon.py
+	* added share/DigitizationRTT_all_pileup10_75ns_perfmon.py
+	* added share/DigitizationRTT_all_pileup05_75ns_perfmon.py
+	* added share/DigitizationRTT_all_pileup20_25ns_perfmon.py
+	* share/*Digitization.py made the use of protectedIncludes uniform for all subdetectors (NB Resilience is now turned off by default in the digitization job transforms)
+	* tag as Digitization-00-17-02
+	
+2008-11-28 John Chapman
+	* share/InDetDigitization.py: Changed PileUpXingFolder for TRT to cover [-50,+75] ns, rather than [-50,+50] ns
+	* share/MuonDigitization.py: Separate PileUpXingFolders for CSC, TGC, RPC and MDT - should reduce the number of unrequired hits read from file.
+	* tag as Digitization-00-17-01
+	
+2008-11-28 John Chapman
+	* share/ConfigDigitization.py: added info level message of pileup luminosity and bunch spacing, suppressed random number service info level messages
+	* share/Digitization.py: bugfix to stop metadata being written to RDO file when no RDO output requested
+	* share/InDetDigitization.py: added separate PileUpXingFolder for Pixels, with pileup config dependent time window
+	* tag as Digitization-00-17-00
+	
+2008-11-12 John Chapman
+	* share/CaloDigitization.py: added "TileL2Container#TileL2Cnt" to RDO file contents, at the request of Tile Cal group.
+	* share/ConfigDigitization.py: commented out obsolete includes
+	* share/FwdDetDigitization.py: commented out obsolete includes
+	* share/InDetDigitization.py: commented out obsolete includes
+	* share/MuonDigitization.py: commented out obsolete includes
+	* share/TruthDigitization.py: commented out obsolete includes
+	* tag as Digitization-00-16-06
+
+2008-10-27 John Chapman
+	* share/CaloDigitization.py: added "TileDigitsContainer#TileDigitsFlt" to RDO file contents, at the request of Tile Cal group.
+	* tag as Digitization-00-16-05
+	
+2008-10-22 John Chapman
+	* share/MuonDigitization.py: changed muon pileup syntax slightly to match other subdetectors.
+	* tag as Digitization-00-16-04
+	
+2008-09-24 John Chapman
+	* share/FwdDetDigitization.py: changes to allow integration of LUCID Digitization, including jobs with pileup
+	* share/TruthDigitization.py: removed debug line
+	* tag as Digitization-00-16-03
+	
+2008-09-18 Paolo Calafiura
+	* share/NightlyPileUp.py: changed MsgSvc format to allow seeing names of bkg caches
+	* tag as Digitization-00-16-02
+	
+2008-09-18 John Chapman
+	* test/Digitization_TestConfiguration.xml changed parent jobGroup of "Digitization_JobTransforms" to "Transform", should fix RTT error message.
+	* tag as Digitization-00-16-01
+	
+2008-08-08 John Chapman
+	* share/DigitizationWriteMetaData.py updated to work with a change on the core side in 14.X.0
+	* tag as Digitization-00-16-00
+
+2008-08-08 John Chapman
+	* python/DigitizationFlags.py added IOVDbGlobalTag jobproperty (status off by default)
+	* share/ConfigDigitization.py use new IOVDbGlobalTag jobproperty to set IOVDbSvc.GlobalTag
+	* share/DigitizationReadMetaData.py compare IOVDbGlobalTag jobproperty to that used in simulation
+	* share/DigitizationWriteMetaData.py add IOVDbGlobalTag to digitization metadata
+	* tag as Digitization-00-15-06
+	
+2008-07-14 John Chapman
+	* share/DigitizationWriteMetaData.py added lvl1TriggerMenu - taken from TrigT1ConfigVersion to Digitization MetaData.
+	* tag as Digitization-00-15-05
+	
+2008-07-11  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* merging in changes from branch Digitization-00-11-32-14 to head
+	* tag as Digitization-00-15-04
+
+2008-07-07  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: taking default LVL1 trigger menu
+	  from trigger flags. Using same naming convention as in
+	  reconstruction production transform.
+	* tag as Digitization-00-11-32-14
+	
+2008-06-28 John Chapman
+	* share/NightlyPileUp.py changed to prevent HIT file metadata reading.
+	* share/DigitizationReadMetaData.py protection for jobs run with AtlasSimulation only
+	* tag as Digitization-00-15-03
+	
+2008-06-26 John Chapman
+	* share/DigitizationReadMetaData.py Simulation Metadata is used configure DetDescrVersion and physicsList
+	* share/Digitization.py uncommented DigitizationReadMetaData.py
+	* python/DigitizationFlags.py added jobproperty overrideMetadata to allow different DetDescrVersion and physicsList to be set
+	* share/DigitizationWriteMetaData.py added overrideMetadata and DetDescrVersion to Digitization MetaData
+	* share/LVL1Digitization.py Changed logic to allow TTL1 sim w/o LV1 output. Added control hook for LArTTL1Maker noise.
+	* share/DetectorDigitization.py Changed logic to allow TTL1 sim w/o LV1 output.
+	* tag as Digitization-00-15-02
+	
+2008-06-20  John Chapman
+	* share/Digitization.py removed TEST_BCM flag - BCM Digitization will now be run by default if ID Digitization is on
+	* share/DigitizationReadMetaData.py added new functionality for read Simulation Metadata - not used in this tag
+	* test/Digitization_TestConfiguration.xml added DigitizationRTT_bcm RTT test job
+	* tag as Digitization-00-15-01
+	
+2008-06-16  John Chapman
+	* merged changed in Digitization-00-11-32-branch back into the HEAD
+	* share/LVL1Digitization.py removed obsolete include made robustness improvements
+	* tag as Digitization-00-15-00
+
+2008-06-10  John Chapman
+	* share/DigitizationWriteMetaData.py: now calling dumpRunNumber.py using the python commands module and looking at output using regexp module - more robust (and valgrind friendly..)
+	* test/TestPileUp.xml: changed email address to mine.
+	* tag as Digitization-00-11-32-13
+	
+2008-06-04  John Chapman
+	* share/DigitizationWriteMetaData.py: replaced dumpVersionTags.py script call with dumpRunNumber.py script call. This allows the run number to be read in for metadata use for older hits files as well as more recent ones. Requires EventInfoMgt-00-01-18 tag.
+	* tag as Digitization-00-11-32-12
+
+2008-05-26  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: adding TrigT1Lucid algorithm.
+	* tag as Digitization-00-11-32-08
+
+2008-05-21  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: adding TrigT1BCM algorithm.
+	* tag as Digitization-00-11-32-05	
+
+2008-05-01  Alan Watson <Alan.Watson@cern.ch>
+        * share/LVL1Digitization.py: add L1Calo RDO to persistency stream.
+        * tag as Digitization-00-13-00
+
+2008-04-23  Paolo Calafiura  <calaf@ibm-0-11-25-81-1e-12.dhcp.lbl.gov>
+	* share/ConfigPileUpEventLoopMgr.py: define PileUpType for each cache
+	* python/PileUpEventType.py: new. Constants matching the c++ enum
+	* tag as Digitization-00-12-00
+
+2008-04-16  Sven Vahsen 
+	* share/LVL1Digitization.py: new default LVL1 triger menu LVL1config_full_no_prescale_14.1.0.xml
+	* share/DigitizationRTT_all_pileup10_perfmon.py
+	* share/DigitizationRTT_all_perfmon.py (PoolRDOOutput): perfmon RTT change
+	* tag as Digitization-00-11-32	
+	
+2008-04-15  Sven Vahsen
+	further adustments to new config scheme
+        M share/Digitization.py
+	M share/Digitization_flags-OLD.py
+	M share/Digitization_flags.py
+	* tag as Digitization-00-11-31	
+
+2008-04-15  Sven Vahsen
+	* more changes to prepare for final transition to jobProperties
+        M share/AtlasDigitization.py
+	M share/Digitization.py
+	M share/Digitization_flags-OLD.py
+        M share/Digitization_flags.py
+	* tag as Digitization-00-11-30
+	
+2008-04-15  Sven Vahsen
+        preparing for final transition from digitization flags to jobProperties:
+	A share/Digitization.py
+	M share/DigitizationRTT_all_newconfig.py
+	* tag as Digitization-00-11-29
+	
+2008-04-11  Sven Vahsen
+	* share/CaloDigitization.py: add LArDigitThinner (SHOULD NOT GO INTO 14.0.0.1, where it would lead to intermittent crashes --> if you make changes for 14.0.0.1, please branch from Digitization-00-11-26!)
+	* test/Digitization_TestConfiguration.xml: tell RTT to keep all perfmon files
+	* tag as Digitization-00-11-28
+	
+2008-04-11  Sven Vahsen  <svahsen@lxplus230.cern.ch>
+	* share/DetectorDigitization.py: revert LVL1 steering change, which broke digi transform when trigger is off!
+	* tag as Digitization-00-11-26
+	
+2008-04-09  Sven Vahsen  <svahsen@lxplus209.cern.ch>
+	M share/DigitizationRTT_all_beamgas_beamhalo.py: bugfix
+	* tag as Digitization-00-11-25
+	
+	M share/InDetDigitization.py: use SiliconRange.FirstXing = -50 --> see bug#35315
+	* tag as Digitization-00-11-24
+	
+2008-04-09  Sven Vahsen
+	added RTT test for pileup with beam gas and halo	
+        M test/Digitization_TestConfiguration.xml
+        A share/DigitizationRTT_all_beamgas_beamhalo.py
+	A share/beamGasFiles.py
+	A share/beamHaloFiles.p
+	* tag as Digitization-00-11-23
+	
+2008-04-09  Sven Vahsen  
+	* share/ConfigPileUpEventLoopMgr.py: bugfix
+	* share/Digitization_flags-OLD.py: add missing flags 
+	* share/NightlyPileUp.py (use flag for bunchSpacing) 
+	* tag as Digitization-00-11-22
+	
+2008-04-09  Sven Vahsen 
+	* share/LVL1Digitization.py: change trigger menu to LVL1config_full_no_prescale_13.0.40.2.xml --> latest one available in this branch
+	* share/DetectorDigitization.py: create LVL1 input objects even when LVL1=OFF, as agreed with trigger group
+	* test/Digitization_TestConfiguration.xml: added keepfilepatterns to retain perfmon files
+	* share/Digitization_flags-OLD.py (DigitizationFlags): add old-style flag "bunchSpacing",to remain backwards-compatible w/ release 13 pileup configuration
+	* share/DigitizationRTT_all.py (PoolRDOOutput): add bunchSpacing
+	* share/DigitizationConfig.py (SkipEvents): add bunchSpacing
+	* share/ConfigPileUpEventLoopMgr.py: ReadDownscaleFactor = 1 for beam gas and beam halo pileup
+	                                     Remove usage of old-style flags for beam gas and beam halo             
+	* share/CaloDigitization.py: switch from deprecated LArDetMgrDetDescrCnv/LArDetMgrDetDescrCnv_joboptions.py to LArDetDescr/LArDetDescr_joboptions.py
+	* tag as Digitization-00-11-21
+	
+2008-03-25  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+	* share/LVL1Digitization.py: removed pool converter, which are autoloaded now.
+	* tag as Digitization-00-11-20
+
+2008-03-07  Sven Vahsen  <svahsen@lxplus100.cern.ch>
+	* share/ConfigDigitization.py: bugifx: always set up random service configurable before attaching seeds
+	* tag as Digitization-00-11-19
+	
+2008-03-02  Sven Vahsen  <svahsen@lxplus222.cern.ch>
+	* share/ConfigPileUpEventLoopMgr.py (pupStream): even non-random cavernCache needs to switch random number service, to avoid non-initialized non-used stream warning
+	* tag as Digitization-00-11-18
+	
+2008-02-27  Sven Vahsen  <svahsen@lxplus215.cern.ch>
+	* python/DigitizationFlags.py (__doc__): remove setting of global flags
+	* share/Digitization_flags-OLD.py (DigitizationFlags): 
+	* share/AtlasDigitization.py (digitization): 
+	* tag as Digitization-00-11-17	
+	
+2008-02-25  Sven Vahsen  <svahsen@lxplus223.cern.ch>
+	* python/DigitizationFlags.py (rndmSeedList.addtoService): make AtRanluxGenSvc (ranlux64) new default random number service
+	* share/Digitization_flags-OLD.py: 
+	* test/Digitization_TestConfiguration.xml: merge new pileup perfmon and leakcheck RTT tests from bugfix into main branch
+        * test/share/DigitizationRTT_*.py
+	* share/DigitizationRTT_all_newconfig.py: nightly test of jobProperties
+	* tag as Digitization-00-11-16	
+	
+2008-02-18  Alan Watson <Alan.Watson@cern.ch>
+        * share/LVL1Digitization.py: use TTL1-specific L1Calo jobOptions
+          rather than (legacy) generic TrigT1CaloSimJobOptions.py. 
+          Done to remove risk of divergence between Simulation and
+          Reconstruction when running trigger
+        * tag as Digitization-00-11-15
+
+2008-02-14  Paolo Calafiura  <calaf@0-11-25-81-1e-12.dhcp.lbl.gov>
+
+        * tagging Digitization-00-11-14
+	* share/InDetDigitization.py: modernized 
+	* share/NightlyPileUp.py: modernized, added monitoring. 
+	* share/TruthDigitization.py: modernized, added CalibRange. 
+
+2008-02-08  Paolo Calafiura  
+        * tagging Digitization-00-11-13 (merge from Digitization-00-10-31-13)
+	* share/TruthDigitization.py: hack to suppress CaloCalibrationHitContainers for overlayed events.
+
+2008-02-8  Alan Watson <Alan.Watson@cern.ch>
+        * tagging as Digitization-01-11-12 (synch with TrigT1Calo-03-xx-xx)
+        * share/LVL1Digitization.py: now get L1Calo jobOptions from TrigT1CaloSim
+
+2008-02-07  Paolo Calafiura  
+
+        * tagging as Digitization-00-11-11 (merge from Digitization-00-10-31-12)
+	* share/CaloDigitization.py: set Intervals TAH the proper way
+	FIXME where is LArRange?
+	* share/InDetDigitization.py: set Intervals TAH the proper way
+	* share/MuonDigitization.py: set Intervals TAH the proper way
+
+2008-02-01  Sven Vahsen  <svahsen@lxplus239.cern.ch>
+
+	* share/ConfigPileUpEventLoopMgr.py:  added bunchSpacing for more general nx25 ns pileup
+	* python/DigitizationFlags.py         numberOfCavern: float --> int
+	                                      added bunchSpacing for more general nx25 ns pileup
+        * tagging as Digitization-00-11-10
+	
+2008-01-15  Sven Vahsen  <svahsen@lxplus215.cern.ch>
+	* share/TruthDigitization.py: remove writeMuonDigit
+        * tagging as Digitization-00-11-09
+
+2008-01-11  Sven Vahsen
+	remove all use of writeMuonDigit in files below
+	* python/DigitizationFlags.py: 
+	* share/Digitization_flags-OLD.py: 
+	* share/ConfigDigitization.py: 
+	* share/AtlasDigitization.py: 
+	* share/MuonDigitization.py: 
+	* tagging as Digitization-00-11-08
+	
+2008-01-10  Sven Vahsen
+	* share/ConfigPileUpEventLoopMgr.py (pupStream): LAr move to configurables from Guillaume Unal
+	* share/CaloDigitization.py: LAr move to configurables from Guillaume Unal
+	* tagging as Digitization-00-11-07
+
+2008-01-04  Sven Vahsen 
+	* test/TestPileUp.xml: correct Sven's email address for ATN test
+	* tagging as Digitization-00-11-06
+	
+2008-01-03  Sven Vahsen  
+	various fixes to prepare full move from digitization flags to jobProperties, and to keep up with other changes in dev branch
+	current changes should be backwards compatible wrt topOptions
+	* share/AtlasDigitization.py: various fixes 
+	* share/NightlyPileUp.py: various fixes --> works again
+	* share/DigitizationRTT_all_pileup.py: use jobProperties.Global.DetDescrVersio
+	* share/Digitization_flags-OLD.py: added flags numberOfBeamHalo, numberOfBeamGas
+	* python/DigitizationFlags: added jobProperties numberOfBeamHalo, numberOfBeamGas
+	* share/ConfigPileUpEventLoopMgr.py: replace all oldstyle digitization flags with jobProperties
+	* share/ConfigDigitization.py: writeMuonDigits --> writeMuonDigit 
+	* share/ConfigDigitization.py: explicitly adding random Service to ServiceMgr (no longer done automatically)
+	
+2008-01-02  Sven Vahsen
+	* share/LVL1Digitization.py: change lvl1 default menu in 13.x.0 to TrigT1ConfigVersion='default_13.0.40.xml' 
+	* share/TruthDigitization.py: merge bugfix (Digitization-00-10-31-04) into MAIN branch: MuonSimDataCollection#CSC_SDO --> CscSimDataCollection#CSC_SDO
+	* tagging as Digitization-00-11-05
+	
+2007-12-15  Paolo Calafiura
+	* share/NightlyPileUp.py: run without PoolFileCatalog.xml
+	* tagging as Digitization-00-11-04
+
+2007-10-31  Sven Vahsen  <sevahsen at cern.nospam.ch>
+2007-11-30  Sven Vahsen  
+	* share/LVL1Digitization.py: add TrigT1MBTS Alg before CTP simulation
+	* tagging as Digitization-00-11-03
+
+2007-11-22  Sven Vahsen  
+	* share/LVL1Digitization.py: changed LVL1 menu name back to  TrigT1ConfigVersion='default_V1.0', seems the trigger group didn't put the 13.0.30 menu in 13.x.0
+	* tagging as Digitization-00-11-02
+
+2007-11-22  Sven Vahsen 
+	* share/LVL1Digitization.py (lv1_menu_file_name): Merged LVL1 menu changes from Digitization-00-10-31-03 branch tag back into HEAD
+	* tagging as Digitization-00-11-01
+	
+2007-11-12  Paolo Calafiura
+	* share/pileUpBootstrap.py: turned into a dummy
+	* share/ConfigPileUpEventLoopMgr.py: set PileUpEventLoopMgr from here,
+	fixed LArAutoCorrTool configuration
+	* share/AtlasDigitization.py: no need to test the ev loop mgr anymore
+	* share/NightlyPileUp.py: update BG files, turned back on subdets
+	* test/TestPileUp.xml: no need of bootstrapping anymore
+	* tagging as Digitization-00-11-00
+
+2007-10-31  Sven Vahsen  <sevahsen at cern.nospam.ch>
+	* test/Digitization_TestConfiguration.xml: added more RTT tests for digitization with individual subdetectors
+        * share/Digitization_RTT_*.py: added more RTT tests for digitization with individual subdetectors
+	* python/DigitizationFlags.py (list_jobproperties): added jobProperties doBeamGas, doBeamHalo, and correponding input collections
+	* python/DigitizationFlags.py (rndmSeedList.addtoService): set default rndmSeedOffSet1 to 0 --> less confusing when debugging
+	* tagging as Digitization-00-10-38
+	
+2007-10-30  Sven Vahsen  <svahsen@lxplus206.cern.ch>
+	* share/DigitizationRTT_*.py, DigitizationConfig.py Geomodel: include --> import, use jobProperties.Global.DetDescrVersion
+	* share/ConfigDigitization.py: Geomodel: include --> import
+	* tagging as Digitization-00-10-37
+	
+2007-10-22  Paolo Calafiura  <calaf@0-11-25-81-1e-12.dhcp.lbl.gov>
+
+	* share/NightlyPileUp.py: fix DetDescrVersion value
+	* tagging as Digitization-00-10-36
+
+2007-10-17  Paolo Calafiura  <calaf@0-11-25-81-1e-12.dhcp.lbl.gov>
+
+	* share/NightlyPileUp.py: use jobProperties.Global.DetDescrVersion
+	* tagging as Digitization-00-10-35
+
+2007-10-08  Paolo Calafiura  
+	* share/ConfigDigitization.py: new-style configuration of auditors
+	* share/NightlyPileUp.py: turn pixels off while we recover from
+	removal of backward compatibility hacks. Added AuditAlgoriths=True
+	* tagging as Digitization-00-10-34
+
+2007-09-20  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* merging in changes from branch Digitization-00-10-31-01 to head
+	* tagging as Digitization-00-10-33
+
+	* share/LVL1Digitization.py: added TriggerMenuXML as default package
+	for LVL1 config file. Default tag for LVL1 config menu is default_V1.0.
+	* tagging Digitization-00-10-31-01
+
+2007-09-13  Paolo Calafiura  <calaf@localhost.localdomain>
+	* share/ConfigPileUpEventLoopMgr.py: added beam gas support 
+	* share/AtlasDigitization.py: added beam gas support 
+	* share/Digitization_flags-OLD.py: added beam gas support 
+	* share/NightlyPileUp.py: added beam gas to example 
+	* tagging Digitization-00-10-32
+
+	* share/ConfigPileUpEventLoopMgr.py: activate event selector
+	KeepInputFilesOpen property for background streams (bug 29069)
+	* tagging Digitization-00-10-31
+
+2007-09-13  Sven Vahsen  <svahsen@lxplus202.cern.ch>
+        * undo poolfile changes for pileup in Digitization-00-10-29
+	* python/DigitizationFlags.py (rndmSeedList.addtoService): added new jobProperty physicsList
+	* tagging Digitization-00-10-30
+
+2007-09-11  Paolo Calafiura  <calaf@localhost.localdomain>
+	* python/DigitizationFlags.py: use PoolInputFileListBase to fix bug
+	29069
+	* tagging Digitization-00-10-29
+
+2007-08-31 G.Unal <Guillaume.Unal@cern.ch>
+        * share/DigitizationRTT_all_noLVL1_pileup.py: changes Evtmax=-1 to 50 to avoid problem
+           with pileup event loop manager which does not like -1
+	* tagging Digitization-00-10-28
+
+2007-08-17  Sven Vahsen  <svahsen@lxplus212.cern.ch>
+	* share/DigitizationRTT_all_perfmon.py: additional RTT job with perfmon enabled
+	* tagging Digitization-00-10-27
+	
+2007-07-20  Sven Vahsen  <svahsen@lxplus212.cern.ch>
+	* share/CaloDigitization.py: fix misconfiguration of LAr digitmaker1 in case of pileup
+	* tagging Digitization-00-10-26
+
+2007-07-18  Sven Vahsen  <sevahsen at cern.nospam.ch>
+	* share/CaloDigitization.py: fix configurable ERROR --> remove outdated digitmaker1 = Algorithm( "digitmaker1" ), instead import configurable
+	* test/Digitization_TestConfiguration.xml: added second pileup RTT test with LVL1 on
+	* tagging Digitization-00-10-25
+	
+2007-07-05  Paolo Calafiura  <calaf@0-d-60-fb-f8-d3.dhcp.lbl.gov>
+	* share/TruthDigitization.py: keep [-2,2] beam xings
+	* tagging Digitization-00-10-24
+
+2007-06-22  Paolo Calafiura  <calaf@0-d-60-fb-f8-d3.dhcp.lbl.gov>
+	* share/CaloDigitization.py: PileUpXingFolder is now a tool hence a
+	Configurable: no more configuration errors "which are not a warning"
+	* share/InDerDigitization.py: PileUpXingFolder is now a tool 
+	* share/MuonDigitization.py: PileUpXingFolder is now a tool 
+	* tagging Digitization-00-10-23
+
+2007-06-22  Sven Vahsen  <svahsen@lxplus201.cern.ch>
+	* test/Digitization_TestConfiguration.xml: added new random seed offsets to tranform arguments  
+	* tagging Digitization-00-10-22
+	
+2007-06-21  Sven Vahsen  <sevahsen at cern.nospam.ch>
+
+	* test/Digitization_TestConfiguration.xml: added CPC and documentation tags
+	* tagging Digitization-00-10-21
+
+2007-06-11  Sven Vahsen  <svahsen@lxplus218.cern.ch>
+	* share/LVL1Digitization.py: (from Fabienne Ledroit) change ttl1maker instance name to agree with LVL1 jobOptions
+	* tagging Digitization-00-10-20
+	
+2007-05-25  Sven Vahsen  <sevahsen at cern.nospam.ch>
+
+	* share/AtlasDigitization.py: print out digitization jobProperties settings
+	* share/LVL1Digitization.py: revert previous change
+	* share/Digitization_flags.py: allow new-style configuration running for testing
+	* tagging Digitization-00-10-19
+	
+2007-05-17 mainly Sebastien Binet  <binet@lblbox>, some Sven Vahsen <sevahsen at cern.nospam.ch>
+
+	* improved Configurable-awareness
+	* M share/AtlasDigitization.py
+	* M share/CaloDigitization.py
+	* M share/ConfigDigitization.py
+	* M share/InDetDigitization.py
+	* M share/LVL1Digitization.py
+	* M share/MuonDigitization.py
+	* M share/ReadRDOs.py
+	* tagging Digitization-00-10-18
+	       	
+2007-05-21  Sven Vahsen  <svahsen@lxplus202.cern.ch>
+		
+	* share/MuonDigitization.py: re-enable CSC RDO writing in 13.0.x, as new converter has been commited
+	* tag Digitization-00-10-17	
+	
+2007-05-18  Sven Vahsen  <svahsen@lxplus217.cern.ch>
+
+	* test/Digitization_TestConfiguration.xml: change rtt test file name
+	* tag Digitization-00-10-16	
+
+2007-05-17  Sven Vahsen  <sevahsen at cern.nospam.ch>
+
+	* share/MuonDigitization.py: temporarily turn of CSC RDO writing, to avoid converter crash
+	* test/Digitization_TestConfiguration.xml: added new RTT preconfig option needed for pileup jobs
+	* share/DigitizationRTT_all_noLVL1_pileup.py: add rfio: to minbias and cavern
+	* share/DigitizationRTT_all_noLVL1_pileup.py: minor changes to RTT scripts, as athena -p option now availiable in RTT. 
+	* tag Digitization-00-10-15	
+	
+2007-05-10  Sven Vahsen  <svahsen@lxplus209.cern.ch>
+
+	* share/TruthDigitization.py: turn on time-cut on truth for pileup in 13.0.x
+	* share/MuonDigitization.py: remove 'CscDigitBuilder = Algorithm( "CscDigitBuilder" )' to avoid configurable error
+	* tag Digitization-00-10-14	
+
+2007-05-09  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: using dedicated configuration for TrigT1RoIB
+	* tag Digitization-00-10-13	
+
+2007-04-30  Sven Vahsen  <svahsen@lxplus220.cern.ch>
+
+	* share/Digitization_flags-OLD.py (DigitizationFlags): temporary hack for jobProperty namechange digitizationRndmSvc --> rndmSvc
+	                                                       bugfix for jobflags backwards compatibilit mode
+	* python/DigitizationFlags.py: digitizationRndmSvc --> rndmSvc
+	* tag Digitization-00-10-12
+
+2007-04-24  Paolo Calafiura  <calaf@0-d-60-fb-f8-d3.dhcp.lbl.gov>
+	* share/ConfigDigitization.py: writeMuonDigits does not exist
+	* share/AtlasDigitization.py: writeMuonDigits does not exist
+	* share/NightlyPileUp.py: add Truth overlay
+        * tag Digitization-00-10-11
+
+2007-04-24  Sven Vahsen  <svahsen@lxplus201.cern.ch>
+
+	* share/CaloDigitization.py: from G. Unal: reduce number of pileup beamcrossings used for LAr, to reduce CPU
+	* python/DigitizationFlags.py: clean up random number seed text output 
+	* tag Digitization-00-10-10
+	
+2007-04-20  Sven Vahsen  <svahsen@lxplus201.cern.ch>
+
+	* share/InDetDigitization.py: removed theApp.Dlls += [ "InDetRawUtils"] --> package has been removed
+        * tag Digitization-00-10-06
+	
+2007-04-19  Sven Vahsen  <svahsen@lxplus204.cern.ch>
+
+	* cmt/requirements: remove InDetRawDataByteStrean
+        * tag Digitization-00-10-05
+	
+2007-04-19  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: updated job options for CTP simulation (random number service)
+
+2007-04-18  Wolfgang Ehrenfeld  <wolfgang.ehrenfeld@desy.de>
+
+	* share/LVL1Digitization.py: updated job options for new CTP simulation and other LVL1 algorithms
+
+a2007-04-06  Sven Vahsen  <sevahsen at cern.nospam.ch>
+
+	* share/ConfigDigitization.py: use jobProperty member functions for rnd seed management
+	* python/DigitizationFlags.py : fix jobProperty member functions that deal with rnd seed management
+	* share/ConfigPileUpEventLoopMgr.py (pupStream): use jobProperties to intialize random number stream
+        * tag Digitization-00-10-02
+	
+2007-04-06  Paolo Calafiura  <pcalafiura@lbl.gov>
+	* share/ConfigPileUpEventLoopMgr.py (RndmSvc): setup IAtRndmSvc (instance & seeds)
+        * tag Digitization-00-10-01
+
+2007-04-03  Paolo Calafiura  <pcalafiura@lbl.gov>
+
+	* Testing/Digitization_pretest.sh: added -data to get_file
+	* test/TestPileUp.xml: update test command line and mailto
+	* share/AtlasDigitization.py: no need to configure pileup event collections here
+	* share/ConfigPileUpEventLoopMgr.py: use Configurables
+	* share/NightlyPileUp.py: less input files, use Configurables
+        * tag Digitization-00-10-00
+
+2007-04-03  Sven Vahsen  <svahsen@lxplus203.cern.ch>
+
+	* python/DigitizationFlags.py: 
+	* share/Digitization_flags-OLD.py: 
+	* share/Digitization_flags.py: starting migration to jobProperties. For now copy jobflags into jobProperties to retain backwards compatibility 
+        * tag Digitization-00-09-13
+	
+2007-03-26  Sven Vahsen  <svahsen@lxplus202.cern.ch>
+	* share/DigitizationRTT_all_noLVL1_pileup.py: modified pileup test jobOptions
+	* test/Digitization_TestConfiguration.xml: modified pileup test config
+        * tag Digitization-00-09-12
+	
+2007-03-22  Sven Vahsen  <svahsen@lxplus206.cern.ch>
+	* test/Digitization_TestConfiguration.xml: fixed jobOptions for pileup and ranlux RTT tests 
+	* tag Digitization-00-09-11
+	
+2007-03-21  Sven Vahsen  <svahsen@lxplus211.cern.ch>
+
+	* cmt/requirements: use apply_pattern declare_joboptions files="*.py" instead of declaring each file
+	* share/*.py: added RTT tests with all detectors on together (with LVL1, without LVL1, with Ranlux, with pileup)
+	* test/Digitization_TestConfiguration.xml: added RTT tests
+	* tag Digitization-00-09-10
+		
+2007-03-20  Sven Vahsen  <svahsen@lxplus218.cern.ch>
+	* share/Digitization_flags.py: added flags doInDetNoise and doMuonNoise
+	* tag Digitization-00-09-09
+	
+2007-03-09  Sven Vahsen  <svahsen@lxplus214.cern.ch>
+
+	* share/Digitization_flags.py: added flag digitizationRndmSvc
+	* tag Digitization-00-09-08
+	
+2007-03-08  Sven Vahsen  <svahsen@lxplus096.cern.ch>
+
+	* cmt/requirements: added new jobOptions files
+	* tag Digitization-00-09-07
+
+2007-03-07  Sven Vahsen  <svahsen@lxplus202.cern.ch>
+
+	* test/Digitization_TestConfiguration.xml: added RTT tests with LVL1 trigger turned off
+	* tag Digitization-00-09-06
+
+2007-02-24  Sven Vahsen  <svahsen@lxplus100.cern.ch>
+	* share/Digitization_flags-OLD.py: starting transition to jobProperties: adding this file from Manuel Gallas
+	* python/Digitization_flags.py: starting transition to jobProperties: adding this file from Manuel Gallas
+
+2007-02-23  Sven Vahsen  <svahsen@lxplus100.cern.ch>
+        * added back missing changelog entries missing after Digitization-00-08-31-02 mergeback
+	
+2007-02-23  Paolo Calafiura <pcalafiura@lbl.gov>
+        * merging back Digitization-00-08-31-02
+	* tag Digitization-00-09-04
+
+2007-02-14  Paolo Calafiura <pcalafiura@lbl.gov>
+	* share/NightlyPileUp.py: cleaned up
+	* share/Digitization_flags.py: set defaults for pileup @ 10^33 lum
+	* tag Digitization-00-08-31-02
+
+2007-02-13  Sven Vahsen  <svahsen@lxplus100.cern.ch>
+	* share/ConfigDigitization.py:       removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) '
+	* share/ConfigPileUpEventLoopMgr.py: removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) '
+	* share/InDetDigitization.py:        removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) '
+	* share/CaloDigitization.py:         removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) '
+	* share/MuonDigitization.py:         removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) '
+	* share/LVL1Digitization.py:         removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) ' 
+	* share/TruthDigitization.py:        removed all (outdated) occurences of ' Stream1 = Algorithm( "Stream1" ) ' 
+
+2007-02-10  Paolo Calafiura  <pcalafiura@lbl.gov>
+        * merge back Digitization-00-08-31-01
+	* tag Digitization-00-09-00
+	
+2007-02-10  Paolo Calafiura  <pcalafiura@lbl.gov>
+        * changes to vary numberOfCaverns and numberOfCollisions independently
+	(bug 23688)
+	* share/ConfigPileUpEventLoopMgr.py: configure new cache tools
+	* share/NightlyPileUp.py: updates to run with 12.x.y
+	* share/Digitization_flags.py: new flag numberOfCavern
+	* tag Digitization-00-08-31-01
+
+2007-02-03  Sven Vahsen  <svahsen@lxplus097.cern.ch>
+	* test/Digitization_TestConfiguration.xml: updated filenames to and added new job transform RTT test 
+
+2007-01-31  Sven Vahsen  <svahsen@lxplus205.cern.ch>
+	* share/TruthDigitization.py: invoke Calo algorithm from Simulation/G4Utilities/MCTruthSimAlgs 
+	  to copy calibration hits from input signal to the merged output event in case of pileup
+
+2007-01-11  Sven Vahsen  <svahsen@lxplus057.cern.ch>
+	* share/DigitizationRTT_muon.py: updated RTT input hit file to latest geometry 'ATLAS-CSC-01-02-00'
+	(same for id and calo RTT files)
+	* share/DigitizationConfig.py: updated default input hit file to latest geometry 'ATLAS-CSC-01-02-00'
+
+2007-01-09  Sven Vahsen  <svahsen@lxplus051.cern.ch>
+	* share/ConfigDigitization.py:  
+	removed include("IOVDbSvc/IOVRecExCommon.py")
+	added include( "AthenaPoolCnvSvc/WriteAthenaPool_jobOptions.py" )
+	
+2006-11-22 Davide Costanzo <davide.costanzo@cern.ch>
+	* share/DetectorDigitization.oy
+	  put TruthDigitization.py at the beginning to allow dereferencing of HepMCPL
+	* tag Digitization-00-08-31
+
+2006-09-18 Davide Costanzo <Davide.Costanzo@cern.ch>
+	* share/ConfigDigitization.py: add include to initialize the 
+	  IOVDbSvc
+
+2006-09-15 Alan Watson <Alan.Watson@cern.ch>
+        * share/LVL1Digitization.py: remove overwriting of trigger menus
+          from L1Config
+
+2006-08-24 Andrea Di Simone <andrea.di.simone@cern.ch>
+        * Fix to TruthDigitization.py
+        * tagging Digitization-00-08-28
+
+2006-08-24 Andrea Di Simone <andrea.di.simone@cern.ch>
+        * migrated to TrackRecords instead of TimedTrackRecord
+        * tagging Digitization-00-08-27
+
+2006-06-29 Paolo Calafiura <pcalafiura@lbl.gov>
+	* fix xml-based test definition
+        tag Digitization-00-08-26
+
+2006-06-26 Davide Costanzo <davide.costanzo@cern.ch>
+        * share/TruthDigitization: Add MBTS hits for debugging
+
+2006-06-19 Davide Costanzo <davide.costanzo@cern.ch>
+	* share/TruthDigitization: MuonEntryLayer has a different
+          class name (TimedTrackRecordCollection)
+
+2006-05-02 Davide Costanzo <davide.costanzo@cern.ch>
+	* share/TruthDigitization: write out calibration hits
+	  tag Digitization-00-08-23
+
+2006-04-21 Davide Costanzo <davide.costanzo@cern.ch>
+        * share/ConfigDigitization.py: Add magnetic field service
+	  (requested by Grant Gorfine)
+
+2006-03-13 Paolo Calafiura <pcalafiura@lbl.gov>
+	* use xml-based test definition
+        tag Digitization-00-08-20
+
+2006-03-09 Davide Costanzo <Davide.Costanzo@cern.ch>
+	* Change TileDigitization to TileSimAlgs, as advised by Sasha
+
+2006-02-13 Davide Costanzo <Davide.Costanzo@cern.ch>
+	* Change TileRec to TileDigitization to work with proj builds
+
+2005-11-17 Paolo Calafiura <pcalafiura@lbl.gov>
+	* Update test/TestPileUp.sh to make it succeed
+
+2005-11-16  Alan Watson  <watsona@lxplus058.cern.ch>
+
+	* share/LVL1Digitization.py (L1Config): Correct bug in LVL1Digitization.py
+
+2005-11-08 Davide Costanzo <Davide.Costanzo@cern.ch>
+	* Update test/TestDigitization.sh to make it succeed
+
+2005-11-08 Davide Costanzo <Davide.Costanzo@cern.ch>
+	* Update share/TruthDigitization.py
+	  use <space> instead of <tab>
+
+2005-11-02 Alan Watson <Alan.Watson@cern.ch>
+        * Update share/LVL1Digitization.py to produce
+          LArTTL1 and TileTTL1
+
+2005-10-18 Davide Costanzo <davide.costanzo@cern.ch>
+	* Update share/CaloDigitization.py  to 
+	    - work with proj build
+	    - remove buildFromNova flag
+
+2005-09-26 Davide Costanzo <davide.costanzo@cern.ch>
+        * share/TruthDigitization.py: add Muon SDO to the output
+
+2005-08-08 David Quarrie <David.Quarrie@cern.ch>
+	* cmt/requirements: Replace dependency on AthenaRunTime by 
+	MinimalRunTime.
+
+2005-06-22 Davide Costanzo <DCostanzo@bnl.gov>
+	* Fix req. for RTT testing
+
+2005-06-22 Davide Costanzo <DCostanzo@bnl.gov>
+	* Add files for RTT testing
+
+2005-05-16 Davide Costanzo <DCostanzo@bnl.gov>
+	* update use of DetFlags
+	* update use of muon det descr	
+
+2005-03-22 Davide Costanzo <DCostanzo@bnl.gov>
+	* remove undesired dependency in req file	
+
+2005-03-21 Davide Costanzo <DCostanzo@bnl.gov>
+        * update trf for pileup
+
+2005-03-21 Tadashi Maeno <Tadashi.Maeno@cern.ch>
+	* share/LVL1Digitization.py: added the calo cell making again
+	and disabled the TTL1 making	
+        tag Digitization-00-08-03
+
+2005-03-17 Davide Costanzo <DCostanzo@bnl.gov>
+	* share/TruthDigitization.py: copy the TrackRecordCollection
+
+2005-02-24 Armin Nairz <Armin.Nairz@cern.ch>
+        * fix Muon time window for pile-up in 
+            share/MuonDigitization.py 
+            script/rome.fullpileup.MuonDigits.trf 
+        * tag Digitization-00-08-01
+
+2005-02-23 Davide Costanzo <DCostanzo@bnl.gov>
+        * rearrange things to have minimum bias and cavern pileup
+        * tag Digitization-00-08-00
+
+2005-02-19 Tadashi Maeno <Tadashi.Maeno@cern.ch>
+	* share/LVL1Digitization.py: removed the calo cell making
+        tag Digitization-00-07-05
+	
+2005-02-17  Paolo Calafiura  <pcalafiura@lbl.gov>
+	* share/NightlyPileUp.py: adapt to the AtlasDigitization.py 
+	* test/TestPileUp.sh: same
+
+2005-02-17 Davide Costanzo <DCostanzo@bnl.gov>
+	* add trf for calibration hits
+
+2005-02-17 Davide Costanzo <DCostanzo@bnl.gov>
+	* Change key in TruthDigitization.py
+	
+2005-02-17 Davide Costanzo <DCostanzo@bnl.gov>
+	* Few bug fixes. Reenale LVL1 and update the list
+          of files to copy	
+
+2005-02-16 Davide Costanzo <DCostanzo@bnl.gov>
+	* reorganize the package. Use Digitization_flags.py
+          for configuration	
+
+2005-02-10 Davide Costanzo <DCostanzo@bnl.gov>
+	* share/LVL1Digitization.py: disable output MuCTPIResult
+
+2005-01-26  Paolo Calafiura  <pcalafiura@lbl.gov>
+	* share/ConfigDigitization.py: remove obsolete option
+
+2005-01-24 Davide Costanzo <DCostanzo@lbl.gov>
+	* script/rome.g4digit.trf and script/rome.g4digit.MuonDigit.trf
+	  fix event counting in metadata.xml
+
+2005-01-21  Sanya Solodkov  <solodkov@lxplus032.cern.ch>
+
+	* added TileTTL1Container to Stream1.ItemList
+
+2005-01-13 Davide Costanzo <DCostanzo@lbl.gov>
+        * 9.0.3 patch to use the correct RPC time window
+
+2005-01-11 Tadashi Maeno <Tadashi.Maeno@cern.ch>
+	* share/LVL1Digitization.py: fixed to use DetFlags.simulateLVL1 
+	and added LArTTL1Container to Stream1.ItemList
+
+2005-01-07 Davide Costanzo <DCostanzo@lbl.gov>
+	* patch to use the latest IOV db tag	
+
+2005-01-05 Davide Costanzo <DCostanzo@lbl.gov>
+	* mod prod script to use sh instead of zsh 	
+
+2004-12-03 Davide Costanzo <DCostanzo@lbl.gov>
+	* mod production scripts to use the T_ paths
+
+2004-12-03 Davide Costanzo <DCostanzo@lbl.gov>
+	* add README
+
+2004-12-03 Davide Costanzo <DCostanzo@lbl.gov>
+	* Move prod scripts to the script directory	
+
+2004-12-02 Davide Costanzo <DCostanzo@lbl.gov>
+	* add Armin's scripts to run Digitization	
+
+2004-11-23 Davide Costanzo <DCostanzo@lbl.gov>
+	* fix the writeMuonRDO flag
+
+2004-11-22 Davide Costanzo <DCostanzo@lbl.gov>
+	* share/MuonDigitization.py: add flag writeMuonDigit. If it's true MuonDigits are written out
+
+2004-11-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* share/CaloDigitization.py temporary patch to switch oracle DD for tile
+	* cmt/requirements: add DigitizationConfig.py
+
+2004-11-17 Davide Costanzo <DCostanzo@lbl.gov>
+	* share/MuonDigitization.py: amdbsimrec not needed
+2004-11-17 Davide Costanzo <DCostanzo@lbl.gov>
+	* share/MuonDigitization.py: remove double (and wrong) configuration 
+	  of the muon id dict
+
+2004-11-17 Davide Costanzo <DCostanzo@lbl.gov>
+	* share/ConfigDigitization.py: update GeoModel setting up
+	* share/AtlasDigitization.py: Use AthenaCommonFlags
+	* share/DigitizationConfig.py: Added to set up the digitizaion job
+	* test/TestDigitization.sh: update to use the configuration file
+	
+

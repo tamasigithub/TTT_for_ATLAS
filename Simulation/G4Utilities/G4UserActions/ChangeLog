@@ -1,0 +1,618 @@
+2017-03-07  John Chapman  <John.Chapman@cern.ch>
+	* G4UserActions/LooperKiller.h - PrintSteps property should be an
+	int rather than a bool. ATLASSIM-3251
+	* python/G4UserActionsConfig.py, python/G4UserActionsConfigDb.py -
+	add CfgGetter method for MonpoleLooperKillerTool. ATLASSIM-3251
+	* tagging G4UserActions-00-01-26
+
+2017-01-13 Jan Stark <stark@in2p3.fr>
+        * Merge "Ben's modifications" to the LengthIntegrator into the HEAD. Specifically:
+           - Add many more plots.
+	   - Add switches to let the user chose which plots are made.
+	   - Additional plots that are intended for single particle events.
+           - Change in units: X0 -> percent of X0
+	   - Add switches that allow splitting per layer and regrouping certain materials (Moderator, ...).
+	   - Update the list of "special" materials.
+        * Update the r and z limits that are used in the LengthIntegrator to identify the ITk volume (cf. Jan's talk at the Simu meeting on Dec. 14th, 2016).
+	* tagging G4UserActions-00-01-25
+
+2016-08-09 Andrea Di Simone <andrea.di.simone@cern.ch>
+	* updating share
+	* tagging G4UserActions-00-01-24
+
+2016-08-09 Andrea Di Simone <andrea.di.simone@cern.ch>
+	* removing v1 user actions
+	* tagging G4UserActions-00-01-23
+
+2016-07-27  John Chapman  <John.Chapman@cern.ch>
+
+	* src/ScoringVolumeTrackKiller.cxx (G4UA::ScoringVolumeTrackKiller::ScoringVolumeTrackKiller):
+	initialize m_killCount to zero in the constructor. Fixes Coverity
+	Defect 111392. ATLASSIM-3019
+	* src/HIPLArVolumeAccept.cxx (G4UA::HIPLArVolumeAccept::HIPLArVolumeAccept):
+	intialize m_HIPacc to false in the constructor. Fixes Coverity
+	Defect 111391. ATLASSIM-3019
+	* src/FluxRecorder.cxx (G4UA::FluxRecorder::FluxRecorder): initialize m_nev to
+	zero in constructor. Fixes Coverity Defect 111390. ATLASSIM-3019
+	* src/FastIDKillerTool.cxx (finalize): remove dead code. Fixes
+	Coverity Defect 111395. ATLASSIM-3019
+	* src/LengthIntegrator.cxx (regAndFillHist): Fix four instances of
+	Coverity Defect 111396. ATLASSIM-3019
+	* src/CosmicPerigeeAction.cxx (G4UA::CosmicPerigeeAction::CosmicPerigeeAction):
+	initialize m_hasBeenSaved in the constructor. Fixes Coverity
+	Defect 111393. ATLASSIM-3019
+	* Tagging: G4UserActions-00-01-22
+
+2016-06-16 Steve Farrell <Steven.Farrell@cern.ch>
+	* Added a note about G4SimTimer's misleading measurements in MT in the
+	  class docs.
+	* Not tagging.
+
+2016-05-31 Steve Farrell <Steven.Farrell@cern.ch>
+	* Made AtlasROOT dependency public in requirements to fix checkreq
+	  error. I guess this only affects CMT builds...?
+	* Tagging: G4UserActions-00-01-21
+
+2016-05-18  Andrea Di Simone <andrea.di.simone@cern.ch>
+	* proper handling of new LengthIntegrator histos in MT runs
+	* tagging G4UserActions-00-01-20
+
+2016-05-17  Andrea Di Simone <andrea.di.simone@cern.ch>
+	* fixing compilation problem in LengthIntegrator
+
+2016-05-17  Ben Smart  <Ben.Smart@cern.ch>
+
+	* Adding extra plots to LengthIntegrator in G4UserActions. ATLASSIM-2787
+
+2016-05-07 Andrea Di Simone <andrea.di.simone@cern.ch>
+	* migrated ScoringPlane and FluxRecorder to hive. both will only run with 1 thread
+	* tagging G4UserActions-00-01-19
+
+2016-04-07  Andrea Di Simone
+	* src/HitWrapper.cxx: fixed collection names
+	* tagging  G4UserActions-00-01-18
+
+2016-04-06  John Chapman  <John.Chapman@cern.ch>
+
+	* src/CosmicPerigeeAction.cxx (CosmicPerigeeAction::BeginOfEvent)
+	(G4UA::CosmicPerigeeAction::beginOfEvent): set the name of the
+	TrackRecordCollection object properly. ATLASSIM-2517
+	* Tagging: G4UserActions-00-01-17
+
+2016-01-14 Steve Farrell <Steven.Farrell@cern.ch>
+	* V2 migration of the LengthIntegrator. Usage of the THistSvc and
+	  histograms is protected via mutex locks for thread-safety. This
+	  implementation is not intended to be performant, however.
+	* Tagging: G4UserActions-00-01-16
+
+2016-01-11 Andrea Di Simone
+	* removed some verbosity
+	* tagging G4UserActions-00-01-15
+
+2016-01-11 Andrea Di Simone
+	* fixed bug in action reports
+	* WriteHandles now with keys
+	* tagging G4UserActions-00-01-14
+
+2016-01-08 Andrea Di Simone
+	* removed deprecated retrieves
+	* tagging G4UserActions-00-01-13
+
+2015-12-21 Andrea Di Simone
+	* improved configuration of the V2 actions
+	* tagging G4UserActions-00-01-12
+
+2015-12-20 Steve Farrell <Steven.Farrell@cern.ch>
+	* Code cleanup and some documentation in the V2 implementations.
+	* Fixed initializer order warning in HitWrapper.
+	* Tagging: G4UserActions-00-01-11
+
+2015-12-18  John Chapman  <John.Chapman@cern.ch>
+	* cmt/requirements - drop use statement for
+	G4DetectorEnvelopes. Add use statement for CxxUtils. General
+	tidying. ATLASSIM-2481
+	* src/CosmicPerigeeAction.cxx, G4UserActions/CosmicPerigeeAction.h
+	- switch to using a WriteHandle for the TrackRecordCollection. Set
+	default values for m_idR and m_idZ, then drop
+	EnvelopeGeometryManager. ATLASSIM-2481
+	* src/FastIDKiller.cxx, G4UserActions/FastIDKiller.h - set default
+	values for m_idR and m_idZ, then drop
+	EnvelopeGeometryManager. ATLASSIM-2481
+	* tagging G4UserActions-00-01-10
+
+2015-10-27 Andrea Di Simone <andrea.di.simone@cern.ch>
+	* migrated some UA to the MT-friendly infrastructure
+	* tagging G4UserActions-00-01-09
+
+2015-10-06 Steve Farrell <Steven.Farrell@cern.ch>
+	* Added new MT version of G4SimTimer. There was no good way currently
+	  to handle the timing of the whole run, so it is disabled for now.
+	* tagging: G4UserActions-00-01-08
+
+2015-09-25 Steve Farrell <Steven.Farrell@cern.ch>
+	* Added G4TrackCounterTool to config DB
+	* tagging: G4UserActions-00-01-07
+
+2015-09-16 Andrea Di Simone
+	* added MT-friendly version of G4TrackRecorder
+	* tagging  G4UserActions-00-01-06
+
+2015-09-15  John Chapman  <John.Chapman@cern.ch>
+	* src/CosmicPerigeeAction.cxx, G4UserActions/CosmicPerigeeAction.h
+	- remove unnecessary dependency on TrackRecorderSD.
+	* tagging G4UserActions-00-01-05
+
+2015-04-23  Andrea Di Simone <Andrea.Di.Simone@cern.ch>
+	* tagging G4UserActions-00-01-04
+	* all user actions now migrated to new infrastructure
+
+2015-04-23 Andrea Di Simone <Andrea.Di.Simone@cern.ch>
+	* tagging  G4UserActions-00-01-03
+	* moved VolumeDebugger (merged with GDMLDumper),
+	G4AtlantisDumper, VerboseSelector (merged with VerboseSelectorArea),
+	StepNtuple, EnergyConservationTest, HyperspaceCatcher, to G4DebuggingTools
+
+2015-04-16 Andrea Di Simone <Andrea.Di.Simone@cern.ch>
+	* tagging G4UserActions-00-01-02
+	* migrated to new infrastructure: HIPKiller, LooperKiller, VolumeDebugger
+	* VolumeDebugger is now and EoR action
+	* merged InteractionLengthIntergator and RadLengthIntegrator into a single action, configured by the single fragment LengthIntegrator_options.py
+	* removed obsolete configuration files RadLengthIntegrator_options.py IntegrationLengthIntegrator_options.py
+
+2015-04-14  Zach Marshall <ZLMarshall@lbl.gov>
+	* tagging G4UserActions-00-01-01
+	* Moving LooperKiller verbosity down to 1
+
+2015-03-24 Andrea Di Simone <Andrea Di Simone>
+	* tagging  G4UserActions-00-01-00
+	* migration of a few actions to the new infrastructure
+	* cmt/requirements: package now producing two separate libs
+	* added python/G4UserActionsConfig.py (now empty)
+	* added python/G4UserActionsConfigDb.py
+	* added src/components/G4UserActions_entries.cxx
+	* added src/components/G4UserActions_load.cxx
+
+2015-03-08  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-96 
+	* Making sure to test for outside; coverity 29289
+
+2015-03-02  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-95
+	* Removing ancient share/action_example.mac
+	* Removing dependence on FADS SD services
+
+2015-02-24  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-94
+	* Improving hyperspace catcher
+
+2015-02-24  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-93
+	* First import of hyperspace catcher
+
+2015-02-23  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-92
+	* Swapping R and Z on 2D plot
+
+2015-02-23  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-91
+	* Significant updates to RadLen and IntLen integrators for more plots
+
+2015-01-25  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-90
+	* Moving to TrackRecordCollection as vector<T> for emplace
+
+2014-09-30  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-89
+	* Tested and commissioned E cons. action
+
+2014-09-17  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-88
+	* Adding first draft of E cons. action
+
+2014-09-17  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-87
+	* Changing everything for logging
+
+2014-08-29  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-86
+	* ScoringPlane: Fixing a bunch of uninitialized variables
+
+2014-07-24  Robert Harrington <roberth@cern.ch>
+	* Tagging: G4UserActions-00-00-85
+	* G4TrackCounter: Added ntracks_tot
+
+2014-04-15  John Chapman  <John.Chapman@cern.ch>
+	* Tagging: G4UserActions-00-00-84
+	* src/ScoringPlane.cxx - explicitly include CLHEP SystemOfUnits.h
+	header and add CLHEP namespace to uses of the ns
+	constant. ATLASSIM-453
+
+2014-03-31  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-83
+	* Adding ScoringPlane obo A. Sbrizzi
+
+2014-02-20  Zach Marshall <ZLMarshall@lbl.gov>
+	* Tagging: G4UserActions-00-00-82
+	* Fixing coverity defect 72517
+
+2013-08-29  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-81
+	* Fixing coverity defect 70861
+
+2013-08-26  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-80
+	* Adding volume debugging user action
+
+2013-06-19  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-79
+	* Ok, probably things shouldn't write to my person tmp area.
+
+2013-06-13  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-78
+	* Bug fix to stopped particle action
+
+2013-05-22  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-77
+	* Removing EMEC before GDML dump
+
+2013-04-19  John Chapman  <John.Chapman@cern.ch>
+	* Tagging: G4UserActions-00-00-76
+	* src/VerboseSelector.cxx - comment out unused primaryBarcode
+	variable.
+
+2013-04-05  John Chapman  <John.Chapman@cern.ch>
+	* Tagging: G4UserActions-00-00-75
+	* src/HitWrapper.cxx - adding hit wrapping for sTGC and Micromegas
+	for NSW upgrade studies. obo Nektarios Benekos.
+
+2013-03-14  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-74
+	* Adding GDML dumping action
+
+2012-11-19  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-73
+	* Adding status code checks for histogram registration in Rad and Int length integration
+
+2012-11-15  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-72
+	* Update for new CLHEP and G4 versions
+
+2012-10-06  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-71
+	* LooperKiller: Adding options for aborting events / setting error state
+
+2012-09-21  Robert Harrington <roberth@cern.ch>
+	* Tagging: G4UserActions-00-00-70
+	* src/CosmicPerigeeAction.cxx: added allowMods property
+
+2012-09-18  Robert Harrington <roberth@cern.ch>
+
+	* Tagging: G4UserActions-00-00-69
+	* src/CosmicPerigeeAction.cxx: transferred ownership of trackRecordCollection
+	  to AthenaHitsCollectionHelper
+
+2012-07-31  John Chapman  <John.Chapman@cern.ch>
+
+	* Tagging: G4UserActions-00-00-68
+	* src/MomentumConservation.cxx, src/StoppedParticleAction.cxx,
+	src/CosmicPerigeeAction.cxx - CLHEP 2.1.2.3 compatibility updates.
+
+2012-03-06  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-67
+	* Turning off verbosity if a looper recovers in looper killer
+
+2011-12-01  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-66
+	* Removing verbose print out for stopped particles
+
+2011-11-14  Zach Marshall <zach.marshall@cern.ch>
+	* Tagging: G4UserActions-00-00-65
+	* */FluxRecorder*: New test action for recording particle fluxes in the muon system
+
+2011-11-09  Francisca Garay <francisca.garay.walls@cern.ch>
+
+	        * Tagging: G4UserActions-00-00-64
+	        * /cmt/requirements: Line added to the requirements file.
+
+2011-11-01  Francisca Garay <francisca.garay.walls@cern.ch>
+
+	* Tagging: G4UserActions-00-00-63
+	* G4AtlantisDumper: Fix coverity issues.
+
+2011-10-19  Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-62
+	* StoppedParticleAction: Adding new action to catch stopped particles
+
+2011-05-30  Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-61
+	* src/*cxx: Moving to logger logging
+	* share/jobOptions*: Fixing order for job options
+
+2011-05-17  Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-60
+
+	* HitWrapper.cxx: Adding wrapping for inner detector hit collections
+
+2011-05-14  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Tagging: G4UserActions-00-00-59
+
+	* Adding, from Sergey Burdin: G4UserActions/HIPKiller.h, src/HIPKiller.cxx
+
+2011-05-03  Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-58
+
+	* share/jobOptions.FastIDKiller.py: Updating to join the modern world
+
+2011-04-28  David Quarrie <David.Quarrie@cern.ch>
+
+	* Tagging: G4UserActions-00-00-57
+
+	* src/HitWrapper.cxx - Replace ininf and isnan by std::isinf and std::isnan for MacOSX compatibility
+
+2011-04-26  John Chapman  <John.Chapman@cern.ch>
+
+	* Tagging: G4UserActions-00-00-56
+
+	* src/G4AtlantisDumper.cxx - fix Coverity Defects 19961 and 20070
+
+	* G4UserActions/G4AtlantisDumper.h - fix Coverity Defect 19909
+
+2011-04-13  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Tagging: G4UserActions-00-00-55
+
+	* share/*_options.py: Remove uses of removed init_Level flag, and
+	use the callback system to register the user actions.
+
+2011-03-21  Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-54
+
+	* Modifying HitWrapper action to take a configurable time (default is the same)
+
+2011-03-03  John Chapman  <John.Chapman@cern.ch>
+
+	* Tagging: G4UserActions-00-00-53
+
+	* src/ScoringVolumeTrackKiller.cxx - fix minor build warning.
+
+2011-03-01  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Tagging: G4UserActions-00-00-52
+
+	* Adding a patched version of src/ScoringVolumeTrackKiller.cxx
+	from Dennis Wright, to check that the pointer to the volume at the
+	post-step point was not null.  In case of null, the method now
+	assumes the track has passed outside the Atlas mother volume.
+
+09/01/2011 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-51
+
+	* Adding HitWrapper test action for wrapping muon hits in time
+
+20/12/2010 Andy Buckley <andy.buckley@cern.ch>
+
+	* Tagging: G4UserActions-00-00-50
+
+	* src/FastIdKiller.cxx: Fixing variable constancy compilation issue introduced by G4 9.4.
+
+	* MomentumConservation.h/.cxx: New user action for checking that overall energy and momentum are (mostly) conserved in sim events. Unfinished.
+
+
+22/10/10 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-48
+
+	* PhotonKiller.h : New user action for removing very low energy photons that come as a result of QGSP_BERT_HP neutron capture processes
+
+
+28/09/10 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-47
+
+	* Adding back protection in the VerboseSelector
+
+
+25/08/10 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-46
+
+	* Fixing coverity reports 21942, 21943, 21944, 21945, 21946
+
+
+30/07/10 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-45
+
+	* Giving FastIDKiller configurable radius and z
+
+
+27/08/05 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-41
+
+	* Correcting looper killer default values
+
+
+27/08/05 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-40
+
+	* Correcting looper killer default values
+
+
+26/08/05 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-39
+
+	* Adding looper killer for production system fun
+
+
+12/08/05 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-38
+
+	* Fixing bug in VerboseSelectorArea for tracks with no PostStep volume
+
+
+09/08/05 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-37
+
+	* Fixing warning in InteractionLengthIntegrator
+
+
+09/08/04 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-36
+
+	* Fixing warnings in TestAction1, TestAction2, and CosmicPerigeeAction
+
+
+09/06/18 David Quarrie <David.Quarrie@cern.ch>
+
+	* Tagging: G4UserActions-00-00-35
+
+	* cmt/requriements: Make this a linked_library in order to build successfully on MacOSX
+
+
+09/06/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-34
+
+	* Fixing radlen job options, int len job options, and TProfile declarations in both cases
+
+
+02/05/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-33
+
+	* Fixing requirements file (thanks checkreq!)
+
+
+01/05/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-32
+
+	* Adding cosmic perigee action for saving cosmic muons near perigee
+
+
+20/04/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-31
+
+	* Cleaning up timer print out (second try's the charm)
+
+
+20/04/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-30
+
+	* Cleaning up timer print out
+
+
+07/04/09 Zach Marshall <zmarshal@caltech.edu>
+
+	* Tagging: G4UserActions-00-00-28
+
+	* Unsigning several unsigned variables (memory and time)
+
+	* Protecting against zero division (returning DBL_MAX)
+
+
+27/01/09 David Quarrie
+
+	* Tagging: G4UserActions-00-00-27
+
+	* src/VerboseSelectorArea.cxx: Add gcc 4.3 compatibility
+
+
+27/10/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-26
+
+	* Fixing Geant4 requirements line
+
+
+20/10/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-25
+
+	* Adding ROOT in requirements to fix checkReq
+
+
+14/10/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-24
+
+	* Updates for the mig
+
+	* Adding VerboseSelectorArea for debugging
+
+
+12/06/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-23
+
+	* Killing secondaries out of bounds for dead track in FastIDKiller
+
+
+21/04/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-22
+
+	* r != rho
+
+
+21/04/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-21
+
+	* Changed G4SimTimer to use User+System time instead of just User time
+
+
+11/04/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-20
+
+	* Removed FastIDKiller job fragment - it should be inserted into SimuJobXforms
+
+
+02/04/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-19
+
+	* Removed two mistakes in FastIDKiller configuration
+
+
+02/04/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-18
+
+	* Modified FastIDKiller to use the Z and R coordinates of the inner detector envelope instead of a constructed volume.  Protects against many potential problems.  Modified job options and fragments accordingly.
+
+	* Removed neutrino cut from job options, since it is now the default
+
+
+14/02/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-17
+
+	* Added FastIDKiller postOptions and jobConfig for use with job transforms.
+
+
+22/01/08 Z. Marshall
+
+	* Tagging: G4UserActions-00-00-16
+
+	* Added FastIDKiller for Fast Calo Simulation to remove particles before they reach the calorimeter.  Also added job options example for the same.
+
+	* Added a ChangeLog and a doc page
+
+

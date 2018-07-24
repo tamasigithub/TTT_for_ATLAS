@@ -1,0 +1,1282 @@
+2016-8-28 Nick Styles
+	* Fix ordering bug for ITK strips
+	* ATLITKSW-26
+	* Tagged as SCT_Digitization-02-00-14-54
+
+2016-04-28 Peter Vankov  <Peter.Vankov@cern.ch>
+        
+        * For upgrade studies with petals as endcaps
+        * ERROR --> DEBUG in L895 of SCT_DigitizationTool.cxx 
+        * Tag as SCT_Digitization-02-00-14-53
+
+2016-04-26 Peter Vankov  <Peter.Vankov@cern.ch>
+        
+        * For upgrade studies with petals as endcaps
+        * A fix in SCT_DigitizationTool.cxx for Gmx Petal Layouts
+        * Tag as SCT_Digitization-02-00-14-52
+
+2016-04-06 Peter Vankov  <Peter.Vankov@cern.ch>
+        
+        * For upgrade studies with petals as endcaps
+        * A fix in SCT_FrontEnd.cxx 
+        * Tag as SCT_Digitization-02-00-14-51
+
+2016-03-29 Peter Vankov  <Peter.Vankov@cern.ch>
+        
+        * For upgrade studies with petals as endcaps
+        * Tag as SCT_Digitization-02-00-14-50
+        * Attention: ! This tag is derived from SCT_Digitization-02-00-14-00 !
+
+
+2015-10-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/SCT_DigitizationConfig.py - SCT_OverlayDigitizationTool:
+	use overlayFlags to set EvtStore. ATLASSIM-1922.
+	* Tag as SCT_Digitization-02-00-14
+
+2015-09-17 Nick Barlow
+	* In SCT_DigitizationTool, protect against strip numbers > 2^11
+	(necessary for upgrade)
+	* Tag as SCT_Digitization-02-00-13
+	
+2015-09-10 Nick Barlow
+	* Revert changes in SCT_SurfaceChargesGenerator.cxx (ATLASSIM-1886) to the previous version (these changes will then put back into a branch tag).
+	* Tag as SCT_Digitization-02-00-12
+
+2015-09-02 Shaun Roe
+	* Fix cppcheck error:
+incorrectLogicOperator in file AtlasSimulation/rel_2/InnerDetector/InDetDigitization/SCT_Digitization/src/SCT_FrontEndDev.cxx:932 Logical disjunction always evaluates to true: EXPR < 0.0000001 || EXPR > -0.0000001.
+	* tag as SCT_Digitization-02-00-11
+2015-08-14  John Chapman  <John.Chapman@cern.ch>
+	* SCT_DigitizationConfig.py - fix random number stream
+	configuration, so that we can freely mix full and fast digi when
+	digitizing the hard-scatter and pile-up Hits separately. Requires
+	Digitization-01-16-00 or later. ATLASSIM-2158. Use
+	HardScatterSplittingMode 0 for
+	SCT_DigitizationToolSplitNoMergePU. ATLASSIM-2174
+	* tagged as SCT_Digitization-02-00-10
+
+2015-06-19 Mahsana Haleem <Mahsana.Haleem@cern.ch>, John Chapman<John.Chapman@cern.ch>
+	* Added two CfgGetter methods (SCT_DigitizationToolSplitNoMergePU,
+	getPileupSCT_FrontEnd) requested by Robert Harrington to allow
+	using different digitization tools for hard scatter and pileup in
+	the event. (ATLASSIM-2066)
+	* tagged as SCT_Digitization-02-00-09
+
+2015-04-20  Malcolm Skinner  <malcolm.bruce.skinner@cern.ch>
+	* SCT_DigitizationConfig.py Migration of overlay configuration to
+	be based on CfgGetter.  ATLASSIM-1922.
+	* SCT_Digitization-02-00-08.
+
+2015-04-14  Malcolm Skinner  <malcolm.bruce.skinner@cern.ch>
+        * SCT_DigitizationConfig.py, SCT_DigitizationConfigDb.py
+        Migration of overlay configuration to be based on CfgGetter. 
+        ATLASSIM-1922.
+        * SCT_Digitization-02-00-07.
+
+2015-03-23  scott snyder  <snyder@bnl.gov>
+
+        * Tagging SCT_Digitization-02-00-06 .
+	* Fix clang warnings:
+	* Fix operator precedence issue.  (By chance, the code was working correctly, but clang was complaining.)
+	* Remove unused class members.
+
+2015-03-20 Mahsana Haleem <Mahsana.Haleem@cern.ch>
+        * fixed monte carlo generation of diffusion in SCT_SurfaceChargesGenerator.cxx as reported in ATLASSIM-1886 
+        * tagged as SCT_Digitization-02-00-05
+
+2015-03-05 Shaun Roe
+	* change barcode of vetoed particles to max value of an int32_t, configurable
+	* tagged as SCT_Digitization-02-00-04
+
+2014-10-06 Mahsana Haleem <Mahsana.Haleem@cern.ch>
+    * Introduced digitizationFlags to switch between different versions of
+    FrontEnd and SurfaceChargesGenerator codes
+    * created methods for the configurations for SCT_Amp,
+    SCT_TimeWalkGenerator, SCT_RandomDisabledCellGenerator and
+    SCT_StripDiscriminator 
+    * tagged as SCT_Digitization-02-00-03
+
+2014-08-12 Mahsana Haleem <Mahsana.Haleem@cern.ch>, John Chapman
+<John.Chapman@cern.ch>
+    * separated the configurations for SCT_FrontEnd and
+    SCT_SurfaceChargesGenerator into separate methods
+    * tagged as SCT_Digitization-02-00-02
+
+2014-04-03 Robert Langenberg <robert.langenberg -at- cern.ch>
+    * prevent hard scatter from being added to InDetSimDataCollection and persistified
+    * tagged 02-00-01
+
+2014-02-10 Mahsana Haleem <Mahsana.Haleem@cern.ch>
+        * Migration from CLHEP::Hep2Vector to Amg::Vector2D
+	* Tagged as SCT_Digitization-02-00-00
+2014-02-07 Mahsana Haleem <Mahsana.Haleem@cern.ch>
+        * Reduced verbosity, by changing output messages from INFO to VERBOSE
+        * Tagged as SCT_Digitization-01-03-01
+  
+2014-01-06 Nick Styles <nicholas.styles -at- cern.ch>
+	* Fixes for compatibility with Eigen migrated code
+	* Tagged as SCT_Digitization-01-03-00
+
+2013-11-18  John Chapman  <John.Chapman@cern.ch>
+
+       * Changes to work with SiDigitization-04-10-00 or later.
+
+       * SCT_Digitization/ISCT_SurfaceChargesGenerator.h - remove dependence on
+        SiDigitization/ISiSurfaceChargesGeneratorTool.h and declare
+        ISiSurfaceChargesInserter locally.
+
+       * SCT_Digitization/SCT_DigitizationTool.h - drop include of
+       SiDigitization.h. Forward declare AtlasDetectorID class. Replace
+       SiDetectorManager usage with SCT_DetectorManager. Remove setManger
+       method.
+
+       * src/SCT_DigitizationTool.cxx - remove setManager method.
+
+       * SCT_Digitization/ISCT_TimeWalkGenerator.h - remove dependence on
+       SiDigitization/ISiRelativeBunchCalculatorTool.h
+
+       * src/SCT_FrontEndDev.cxx, src/SCT_FrontEnd.cxx - add SCT_Amp
+       configurable property.
+
+       * Tagged as SCT_Digitization-01-02-00
+
+
+2013-10-29  Per Daniel Conny Johansson <Per.Johansson@cern.ch>
+	* src/SCT_SurfaceChargesGenerator.cxx - small bug fix in the charge
+	trapping code when using the Ramo potential
+	normal charges got added on top of the ramo ones
+	* Tagged as SCT_Digitization-01-01-01
+
+2013-10-28  John Chapman  <John.Chapman@cern.ch>
+
+	* SCT_Digitization/SCT_DigitizationTool.h,
+	src/SCT_DigitizationTool.cxx - adapt Roland Jansky's changes from
+	SCT_Digitization-00-13-00-branch for the trunk.
+
+	* python/SCT_DigitizationConfig.py,
+	python/SCT_DigitizationConfigDb.py - add confGetter methods for
+	SCT_DigitizationToolHS, SCT_DigitizationToolPU,
+	SCT_DigitizationHS and SCT_DigitizationPU.
+
+	* share/SCT_Digitization_jobOptions.py - adapt to respond to
+	experimental doSplitDigi digitizationFlags (true=split pileup &
+	signal during digi, false=no change).
+
+	* Tagged as SCT_Digitization-01-01-00
+
+2013-10-18 John Chapman <John.Chapman@cern.ch> Mahsana Haleem <Mahsana.Haleem@cern.ch>
+	* src/SCT_DigitizationTool.cxx, src/SCT_Digitization.cxx,
+	  SCT_Digitization/SCT_DigitizationTool.h
+	  SCT_Digitization/SCT_Digitization.h - Remove dependency on
+	  SiDigitization and share code between Algorithm and PileupTools
+	  approaches in SCT_DigitizationTool.
+
+	* python/SCT_DigitizationConfigDb.py, python/SCT_DigitizationConfig.py
+	  update to setup properties in SCT_DigitizationTool
+
+	* Tagged as SCT_Digitization-01-00-00
+
+2013-06-06  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/SCT_DigitizationConfigDb.py,
+	python/SCT_DigitizationConfig.py - confGetter-based wrapper for
+	SCT_Digitization configuration. This will factorize development of
+	the Digitization configuration from SCT_Digitization C++ code
+	updates.
+
+	* share/SCT_Digitization_jobOptions.py - update to use confGetter
+	configuration. Kept for back-compatibility.
+
+	* Tagged as SCT_Digitization-00-13-11
+
+2013-02-11  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SCT_DetailedSurfaceChargesGenerator.cxx,
+	src/SCT_SurfaceChargesGenerator.cxx - Adding bugfix for bug #96640 to trunk.
+	* Tag as SCT_Digitization-00-13-10
+
+2012-12-20  Per Daniel Conny Johansson
+	* Again forgot to check all the CLHEP things, in SCT_DetailedSurfaceChargesGenerator
+	* Tag as SCT_Digitization-00-13-09
+
+2012-12-19  Per Daniel Conny Johansson
+	* Changes to the charge trapping code, changed ouput even though not used
+	* Tag as SCT_Digitization-00-13-08
+
+2012-12-13  Per Daniel Conny Johansson
+	* Updated the charge trapping model
+	* Tag as SCT_Digitization-00-13-07
+
+2012-11-07  Per Daniel Conny Johansson
+	* Fixed the error in the 2nd ATH_MSG_VERBOSE statement
+
+2012-10-19  Per Daniel Conny Johansson
+	* Fixed error in ATH_MSG_VERBOSE statement
+	* Tag as SCT_Digitization-00-13-05
+
+2012-10-15  Per Daniel Conny Johansson
+	* Fixed some errors with the requirement and SCT_SurfaceChargesGenerator files
+	* Tag as SCT_Digitization-00-13-04
+
+2012-08-31  Per Daniel Conny Johansson
+	* Put in the Charge trapping code
+	* Tag as SCT_Digitization-00-13-03
+
+2012-08-23  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SCT_Amp.cxx, src/SCT_FrontEndDev.cxx, src/SCT_FrontEnd.cxx,
+	src/SCT_RandomDisabledCellGenerator.cxx,
+	src/SCT_TimeWalkGenerator.cxx,
+	src/SCT_DetailedSurfaceChargesGenerator.cxx,
+	src/SCT_StripDiscriminator.cxx,
+	src/SCT_SurfaceChargesGenerator.cxx - updates for CLHEP 2.1.2.3
+	compatibility, should be completely back-compatible.
+	* Tag as SCT_Digitization-00-13-02
+
+2012-07-16  Per Daniel Conny Johansson
+	* Fixed bug, #95563, in SCT_SurfaceChargesGenerator
+	* Tag as SCT_Digitization-00-13-01
+
+2012-05-14  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires SiDigitization-04-00-00 or later
+
+	* src/SCT_DigitizationTool.cxx - adaptions to addSDO method for
+	the fact that SiChargedDiodeMap is now sorted using
+	InDetDD::SiCellId rather than Identifiers (necessary for
+	compatibility with 64-bit Identifier builds. (obo Andreas Korn)
+
+	* Tag as SCT_Digitization-00-13-00
+
+2012-03-08  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - add use statement for
+	Simulation/Tools/AtlasCLHEP_RandomGenerators.
+	* src/SCT_FrontEndDev.cxx, src/SCT_FrontEnd.cxx,
+	src/SCT_TimeWalkGenerator.cxx,
+	src/SCT_DetailedSurfaceChargesGenerator.cxx,
+	src/SCT_StripDiscriminator.cxx,
+	src/SCT_SurfaceChargesGenerator.cxx - replace all usage of
+	CLHEP::RandGauss with RandGaussZiggurat.
+	* Tag as SCT_Digitization-00-12-26
+
+2012-03-02  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - switching use statements for AthenaBaseComps
+	and SCT_ModuleDistortions to be private (checkreq fix).
+	* SCT_Digitization/SCT_Digitization.h, src/SCT_Digitization.cxx -
+	removing m_chargedDiodes member variable and re-creating
+	SiChargedDiodeCollection during each call to digitizeAllHits and
+	digitizeNonHitElements. Reduces memory-footprint.
+	* Tag as SCT_Digitization-00-12-25
+
+2012-02-15  F. Djama (Patch from S. Snyder)
+	* A patch for savannah bug 67423
+	* Tag as SCT_Digitization-00-12-24
+
+2012-02-15  Per Daniel Conny Johansson
+	* Hardcoded Conditions tags removed from joboption
+	* Tag as SCT_Digitization-00-12-23
+
+2011-11-25  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SCT_DigitizationTool.cxx - intialize all member variables of
+	DigitizeNonHitElementsDebugPrinter. (Coverity Defect 19804)
+
+	* Tag as SCT_Digitization-00-12-22
+
+2011-09-29  Per Daniel Conny Johansson
+	* The new FrontEndTool from the -17 branch now included in the head as FrontEndDev
+	* Tag as SCT_Digitization-00-12-21
+
+2011-09-28  Per Daniel Conny Johansson
+	* Added option to manually set the depletion and bias voltage
+	* Tag as SCT_Digitization-00-12-20
+
+2011-09-13  Per Daniel Conny Johansson
+	* Fixed bug #86528, out of bound vector read in SCT_DetailedSurfaceChargesGenerator
+	* Tag as SCT_Digitization-00-12-19
+
+2011-09-08  John Chapman  <John.Chapman@cern.ch>
+
+	* src/SCT_Digitization.cxx, src/SCT_DigitizationTool.cxx - In the createAndStoreRDO() method,
+	make sure that RDOColl is deleted if it is not added to
+	m_rdocontainer.
+	* Tag as SCT_Digitization-00-12-18
+
+2011-04-13  Per Daniel Conny Johansson
+	* data compression mode now dependent on bunch spacing only
+	* <=25: edge mode (2), <=50: level mode (1), and >50: expanded any hit mode (3)
+	* Tag as SCT_Digitization-00-12-17
+
+2011-04-01  Per Daniel Conny Johansson
+	* Split off the new charge drift models into a new tool SCT_DetailedSurfaceChargesGenerator
+	* Tag as SCT_Digitization-00-12-16
+
+2011-02-24  Per Daniel Conny Johansson
+	* Small bug fix, potential memory leak
+
+2011-01-28  Per Daniel Conny Johansson
+	* Some clean-up of the eh transport model code
+	* Tag as SCT_Digitization-00-12-14
+
+2011-01-26  Per Daniel Conny Johansson
+	* First implementation of Taka Kondo's new charge drift models
+	* Contains beta version of the eh transport, but charge map model not yet there
+
+2010-09-29  Per Daniel Conny Johansson
+	* Removed the call to the PrintAverage function in SCT_Amp which created an empty file at end of job
+
+2010-09-24  Per Daniel Conny Johansson
+	* Set expanded any hit mode to default in jobOption
+	* Tag as SCT_Digitization-00-12-12
+
+2010-07-02  Per Daniel Conny Johansson
+	* MRS INFO to DEBUG changes
+	* Tag as SCT_Digitization-00-12-11
+
+2010-06-23  Per Daniel Conny Johansson
+	* Added jobOption fragment for use to activate expanded mode
+	* Tag as SCT_Digitization-00-12-10
+
+2010-05-19  Per Daniel Conny Johansson
+	* Added some beta code for expanded any hit mode, needs SiDigitization-03-06-05
+	* Tag as SCT_Digitization-00-12-09
+
+2010-05-06  Per Daniel Conny Johansson
+	* More fixing of the calib rand noise method
+	* Tag as SCT_Digitization-00-12-08
+
+2010-05-06  Per Daniel Conny Johansson
+	* Fixed bug #67017, bugs in the random noise methods, problem if trying to add more noisy strips than there was free strips
+	* Tag as SCT_Digitization-00-12-07
+
+2010-04-26  Per Daniel Conny Johansson
+	* FrontEnd prepareGainAndOffset method using the COOL DB now falls back to fixed value method for wafers where the chip values are all 0.
+	* Tag as SCT_Digitization-00-12-06
+
+2010-04-22  Per Daniel Conny Johansson
+	* Fixed checkreq problems
+	* Tag as SCT_Digitization-00-12-05
+
+2010-04-20  Per Daniel Conny Johansson
+	* Fixed major bug in prepareGainAndOffset when using calibration DB values
+	* Tag as SCT_Digitization-00-12-04
+
+2010-04-13  Per Daniel Conny Johansson
+	* Fix extra parenthesis
+	* Tag as SCT_Digitization-00-12-03
+
+2010-04-13  Per Daniel Conny Johansson
+	* Small bug fix in the FrontEnd
+	* Tag as SCT_Digitization-00-12-02
+
+2010-04-07  Per Daniel Conny Johansson
+	* Removed unnecessary jo file
+	* Tag as SCT_Digitization-00-12-01
+
+2010-04-07  Per Daniel Conny Johansson
+	* Fixed a bug and other various small things
+	* This version should now be ready to use
+	* Tag as SCT_Digitization-00-12-00
+
+2010-04-02  Per Daniel Conny Johansson
+	* Merged the SCT_Digitization-00-11-32-14 pile-up branch into the trunk
+	* Obs, needs checking and cleaning up!
+	* Tag as SCT_Digitization-00-11-42 (not done)
+
+2009-12-09  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+	* dead code removal
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/SCT_DigitizationTool.cxx
+
+	* Use the new SiDigitizationTool base class
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/SCT_DigitizationTool.cxx
+
+2009-12-02  Peter Sherwood  <sherwood@lxplus254.cern.ch>
+
+	* SiWaaferCache can now accept diode collection tools.
+	Use this new fucntionality - the tools are loaded after creation
+	in intialize().
+
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/SCT_DigitizationTool.cxx
+
+
+2009-11-27  Peter Sherwood  <sherwood@lxplus255.cern.ch>
+
+	* Uncommented out mergeEvent
+	* added some exception protection.
+	M      src/SCT_DigitizationTool.cxx
+
+2009-11-27  Peter Sherwood  <sherwood@lxplus243.cern.ch>
+
+	* Use the new SiDigitization/SiWaferCache class.
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/SCT_DigitizationTool.cxx
+
+	D      src/HitToDiodeConverter.cxx
+	D      src/HitToDiodeConverter.h
+
+
+2009-11-18  Peter Sherwood  <sherwood@lxplus248.cern.ch>
+
+	* Copied files that will also be used by Pixels to SiDigitization
+	* modify #includes to pick these files up from there.
+
+	D      SCT_Digitization/HitIndexAndTime.h
+	D      SCT_Digitization/WaferCache.h
+	D      src/countHitsInCache.h
+	D      src/HitIndexAndTimeMaker.h
+	D      src/SubEventHitsLooper.h
+	D      src/countHitsInCache.cxx
+	D      src/HitIndexAndTimeMaker.cxx
+	D      src/SubEventHitsLooper.cxx
+
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/memPrint.h
+	M      src/HitToDiodeConverter.cxx
+	M      src/SCT_DigitizationTool.cxx
+
+	* refacorisation of mergeEvent
+	M      src/SCT_DigitizationTool.cxx
+
+2009-11-16  Peter Sherwood  <sherwood@lxplus248.cern.ch>
+
+	* Renamed SubEventLooper to SubEventHitsLooper
+	* added comments
+
+	M      SCT_Digitization/HitIndexAndTime.h
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/HitIndexAndTimeMaker.h
+	M      src/HitToDiodeConverter.cxx
+	M      src/SCT_DigitizationTool.cxx
+
+	A      src/SubEventHitsLooper.h
+	A      src/SubEventHitsLooper.cxx
+
+	D      src/SubEventLooper.h
+	D      src/SubEventLooper.cxx
+
+2009-11-03  Peter Sherwood  <sherwood@lxplus253.cern.ch>
+
+	* reinstated code/files lost during development
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/components/SCT_Digitization_entries.cxx
+	M      src/SCT_DigitizationTool.cxx
+
+
+2009-11-03  Peter Sherwood  <sherwood@lxplus253.cern.ch>
+
+	* Added some debug fucntions
+	* Reinstated SCT_Digitization (an Athena Algorithm)
+	* removed a memory leak in SubEventLooper caused by a
+	*   superfluous hit copy.
+
+
+	A      SCT_Digitization/SCT_Digitization.h
+	A      src/countHitsInCache.h
+	A      src/countHitsInCache.cxx
+	M      src/SCT_DigitizationTool.cxx
+	A      src/SCT_Digitization.cxx
+	M      src/SubEventLooper.cxx
+
+2009-10-27  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+	* first version using hit cache rather than diode cache
+
+	D      SCT_Digitization/SubEventSummer.tpl
+	D      SCT_Digitization/SubEventHitProcessor.h
+	D      SCT_Digitization/SubEventSummer.h
+	D      SCT_Digitization/SCT_Digitization.h
+	D      SCT_Digitization/SubEventHitProcessor.tpl
+	D      src/SCT_Digitization.cxx
+	D      src/SiChargedDiodeCollectionFiller.cxx
+
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/components/SCT_Digitization_entries.cxx
+	M      src/HitToDiodeConverter.cxx
+	M      src/SiChargedDiodeCollectionFiller.h
+	M      src/HitIndexAndTimeMaker.cxx
+	M      src/SCT_DigitizationTool.cxx
+	M      src/HitToDiodeConverter.h
+	M      src/SubEventLooper.cxx
+
+2009-10-20  Peter Sherwood  <sherwood@lxplus302.cern.ch>
+
+	* more preparatory work to moving to a hit cache rather than a diode cache
+	D      SCT_Digitization/getMemUsage.h
+	D      src/HitIndexAndTime.h
+	D      src/IdentifiedHitIndexAndTimeCollection.h
+
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/HitIndexAndTimeMaker.h
+	M      src/HitIndexAndTimeMaker.cxx
+	M      src/SubEventLooper.h
+	M      src/getMemUsage.cxx
+	M      src/SCT_DigitizationTool.cxx
+	M      src/SubEventLooper.cxx
+
+	A      SCT_Digitization/HitIndexAndTime.h
+	A      SCT_Digitization/WaferCache.h
+	A      src/memPrint.h
+	A      src/HitToDiodeConverter.cxx
+	A      src/getMemUsage.h
+	A      src/SiChargedDiodeCollectionFiller.h
+	A      src/SiChargedDiodeCollectionFiller.cxx
+	A      src/HitToDiodeConverter.h
+
+2009-10-16  Peter Sherwood  <sherwood@lxplus303.cern.ch>
+
+	* Preparatory work to moving to a hit cache rather than a diode cache
+
+	A      src/HitIndexAndTimeMaker.h
+	A      src/HitIndexAndTimeMaker.cxx
+	A      src/SubEventLooper.h
+	A      src/HitIndexAndTime.h
+	A      src/IdentifiedHitIndexAndTimeCollection.h
+	M      src/SCT_DigitizationTool.cxx
+	A      src/SubEventLooper.cxx
+
+2009-10-10   Peter Sherwood  <peter@peter-4.home>
+
+	* small tweaks for efficiency plus small bug fixes
+	for new code
+	* added (temporarily) the monitoring function getMemUsage
+	A      SCT_Digitization/getMemUsage.h
+	A      src/getMemUsage.cxx
+
+	M      SCT_Digitization/SubEventSummer.tpl
+	M      SCT_Digitization/SubEventHitProcessor.h
+	M      SCT_Digitization/SubEventSummer.h
+	M      SCT_Digitization/SubEventHitProcessor.tpl
+	M      src/SCT_DigitizationTool.cxx
+
+
+2009-10-07  Peter Sherwood  <sherwood@lxplus302.cern.ch>
+
+	* Decoupled SiDigitization and SCT_Digitization
+	* added some helper classes
+	A      SCT_Digitization/SubEventSummer.tpl
+	A      SCT_Digitization/SubEventHitProcessor.h
+	A      SCT_Digitization/SubEventSummer.h
+	A      SCT_Digitization/SubEventHitProcessor.tpl
+
+	M      SCT_Digitization/SCT_DigitizationTool.h
+	M      src/SCT_DigitizationTool.cxx
+
+
+2009-10-01  Peter Sherwood  <sherwood@lxplus316.cern.ch>
+
+	* Adding in John Chapman's "V3" Changes. Includes PileUpTool
+	A      src/SCT_Amp.h
+	A      src/SCT_FrontEnd.h
+	A      src/SCT_RandomDisabledCellGenerator.h
+	A      SCT_Digitization/ISCT_StripDiscriminator.h
+	A      SCT_Digitization/ISCT_SurfaceChargesGenerator.h
+	A      SCT_Digitization/ISCT_Amp.h
+	A      SCT_Digitization/ISCT_FrontEnd.h
+	A      SCT_Digitization/ISCT_RandomDisabledCellGenerator.h
+	A      SCT_Digitization/ISCT_TimeWalkGenerator.h
+	A      SCT_Digitization/SCT_DigitizationTool.h
+	A      src/SCT_TimeWalkGenerator.h
+	A      src/SCT_StripDiscriminator.h
+	A      src/SCT_SurfaceChargesGenerator.h
+	A      src/SCT_DigitizationTool.cxx
+A       A      share/SCT_DigiTool_jobOptions.py
+
+	D      SCT_Digitization/SCT_TimeWalkGenerator.h
+	D      SCT_Digitization/SCT_StripDiscriminator.h
+	D      SCT_Digitization/SCT_SurfaceChargesGenerator.h
+	D      SCT_Digitization/SCT_Amp.h
+	D      SCT_Digitization/SCT_FrontEnd.h
+	D      SCT_Digitization/SCT_RandomDisabledCellGenerator.h
+
+	M      cmt/requirements
+	M      SCT_Digitization/SCT_Digitization.h
+	M      src/components/SCT_Digitization_entries.cxx
+	M      src/SCT_Amp.cxx
+	M      src/SCT_FrontEnd.cxx
+	M      src/SCT_RandomDisabledCellGenerator.cxx
+	M      src/SCT_TimeWalkGenerator.cxx
+	M      src/SCT_StripDiscriminator.cxx
+	M      src/SCT_SurfaceChargesGenerator.cxx
+	M      src/SCT_Digitization.cxx
+
+2010-04-01  Per Daniel Conny Johansson
+	* Minor changes to the FrontEnd, and activated the cool calib data usage
+	* Tag as SCT_Digitization-00-11-41
+
+2010-04-01  Per Daniel Conny Johansson
+	* Updated the enc noise values too.
+	* Tag as SCT_Digitization-00-11-40
+
+2010-03-31  Per Daniel Conny Johansson
+	* Updated the noise occupancy values and divided the barrel to inner and outer barrel
+	* Tag as SCT_Digitization-00-11-39
+
+2010-03-02  Per Daniel Conny Johansson
+	* Changed from using estimatedLuminosity() directly to using numberOfCollisions and bunchSpacing instead
+	* Fixed a small bug concerning expanded mode noise (was actually already activated since 00-11-34)
+	* Tag as SCT_Digitization-00-11-38
+
+2010-01-11  Per Daniel Conny Johansson
+	* Bug fix, invalid reads in SCT_FrontEnd::PrepareGainAndOffset
+	* Tag as SCT_Digitization-00-11-37
+
+2009-12-29  Per Daniel Conny Johansson
+	* Commented out calibration DB tags/folders used for testing from joboption
+	* Tag as SCT_Digitization-00-11-36
+
+2009-11-23  Per Daniel Conny Johansson
+	* Added threshold dependecy to the random noise function
+	* Tested the calibration DB reading functionality
+	* Tuned the NO values and some minor other fixes
+	* Tag as SCT_Digitization-00-11-35
+
+2009-11-16  Per Daniel Conny Johansson
+	* Finalized the new noise contribution code (need fine-tuning of new noise values)
+	* Optimized the way front-end parameters are setup
+	* Old way of doing things not an option anymore
+	* Tag as SCT_Digitization-00-11-34
+
+2009-11-03  Per Daniel Conny Johansson
+	* Put back code to access and use calib DB values, need SCT_ConditionsServices-00-03-71
+	* Added new test code for new randomized noise contributions
+	* Various small fixes and clean ups of unused code
+	* Should not be collected anywhere
+	* Tag as SCT_Digitization-00-11-33
+
+2009-09-07  Per Daniel Conny Johansson
+	* Fixed bug #54307, now gets the maximum number of strips from manager in initialize, for SLHC studies, instead of JO value
+	* Tag as SCT_Digitization-00-11-32
+
+2009-07-14  Patricia Ward  <ward@lxplus237.cern.ch>
+	* Include code to apply module distortions (off by default)
+	* Tag as SCT_Digitization-00-11-31
+
+2009-07-10 Carl Gwilliam
+	* React to interface changes in SCT_ConditionsServices
+	* Tag as SCT_Digitization-00-11-30
+
+2009-07-01  Patricia Ward  <ward@lxplus221.cern.ch>
+	* SCT_SurfaceChargesGenerator: set default small step length to
+	* 5 microns and number of charges to 1
+	* Tag as SCT_Digitization-00-11-29
+
+2009-06-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Revert last change as it is now the default in SiLorentzAngleSvc
+	* tagged as SCT_Digitization-00-11-28
+
+2009-06-15 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Set LorentzAngleSvc to retrieve MagFieldTool during init.
+	* tagged as SCT_Digitization-00-11-27
+
+2009-05-30  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fix in SCT_TimeWalkGenerator for bug #50555
+	* Tagged as SCT_Digitization-00-11-26
+
+2009-05-14  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Added DCS folders and Svc in the joboption, so now the sctSiliconConditionsSvc is using the DB as default
+	* Tagged as SCT_Digitization-00-11-25
+
+2009-05-08  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* getIdHelper now accessed directly from the detStore
+	* Tagged as SCT_Digitization-00-11-24
+
+2009-05-06  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed checkreq problem, seen in the 15.X.0-PEN release
+	* Tagged as SCT_Digitization-00-11-23
+
+2009-03-05 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Fixed names of services just added.
+	* Tagged as SCT_Digitization-00-11-22
+
+2009-03-05  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	*  New services added, ISiPropertiesSvc and ISiliconConditionsSvc, used in SCT_SurfaceChargesGenerator
+	* Tagged as SCT_Digitization-00-11-21
+
+2009-03-05  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Disabled the usage of calibration data due to changes in the SCT_ReadCalibDataSvc
+	* Tagged as SCT_Digitization-00-11-20
+
+2009-02-11  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Added message output for noise value of the short middle modules
+	* Cosmic run and FixedTime now triggered in joboption by Beam.beamType job property
+	* Tagged as SCT_Digitization-00-11-19
+
+2009-02-06  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Some more cleaning
+	* Randomized disabled cells is off as default now
+	* Short middle modules now have separate noise values
+	* Tagged as SCT_Digitization-00-11-18
+
+2009-01-26  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Removed instance of detStore from SCT_FrontEnd.cxx
+	* Tagged as SCT_Digitization-00-11-17
+
+2009-01-22  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Removed private instance of Storegate from SCT_TimeWalkGenerator
+	* Cleaned up the requirement of storegate, and changed from dual_use to component_library
+	* Tagged as SCT_Digitization-00-11-16
+
+2009-01-20  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Clean-up of the requirement file, public/private use
+	* SCT_RandomDisabledCellGenerator.h gcc4.3 compatibility fix
+	* SCT_FrontEnd.cxx bug fix
+	* SCT_Digitization_jobOptions.py DataCompression mode set to edge mode if lumi > 5.e33
+	* Tagged as SCT_Digitization-00-11-15
+
+2008-12-21  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* 'Improving Quality of Our Software' drive changes
+	* Tagged as SCT_Digitization-00-11-14
+
+2008-11-03  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Brought the SCT_Digitization-00-11-08 branch changes into the head version
+	* Cosmic run changes as FixedTime option back, will digitize all SCT now, and will use normal randomized disabled cells
+	* Tagged as SCT_Digitization-00-11-13
+
+2008-09-29  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Adressing bug #38675: SCT_Digitization: CPU, Vmem and Malloc usage in pileup
+	* Tagged as SCT_Digitization-00-11-12
+
+2008-09-29  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed bug #41638 mem-leak in SCT_Digitization
+	* Tagged as SCT_Digitization-00-11-11
+
+2008-09-06  Per Daniel Conny Johansson  <perj@lxplus204.cern.ch>
+	* Fixed bug #40848 (SCT_Digitization DEBUG printout is way too VERBOSE)
+	* Tagged as SCT_Digitization-00-11-10
+
+2008-08-20  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Can now write out SCT3_RawData, set as default, Error=0 and TimeBin=2
+	* Needed for MC and data pile-up overlay
+	* Tagged as SCT_Digitization-00-11-09
+
+2008-07-15  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Implemented the use of calibration data in the FrontEnd, using the SCT_ConditionsServices package
+	* Removed use of the old SCT_ConditionsAlgs (affects only CTB/cosmic)
+	* Put back the improved noise handling if not using calib data
+	* CPU/memory optimization, bug #38675
+	* Tagged as SCT_Digitization-00-11-08
+
+2008-06-19  Per Daniel Conny Johansson <Per.Johansson@cern.ch>
+	* Fix bug #37865
+	* SCT_SurfaceChargesGenerator.cxx 'DriftTime: hit coordinate zhit out of range' ERROR changed to WARNING
+	* Should have been changed together with the added compression protection
+	* Tagged as SCT_Digitization-00-11-07
+
+2008-06-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Replace use of deprecated methods. Replace use of SiDiode
+	  and SiReadoutCell with SiCellId and SiReadoutCellId.
+	* SCT_FrondEnd.cxx: Removed unnecessary push_backs of FirstDiode vector.
+	* Tagged as SCT_Digitization-00-11-06
+
+2008-05-28  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Added protection against hits ending up outside of modules due to rounding errors from hit compression
+	* Tagged as SCT_Digitization-00-11-05
+
+2008-05-27  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed jobOption file, got error when setting compression
+	* Tagged as SCT_Digitization-00-11-04
+
+2008-05-26  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Removed the noise handling for now, since it did not work properly
+	* Data compression and bug fixes are still in
+	* Tag as SCT_Digitization-00-11-03
+
+2008-05-05  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Fixed bug in SCT_Digitization, modultype was always set to EC inners
+	* Fixed inefficient code in SCT_FrontEnd, now correct moduletype switch statement outside strip loop
+	* Fixed bug #36238, can now set jobproperties.Digitization.doInDetNoise=False
+	* Tagged as SCT_Digitization-00-11-02
+
+2008-04-29  Per Daniel Conny Johansson  <Per.Johansson@.cern.ch>
+	* Fixed misspelled property name in SCT_Digitization_jobOptions.py
+	* Tagged as SCT_Digitization-00-11-01
+
+2008-04-25  Per Daniel Conny Johansson  <Per.Johansson@cern.ch>
+	* Implemented data compression, level/edge mode
+	* Implemented a more correct description of the noise, noise value now depends on module type
+	* General clean-up of code
+	* Tagged as SCT_Digitization-00-11-00
+
+2008-04-15  Per Daniel Conny Johansson  <P.Johansson@cern.ch>
+	* Fix bugs #34544 and #35113
+	* non-repeatability in sct/pixel digitization
+	* most of the digits have cluster size = 0
+	* Tagged as SCT_Digitization-00-10-01
+
+2008-03-23  Markus Elsing
+	* Migration to new IDC
+	* Tagged as SCT_Digitization-00-10-00
+
+2008-03-18  Per Daniel Conny Johansson  <P.Johansson@cern.ch>
+	* Fix bug #34462
+	* SCT_Digitization_jobOptions.py: Replacing GaudiHandles.GaudiHandles
+	import with GaudiKernel.GaudiHandles import
+	* Tagged as SCT_Digitization-00-09-32 (31, bug fix #34267)
+
+2007-11-02 Kondo Gnanvo <kondo.gnanvo@cern.ch>
+	* First import of calibration data into ST_Digitization
+	* Tagged as SCT_Digitization-00-09-30
+
+2007-11-01 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* Fix bug #30721
+	* SCT_Digitization_jobOptions.py: Replacing GaudiHandles
+	import with GaudiPython.GaudiHandles import
+
+2007-10-15 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	*  SCT_SurfaceChargesGenerator: Fix TOF calculation
+
+2007-09-29 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* First implementation of calibration data form SCT conditions
+	in the SCT_Digitization
+
+2007-09-20 Kondo Gnanvo <kondo.gnanvo@cern.ch>
+	* SCT_SurfaceChargesGenerator: Use of m_element->center() to extract nominal module time of flight
+	from the hit mean time (total time of flight).
+	* Fix WARNING error message in SCT codes during compilation
+	* Tagged as SCT_Digitization-00-09-29
+
+2007-08-23 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* Updates the following codes to AlgTool: SCT_FrontEnd, SCT_Amp, SCT_SurfaceChargesGenerator
+	* Add SCT_RandomDisabledCellGenerator instead of using SiDigitization/SiRandomDisabledCellGenerator
+	* Add dummy codes SCT_TimeWalkGenerator and SCT_StripDiscriminator
+	* Code to implement ComTime to use the commisionning time
+	* Move SCT_Digitization_entries.cxx and SCT_Digitization_load.cxx form src to src/components
+	* Update cmt/requirement
+	* Tagged as SCT_Digitization-00-09-28
+
+2007-06-19 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* Update documentation for Doxygen
+	* tagged as SCT_Digitization-00-09-27
+
+2007-06-19 Kondo Gnanvo <Kondo.Gnanvo@cern.ch>
+	* Update documentation for Doxygen
+	* tagged as SCT_Digitization-00-09-26
+
+2007-04-10 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Configurables
+
+2007-02-14 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Add BarrelOnly option
+
+2007-01-15 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Remove symlinks
+
+2007-01-14 David Quarrie <David.Quarrie@cern.ch>
+	* Backwards compatible changes for Gaudi v19 compatibility
+
+2007-01-12 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Fix InDetRawDataCollection
+
+2007-01-11 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* joboptions for IAtRndmGenSvc
+
+2006-12-21 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Move to IAtRndmGenSvc
+	* Tagging as SCT_Digitization-00-09-19
+
+2006-11-02 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Replace IgnoreGlobalTime option with SubtractTime and FixedTime options
+
+2006-11-01 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Add IgnoreGlobalTime option
+
+2006-10-16 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix gains and offsets
+	* Tagging as SCT_Digitization-00-09-16
+
+2006-10-04 Thijs Cornelissen
+	* Fix compilation error
+
+2006-09-20 Jorgen Dalmau
+	* Adding missing forward declaration + missing std::
+	* Tagging as SCT_Digitization-00-09-14
+
+2006-09-15 Jorgen Dalmau
+	* Fix checking of barrel_ec flag
+	* Tagging as SCT_Digitization-00-09-13
+
+2006-09-13 Thijs Cornelissen
+	* Fix crash
+	* Tagging as SCT_Digitization-00-09-12
+
+2006-09-11 Jorgen Dalmau
+	* Fixed bug where m_layer was set rather than m_eta in SCT_Digitization::execute()
+	* Tagging as SCT_Digitization-00-09-11
+
+2006-09-11 Jorgen Dalmau
+	* Moving DetStore/SG init to initialize() in SCT_Digitzation.cxx
+	* Tagging as SCT_Digitization-00-09-10
+
+2006-09-06 Jorgen Dalmau
+	* Reorganising code in SCT_Digitzation.cxx/.h
+	* Tagging as SCT_Digitization-00-09-09
+
+2006-09-01 Jorgen Dalmau
+	* Changing some comments to doxygen format
+	* Tagging as SCT_Digitization-00-09-08
+
+2006-03-07 Jorgen Dalmau
+	* Fix req file to use latest version of InDetSimData
+	* Tagging as SCT_Digitization-00-09-07
+
+2006-05-15 Grant Gorfine
+	* Fix bug that occurs when readout side is at +ve depth direction.
+
+2006-05-04 Thijs Cornelissen
+	* Fix voltage units!
+
+2006-03-07 Jorgen Dalmau
+	* Fix include of non-standard/deprecated headers
+	* Tagging as SCT_Digitization-00-09-03
+
+2006-03-03 Jorgen Dalmau
+	* Remove redundant ';' in SCT_Digitization_entries.cxx
+	* Add a template for a mainpage.h doxygen file
+	* Tagging as SCT_Digitization-00-09-02
+
+2005-15-12 Paul Bell paul.bell@cern.ch
+	* Tidying up for 11.1.0, some msgs removed
+
+2005-05-12 Paul Bell
+	* Removed Lisbon DB access for CTB and implemented COOL access for
+	CTB and cosmics. Bad channels simulated in these scenarios
+
+2005-04-09 Paul Bell
+	* Change way SCT_ModuleStatusAlg is accessed
+	Module status now read from map, map filled on callback
+
+2005-14-06 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Bug fix
+
+2005-13-05 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix for disabled strips
+	* Enable noise in elements without hits
+
+2005-21-04 Paul Bell
+	* Cosmic setup tested and ok
+
+2005-20-04 Paul Bell
+	* First attempt at cosmic setup
+
+2005-28-02 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove second cell disabler
+
+2005-28-02 Paul Bell
+	* Remove cabling dll from jO file
+
+2005-18-02 Paul Bell
+	* Remove redundant inncludes to the cabling service
+
+2004-12-12 Paul Bell
+	* Integrate with use of condDB
+	* Discontinue SCT_ActualDisabledCellGenerator
+
+2004-11-09 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Import file with disabled channels in testbeam.
+	* Bug fix (noise hits were not disabled)
+
+2004-08-31 Grant Gorfine <gorfine@nikhef.nl>
+	* SCT_SurfaceChargesGenerator: Use readoutSide()
+	  method in design to determine readout side.
+
+2004-08-05 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirements: CLHEP migration
+
+2004-07-20 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix checkreq warnings
+
+2004-07-17 Davide Costanzo
+	* cmt/requirements remove txt j obO from the cmt pattern
+
+2004-07-05 Thijs Cornelissen
+	* Give noise SDOs charge
+
+2004-06-22 Paul Bell
+	* Include example file of bad channels
+	in share, stored as rod, link, strip
+
+2004-06-22 Paul Bell <paul.bell@cern.ch>
+	* Add provision for dead channels in CTB,
+	read from ascii file
+
+2004-06-15 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix problem with disconnected strips
+
+2004-06-09 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix missing SDOs
+
+2003-05-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* try branch hopping. SCT_Digitization-00-08-03
+
+2003-05-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirement add the python jo to the install_jo
+
+2003-05-19 Davide Costanzo <DCostanzo@lbl.gov>
+	* add python
+
+2003-04-28 Davide Costanzo <DCostanzo@lbl.gov>
+	* Use HepMcParticleLink, Change to SCT_SurfaceCharge::process
+
+2003-04-28 Davide Costanzo <DCostanzo@lbl.gov>
+	*Set DiagnosticAveragePulse for DC2
+
+2004-04-2 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* SCT_Frontend: Avoid non-existing strip 768.
+
+2004-04-02 Grant Gorfine <gorfine@nikhef.nl>
+	* SCT_SurfaceChargesGenerator: Use TimedHitPtr.
+
+2004-03-25 Davide Costanzo <DCOstanzo@lbl.gov>
+	* SCT_Digitization.cxx move to InDetSImDataCollection
+
+2004-03-25 Grant Gorfine <gorfine@nikhef.nl>
+	* SCT_Digitization_jobOptions.txt: Add noise
+
+2004-03-23 Grant Gorfine <gorfine@nikhef.nl>
+	* SCT_Digitization: Process elements without hits.
+
+2004-03-11 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Update req file
+
+2004-02-29 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Bug fix. Calls to MaxDriftTime and MaxDiffusionSigma caused segmentation faults in
+	  SCT_SurfaceChargesGenerator constructor
+	* Fix req file
+
+2004-02-24 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove hardwired numbers
+	* Remove postition/energy conversion factors
+	* Make SCT_SurfaceChargesGenerator methods private
+
+2004-02-11 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove other obsolete files
+
+2004-02-08 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove "goofy hits"
+
+2004-01-28 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove internal conversion factors
+
+2003-01-26 Davide Costanzo <DCostanzo@lbl.gov>
+	* Change of the SiDigitization data members for pile-up
+
+2003-01-14 Davide Costanzo <DCostanzo@lbl.gov>
+	* Corectly symling the RDOcollections
+
+2003-11-20  Davide Costanzo  <DCostanzo@lbl.gov>
+	put jobO in the InstallArea
+
+2003-11-18 Thijs Cornelissen <tgcornel@nikhef.nl>
+	Remove some printout, fix typo
+
+2003-11-17 Thijs Cornelissen <tgcornel@nikhef.nl>
+	Move to GeoModel Detector Description.
+	Move to mm and MeV
+
+2003-10-23  Frederick Luehring <luehring@indiana.edu>
+	Move package back into InDetDigitization.
+	Tag as SCT_Digitization-00-05-03
+
+2003-09-08  Davide Costanzo  <DCostanzo@lbl.gov>
+	tg lorentz from the element
+
+2003-08-18  Davide Costanzo  <DCostanzo@lbl.gov>
+	Use SiDetectorElement instead of SiDetectorDesign
+
+2003-08-06  Davide Costanzo  <DCostanzo@lbl.gov>
+	fix identifier print-out
+
+2003-07-22  Davide Costanzo  <DCostanzo@lbl.gov>
+	create a SiChargedDiode in SCT_FrontEnd.cxx if the first
+	strip of the cluster didn't exist before (noise/cross-talk)
+
+2003-07-15  Davide Costanzo  <DCostanzo@lbl.gov>
+	Add the jobOptions fragment
+
+2003-07-15  Davide Costanzo  <DCostanzo@lbl.gov>
+	Add SDO
+
+2003-07-11  Davide Costanzo  <DCostanzo@lbl.gov>
+	use SCT_RDORawData as a RDO type which is what is read by SCT_Clusterization
+
+2003-07-10  Davide Costanzo  <DCostanzo@lbl.gov>
+	bug fix in the RDO creation
+	units factor to be passed to the ChargeHenerator to use cm and GeV (official units??)
+	add cluster size to the RDOs
+
+2003-07-10  Davide Costanzo  <DCostanzo@lbl.gov>
+	Flag the diode below threshold
+
+2003-06-10  Davide Costanzo  <DCostanzo@lbl.gov>
+	Minor changes to read the new hits in InDetSimEvent
+
+2003-06-10  Davide Costanzo  <DCostanzo@lbl.gov>
+	Temporarly disable test beam and ascii reading also from
+	the _entries file
+
+2003-05-27  Davide Costanzo  <DCostanzo@lbl.gov>
+	Several changes nedded to move to RDOs. IT compiles, but it should
+	be tested. SCT_TestbeamDigitization is temporarly discontinued
+
+2003-05-26  Awatif Belymam  <belymam@lxplus098.cern.ch>
+
+	* cmt/requirements: add InDetRawData and InDetRawUtils
+
+	* SCT_Digitization/SCT_FrontEnd.h: move to RDO
+
+	* src/SCT_FrontEnd.cxx: move to RDO
+
+2003-03-11  Awatif Belymam  <belymam@lxplus055.cern.ch>
+
+	* src/SiTrackerHitAsciiCnv.cxx: adapt to the new SiTrackerHit
+
+	* src/SCT_SurfaceChargesGenerator.cxx: fixing compilation errors
+
+2003-03-05  Awatif Belymam  <belymam@lxplus057.cern.ch>
+
+	* src/SCT_FrontEnd.cxx: bug fix
+
+	* share/SCT_Digitization_Goofy_jobOptions.txt: reorganize jobOptions
+
+	* SCT_Digitization/SCT_DummyDetDescrCnv.h: modified for compact ids
+
+	* src/SCT_DummyDetDescrCnv.cxx: modified for compact ids
+
+2003-02-17  Awatif Belymam  <belymam@lxplus041.cern.ch>
+
+	* SCT_Digitization/SCT_DummyDetDescrCnv.h: Adapt to SiTrackerDetDescr
+
+	* SCT_Digitization/SCT_TestBeamDigitization.h: Adapt to SiTrackerDetDescr
+
+	* src/SCT_DummyDetDescrCnv.cxx: Adapt to SiTrackerDetDescr
+
+	* src/SCT_TestBeamDigitization.cxx: Adapt to SiTrackerDetDescr
+
+2003-02-09  David Candlin  <candlin@lxplus042.cern.ch>
+
+	* src/SCT_Digitization.cxx (execute): Adapt to new
+	SiTrackerDigitContainer
+
+2003-01-15  David Candlin  <candlin@lxplus025.cern.ch>
+
+	* src/SCT_Digitization.cxx (nStripsOK): Adapt to new
+	SiTrackerCollection iterator
+
+2002-11-25  Awatif Belymam  <belymam@lxplus003.cern.ch>
+
+	* src/SCT_SurfaceChargesGenerator.cxx: the thickness of sensors is
+	obtained from the objects of SCT_ModuleSideDesign type instead from
+	its jobOptions file.
+	* Code in CLHEP units.
+	* Use mm XML files in Alessandro's SCT_ModuleSideDesign in /share
+	directory.
+
+2002-11-12  Awatif Belymam  <belymam@mail.cern.ch>
+
+	*  Tagging SCT_Digitization-00-01-01
+
+2002-10-29  Awatif Belymam  <belymam@mail.cern.ch>
+
+	* src/SCT_Digitization.cxx: same here.
+
+	* src/SCT_TestBeamDigitization.cxx: same here.
+
+	* src/SCT_SurfaceChargesGenerator.cxx: the thickness of sensors is
+	obtained from the objects of SCT_ModuleSideDesign type instead from
+	its jobOptions file. Changes are done as well in jobOptions files.
+
+
+2002-08-13  David Candlin  <candlin@lxplus058.cern.ch>
+
+	* cmt/requirements: Use AIDA histos
+
+2002-07-05  RD Schaffer  <R.D.Schaffer@cern.ch>
+
+	* tagging SCT_Digitization-00-00-03 for 4.0.0
+
+	* src/SCT_TestBeamDigitization.cxx: same here
+
+	* src/SCT_DummyDetDescrCnv.cxx: added include of
+	AGDD_Parser/AGDD_Factory.h -structure of AGDD changed.
+
+2002-02-26  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* XML files in Alessandro's SCT_ModuleSideDesign have new names
+	now. Needed to change one of the share/*.txt files accordingly.
+
+2002-02-19  Christian Arnault  <carnault@atlas50.cern.ch>
+
+	* src/SCT_DummyDetDescrCnv.cxx (initialize): add std:: to cout,
+	endl, bad_alloc
+
+2002-02-08  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* fixes to if(ntupleFile) on advice of David Calvet
+
+2001-12-17  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	*  Constructor of SiTrackerHit has one parameter changed,
+	one has to use IdentifiableContainer instead of
+	ObjectIdentifierMap and we now use DetectorStore. Status of
+	testing for the three possible inputs:
+	+ beam test hits from ASCII file - tested with 2.4.0
+	+ TDR hits from old tape - tested with 2.4.0
+	- Goofy hits - problems with new identifier, not supported in code
+	of David Calver and RD Shafer until 17.12.00. On 17.12.00 there
+	are other problems with StoreGate, reported to Hong Ma by RD. I
+	will tag the package without having it fully tested because of that.
+
+2001-10-26  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* Two new algorighms added, one to setup dummy detector
+	description (until the link to AGDD is done), the other to read
+	ASCII file with the FADS hits (until we know how to use
+	persistency). A diagnostic ntuple is added to
+	SCT_Digitization. All tested with 2.2.0 and with
+	SCT_ModuleSideDedign-01-00-01.
+
+2001-10-08  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* changes to includes for histogramming, tested with 2.2.0 and
+	with SCT_ModuleSideDedign-01-00-01
+
+2001-09-28  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* tested with cmt release 2.1.1, some minor improvements made too
+
+2001-08-01  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* added SCT_Digitization, tested in 2.0.0 together with
+	 SiDigitization-00-02-00
+	 SiTrackerTDR_Cnv head
+	 SiTrackerReadExample-00-00-01
+	 SCT_ModuleSideDesign head
+	we can process G3 hits and get sensible digits!
+
+2001-07-30  Szymon Gadomski  <szymon.gadomski@cern.ch>
+
+	* modified to work with SiDigitization-00-02-00 (new hit class,
+	new way to iterate over the hit collection), tested, it works with
+	2.0.0
+
+2001-07-06  Szymon Gadomski  <gadomski@lxplus023.cern.ch>
+
+	* modified to work with SCT_ModuleSideDesignXmlBuilder and tested,
+	still in 1.3.7
+
+2001-07-03  Szymon Gadomski  <Szymon.Gadomski@cern.ch>
+
+	* changed Gaudi includes and GNUmakefile to work with 1.3.7,
+	tested, it works correctly; also added the correct output file
+
+2001-07-02  Szymon Gadomski  <Szymon.Gadomski@cern.ch>
+
+	* tested, works with SCT_ModuleSideDesign-00-00-01 in 1.3.0,
+	results as in old stand-alone tests of the digitization

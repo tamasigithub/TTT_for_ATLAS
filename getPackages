@@ -1,0 +1,30 @@
+#!/bin/bash
+lxplusId=jwang
+kinit ${lxplusId}@CERN.CH
+setupATLAS
+asetup 20.20.10.7 here
+export SVNROOT=svn+ssh://${lxplusId}@svn.cern.ch/reps/atlasoff
+export SVNUSER=svn+ssh://${lxplusId}@svn.cern.ch/reps/atlas-hessey
+pkgco.py -A GmxLayouts
+#echo Change requirements file to use LTFwithBCL:
+#nano InnerDetector/InDetDetDescr/GmxLayouts/cmt/requirements
+pkgco.py VP1GeometrySystems
+pkgco.py InDetSLHC_Example
+pkgco.py SCT_G4_SD
+pkgco.py InDetReadoutGeometry
+pkgco.py SCT_Digitization
+#
+# Following are not in the release, so pkgco.py does not work
+#
+cmt co InnerDetector/InDetPerformance/SiHitAnalysis
+mkdir -p run
+cp InnerDetector/InDetPerformance/SiHitAnalysis/share/stripHit.C  ./run
+svn co $SVNUSER/InDetTrackingGeometryXML/trunk InnerDetector/InDetDetDescr/InDetTrackingGeometryXML
+svn co $SVNUSER/stripDig/trunk stripDig
+svn co $SVNUSER/vector/trunk vector
+echo Give your own lxplus password
+scp ${lxplusId}@lxplus.cern.ch:/afs/cern.ch/user/h/hessey/public/athenaFiles.tgz .
+tar xzf athenaFiles.tgz
+rm athenaFiles.tgz
+
+

@@ -1,0 +1,355 @@
+2017-07-18 Nora Pettersson
+				* Updating configuration for step2 tables
+			  * Tagged as PixelCabling-00-01-20
+
+2017-07-14 Ben Smart <Ben.Smart@cern.ch>
+        * Updating step2.2 tables
+        * Tagged as PixelCabling-00-01-19
+
+2017-07-14 Noemi Calace <noemi.calace@cern.ch>
+        * Updating configuration for using the right step2 tables
+        * Tagged as PixelCabling-00-01-18
+
+2017-07-04 Atanu Pathak
+        * Updating share/create_dummy_table.py
+        * Adding InclinedQuads_step2p0 ITk dat files
+        * Tagged as PixelCabling-00-01-17
+
+2017-07-04 Atanu Pathak
+        * Updating share/create_dummy_table.py
+        * Adding InclinedQuads_step2p2 and InclinedDuals_step2p2 ITk dat files
+        * Tagged as PixelCabling-00-01-16
+
+2017-03-13 Simon Viel
+        * Adding LoI and LoIVF GeoType options for ITk
+        * Adding dedicated dat file for BrlInclOptRing_4.0ref
+        * Commmit share/create_dummy_table.py allowing to re-create the ITk dat files
+        * Tagged as PixelCabling-00-01-15
+
+2017-02-10 Noemi Calace <Noemi.Calace@cern.ch>
+	* Adding BrlInclOptRing_4.0ref GeoType option
+	* tagged as PixelCabling-00-01-14
+
+2016-12-15 Steffen Maeland <steffen.maeland@cern.ch>
+	* Changed verbose warning message to debug, ref. ATLASRECTS-3736
+	* Tagged as PixelCabling-00-01-13
+
+2016-07-28  scott snyder  <snyder@bnl.gov>
+	* Tagging PixelCabling-00-01-10.
+	* Fix clang warnings.
+	* Tagging PixelCabling-00-01-09.
+	* endreq -> endmsg.
+
+2016-04-14 Walter Lampl <walter.lampl@ cern.ch>
+	* refactor to avoid dangling pointer + minor cleanup
+	* tag PixelCabling-00-01-06
+
+2016-04-05  John Chapman  <John.Chapman@cern.ch>
+	* add python/PixelCablingConfigDb.py,
+	python/PixelCablingConfig.py, cmt/requirements,
+	share/SelectPixelMap.py - Fixed Pixel Cabling for Run1 digi
+	jobs. ATLASSIM-2680
+	* Tagged as PixelCabling-00-01-05
+
+2016-03-18  Jiri Masik  <jiri.masik@manchester.ac.uk>
+	* share/SelectPixelMap.py: ability to run with run1 cabling in the
+	online mode. PIXELDAQ-152
+	* tagged as PixelCabling-00-01-04
+
+2016-03-16 Steffen Maeland <steffen.maeland @ cern.ch>
+	* PixelCablingSvc.cxx: Re-ordered registration of callbacks so that HDC is
+	done after CablingMap, otherwise IBL ToTs might be wrong
+	* SelectPixelMap.py: Fix for trigger tests
+	* Tagged as PixelCabling-00-01-03
+
+2016-03-13 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Corrected out-of-bounds read in prev tag
+	* SelectPixelMap.py: Changed default fallback mapping files
+	* Tagged as PixelCabling-00-01-02
+
+2016-03-05 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Fix for ATR-13472 (also see PIXELDAQ-152)
+	* Tagged as PixelCabling-00-01-01
+
+2016-03-03 Steffen Maeland <steffen.maeland @ cern.ch>
+	* share/SelectPixelMap.py: Fix to select the correct CablingMap folder
+	both for online and offline
+	* Now ready for M11
+	* Tagged as PixelCabling-00-01-00
+
+2016-02-12 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Now reading cabling map from COOL
+	* Added new class PixelFillCablingData replacing the ones named _Final and
+	_CoralDB
+	* Deleted old unused files
+	* Tagged as PixelCabling-00-00-62
+
+2016-01-05  RD Schaffer  <R.D.Schaffer@cern.ch>
+	* tagged PixelCabling-00-00-61
+	* src/PixelCablingSvc.cxx (initialize): removed use of __IDENTIFIER_64BIT__
+
+2015-010-23  Fares Djama
+	* Protect run 1 against HitDiscCnfg folder
+	* Tagged as PixelCabling-00-00-60
+
+2015-010-23  Fares Djama
+	* Recover MSG levels of tag 00-00-56
+	* Tagged as PixelCabling-00-00-59
+
+2015-010-23  Fares Djama
+	* Cosmetics
+	* Tagged as PixelCabling-00-00-58
+
+2015-010-23  Fares Djama
+	* share/SelectPixelMap.py: /PIXEL/HitDiscCnfg added also for MC
+	* Tagged as PixelCabling-00-00-57
+
+2015-07-17  Jiri Masik  <masik>
+
+	* share/SelectPixelMap.py: /PIXEL/HitDiscCnfg added also for
+	online, tagged as PixelCabling-00-00-56
+
+2015-07-16 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Implemented reading of FE-I4 hit discriminator settings (HitDiscCnfg)
+	from COOL. Values are filled to a map and can be retrieved via
+	getHitDiscCnfg(). 
+	* Tagged as PixelCabling-00-00-55
+
+2015-05-28 Steffen Maeland <steffen.maeland @ cern.ch>
+	* The fixes for coverity issues 11448 and 11506 were not properly
+	implemented in PixelCabling-00-00-53. Although it doesn't cause any
+	errors, it has been fixed again in tag -54.
+	* Tagged as PixelCabling-00-00-54
+
+2015-05-28 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Added new cabling map for Run2 (K. Potamianos), this is now the default
+	* Fixed coverity issues 11448, 11506, and 29165
+	* Tagged as PixelCabling-00-00-53
+
+2015-03-04 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Changed translation of eta_index <-> row for DBM A-side, following 
+	recommendation by H. Oide et al.
+	* Tagged as PixelCabling-00-00-52
+	
+2015-01-04 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Updated DBM part of M7 cabling map to be ready for M8 (no changes for
+	pixels or IBL, so updated M7 map rather than creating a new one)
+	* Tagged as PixelCabling-00-00-51
+
+2014-11-20 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Patching M7 cabling map following switching to the alternate link for
+	L0_B07_S2_C6_M1C L0_B08_S2_C6_M6C L0_B04_S1_A6_M5A
+	* Tagged as PixelCabling-00-00-50
+
+2014-11-18 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Set M7.dat as default map
+	* Added jobOptions file for offline map selection (not automatically
+	included by RecEx yet)
+	* In PixelCablingData, replaced std::map by boost::unordered_map
+	* Fixed coverity reports (11217, 11953, 11982)
+	* Tagged as PixelCabling-00-00-49
+
+2014-10-24 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Replaced misbehaving ROBIN 140121 in M6 map with dummy values
+	* Added M7 map
+	* Tagged as PixelCabling-00-00-48
+
+2014-10-16 Mapo Giordani <mario.giordani @ cern.ch> 
+	* Modified IBL ROBIN/ROD IDs
+	* Tagged as PixelCabling-00-00-47 
+
+2014-10-09 Mapo Giordani <mario.giordani @ cern.ch> 
+	* Modified Run 2 default map settings (ready for M6)
+	* Modified DBM ROBIN/ROD IDs
+	* Tagged as PixelCabling-00-00-46 
+
+2014-09-20 Mapo Giordani <mario.giordani @ cern.ch> 
+	* Modifications for reprocessing M5 data (correct for wrong cabling of 5
+	B-Layer RODs)
+	* Added mapping file (Pixels...M6.dat), which is a copy of previous M5 
+	* Modified M5 mapping file in order to mimick M5 detector cabling
+	* Tagged as PixelCabling-00-00-45 
+	 
+2014-09-18 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Added mapping file (Pixels...M5.dat)
+	* Removed the hack in PixelCablingSvc.cxx which was added in the previous
+	tag
+	* Set M5 map as default for IBL (+DBM) geometries
+	* Tagged as PixelCabling-00-00-44
+
+2014-09-03 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Tag for M5:
+	* Added mapping file (Pixels...Sep14.dat)
+	* Fixed bug in PixelCablingData::find_entry_onoff
+	* Added hack in PixelCablingSvc.cxx to set external mapping file (to be
+	removed after M5)
+	* Tagged as PixelCabling-00-00-43
+
+2014-08-18 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Reinstated hack in PixelCablingData.cxx, but in a manner which is
+	compatible with Run-2 mapping file
+	* Tagged as PixelCabling-00-00-42
+
+2014-07-15 Steffen Maeland <steffen.maeland @ cern.ch>
+	* Removed old hack in PixelCablingData.cxx
+	* Changed error message severity levels
+	* Tagged as PixelCabling-00-00-41
+
+2014-07-10 Mapo Giordani <mapo.giordani -at- cern.ch>
+	* Adding new mapping files
+	* Tag as PixelCabling-00-00-40
+
+2014-01-09 Nick Styles <nicholas.styles -at- cern.ch>
+	* Changes to accomodate Geo Tags with Hybrid IBL and DBM included
+	* Tag as PixelCabling-00-00-37
+
+2013-12-02 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Added call to IBLParameterSvc to set parameters needed for IBL
+	* Tag as PixelCabling-00-00-36
+
+2013-10-25 Nick Styles <nicholas.styles @ cern.ch>
+	* Removed unprotected VERBOSE messages
+	* Tagged as PixelCabling-00-00-35
+
+2013-06-21 Nick Styles <nicholas.styles -at- cern.ch>
+	* Added .dat files including IBL from branch, filenames appended with _inclIBL
+	* modified PixelCablingSvc to allow steering via job options of module paramters (temporary fix to restore backwards compatibility)
+	* Added postInclude.IBLPixelSvcCablingSetup.py for setting IBL-compatible configuration
+
+2011-8-02 Christian Jung <christian.jung@cern.ch>
+	* removed unprotected debug messages
+	* Tag as PixelCabling-00-00-32
+
+2011-2-14 Maaike Limper <maaike.limper@cern.ch>
+	* fixed checkreq warnings
+
+2010-11-18     Florian Hirsch <hirsch@cern.ch>
+        * Fixed compiler warnings
+	* Tag as PixelCabling-00-00-31
+
+2010-09-02     Florian Hirsch <hirsch@cern.ch>
+        * Fix to prevent broken links in b-layer to affect the bytestream conversion
+	* Tag as PixelCabling-00-00-30
+
+2010-09-02     Attilio Andreazza <attilio.andreazza@mi.infn.it>
+        * Fix last missing module...
+	* Tag as PixelCabling-00-00-29
+
+2010-09-01     Attilio Andreazza <attilio.andreazza@mi.infn.it>
+        * Fix connectivity table for 80 Mbps readout
+	* Tag as PixelCabling-00-00-28
+
+2010-07-16     Florian Hirsch <hirsch@cern.ch>
+        * Bugfix (convert hex number correctly)
+	* Tag as PixelCabling-00-00-27
+	
+2010-07-15     Florian Hirsch <hirsch@cern.ch>
+	* Added callback to switch readout speed
+	* Disabled support for reading directly from CoralDB, textfile is the only option for now
+	* Cabling is for readout speed 40 by default and is changed through the callback
+        * Tag as PixelCabling-00-00-26
+
+2010-06-05     Florian Hirsch <hirsch@cern.ch>
+	* Added DumpCabling with joboptions
+        * Tag as PixelCabling-00-00-25
+
+2010-06-05     Florian Hirsch <hirsch@cern.ch>
+	* Added DumpCabling with joboptions
+        * Tag as PixelCabling-00-00-24
+
+2010-05-23	Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fixing compiler warning in PixelFillCablingData_CoralDB.cxx
+        * Tag as PixelCabling-00-00-23
+
+2010-04-06      Florian Hirsch <hirsch@cern.ch>
+	* Retrieve the correct string from the cabling textfile
+        * Tag as PixelCabling-00-00-22
+
+2010-04-04      Florian Hirsch <hirsch@cern.ch>
+	* Added new functionality to retrive offline identifier from DCS name
+        * Tag as PixelCabling-00-00-20
+
+2009-12-17      Florian Hirsch <hirsch@cern.ch>
+	* Remove warning messages
+        * Tag as PixelCabling-00-00-19
+
+2009-12-04	Florian Hirsch <hirsch@cern.ch>
+	* use of improved CoralDB retrieval methods
+        * Tag as PixelCabling-00-00-18
+
+2009-10-19	Florian Hirsch <hirsch@cern.ch>
+	* fix for bug 57164
+        * Tag as PixelCabling-00-00-17
+
+2009-10-16	Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* checking input to PixelCablingSvc::getPixelId 
+	* in order to provide always a physical identifier.
+        * Tag as PixelCabling-00-00-16
+
+2009-07-16	Florian Hirsch <hirsch@cern.ch>
+	* moved configuration properties to PixelCablingSvc
+	* removed properties for tools
+        * Tag as PixelCabling-00-00-15
+
+2009-07-14	Florian Hirsch <hirsch@cern.ch>
+        * add bulk retrieval of IdentifierHashes for one ROD
+	* Tag as PixelCabling-00-00-14
+	
+2009-05-18	Florian Hirsch <hirsch@cern.ch>
+	* fix requirements
+	* Tag as PixelCabling-00-00-13
+
+2009-05-12	Florian Hirsch <hirsch@cern.ch>
+	* migration of PixelID
+	* Tag as PixelCabling-00-00-12
+
+2009-05-11	Florian Hirsch <hirsch@cern.ch>
+	* migration of PixelID
+	* Tag as PixelCabling-00-00-11
+
+2009-02-19	Florian Hirsch <hirsch@cern.ch>
+	* moved headers to /src
+	* removed PixelIdMapping
+	* Tag as PixelCabling-00-00-10
+
+2009-02-13	Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Adding missing module in Pixels_Atlas_IdMapping_May08.dat
+	* Tag as PixelCabling-00-00-09
+
+2009-01-19	Florian Hirsch <hirsch@cern.ch>
+	* Added PixelCablingSvc (mapping now service)
+	* Leave PixelIdMapping until the clients migrated
+	* Removed TB04, DC1, Cosmics Cabling Tools and datafiles
+	* code improvements as requested
+	* Tag as PixelCabling-00-00-08
+
+2008-11-30	Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Remove spurious tab in Pixels_Atlas_IdMapping.dat
+	* Tag as PixelCabling-00-00-07
+
+2008-11-30	Florian Hirsch <hirsch@cern.ch>
+	* Correction in cabling text files
+	* Tag as PixelCabling-00-00-06
+
+2008-11-29	Florian Hirsch <hirsch@cern.ch>
+	* Swapped FMT and link of modules D2C_B04_S1_M3 and M4 in Pixels_Atlas_IdMapping_May08.dat
+	* Tag as PixelCabling-00-00-05
+
+2008-11-29	Florian Hirsch <hirsch@cern.ch>
+	* Swapped FMT and link of modules D2C_B04_S1_M3 and M4 in Pixels_Atlas_IdMapping.dat
+	* Tag as PixelCabling-00-00-04
+
+2008-11-21	Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fix compilatiopn errors from wrong includes and requirements
+	* Tag as PixelCabling-00-00-03
+
+2008-11-20	Florian Hirsch <hirsch@cern.ch>
+	* Apply latest changes from InDetCabling
+	* Tag as PixelCabling-00-00-02
+
+2008-11-13	Florian Hirsch <hirsch@cern.ch>
+	* Merge from InDetCabling
+	* Tag as PixelCabling-00-00-01
+
+2008-10-13	Atlas Librarian <Atlas.Librarian@cern.ch>
+	* First creation of the package

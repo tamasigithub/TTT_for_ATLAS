@@ -1,0 +1,13 @@
+# Setup to use locally installed release
+setupATLAS
+# Setup data base access: See https://twiki.cern.ch/twiki/bin/view/AtlasComputing/FroNTier, AGIS section
+#export FRONTIER_SERVER="(serverurl=http://frontier-atlas.lcg.triumf.ca:3128/ATLAS_frontier)(serverurl=http://atlasfrontier-ai.cern.ch:8000/atlr)(serverurl=http://lcgft-atlas.gridpp.rl.ac.uk:3128/frontierATLAS)(serverurl=http://ccfrontier.in2p3.fr:23128/ccin2p3-AtlasFrontier)(proxyurl=http://atlas-tier3-squid.triumf.ca:3128)(proxyurl=http://cernvm-webfs.atlas-canada.ca:3128)"
+
+asetup 20.20.10.7 here
+# For some reason, all these get reset by asetup; restore them
+export SVNROOT=svn+ssh://tkar@svn.cern.ch/reps/atlasoff
+export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+export ALRB_localConfigDir=$HOME/localConfig
+
+# Fix for VP1 load error "WARNING: dlopen: cannot load any more object with static TLS"
+export LD_PRELOAD=/usr/lib64/libGL.so.1

@@ -1,0 +1,8 @@
+namespace InDetDD {
+	
+inline const HepGeom::Transform3D & TRT_BaseElement::defTransform() const
+{
+  return getMaterialGeom()->getDefAbsoluteTransform();
+}
+
+}

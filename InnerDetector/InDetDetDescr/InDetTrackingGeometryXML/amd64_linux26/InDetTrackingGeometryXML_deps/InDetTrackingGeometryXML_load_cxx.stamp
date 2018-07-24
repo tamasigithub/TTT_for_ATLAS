@@ -1,0 +1,1 @@
+InDetTrackingGeometryXML_load_cxx_dependencies =  ../src/components/InDetTrackingGeometryXML_load.cxx  $(bin)InDetTrackingGeometryXML_deps/InDetTrackingGeometryXML_load_cxx.stamp

@@ -1,0 +1,7 @@
+libFastSiDigitization.so:PixelFastDigitization
+libFastSiDigitization.so:PixelFastDigitizationTool
+libFastSiDigitization.so:SCT_FastDigitization
+libFastSiDigitization.so:SCT_FastDigitizationTool
+libFastSiDigitization.so:SCT_SmearedDigitizationTool
+libFastSiDigitization.so:SiSmearedDigitization
+libFastSiDigitization.so:SiSmearedDigitizationTool

@@ -1,0 +1,217 @@
+2016-07-15  John Chapman  <John.Chapman@cern.ch>
+	* src/SctSensorGmxSD.cxx, src/SctSensorSD.cxx,
+	src/SctSensor_CTB.cxx (ProcessHits): Switch to using the
+	HepMcParticleLink-based constructor for SiHit. Requires
+	InDetSimEvent-00-06-04 and MCTruth-00-05-00 or
+	later. ATLASSIM-3009
+	* Tagging: SCT_G4_SD-00-08-00
+
+2016-02-26 Steve Farrell <Steven.Farrell@cern.ch>
+	* Removing WriteHandle isValid protections.
+	* Tagging: SCT_G4_SD-00-07-01
+
+2015-11-26  John Chapman  <John.Chapman@cern.ch>
+	* add src/SctSensorGmxSD.cxx, src/SctSensorGmxSD.h to contain the
+	updates from Jike in SCT_G4_SD-00-06-07. Inherits from
+	SctSensorSD. ATLASSIM-2301
+	* src/SctSensorSD.h, src/SctSensorSD.cxx - revert to the
+	SCT_G4_SD-00-06-06 versions except that the index calculations are
+	moved into a separate method and the ProcessHits method can now be
+	overridden. ATLASSIM-2301
+	* src/SctSensorSDTool.cxx, src/SctSensorSDTool.h - add GmxSensor
+	configurable property (false by default). If this is true then an
+	instance of SctSensorGmx rather than SctSensor is
+	created. ATLASSIM-2301
+	* python/SCT_G4_SDConfig.py, python/SCT_G4_SDConfigDb.py - add
+	getSLHC_SctSensorSD_Gmx method so that we can automatically
+	configure a job to use SctSensorGmx in the future - not currently
+	used. ATLASSIM-2301
+	* tagged as SCT_G4_SD-00-07-00
+
+2015-10-30  Jike Wang  <Jike.Wang@cern.ch>
+	* SctSensorSD.cxx, make it works for both Gmx sensor and normal sensor
+	* add getSLHC_SctSensorSD_Gmx in SCT_G4_SDConfig.py
+	* tagged as SCT_G4_SD-00-06-07
+
+2015-10-15  John Chapman  <John.Chapman@cern.ch>
+	* src/SctSensorSDTool.cxx, src/SctSensor_CTB.cxx - remove usage of
+	DetectorGeometryHelper. ATLASSIM-2284
+	* cmt/requirements - remove use statement for SimHelpers package.
+	* Tagging SCT_G4_SD-00-06-06
+
+2015-06-09 Steve Farrell <Steven.Farrell@cern.ch>
+	* Temporary fix for WriteHandle in hive: remove isValid check
+	* Tagging SCT_G4_SD-00-06-05
+
+2015-06-08  John Chapman  <John.Chapman@cern.ch>
+	* src/*Tool.cxx/.h - makeSD method protected, as in
+	base-class. Move default configuration to CfgGetter
+	methods. ATLASSIM-1963.
+	* SctSensorSD.cxx, src/SctSensor_CTB.cxx - throw G4Exceptions
+	rather than char*.
+	* python/PixelG4_SDConfigDb.py, python/PixelG4_SDConfig.py - add
+	default configuration to CfgGetter methods.
+	* Requires G4AtlasTools-00-00-23-18 or G4AtlasTools-00-00-37 or
+	later.
+	* Tagged SCT_G4_SD-00-06-04
+
+2015-05-31  Zach Marshall <ZLMarshall@lbl.gov>
+	* cmt/requirements - add use statement for CxxUtils. ATLASSIM-1963
+	* src/SctSensorSD.cxx, src/SctSensor_CTB.cxx, src/SctSensorSD.h,
+	src/SctSensor_CTB.h - Add Initialize method which creates a new
+	hit collection if required. ATLASSIM-1963.
+	* tag as SCT_G4_SD-00-06-03
+
+2015-05-15  John Chapman  <John.Chapman@cern.ch>
+	* src/SctSensorSDTool.cxx, src/SctSensor_CTBTool.cxx - rename
+	m_hitCollectionNames to m_outputCollectionNames. ATLASSIM-1963
+	* src/SctSensorSDTool.h, src/SctSensor_CTBTool.h,
+	src/SctSensorSD.h, src/SctSensor_CTB.h - standardize includes.
+	* tag as SCT_G4_SD-00-06-02
+
+2015-05-12  John Chapman  <John.Chapman@cern.ch>
+	* python/SCT_G4_SDConfig.py, python/SCT_G4_SDConfigDb.py - update
+	to new tool names. ATLASSIM-1963.
+	* tag as SCT_G4_SD-00-06-01
+
+2015-05-11  John Chapman  <John.Chapman@cern.ch>
+	* Moving all headers into src directory.
+	* Migrating to next version of base classes. ATLASSIM-1963.
+	* tag as SCT_G4_SD-00-06-00
+
+2015-02-18  John Chapman  <John.Chapman@cern.ch>
+	* python/SCT_G4_SDConfig.py, python/SCT_G4_SDConfigDb.py - add
+	SLHC_SctSensorSD method to configure SctSensorSD differently for
+	upgrade geometries.
+	* Tag as SCT_G4_SD-00-05-01
+
+2015-02-16  John Chapman  <John.Chapman@cern.ch>
+	* add python/SCT_G4_SDConfig.py, python/SCT_G4_SDConfigDb.py -
+	dummy methods for CfgGetter configuration.
+	* Tag as SCT_G4_SD-00-05-00
+
+2014-12-26  Zach Marshall <ZLMarshall@lbl.gov>
+	* Major migration to new baseclass
+
+2012-07-26  Pat Ward <cpw1@hep.phy.cam.ac.uk>
+	* Patch for CLHEP 2.1.2.3
+	* Tag as SCT_G4_SD-00-04-01
+	
+2012-04-18  Robert Harrington <roberth@cern.ch>
+	* merge SCT_G4_SD-00-03-20-branch to trunk (changes to allow
+	writing non-const hit collections for ISF)
+	* needs following (or later) tags:
+	  - SimHelpers-00-01-02 
+	  - FadsSensitiveDetector-00-01-00 
+	* tag as SCT_G4_SD-00-04-00
+
+2011-12-01 Robert Harrington <roberth@cern.ch>
+	* src/SCTSensorSD.cxx - using new RetrieveNonconstCollection method 
+	  of AthenaHitsCollectionHelper, transfers ownership of hit coll
+	  to AthenaHitsCollectionHelper, hit coll set to const in EndOfEvent 
+	  if m_allowMods (protected member of FadsSensitiveDetector) is false
+	* uses FadsSensitiveDetector-00-00-56-01
+	* tag as SCT_G4_SD-00-03-20-01  
+
+2011-11-01  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - remove lines which alter cppflags.
+	* src/SCT_SensorSD.cxx, src/SCT_Sensor_CTB.cxx - fix build
+	warnings about unused variables.
+	* remove executable properties from all files.
+	* tag as SCT_G4_SD-00-03-20
+
+2011-04-08 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Fix some coverity warnings.
+	* Tag as SCT_G4_SD-00-03-19
+
+2008-09-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Handle different SLHC layouts.
+	* Tag as SCT_G4_SD-00-03-18
+
+2008-08-28 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* More package cleanup.
+	* Tag as SCT_G4_SD-00-03-17
+
+2008-05-04 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Hit container migration
+
+2008-12-23  Patricia Ward  <ward@lxplus221.cern.ch>
+	* Clean up code 
+
+2008-04-02 Grant Gorfine <Grant.Gorfine@cern.ch>	
+	* src/SctSensor_CTB.cxx, src/SctSensorSD.cxx:
+	  Compare particle definition rather than string comparison for geantinos.
+        * Fix use of deprecated header files.
+	
+2006-02-11  Grant Gorfine  <gorfine@cern.ch>
+        * src/SctSensor_CTB.cxx, src/SctSensorSD.cxx:
+	  Distinguish DC2 from DC3 as level in hierarchy has changed
+	  in the endcap. 
+	  Also some code cleanup.
+
+2005-08-25  Grant GORFINE  <gorfine@cern.ch>
+	* src/SctSensor_CTB.cxx, src/SctSensorSD.cxx:
+	  Save hits for Charged Geantinos.
+
+*** 03/23/05 Grant Gorfine <gorfine@nikhef.nl>
+	* src/SctSensor_CTB.cxx: Add support for single sensor.
+
+*** 03/22/05 Grant Gorfine <gorfine@nikhef.nl>
+	* src/SctSensor_CTB.cxx: Add support for standalone setups.
+
+*** 01/06/05 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Also save geantino hits in CTB
+
+*** 09/28/04 Davide Costanzo <DCostanzo@lbl.gov>
+	* Save geantino hits
+	
+2004-08-07 Frederick Luehring <luehring@indiana.edu>:
+	* Fix CLHEP line in requirements file.
+
+*** 7/02/04 Thijs Cornelissen <tgcornel@nikhef.nl>
+	SctSensor_CTB: use barcode.
+
+*** 6/12/04 Thijs Cornelissen <tgcornel@nikhef.nl>
+        SctSensor_CTB: eta=1
+
+*** 4/1/04 Grant Gorfine <gorfine@nikhef.nl>	
+        SctSensor_CTB: Less print out.
+	share/*.mac: Add range cut on delta rays (commented out for full ATLAS)
+	
+*** 2/18/04 Grant Gorfine <gorfine@nikhef.nl>	
+        Adapt to changes in SCT_GeoModel regarding the numbering in 
+	-ve endcap.
+*** 03/08/04 Davide Costanzo <DCostanzo@lbl.gov>
+	Set the max step size to 50 um in the .mac file
+
+*** 02/29/04 Davide Costanzo <DCostanzo@lbl.gov>
+	Get the barcode of the particle using the TrackParticle helper
+*** 2/18/04 Grant Gorfine <gorfine@nikhef.nl>
+	share/sct_ctbsensitive.mac: Uncomment different sensor names.
+*** 1/20/04 Thijs Cornelissen <tgcornel@nikhef.nl>
+	Add SD for testbeam
+*** 11/13/03 Davide Costanzo <DCostanzo@lbl.gov>
+	Use of GeoModel
+*** 11/12/03 Grant Gorfine <gorfine@nikhef.nl>
+        Adapt to copy number changes in geometry, decode endcap phi number
+	to get -ve endcap numbering right.	 
+*** 11/07/03 Davide Costanzo <DCostanzo@lbl.gov>
+	SiHit has a HepPoint3D
+*** 11/06/03 Davide Costanzo <DCostanzo@lbl.gov>
+	back to mm anb MeV
+*** 10/27/03 Davide Costanzo <DCostanzo@lbl.gov>
+	Update G4 macro sctsensitive.mac after repackaging
+*** 10/24/03 Davide Costanzo <DCostanzo@lbl.gov>
+	Change of include file pattern
+*** 10/23/03 Davide Costanzo <DCostanzo@lbl.gov>
+	Somehow forgot the SD for the backward EC
+*** 10/16/03 Davide Costanzo <DCostanzo@lbl.gov>
+	GetMother() method removed
+*** 10/15/03 Davide Costanzo <DCostanzo@lbl.gov>
+		change of inc for AthenaHitsCollectionHelper
+*** 10/13/03 Davide Costanzo <DCostanzo@lbl.gov>
+	restructuring of the hits
+*** 7/14/03 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* Adding this to cvs

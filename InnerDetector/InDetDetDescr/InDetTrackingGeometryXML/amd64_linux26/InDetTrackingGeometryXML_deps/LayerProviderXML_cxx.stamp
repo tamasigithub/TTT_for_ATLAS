@@ -1,0 +1,1 @@
+LayerProviderXML_cxx_dependencies =  ../src/LayerProviderXML.cxx  $(bin)InDetTrackingGeometryXML_deps/LayerProviderXML_cxx.stamp

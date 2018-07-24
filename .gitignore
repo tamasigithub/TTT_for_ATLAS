@@ -1,7 +1,9 @@
 *log
+WorkArea/
+InstallArea/
 GitU/
 run/
-*.root
+*.root*
 *.txt
 *.make
 *.d
