@@ -331,7 +331,8 @@ StatusCode SiSmearedDigitizationTool::digitize() {
       ATH_MSG_DEBUG("Pixel SiDetectorElement --> barrel_ec " << barrelEC << ", layer_disk " << layerDisk << ", phi_module " << phiModule << ", eta_module " << etaModule ); 
             
       if ( !hitSiDetElement) {
-        ATH_MSG_ERROR( " could not get detector SiDetElement");
+        // ATH_MSG_ERROR( " could not get detector SiDetElement");
+	std::cout << "Jike, error in pixelsmearingdigi ... could not get detector SiDetElement ..." << std::endl; 
         continue;
       }
       

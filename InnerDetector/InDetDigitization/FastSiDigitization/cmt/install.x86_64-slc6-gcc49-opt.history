@@ -16,7 +16,7 @@ ssS'../../../InnerDetector/InDetDigitization/FastSiDigitization/x86_64-slc6-gcc4
 p8
 S'../../../../InstallArea/x86_64-slc6-gcc49-opt/lib/libFastSiDigitization.so.debug'
 p9
-sS'../../../../../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/GAUDI/v26r2p3-lcg81f/GaudiPolicy/cmt/fragments/__init__.py'
+sS'../../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/GAUDI/v26r2p3-lcg81f/GaudiPolicy/cmt/fragments/__init__.py'
 p10
 S'../../../../InstallArea/python/FastSiDigitization/__init__.py'
 p11
@@ -24,7 +24,7 @@ sS'../../../InnerDetector/InDetDigitization/FastSiDigitization/x86_64-slc6-gcc49
 p12
 S'../../../../InstallArea/x86_64-slc6-gcc49-opt/lib/libFastSiDigitization.so'
 p13
-sS'../../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/GAUDI/v26r2p3-lcg81f/GaudiPolicy/cmt/fragments/__init__.py'
+sS'../../../../../../../../../../../../cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/GAUDI/v26r2p3-lcg81f/GaudiPolicy/cmt/fragments/__init__.py'
 p14
 S'../../../../InstallArea/python/FastSiDigitization/__init__.py'
 p15

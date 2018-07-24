@@ -672,6 +672,9 @@ StatusCode SCT_SmearedDigitizationTool::createAndStoreRIOs()
       ATH_MSG_WARNING( "Could not add collection to Identifyable container !" );
     }
   } // end for
+
+  std::cout << " m_sctClusterContainer size ... " << m_sctClusterContainer->size() << std::endl; 
+
   ATH_MSG_DEBUG("--- SCT_SmearedDigitizationTool: SCT_ClusterCollection with " << m_nClusters << " sct clusters");
   ATH_MSG_DEBUG("--- SCT_SmearedDigitizationTool: TruthClusterCollection with " << m_nTruthClusters << " clusters");      
   m_sctClusterMap->clear();
