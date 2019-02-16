@@ -1,0 +1,136 @@
+{
+  "cmdLine": "'/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasReconstruction/20.20.10/InstallArea/share/bin/Reco_tf.py' '--geometryVersion' 'default:ATLAS-P2-ITK-20-00-00' '--conditionsTag' 'default:OFLCOND-MC15c-SDR-14-03' '--digiSteeringConf' 'StandardInTimeOnlyTruth' '--numberOfHighPtMinBias' '0.725172' '--preExec' 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={\"run\":242020, \"startmu\":190.0, \"endmu\":210.0, \"stepmu\":1.0, \"startlb\":1, \"timestamp\":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=[\"SimLayout\" , \"PhysicsList\"];digitizationFlags.experimentalDigi += [\"doSmearedPixelDigi\", \"doSmearedSCT_Digi\"]' '--numberOfLowPtMinBias' '209.2692' '--inputLowPtMinbiasHitsFile' '/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/user.tkar/Lowpt.15326819.EXT0._009957.HITS_InclBrl4.pool.root' '--inputHighPtMinbiasHitsFile' '/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/user.tkar/user.tkar.15404978.EXT0._053734.HITS_InclBrl4.pool.root' '--preInclude' 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py' 'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.SiliconOnly.py' 'default:InDetSLHC_Example/preInclude.SLHC.SiliconOnly.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry.py,InDetSLHC_Example/preInclude.RecoSmearedDigi_Pixel.py' '--postInclude' 'all:PyJobTransforms/UseFrontier.py,InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_SmearedPixel.py' '--postExec' 'HITtoRDO:CfgMgr.MessageSvc().setError+=[\"HepMcParticleLink\"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool(\"PixelSmearedDigitizationTool\"); sctdigi= getPublicTool(\"SCT_SmearedDigitizationTool\"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += [\"InDet::SiClusterContainer#PixelClusters\", \"InDet::SiClusterContainer#SCT_Clusters\"] ; topSequence.StreamRDO.ItemList += [\"PRD_MultiTruthCollection#PRD_MultiTruthSCT\", \"xAOD::TruthParticleContainer#*\"] ' '--runNumber=309527' '--DataRunNumber=242020' '--inputHITSFile' './sim_SiOnly/HITS.SiOnlyhh4b.pool.root' '--maxEvents' '3' '--jobNumber' '1' '--outputRDOFile' './digi_SiOnly/RDO1.SiOnlyhh4b.pool.root'", 
+  "created": "2019-02-07T13:49:55", 
+  "executor": [
+    {
+      "asetup": null, 
+      "errMsg": "HITtoRDO got a SIGKILL signal (exit code 137)", 
+      "exeConfig": {
+        "inputs": [
+          "HITS"
+        ], 
+        "outputs": [
+          "RDO"
+        ], 
+        "script": "athena.py", 
+        "substep": "h2r"
+      }, 
+      "logfileReport": {
+        "countSummary": {
+          "CATASTROPHE": 0, 
+          "CRITICAL": 0, 
+          "DEBUG": 0, 
+          "ERROR": 0, 
+          "FATAL": 0, 
+          "IGNORED": 0, 
+          "INFO": 12391, 
+          "UNKNOWN": 41663, 
+          "VERBOSE": 0, 
+          "WARNING": 20
+        }, 
+        "details": {}
+      }, 
+      "metaData": {
+        "[IOVDbGlobalTag": "OFLCOND-MC15c-SDR-14-03]"
+      }, 
+      "name": "HITtoRDO", 
+      "rc": 137, 
+      "statusOK": false, 
+      "validation": false
+    }
+  ], 
+  "exitAcronym": "TRF_EXEC_FAIL", 
+  "exitCode": 65, 
+  "exitMsg": "HITtoRDO got a SIGKILL signal (exit code 137)", 
+  "exitMsgExtra": "", 
+  "files": {
+    "input": [
+      {
+        "dataset": null, 
+        "nentries": 10, 
+        "subFiles": [
+          {
+            "file_guid": "D8287D99-DB33-1741-BCDC-67AEF7C44BD7", 
+            "name": "HITS.SiOnlyhh4b.pool.root"
+          }
+        ], 
+        "type": "HITS"
+      }
+    ], 
+    "output": [
+      {
+        "argName": "outputRDOFile", 
+        "dataset": null, 
+        "subFiles": [
+          {
+            "file_guid": null, 
+            "file_size": null, 
+            "name": "RDO1.SiOnlyhh4b.pool.root", 
+            "nentries": null
+          }
+        ], 
+        "type": "RDO"
+      }
+    ]
+  }, 
+  "name": "Reco_tf", 
+  "reportVersion": "2.0.6", 
+  "resource": {
+    "executor": {
+      "HITtoRDO": {
+        "cpuTime": 203, 
+        "memory": {
+          "Avg": {
+            "avgPSS": 3213009, 
+            "avgRSS": 3216716, 
+            "avgSwap": 692128, 
+            "avgVMEM": 4476381
+          }, 
+          "Max": {
+            "maxPSS": 13475273, 
+            "maxRSS": 13478804, 
+            "maxSwap": 4610088, 
+            "maxVMEM": 18894056
+          }
+        }, 
+        "postExe": {
+          "cpuTime": 6, 
+          "wallTime": 1
+        }, 
+        "preExe": {
+          "cpuTime": 1, 
+          "wallTime": 5
+        }, 
+        "total": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "validation": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "wallTime": 651
+      }
+    }, 
+    "machine": {
+      "cpu_family": "6", 
+      "linux_distribution": [
+        "Scientific Linux CERN SLC", 
+        "6.10", 
+        "Carbon"
+      ], 
+      "model": "60", 
+      "model_name": "Intel Core Processor (Haswell, no TSX, IBRS)", 
+      "node": "lxplus101.cern.ch", 
+      "platform": "Linux-2.6.32-754.10.1.el6.x86_64-x86_64-with-redhat-6.10-Carbon"
+    }, 
+    "transform": {
+      "cpuEfficiency": 0.3208, 
+      "cpuPWEfficiency": 0.0151, 
+      "cpuTime": 10, 
+      "cpuTimeTotal": 0, 
+      "externalCpuTime": 8, 
+      "wallTime": 664
+    }
+  }
+}

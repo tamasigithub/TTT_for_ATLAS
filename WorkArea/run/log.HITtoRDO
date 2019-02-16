@@ -1,0 +1,371 @@
+14:32:19 Mon Jan 21 14:32:18 CET 2019
+14:32:19 Preloading tcmalloc_minimal.so
+14:32:19 Preloading /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/IntelSoftware/linux/x86_64/xe2013/composer_xe_2013.3.163/compiler/lib/intel64/libintlc.so.5:/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/IntelSoftware/linux/x86_64/xe2013/composer_xe_2013.3.163/compiler/lib/intel64/libimf.so
+14:32:21 Py:Athena            INFO including file "AthenaCommon/Preparation.py"
+14:32:22 Py:Athena            INFO using release [AtlasProduction-20.20.10.7] [x86_64-slc6-gcc49-opt] [20.20.X.Y-VAL-Prod/rel_6] -- built on [2017-08-26 00:24]
+14:32:22 Py:Athena            INFO including file "AthenaCommon/Bootstrap.py"
+14:32:22 Py:Athena            INFO including file "AthenaCommon/Atlas.UnixStandardJob.py"
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::MdtPrepData> > > > found in MuonPrepRawDataDict.so  is already in iMuGirlStauDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::CscPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in MuonPrepRawDataDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::MMPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in MuonPrepRawDataDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::MdtPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in iMuGirlStauDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::RpcPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in MuonPrepRawDataDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::TgcPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in MuonPrepRawDataDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  SG::GenericElementLinkBase<SG::IdentContIndexingPolicy<Muon::MuonPrepDataContainer<Muon::MuonPrepDataCollection<Muon::sTgcPrepData> > > > found in MuonRIO_OnTrackDict.so  is already in MuonPrepRawDataDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCS1DFunction found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCSExtrapolationState found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCSParametrization found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCSParametrizationBase found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCSSimulationState found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  TFCSTruthState found in libISF_FastCaloSimEventLib.so  is already in libISF_FastCaloSimParametrizationLib.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  pair<int,float> found in libCore.so  is already in AtlasSTLAddReflexDict.so
+14:32:25 Warning in <TInterpreter::ReadRootmapFile>: class  pair<string,double> found in libCore.so  is already in AtlasSTLAddReflexDict.so
+14:32:26 Py:Athena            INFO executing ROOT6Setup
+14:32:27 [?1034hPy:Athena            INFO including file "AthenaCommon/Execution.py"
+14:32:27 Py:Athena            INFO including file "runargs.HITtoRDO.py"
+14:32:27 WARNING - AttributeError for LowPtMinbiasHitsFile
+14:32:27 WARNING - AttributeError for beamGasHitsFile
+14:32:27 WARNING - AttributeError for cavernHitsFile
+14:32:27 WARNING - AttributeError for HighPtMinbiasHitsFile
+14:32:27 WARNING - AttributeError for beamHaloHitsFile
+14:32:27 Py:Athena            INFO including file "SimuJobTransforms/skeleton.HITtoRDO.py"
+14:32:27 Py:Athena            INFO including file "SimuJobTransforms/CommonSkeletonJobOptions.py"
+14:32:27 stripping _VALIDATION
+14:32:27 Py:Digi_tf           INFO ****************** STARTING DIGITIZATION *****************
+14:32:27 Py:Digi_tf           INFO **** Transformation run arguments
+14:32:27 Py:Digi_tf           INFO RunArguments:
+14:32:27    DataRunNumber = 242000
+14:32:27    HITSFileIO = 'input'
+14:32:27    conditionsTag = 'OFLCOND-MC15c-SDR-14-03'
+14:32:27    digiSteeringConf = 'StandardInTimeOnlyTruth'
+14:32:27    geometryVersion = 'ATLAS-P2-ITK-20-00-00'
+14:32:27    inputHITSFile = ['/afs/cern.ch/work/t/tkar/public/CMOS-Triplet-SimDigi/WorkArea/run/files/HITS.12807745._000010.pool.root']
+14:32:27    inputHITSFileNentries = 20L
+14:32:27    inputHITSFileType = 'HITS'
+14:32:27    maxEvents = 10
+14:32:27    outputRDOFile = './digi_files/RDO.12807745._000010SiOnly.pool.root'
+14:32:27    outputRDOFileType = 'RDO'
+14:32:27    postExec = ['CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"] ']
+14:32:27    postInclude = ['PyJobTransforms/UseFrontier.py', 'InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py', 'InDetSLHC_Example/postInclude.SLHC_Digitization_SmearedPixel.py']
+14:32:27    preExec = ['rec.doTrigger.set_Value_and_Lock(False); from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)', 'from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]']
+14:32:27    preInclude = ['InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py', 'InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py', 'InDetSLHC_Example/preInclude.SLHC.py', 'InDetSLHC_Example/preInclude.SiliconOnly.py']
+14:32:27    trfSubstepName = 'HITtoRDO'
+14:32:27 Py:Digi_tf           INFO transform pre-exec
+14:32:27 Py:Digi_tf           INFO rec.doTrigger.set_Value_and_Lock(False); from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)
+14:32:28 Py:Digi_tf           INFO from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]
+14:32:28 Py:Athena            INFO including file "InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py"
+14:32:28 Data source lookup using /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasCore/20.20.10/InstallArea/XML/AtlasAuthentication/dblookup.xml file
+14:32:30 SetGeometryVersion.py obtained major release version 20
+14:32:30 WARNING! No recognised value of SLHC_Flags.LayoutOption found. (SLHC_Flags.LayoutOption =      |- LayoutOption = '' ) In this case the Step 1.7 Inclined layout will be used.
+14:32:30 ['IdDictFileName', 'Initialized', 'InnerLayerIndices', 'PixelBarrelLayout', 'PixelEndcapLayout', 'SCTBarrelLayout', 'SCTEndcapLayout', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__name__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_context_name', '_locked', '_log', '_nInstancesContextList', 'addBCL', 'add_Container', 'add_JobProperty', 'del_Container', 'del_JobProperty', 'doPix', 'doSCT', 'dump', 'help', 'import_Flags', 'import_JobProperties', 'isGMX', 'isRingLayout', 'is_locked', 'lock_JobProperties', 'print_JobProperties', 'readXMLfromDB', 'setValuesFromSetup', 'set_JobProperties', 'splitBarrelLayers', 'unlock_JobProperties']
+14:32:30 *******************************************************************************************
+14:32:30 *******************************************************************************************
+14:32:30 *******************************************************************************************
+14:32:30 another keyword arg: dictionaryFileName: InDetIdDictFiles/IdDictInnerDetector_SLHC_InclBrl_4.xml
+14:32:30 another keyword arg: PixelLayout: InclBrl4Ref
+14:32:30 another keyword arg: isGMX: True
+14:32:30 another keyword arg: createXML: True
+14:32:30 another keyword arg: PixelEndcapLayout: ECRing4Ref
+14:32:30 another keyword arg: doSCT: True
+14:32:30 another keyword arg: doPix: True
+14:32:30 another keyword arg: SCTLayout: FourLayersNoStub_23-25-dev0
+14:32:30 **** FLAGS **************************************************
+14:32:30 XMLReaderFlags setup :
+14:32:30    SCTEndcapLayout: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/FourLayersNoStub_23-25-dev0_SCTEndcap.xml
+14:32:30    PixelBarrelLayout: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/InclBrl4Ref_PixelBarrel.xml
+14:32:30    isGMX: True
+14:32:30    PixelEndcapLayout: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/ECRing4Ref_PixelEndcap.xml
+14:32:30    doSCT: True
+14:32:30    addBCL: False
+14:32:30    doPix: True
+14:32:30    readXMLfromDB: False
+14:32:30    SCTBarrelLayout: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/FourLayersNoStub_23-25-dev0_SCTBarrel.xml
+14:32:30 Pixel =  /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/InclBrl4Ref_PixelBarrel.xml   /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/ECRing4Ref_PixelEndcap.xml
+14:32:30 SCT   =  /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/FourLayersNoStub_23-25-dev0_SCTBarrel.xml   /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasConditions/20.20.10/InstallArea/share/FourLayersNoStub_23-25-dev0_SCTEndcap.xml
+14:32:30 ID    =>  doPixel       |- doPix = True   doSCT       |- doSCT = True   isGMX       |- isGMX = True (Default: False)   addBCL       |- addBCL = False
+14:32:30 splitBarrel  :  True
+14:32:30 isRingLayout :  True
+14:32:30 InnerLayer   :  [0, 1]
+14:32:30 DB-CLOB      :  False
+14:32:30 ******************************************************
+14:32:30 Py:Athena            INFO including file "InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py"
+14:32:30 Py:JobProperty ::    INFO The JobProperty doGMX is blocked
+14:32:37 Py:ConfiguredFactory    INFO imported 115 confDb modules in 6.82 seconds
+14:32:37 Py:ConfigurableDb    INFO Read module info for 5210 configurables from 11 genConfDb files
+14:32:37 Py:ConfigurableDb WARNING Found 1 duplicates among the 11 genConfDb files :
+14:32:37 Py:ConfigurableDb WARNING --------------------------------------------------
+14:32:37 Py:ConfigurableDb WARNING   -<component name>: <module> - [ <duplicates> ]
+14:32:37 Py:ConfigurableDb WARNING --------------------------------------------------
+14:32:37 Py:ConfigurableDb WARNING   -SiHitAnalysis: SiHitAnalysis.SiHitAnalysisConf - ['HitAnalysis.HitAnalysisConf']
+14:32:37 Py:ConfigurableDb WARNING Fix your cmt/requirements file !!
+14:32:37 Py:Athena            INFO including file "InDetSLHC_Example/preInclude.SLHC.py"
+14:32:37 Py:Athena            INFO including file "InDetSLHC_Example/preInclude.SiliconOnly.py"
+14:32:37 Py:Digi_tf           INFO Changing digitizationFlags.digiSteeringConf from StandardPileUpToolsAlg to StandardInTimeOnlyTruth
+14:32:37 Py:Digi_tf           INFO NB Some pile-up (re-)configuration was done on the command-line.
+14:32:37 Py:Digi_tf        WARNING digiSeedOffset1 not set
+14:32:37 Py:Digi_tf        WARNING digiSeedOffset2 not set
+14:32:37               : bpipe pixel   SCT   TRT   BCM   DBM Lucid   ZDC  ALFA   AFP FwdRegion    em   HEC  FCal  Tile  HGTD   MDT   CSC   TGC   RPC  sTGC Micromegas Truth  LVL1 BField   FTK
+14:32:37           dcs :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37      detdescr :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37      digitize :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37      geometry :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37       haveRDO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37       haveRIO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37       makeRIO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37       overlay :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37        pileup :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37     readRDOBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37   readRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37     readRIOBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37   readRIOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37      simulate :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37  simulateLVL1 :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37       writeBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37  writeRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37  writeRIOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:37 Py:Digi_tf           INFO Overriding run number to be: 242000
+14:32:38 Py:Athena            INFO including file "Digitization/Digitization.py"
+14:32:38 Py:JobProperty ::    INFO The JobProperty InputFormat is blocked
+14:32:38 Py:Digitization   WARNING DetFlags already defined! This means DetFlags should have been fully configured already..
+14:32:38               : bpipe pixel   SCT   TRT   BCM   DBM Lucid   ZDC  ALFA   AFP FwdRegion    em   HEC  FCal  Tile  HGTD   MDT   CSC   TGC   RPC  sTGC Micromegas Truth  LVL1 BField   FTK
+14:32:38           dcs :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      detdescr :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      digitize :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      geometry :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       haveRDO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       haveRIO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       makeRIO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       overlay :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38        pileup :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38     readRDOBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38   readRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38     readRIOBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38   readRIOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      simulate :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38  simulateLVL1 :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       writeBS :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38  writeRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38  writeRIOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38               : bpipe pixel   SCT   TRT   BCM   DBM Lucid   ZDC  ALFA   AFP FwdRegion    em   HEC  FCal  Tile  HGTD   MDT   CSC   TGC   RPC  sTGC Micromegas Truth  LVL1 BField   FTK
+14:32:38           dcs :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      detdescr :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      digitize :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38      geometry :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       haveRDO :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       haveRIO :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38       makeRIO :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38       overlay :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38        pileup :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38     readRDOBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38   readRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38     readRIOBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38   readRIOPool :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38      simulate :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38  simulateLVL1 :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38       writeBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38  writeRDOPool :    ON    ON    ON    --    ON    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:32:38  writeRIOPool :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:32:38 Py:Digitization      INFO Global jobProperties values:
+14:32:38 Py:JobProperty ::    INFO  x-> JobProperties.Global.ConditionsTag = 'OFLCOND-MC15c-SDR-14-03'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Global.DataSource = 'geant4'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Global.DatabaseInstance = 'auto'
+14:32:38 Py:JobProperty ::    INFO  x-> JobProperties.Global.DetDescrVersion = 'ATLAS-P2-ITK-20-00-00'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Global.DetGeo = 'atlas'
+14:32:38 Py:JobProperty ::    INFO  x-> JobProperties.Global.InputFormat = 'pool'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Global.Luminosity = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Global.isOverlay = False
+14:32:38 Py:Digitization      INFO Digitization jobProperties values:
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.BeamIntensityPattern = 'None'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.FixedT0BunchCrossing = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.HighPtMinBiasInputCols = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.IOVDbGlobalTag = 'OFLCOND-MC15c-SDR-14-03'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.LowPtMinBiasInputCols = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.RunAndLumiOverrideList = 'None'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.SignalPatternForSteppingCache = 'None'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.SimG4VersionUsed = 'not_specified'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.TRTRangeCut = 0.05
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.beamGasInputCols = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.beamHaloInputCols = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.bunchSpacing = 25
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.cavernIgnoresBeamInt = True
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.cavernInputCols = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.dataRunNumber = 242000
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.digiSteeringConf = 'StandardInTimeOnlyTruthPileUpToolsAlg'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doBeamGas = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doBeamHalo = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doBichselSimulation = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doCaloNoise = True
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doCavern = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doFwdNoise = True
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doHighPtMinBias = False
+14:32:38 Py:JobProperty ::    INFO  x-> JobProperties.Digitization.doInDetNoise = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doLowPtMinBias = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doMuonNoise = True
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doRadiationDamage = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.doXingByXingPileUp = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.experimentalDigi = ['doSmearedPixelDigi', 'doSmearedSCT_Digi']
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.finalBunchCrossing = 6
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.initialBunchCrossing = -32
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfBeamGas = 0.0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfBeamHalo = 0.0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfCavern = 0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfCollisions = 0.0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfHighPtMinBias = 0.0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.numberOfLowPtMinBias = 0.0
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.overrideMetadata = ['SimLayout', 'PhysicsList']
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.physicsList = 'QGSP_BERT'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.readSeedsFromFile = False
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.rndmSeedInputFile = 'AtRanluxGenSvc.in'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.rndmSeedList = []
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.rndmSeedOffset1 = 1
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.rndmSeedOffset2 = 2
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.rndmSvc = 'AtDSFMTGenSvc'
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.simRunNumber = None
+14:32:38 Py:JobProperty ::    INFO  --> JobProperties.Digitization.specialConfiguration = None
+14:32:38 Py:DigitizationReadMetadata    INFO Checking for Signal Simulation MetaData...
+14:32:40 Py:AthFile           INFO loading cache from [athfile-cache.ascii.gz]...
+14:32:40 Py:AthFile           INFO loading cache from [athfile-cache.ascii.gz]... [done]
+14:32:45 Py:AthFile           INFO opening [/afs/cern.ch/work/t/tkar/public/CMOS-Triplet-SimDigi/WorkArea/run/files/HITS.12807745._000010.pool.root]...
+14:34:15 Py:DigitizationFlags    INFO Found Run Number 242000 in hits file metadata.
+14:34:21 Py:DigitizationReadMetadata    INFO specialConfiguration directive: NONE
+14:34:21 Py:DigitizationReadMetadata    INFO Checking Digitization properties against Signal Simulation MetaData...
+14:34:21 Py:DigitizationReadMetadata    INFO Digitization properties: [IOVDbGlobalTag = OFLCOND-MC15c-SDR-14-03], Signal Simulation MetaData: [IOVDbGlobalTag = OFLCOND-MC15c-SDR-14-03]
+14:34:21 Py:DigitizationReadMetadata    INFO Ensured 10 sub-detectors which were not simulated were switched off: ['TRT', 'BCM', 'Lucid', 'ZDC', 'ALFA', 'AFP', 'FwdRegion', 'HGTD', 'Micromegas', 'sTGC']
+14:34:21               : bpipe pixel   SCT   TRT   BCM   DBM Lucid   ZDC  ALFA   AFP FwdRegion    em   HEC  FCal  Tile  HGTD   MDT   CSC   TGC   RPC  sTGC Micromegas Truth  LVL1 BField   FTK
+14:34:21           dcs :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21      detdescr :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21      digitize :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21      geometry :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21       haveRDO :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21       haveRIO :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21       makeRIO :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21       overlay :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21        pileup :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21     readRDOBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21   readRDOPool :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21     readRIOBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21   readRIOPool :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21      simulate :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21  simulateLVL1 :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21       writeBS :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21  writeRDOPool :    ON    ON    ON    --    --    ON    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    ON    --     --    --
+14:34:21  writeRIOPool :    --    --    --    --    --    --    --    --    --    --        --    --    --    --    --    --    --    --    --    --    --         --    --    --     --    --
+14:34:21 Py:DigitizationReadMetadata    INFO Completed checks of Digitization properties against Signal Simulation MetaData.
+14:34:21 Py:DigitizationReadMetadata    INFO Completed all checks against Signal Simulation MetaData.
+14:34:21 Py:Athena            INFO including file "Digitization/ConfigDigitization.py"
+14:34:22 Py:Athena            INFO including file "IdDictDetDescrCnv/IdDictDetDescrCnv_joboptions.py"
+14:34:23 EventInfoMgtInit: Got release version  AtlasProduction-20.20.10.7
+14:34:23 Py:IOVDbSvc.CondDB    INFO Setting up conditions DB access to instance OFLP200
+14:34:24 GEOTYPE :  Inclined_Duals   none
+14:34:24 Py:Athena            INFO Importing MagFieldServices.SetupField
+14:34:24 Py:Athena            INFO Importing MagFieldServices.MagFieldServicesConfig
+14:34:24 Py:Athena            INFO including file "Digitization/RunNumberOverride.py"
+14:34:24 Py:Digitization      INFO Overriding run number to be: 242000
+14:34:24 Py:JobProperty :: WARNING You are attempting to access the jobproperty JobProperties.Digitization.RunAndLumiOverrideList which has not been set
+14:34:24 Py:JobProperty :: WARNING You are attempting to access the jobproperty JobProperties.Digitization.RunAndLumiOverrideList which has not been set
+14:34:24 Py:DigiConfigChecker    INFO Beam jobProperties values:
+14:34:24 Py:JobProperty ::    INFO  --> JobProperties.Beam.beamType = 'collisions'
+14:34:24 Py:JobProperty ::    INFO  --> JobProperties.Beam.bunchSpacing = 50
+14:34:24 Py:JobProperty ::    INFO  --> JobProperties.Beam.energy = 7000000.0
+14:34:24 Py:JobProperty ::    INFO  --> JobProperties.Beam.numberOfCollisions = 0.0
+14:34:24 Py:JobProperty ::    INFO  --> JobProperties.Beam.override = True
+14:34:24 Py:DigiConfigChecker    INFO Not using Bunch Structure, so setting jobproperties.Beam.bunchSpacing equal to digitizationFlags.bunchSpacing.
+14:34:24 Py:JobPropertyContainer::    INFO Locked all Digitization JobProperties except ['rndmSeedList'].
+14:34:24 Py:Athena            INFO including file "Digitization/DetectorDigitization.py"
+14:34:24 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasSimulation/20.20.10/InstallArea/python/Digitization/DigiAlgConfig.py:7: SyntaxWarning: import * only allowed at module level
+14:34:24   def getTestPileUpTool(name="TestPileUpTool", **kwargs):
+14:34:24 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasSimulation/20.20.10/InstallArea/python/Digitization/DigiAlgConfig.py:14: SyntaxWarning: import * only allowed at module level
+14:34:24   def getTestFilterPileUpTool(name="TestFilterPileUpTool", **kwargs):
+14:34:24 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasSimulation/20.20.10/InstallArea/python/Digitization/DigiAlgConfig.py:417: SyntaxWarning: import * only allowed at module level
+14:34:24   def getTestPileUpToolsAlg(name="TestPileUpToolsAlg", **kwargs):
+14:34:24 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasSimulation/20.20.10/InstallArea/python/Digitization/DigiAlgConfig.py:424: SyntaxWarning: import * only allowed at module level
+14:34:24   def getTestFilterPileUpToolsAlg(name="TestFilterPileUpToolsAlg", **kwargs):
+14:34:24 /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasSimulation/20.20.10/InstallArea/python/Digitization/DigiAlgConfig.py:431: SyntaxWarning: import * only allowed at module level
+14:34:24   def getTestTruthJetFilterPileUpToolsAlg(name="TestTruthJetFilterPileUpToolsAlg", **kwargs):
+14:34:24 Py:DigitizationFlags    INFO Adding Digitization random number seed 'FastPixelDigitization OFFSET 3 10513239 492615104'
+14:34:25 Py:DigitizationFlags    INFO Adding Digitization random number seed 'SCT_Digitization OFFSET 3 49261510 105132394'
+14:34:25 SCT_Digitization:::: Turned off Noise in SCT_FrontEnd
+14:34:25 Py:Athena            INFO including file "Digitization/InDetDigitization.py"
+14:34:25 Py:Athena            INFO including file "Digitization/LVL1Digitization.py"
+14:34:26 Py:DigitizationFlags    INFO Adding Digitization random number seed stored in jobProperties to Random Number Service 'AtDSFMTGenSvc'
+14:34:26 Py:DigitizationFlags    INFO Random Number Seeds stored in digitization jobProperty: ['FastPixelDigitization OFFSET 3 10513239 492615104', 'SCT_Digitization OFFSET 3 49261510 105132394']
+14:34:26 Py:DigitizationFlags    INFO Random Number Seeds attached to Service 'AtDSFMTGenSvc': ['FastPixelDigitization OFFSET 3 10513239 492615104', 'SCT_Digitization OFFSET 3 49261510 105132394']
+14:34:26 Py:Digitization      INFO Digitization Configured Successfully.
+14:34:26 Py:JobPropertyContainer::    INFO The JobProperty Container Digitization is locked
+14:34:26 Py:Athena         WARNING PyCintex imported (replace with import cppyy) from: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/lcg/releases/LCG_81f/COOL/3_1_0/x86_64-slc6-gcc49-opt/python/PyCool/__init__.py:12
+14:34:28 Py:Athena         WARNING PyCintex imported (replace with import cppyy) from: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/lcg/releases/LCG_81f/COOL/3_1_0/x86_64-slc6-gcc49-opt/python/PyCool/_internal/definitions.py:22
+14:34:28 Py:Athena         WARNING PyCintex imported (replace with import cppyy) from: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/lcg/releases/LCG_81f/COOL/3_1_0/x86_64-slc6-gcc49-opt/python/PyCool/_internal/instrumentation.py:8
+14:34:28 Py:Athena         WARNING PyCintex imported (replace with import cppyy) from: /cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/sw/lcg/releases/LCG_81f/COOL/3_1_0/x86_64-slc6-gcc49-opt/python/PyCool/_internal/instrumentation.py:10
+14:34:36 Py:DigitizationWriteMetadata    INFO Setting the  Digitization MetaData IOV from the IOVDbMetaDataTool
+14:34:36 Py:DigitizationWriteMetadata    INFO Filling Digitization MetaData
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doInDetNoise" to be False
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doCaloNoise" to be True
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doMuonNoise" to be True
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "bunchSpacing" to be 25
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "initialBunchCrossing" to be -32
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "finalBunchCrossing" to be 6
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doCavern" to be False
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doBeamGas" to be False
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "doBeamHalo" to be False
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "rndmSvc" to be AtDSFMTGenSvc
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "physicsList" to be QGSP_BERT
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "overrideMetadata" to be ['SimLayout', 'PhysicsList']
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "BeamIntensityPattern" to be None
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "beamType" to be collisions
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "intraTrainBunchSpacing" to be 25
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "IOVDbGlobalTag" to be OFLCOND-MC15c-SDR-14-03
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting N_LowPtMinBiasInputFiles to be 0
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting N_HighPtMinBiasInputFiles to be 0
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting N_cavernInputFiles to be 0
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting N_beamGasInputFiles to be 0
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting N_beamHaloInputFiles to be 0
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "DetDescrVersion" to be ATLAS-P2-ITK-20-00-00
+14:34:36 Py:DigitizationWriteMetadata    INFO DigitizationMetaData: setting "lvl1TriggerMenu" to be NONE
+14:34:36 Py:DigitizationWriteMetadata    INFO Setting 'DigitizedDetectors' = ['pixel', 'SCT', 'Truth']
+14:34:39 ParameterDbFiller.genDb:  Removed db DigitParams.db
+14:34:39 ParameterDbFiller.genDb:  Recording parameters [physicsList (String4k) : QGSP_BERT], [N_beamGasInputFiles (String4k) : 0], [doBeamHalo (String4k) : False], [intraTrainBunchSpacing (String4k) : 25], [N_cavernInputFiles (String4k) : 0], [overrideMetadata (String4k) : ['SimLayout', 'PhysicsList']], [doCavern (String4k) : False], [IOVDbGlobalTag (String4k) : OFLCOND-MC15c-SDR-14-03], [beamType (String4k) : collisions], [initialBunchCrossing (String4k) : -32], [doCaloNoise (String4k) : True], [rndmSvc (String4k) : AtDSFMTGenSvc], [DigitizedDetectors (String4k) : ['pixel', 'SCT', 'Truth']], [RunAndLumiAreOverriden (String4k) : False], [bunchSpacing (String4k) : 25], [doMuonNoise (String4k) : True], [doInDetNoise (String4k) : False], [N_HighPtMinBiasInputFiles (String4k) : 0], [N_beamHaloInputFiles (String4k) : 0], [finalBunchCrossing (String4k) : 6], [doBeamGas (String4k) : False], [N_LowPtMinBiasInputFiles (String4k) : 0], [DetDescrVersion (String4k) : ATLAS-P2-ITK-20-00-00], [lvl1TriggerMenu (String4k) : NONE], [BeamIntensityPattern (String64k) : None]
+14:34:39 ParameterDbFiller.genDb:  Stored object
+14:34:39 ParameterDbFiller.dumpDb:  Dumping database: sqlite://;schema=DigitParams.db;dbname=DIGPARAM
+14:34:39 ParameterDbFiller.dumpDb:  Dumping folder /Digitization/Parameters
+14:34:39 ParameterDbFiller.dumpDb:  number of IOV payloads 1
+14:34:39 ParameterDbFiller.dumpDb:  Payload 0 since [r,l]: [ 242000 , 0 ] until [r,l]: [ 242001 , 0 ] payload [physicsList (String4k) : QGSP_BERT], [N_beamGasInputFiles (String4k) : 0], [doBeamHalo (String4k) : False], [intraTrainBunchSpacing (String4k) : 25], [N_cavernInputFiles (String4k) : 0], [overrideMetadata (String4k) : ['SimLayout', 'PhysicsList']], [doCavern (String4k) : False], [IOVDbGlobalTag (String4k) : OFLCOND-MC15c-SDR-14-03], [beamType (String4k) : collisions], [initialBunchCrossing (String4k) : -32], [doCaloNoise (String4k) : True], [rndmSvc (String4k) : AtDSFMTGenSvc], [DigitizedDetectors (String4k) : ['pixel', 'SCT', 'Truth']], [RunAndLumiAreOverriden (String4k) : False], [bunchSpacing (String4k) : 25], [doMuonNoise (String4k) : True], [doInDetNoise (String4k) : False], [N_HighPtMinBiasInputFiles (String4k) : 0], [N_beamHaloInputFiles (String4k) : 0], [finalBunchCrossing (String4k) : 6], [doBeamGas (String4k) : False], [N_LowPtMinBiasInputFiles (String4k) : 0], [DetDescrVersion (String4k) : ATLAS-P2-ITK-20-00-00], [lvl1TriggerMenu (String4k) : NONE], [BeamIntensityPattern (String64k) : None] chan 0
+14:34:39 Py:Athena            INFO including file "PyJobTransforms/UseFrontier.py"
+14:34:39 UseFrontier.py: Enabling FRONTIER DB access
+14:34:39 Py:Athena            INFO including file "InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py"
+14:34:40 SLHC_Setup: Geometry coming fully from database
+14:34:40 ENV  PIXEL_SILICONMODULES_GEO_XML   ITK_PixelModules.xml
+14:34:40 ENV  PIXEL_PIXELSIMPLESERVICE_GEO_XML   InclBrl_PixelSimpleService.xml
+14:34:40 ENV  PIXEL_MATERIAL_GEO_XML   InclBrl_Material.xml
+14:34:40 ENV  PIXEL_PIXELROUTINGSERVICE_GEO_XML   InclBrl4_PixelRoutingService.xml
+14:34:40 ENV  PIXEL_PIXELDISCSUPPORT_GEO_XML   InclBrl4_DiskSupport.xml
+14:34:40 ENV  PIXEL_SILICONREADOUT_GEO_XML   PixelModuleReadout.xml
+14:34:40 ENV  PIXEL_PIXELGENERAL_GEO_XML   InclBrl4_PixelGeneral.xml
+14:34:40 ENV  PIXEL_STAVESUPPORT_GEO_XML   InclBrl4_StaveSupport.xml
+14:34:40 ******************************************************************************************
+14:34:40 PixelGeoModel - import module and design tools
+14:34:40 ******************************************************************************************
+14:34:40 PixelGeoModel - import PixelServiceTool
+14:34:40 ******************************************************************************************
+14:34:40 PixelGeoModel - import GeoPixelLayerInclRefTool
+14:34:40 PixelGeoModel - import GeoPixelBarrelInclRefTool
+14:34:40 ******************************************************************************************
+14:34:40 PixelGeoModel - import GeoPixelLayerECRingRefTool
+14:34:40 PixelGeoModel - import GeoPixelEndcapECRingRefTool
+14:34:40 ******************************************************************************************
+14:34:40 PixelGeoModel - import GeoPixelEnvelopeInclRefTool
+14:34:40 ******************************************************************************************
+14:34:40 Py:Athena            INFO including file "InDetSLHC_Example/postInclude.SLHC_Setup_Common.py"
+14:34:40 Py:Athena            INFO including file "PyJobTransforms/UseFrontier.py"
+14:34:40 UseFrontier.py: Enabling FRONTIER DB access
+14:34:40 Forcing the SiliconConditionsSvc to use GeoModel
+14:34:40 Py:Athena            INFO including file "InDetSLHC_Example/postInclude.SLHC_Digitization_SmearedPixel.py"
+14:34:40 Py:Athena            INFO including file "PixelConditionsServices/PixelCalibSvc_jobOptions.py"
+14:34:40 Py:Digi_tf           INFO transform post-exec
+14:34:40 Py:Digi_tf           INFO CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"]
+14:34:40 Py:ConfigurableDb WARNING : Class SCT_SmearedDigitizationTool not in database
+14:34:40 Shortened traceback (most recent user call last):
+14:34:40   File "/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasProduction/20.20.10.7/InstallArea/jobOptions/SimuJobTransforms/skeleton.HITtoRDO.py", line 481, in <module>
+14:34:40     exec(cmd)
+14:34:40   File "<string>", line 1, in <module>
+14:34:40 ConfigurationError: Public Tool 'SCT_SmearedDigitizationTool' not found
+14:34:40 Py:Athena            INFO leaving with code 8: "an unknown exception occurred"

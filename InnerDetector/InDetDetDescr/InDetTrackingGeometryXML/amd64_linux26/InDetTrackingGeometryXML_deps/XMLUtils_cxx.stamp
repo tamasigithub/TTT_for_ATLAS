@@ -1,0 +1,1 @@
+XMLUtils_cxx_dependencies =  ../src/XMLUtils.cxx  $(bin)InDetTrackingGeometryXML_deps/XMLUtils_cxx.stamp

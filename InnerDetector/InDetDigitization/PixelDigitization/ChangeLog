@@ -1,0 +1,1402 @@
+2016-10-27 Noemi Calace <noemi.calace@cern.ch
+	* Bug fix in PixelLightDigitizationTool
+	* Tagged as PixelDigitization-02-00-20-18
+
+2016-09-30 Simon Viel
+	* obo Soshi Tsuno
+        * disable SpecialPixelMapGenerator for ITk in PixelDigitizationConfig.py
+	* Tagged as PixelDigitization-02-00-20-17
+
+2016-09-14 Noemi Calace <noemi.calace@cern.ch
+	* Updating PixelLightDigitizationTool for ITk purpose
+	* Tagged as PixelDigitization-02-00-20-16
+
+2016-08-29 Noemi Calace <noemi.calace@cern.ch
+	* Updating PixelLightDigitizationTool for ITk purpose
+	* Adding a flag to turn on/off the Lorentz angle
+	* Tagged as PixelDigitization-02-00-20-14 and PixelDigitization-02-00-20-15
+
+2016-08-26 Simon Viel
+        * Removed doITk flag except in SurfaceChargesTool, as in PixelDigitization-02-03-10
+        * Permanent fix for ATLASRECTS-3294 in PixelNoisyCellGenerator::addCell
+              The temporary fix was only good for chips with 336 rows
+        * Tagged as PixelDigitization-02-00-20-13
+
+2016-08-17 Noemi Calace <noemi.calace@cern.ch
+	* Updating PixelLightDigitizationTool for ITk purpose
+	* Bug fix in PixelDigitization-02-00-20-12
+	* Tagged as PixelDigitization-02-00-20-11 and PixelDigitization-02-00-20-12
+
+2016-07-28 Noemi Calace <noemi.calace@cern.ch
+	* Adding new PixelLightDigitizationTool for ITk purpose
+	* Tagged as PixelDigitization-02-00-20-10
+
+2016-05-27 Iain Bertram <iain.bertram@cern.ch>
+	* Fix logic mistake in PixelDigitizationConfig.py for cosmics 20.7 branch 
+	* [ATLASSIM-2803]
+	* Tagged as PixelDigitization-02-00-20-09
+
+2016-04-12  Fares Djama
+
+	* Quick fix to ATLASSIM-2719
+	* Issue: do not jump over non existing ganged pixels in IBL in noise generator class
+	* Need a more elegant fix
+	* Tagging as PixelDigitization-02-00-20-08
+
+2016-04-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py (BasicPixelDigitizationTool):
+	now matches the version of this method in
+	PixelDigitization-02-00-20-04
+	* Tagging as PixelDigitization-02-00-20-07
+
+2016-04-12 Noemi Calace <noemi.calace@cern.ch>
+	* ServiceMgr.PixelLorentzAngleSvc.ITkLayout = True moved to the postInclude of the single layouts
+	    together with the lorentzAngleSvc.forceUseGeoModel() 
+	* Added in InDetSLHC_Example-00-01-90
+	* Tagging as PixelDigitization-02-00-20-06
+
+2016-04-08 Noemi Calace <noemi.calace@cern.ch>
+	* Fixing configuration for the LorentzAngleSvc when running with ITk
+	* ServiceMgr.PixelLorentzAngleSvc.ITkLayout = True
+	* partial fix for d0 bias, ATLASRECTS-3027
+	* also need to call lorentzAngleSvc.forceUseGeoModel() when configuring FastGeoModel layouts
+	* Tagging as PixelDigitization-02-00-20-05
+
+2016-04-05  John Chapman  <John.Chapman@cern.ch>
+
+	* src/Ibl3DBichselChargeTool.cxx (Ibl3DBichselChargeTool): reorder
+	initialization of member variables to remove build warning.
+	(charge): comment out unused m_isRealBichsel variable to get rid
+	of build warning.
+	* Tagged as PixelDigitization-02-00-20-04
+
+2016-03-23 Magda Chelstowska <magdac@cern.ch>
+	* Fixed Pixel Cabling for Run1 digi (obo John Chapman) ATLASSIM-2680
+	* Tagged as PixelDigitization-02-00-20-03
+	
+2016-02-17  John Chapman  <John.Chapman@cern.ch>
+	* Revert changes from PixelDigitization-02-00-20-01
+	* Merge in changes from PixelDigitization-02-00-22-04 without the
+	changes from PixelDigitization-02-00-21. ATLASSIM-2593
+        * Set doITk flags consistently using GeometryFlags.isSLHC()
+        * SurfaceChargeTool: Use IBL planar modules everywhere if doITk
+	for now
+        * Added more debug statements
+        * src/PixelDigitizationTool.cxx - Use "at" to protect against
+	range errors. Allow for more pixel barrel layers, also assign
+	PixRegion = 6. Hits are dropped based on maxToT or minToT only by
+	FEI3.
+	* src/PixelDigitizationTool.h, src/PixelCellDiscriminator.h,
+	src/PixelDigitizationTool.cxx, src/PixelCellDiscriminator.cxx,
+	src/TimeSvc.cxx - Fixes for ITk using new "doITk" flag, if enabled
+	then: PixRegion is compatible with 5 pixel barrel layers
+	Hit-copying is turned off Time-walk simulation is turned off
+	* add share/Bichsel_1.dat, share/Bichsel_2.dat,
+	share/Bichsel_3.dat, share/Bichsel_4.dat, share/Bichsel_5.dat,
+	share/Bichsel_6.dat - new runtime files
+	* cmt/requirements - register new runtime files, add use statement
+	for PathResolver.
+	* add src/BichselSimTool.cxx, src/BichselSimTool.h,
+	src/Ibl3DBichselChargeTool.cxx, src/Ibl3DBichselChargeTool.h,
+	src/IblPlanarBichselChargeTool.cxx,
+	src/IblPlanarBichselChargeTool.h,
+	src/PixelBarrelBichselChargeTool.cxx,
+	src/PixelBarrelBichselChargeTool.h,
+	src/PixelECBichselChargeTool.cxx, src/PixelECBichselChargeTool.h -
+	add new classes for simulating the Bichsel model.
+	* src/components/PixelDigitization_entries.cxx - add new tools.
+	* python/PixelDigitizationConfig.py,
+	python/PixelDigitizationConfigDb.py - CfgGetter methods for the new tools. ATLIDTRKCP-50
+	* tagged as PixelDigitization-02-00-20-02
+
+2016-01-26  John Chapman  <John.Chapman@cern.ch>
+	* src/PixelDigitizationTool.h,
+	src/PixelDigitizationTool.cxx (processBunchXing): update to use
+	xAODEventInfo rather than PileUpEventInfo. ATLASSIM-2231. Requires
+	PileUpTools-01-18-00 or later. ATLASSIM-2122
+	* cmt/requirements - add use statement for
+	xAODEventInfo. ATLASSIM-2231
+	* tagged as PixelDigitization-02-00-20-01
+
+2015-11-17 Fares Djama
+	* Set default value of latency in B layer to 150
+	* tagged as PixelDigitization-02-00-20
+
+2015-11-04 Goetz Gaycken
+	* Correct test when not to use the offline calib svc.
+
+2015-11-03 Goetz Gaycken
+	* Allow to run without an offline calib svc. This wil set the
+	  IBL overflow value to the maximum of 16.
+
+2015-11-03 Silvia Miglioranzi <silviam@mail.cern.ch>
+	* src/Ibl3DChargeTool.cxx
+	fix the correct granularity for the IBL3d charge probability map
+	* tagged as PixelDigitization-02-00-17
+	
+2015-10-23 Fares Djama
+	* HitDiscCnfg read from COOL folder /PIXEL/HitDiscCnfg
+	* tagged as PixelDigitization-02-00-16
+
+2015-10-12  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py -
+	PixelOverlayDigitizationTool: use overlay flags to set
+	EvtStore. ATLASSIM-1922.
+	* tagged as PixelDigitization-02-00-15
+
+2015-10-02 Fares Djama
+	* Implement FE-I4 copy mechanism for small hits.
+	* HitDiscCnfg folder not ready yet: HitDiscCnfg put manually to 2. Will fix once folders are available. 
+	* tagged as PixelDigitization-02-00-14
+
+2015-09-24 Fares Djama
+	* Remove FEI3 duplicaion mechanism for IBL.
+	* Add ApplyDupli property for IBL, BL, L1, L2 ECC and DBM independently. 
+	* Add 3 other properties for the same regions: latency, ToT cut and maximum ToT for hit duplication.
+	* tagged as PixelDigitization-02-00-13
+
+2015-08-17  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py - fix random number stream
+	configuration, so that we can freely mix full and fast digi when
+	digitizing the hard-scatter and pile-up Hits separately. Requires
+	Digitization-01-16-00 or later. ATLASSIM-2158. Use
+	HardScatterSplittingMode=0 for
+	PixelDigitizationToolSplitNoMergePU. ATLASSIM-2174
+	* tagged as PixelDigitization-02-00-12
+
+2015-06-22  Robert Harrington <roberth@cern.ch>
+	* python/PixelDigitizationConfig.py,
+	python/PixelDigitizationConfigDb.py - add new
+	PixelDigitizationToolSplitNoMergePU CfgGetter method for
+	PixelDigitizationTool. ATLASSIM-2067
+	* tagged as PixelDigitization-02-00-11
+
+2015-04-14  Malcolm Skinner  <malcolm.bruce.skinner@cern.ch>
+	* python/PixelDigitizationConfig.py,
+	python/PixelDigitizationConfigDb.py Migration of overlay
+	configuration to be based on CfgGetter.  ATLASSIM-1922
+	* tagged as PixelDigitization-02-00-10
+
+2014-03-08 Silvia Miglioranzi <silvia.miglioranzi@cern.ch>
+	obo S.Roe:
+	* src/PixelDigitizationTool.cxx
+	* src/PixelDigitizationTool.h
+	added protection to avoid ParticleGuns to be blocked
+	JIRA ATLASSIM-1790
+	*  tagged as PixelDigitization-02-00-09
+	
+2014-02-05 Silvia Miglioranzi <silvia.miglioranzi@cern.ch>
+	* src/PixelDigitizationTool.cxx
+	removed the IBL tot special treatment , now is 
+	taken care in the conddb
+	* tagged as PixelDigitization-02-00-07
+	
+2014-12-09 Matthew Klein <matthew.henry.klein@cern.ch>
+	* CalibSvc now uses PixelCalibSvc for default settings with no db
+
+2014-11-30 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	* moved CalibSvc.h from src/ to PixelDigitization/ 
+	plus adjusted the corresponding includes
+	* Tagged as PixelDigitization-02-00-06
+	
+2014-11-05 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed covarity defects
+	* Tagged as PixelDigitization-02-00-05
+
+2014-07-11 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed bug with IBL thresholds
+	* Tagged as PixelDigitization-02-00-04
+
+2014-05-15 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Added changes from 17.3.X branch to head
+	* Tagged as PixelDigitization-02-00-03
+
+2014-04-03 Robert Langenberg <robert.langenberg -at- cern.ch>
+    * prevent hard scatter from being added to InDetSimDataCollection and persistified
+    * tagged 02-00-02
+
+2013-02-07 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Reduced message verbosity
+	* Added changes from tag PixelDigitization-01-00-19
+	* Tagged as PixelDigitization-02-00-01
+
+2013-12-18 Matthew Klein <matthew.henry.klein@cern.ch>
+	* CLHEP to Eigen migration
+	* Tagged as PixelDigitization-02-00-00
+
+2013-11-28 Matthew Klein <matthew.henry.klein@cern.ch>
+	* Added call to IBLParameterSvc to make IBL-specific parameter
+	  settings.
+	* Tagged as PixelDigitization-01-00-18
+
+2013-11-18  John Chapman  <John.Chapman@cern.ch>
+
+	* src/DBMChargeTool.cxx - fix for CLHEP 2.1.2.3 compatibility.
+	* Tagged as PixelDigitization-01-00-17
+
+2013-11-11 Matthew Rudolph <matthew.scott.rudolph@cern.ch>
+	* Updated DBM charge generation model and formula used for ToT conversion for DBM
+	* Tagged as PixelDigitization-01-00-16
+
+2013-11-01 Matthew Klein <Matthew.henry.klein@cern.ch>
+	* Removed unused includes from SiDigitization package. 
+	  Necessary for compatibility with new SiDigitization package.
+	* Tagged as PixelDigitization-01-00-15
+
+2013-11-01  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py - fix random stream name
+	configuration. Actually tested the code this time...
+
+	* Tagged as PixelDigitization-01-00-14
+
+2013-10-31  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py - fixing my typos from the
+	previous tag..
+
+	* Tagged as PixelDigitization-01-00-13
+
+2013-10-28  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitizationTool.h, src/PixelDigitizationTool.cxx -
+	adapt Roland Jansky's changes from
+	PixelDigitization-00-12-00-branch for the trunk.
+
+	* python/PixelDigitizationConfigDb.py,
+	python/PixelDigitizationConfig.py - add confGetter methods for
+	PixelDigitizationToolHS and PixelDigitizationToolPU.
+
+	* share/PixelDigiTool_jobOptions.py,
+	share/PixelDigitization_jobOptions.py - adapt to respond to
+	experimental doSplitDigi digitizationFlags (true=split pileup &
+	signal during digi, false=no change).
+	* Tagged as PixelDigitization-01-00-12
+
+2013-10-18  Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed error when using geometry that includes dbm 
+	  but purely planar IBL.
+	* Tagged as PixelDigitization-01-00-10
+
+2013-10-17  Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed cosmic error
+	* Modified tool configuration
+	* Tagged as PixelDigitization-01-00-09
+
+2013-10-11  John Chapman  <John.Chapman@cern.ch>
+
+	* python/PixelDigitizationConfig.py - fix typo.
+	* Tagged as PixelDigitization-01-00-08
+
+2013-09-11 Matthew Klein
+	* Fixed memory leak
+	* Tagged as PixelDigitization-01-00-07
+
+2013-09-05  Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed unused variable compiler warning
+	* Fixed IBL bug where geometries with 3D modules
+	  gave an ERROR
+	* Made minor changes to IBL planar/3D code
+	* Tagged as PixelDigitization-01-00-05
+
+2013-09-03  Matthew Klein <matthew.henry.klein@cern.ch>
+	* Fixed error for newer code versions
+	* Tagged as PixelDigitization-01-00-04
+
+2013-09-02  Matthew Klein <matthew.henry.klein@cern.ch>
+
+	* Moved most of the code from joboptions files to 
+	  python/PixelDigitizationConfig.py under the defs of CalibSvc and 
+	  PixelDigitizationTool in order to make the joboptions files 
+	  unnecessary. Needed for versions greater than 17.7.0.
+	* Tagged as PixelDigitization-01-00-03
+
+2013-08-30  John Chapman  <John.Chapman@cern.ch>
+
+	* src/Ibl3DChargeTool.cxx - replaced Hep3Vector with
+	CLHEP::Hep3Vector - necessary for CLHEP 2.1.2.3 compatibility.
+	* Tagged as PixelDigitization-01-00-02
+
+2013-08-30  Matthew Klein <matthew.henry.klein@cern.ch>
+
+	* Removed dependence on SiDigitization package
+	* Combined previous PixelDigitization.* and PixelDigitizationTool.*
+	  into PixelDigitizationTool.*. PixelDigitization simply creates
+	  and runs the tool.
+	* Restructuring of PileUpTools related code to conform to 
+	  conventions and simplify the process
+	* Removed PixelDigitConfig and the corresponding pointers pixdig
+	  in each tool. Each parameter is created and accessed in the 
+	  tool or service in which it is used
+	* Renamed PixelDistortionsSimpleSurfaceChargesGenerator->
+	  SurfaceChargesGenerator.
+	* Created a charge generation tool for each technology, which
+	  is called by SurfaceChargesTool. 
+	* Created CalibSvc and TimeSvc to provide parameters needed
+	  by multiple other tools. TimeSvc has the functionality of
+	  the old PixelTimeWalkGenerator.
+	* Tagged as PixelDigitization-01-00-01
+
+2013-06-24  John Chapman  <John.Chapman@cern.ch>
+
+	* share/PixelDigitization_jobOptions.py - add missing import of
+	CfgGetter. 
+
+	* Tagged as PixelDigitization-00-12-05
+
+2013-06-06  John Chapman  <John.Chapman@cern.ch>
+
+	* add python/PixelDigitizationConfigDb.py,
+	python/PixelDigitizationConfig.py - confGetter-based wrapper for
+	PixelDigitization configuration. This will factorize development
+	of the Digitization configuration, from PixelDigitization C++ code
+	updates.
+
+	* share/PixelDigiTool_jobOptions.py,
+	share/PixelDigitization_jobOptions.py - update to use confGetter
+	configuration. Kept for back-compatibility.
+
+	* Tagged as PixelDigitization-00-12-04
+
+2013-04-24  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelNoisyCellGenerator.cxx - remove unused variable - fixes
+	gcc46 compilation warning.
+
+	* Tagged as PixelDigitization-00-12-03
+
+2012-08-06  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitizationTool.cxx, src/PixelDigitization.cxx,
+	src/PixelRandomDisabledCellGenerator.cxx,
+	src/PixelTimeWalkGenerator.cxx, src/PixelCellDiscriminator.cxx,
+	src/SpecialPixelGenerator.cxx, src/PixelChargeSmearer.cxx,
+	src/PixelDistortionsSimpleSurfaceChargesGenerator.cxx,
+	src/PixelDistortionsSimpleSurfaceChargesGeneratorHelper.cxx,
+	src/PixelNoisyCellGenerator.cxx - CLHEP 2.1.2.3 compatibility
+	updates. Completely back-compatible.
+
+	* Tagged as PixelDigitization-00-12-02
+
+2012-06-08  John Chapman  <John.Chapman@cern.ch>
+
+	* PixelDigitization/PixelDigitizationTool.h - add m_diskTechnology
+	vector of strings member variable (obo Andreas Korn).
+
+	* src/PixelDigitizationTool.cxx - add m_diskTechnology member
+	variable (obo Andreas Korn). Tidying up StatusCode checks.  Add
+	back in FEI4 fudge code removed from createRDO in
+	PixelDigitization-00-10-17 and update to check m_diskTechnology
+	for the endcaps. (bug #95084)
+
+	* PixelDigitization/PixelDigitization.h - add m_diskTechnology
+	vector of strings member variable (obo Andreas Korn). Rename
+	m_pixelID to m_detID to make code look more similar to
+	PixelDigitizationTool.
+
+	* src/PixelDigitization.cxx - add m_diskTechnology vector of
+	strings member variable (obo Andreas Korn). Rename m_pixelID to
+	m_detID to make code look more similar to
+	PixelDigitizationTool. Tidying up StatusCode checks. Update FEI4
+	fudge code in createRDO to check m_diskTechnology for the endcaps.
+
+	* Tagged as PixelDigitization-00-12-01
+
+2012-05-14  John Chapman  <John.Chapman@cern.ch>
+
+	* Requires SiDigitization-04-00-00 or later.
+
+	* src/PixelDigitizationTool.cxx, src/PixelDigitization.cxx,
+	src/PixelCellDiscriminator.cxx, src/PixelGangedMerger.cxx,
+	src/SpecialPixelGenerator.cxx - adaptions for the fact that
+	SiChargedDiodeMap is now sorted using InDetDD::SiCellId rather
+	than Identifiers (necessary for compatibility with 64-bit
+	Identifier builds). (obo Andreas Korn)
+	* Tagged as PixelDigitization-00-12-00
+
+
+2012-03-21  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitization.cxx - digitizeAllHits method: create
+	SiChargedDiodesCollection after check on m_enableHits to avoid
+	memory leak in the case that it is false. Fixes Coverity Defect
+	64498.
+	* Tagged as PixelDigitization-00-11-04
+
+2012-03-08  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - add use statement for Simulation/Tools/AtlasCLHEP_RandomGenerators.
+	* src/PixelDigitizationTool.cxx, src/PixelDigitization.cxx,
+	src/PixelTimeWalkGenerator.cxx, src/PixelCellDiscriminator.cxx,
+	src/PixelChargeSmearer.cxx,
+	src/PixelDistortionsSimpleSurfaceChargesGenerator.cxx,
+	src/PixelDistortionsSimpleSurfaceChargesGeneratorHelper.cxx,
+	src/PixelNoisyCellGenerator.cxx - replace all usage of
+	CLHEP::RandGauss with RandGaussZiggurat.
+	* removed executable property from all source files.
+	* Tagged as PixelDigitization-00-11-03
+
+2012-03-02  John Chapman  <John.Chapman@cern.ch>
+
+	* PixelDigitization/PixelDigitization.h, src/PixelDigitization.cxx -
+	removing m_chargedDiodes member variable and re-creating
+	SiChargedDiodeCollection during each call to digitizeAllHits and
+	digitizeNonHits. Reduces memory-footprint.
+	* Tag as PixelDigitization-00-11-02
+
+2012-02-17  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitizationTool.cxx - fix unchecked StatusCode in
+	prepareEvent method.
+	* Tagged as PixelDigitization-00-11-01
+
+2011-08-17  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitizationTool.cxx - fix unchecked StatusCode in
+	prepareEvent method.
+	* Tagged as PixelDigitization-00-10-21
+2011-06-04 Fares Djama <djama@cppm.in2p3.fr>
+        * Scaling of Lorentz angle removed (it is now in PixelLorentzAngleSvcSetup)
+	* Double the cross talk parameters
+	* Generate cross talk before applying threshold
+	* Tagged as PixelDigitization-00-10-20
+
+2011-05-02 Fares Djama
+        * Scaling of Lorentz angle by 0.9013
+	* Tagged as PixelDigitization-00-10-19
+
+2011-03-24  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - clean up use statements for 17.X.0
+	* src/PixelDigitization.cxx - fif for Coverity defects 19801 and 19977
+	* src/PixelDigitizationTool.cxx - fix for Coverity defects 19803 and 19978
+	* Tagged as PixelDigitization-00-10-18
+
+2010-11-04 Fares Djama
+        * Change scale and implement overflow bit for FEI4 in PixelDigitizationTool
+	* Tagged as PixelDigitization-00-10-17
+
+2010-11-04 Fares Djama
+        * Drop Luminosity scenario in readout window definition
+	* Tagged as PixelDigitization-00-10-16
+
+2010-10-01 Fares Djama
+        * Change duplication threshold to ToT >= 7.
+	* Tagged as PixelDigitization-00-10-15
+2010-09-28 Fares Djama
+        * Read out window reduced to 1 BC with duplication for ToT >= 6.
+	* Add the case bunch spacing higher between 25 and 75 in luminosity scenario of timing conditions.
+	* Tagged as PixelDigitization-00-10-14
+
+010-08-31 Fares Djama
+        * Read out window reduced to 2 BC.
+	* Add the case bunch spacing higher than 75 ns in luminosity scenario of timing conditions.
+	* Tagged as PixelDigitization-00-10-13
+
+2010-08-18  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelDigitizationTool.cxx, src/PixelDigitization.cxx - initialize m_time_y_eq_zero in
+	constructor - fixes bug found by coverity scan.
+
+	* tagged as PixelDigitization-00-10-12
+
+2010-08-13  John Chapman  <John.Chapman@cern.ch>
+	* share/PixelDigiTool_jobOptions.py, share/PixelDigitization_jobOptions.py - add lines to 
+	load /PIXEL/ReadoutSpeed DB table.
+	* tagged as PixelDigitization-00-10-11
+
+2010-07-30 Fares Djama
+	* Decrease verbosity
+	* Tagged as PixelDigitization-00-10-10
+
+2010-07-29 Fares Djama
+        * Merging in PixelDigitization-00-10-08 failed.
+	* Add by hand changes of 00-10-04 and 00-10-05
+	* Tagged as PixelDigitization-00-10-09
+
+2010-07-29 Fares Djama
+        * Merge PixelDigitization-00-10-03-branch with PixelDigitization-00-10-07
+	* Tagged as PixelDigitization-00-10-08
+
+2010-07-27 Fares Djama
+        * Readout window = 3 BC
+	* T0 = 5 ns
+	* Disconnection probability: 0.1 %
+	* Tagged as PixelDigitization-00-10-05
+
+
+2010-07-27 John Chapman <John.Chapman@cern.ch>
+
+        * share/PixelDigiTool_jobOptions.py - small syntax change so that the RndNoiseProb property of the PileUpTool rather than the Algorithm is set.
+        * tagged as PixelDigitization-00-10-04
+
+2010-07-23 Attilio Andreazza
+	* Change scale and implement overflow bit for FEI4
+	* tagged as PixelDigitization-00-10-03-03
+
+2010-07-19 Attilio Andreazza
+	* Set default technology as "SiPl,FEI3"
+	* Implement only 4 bit readout for FEI4
+	* tagged as PixelDigitization-00-10-03-02
+
+2010-06-17 Fares Djama
+	* Implement sensor technology property. For IBL studies 
+	* 
+	* tagged as PixelDigitization-00-10-03-01
+
+2010-04-16 Fares Djama
+	* Include TW parametrization from 2009 cosmic data
+	* Readout window = 5 BC
+	* T0 = 55 ns (Bunch crossing at BC = 2)
+	* Put random noise to 1.e-10 per BC per event
+	* tagged as PixelDigitization-00-10-03
+
+2010-04-16 John Chapman
+	* cmt/requirements - comment out unneeded do_genconf line
+	* tagged as PixelDigitization-00-10-02
+	
+2010-04-14 John Chapman
+	* remove duplicate copies of tools.
+	D   PixelDigitization/PixelCellDiscriminatorTool.h
+	D   PixelDigitization/PixelNoisyCellGeneratorTool.h
+	D   PixelDigitization/PixelDistortionsSimpleSurfaceChargesGeneratorTool.h
+	D   PixelDigitization/PixelChargeSmearerTool.h
+	D   PixelDigitization/PixelDiodeCrossTalkGeneratorTool.h
+	D   PixelDigitization/PixelTimeWalkGeneratorTool.h
+	D   PixelDigitization/PixelGangedMergerTool.h
+	D   PixelDigitization/SpecialPixelGeneratorTool.h
+	D   src/PixelDiodeCrossTalkGeneratorTool.cxx
+	D   src/PixelTimeWalkGeneratorTool.cxx
+	D   src/PixelGangedMergerTool.cxx
+	D   src/SpecialPixelGeneratorTool.cxx
+	D   src/PixelCellDiscriminatorTool.cxx
+	D   src/PixelChargeSmearerTool.cxx
+	D   src/PixelDistortionsSimpleSurfaceChargesGeneratorTool.cxx
+	D   src/PixelNoisyCellGeneratorTool.cxx
+	* modify cmt/requirements and src/components/PixelDigitization_entries.cxx to remove references to removed files.
+	* src/PixelDigitizationTool.cxx, PixelDigitization/PixelDigitizationTool.h, src/PixelDigitization.cxx, PixelDigitization/PixelDigitization.h - tidy up commented out lines that have been moved to PixelDigitConfig.cxx/.h
+	* tagged as PixelDigitization-00-10-01
+
+2010-04-14  John Chapman
+	* Add common base class PixelDigitConfig for PixelDigitization and PixelDigitizationTool this deals with all the communication with the other AlgTools in the package and removes the need for two copies of every tool. It also provides a clear list of the 'get' function calls which should be turned into 'set' function calls or DB lookups in the future. Tag this intermediate version before any classes are removed.
+	A PixelDigitization/PixelDigitConfig.h
+	A src/PixelDigitConfig.cxx
+	M PixelDigitization/PixelGangedMerger.h
+	M PixelDigitization/SpecialPixelGenerator.h
+	M PixelDigitization/PixelDigitizationTool.h
+	M PixelDigitization/PixelDigitization.h
+	M PixelDigitization/PixelCellDiscriminatorTool.h
+	M PixelDigitization/PixelNoisyCellGeneratorTool.h
+	M PixelDigitization/PixelDistortionsSimpleSurfaceChargesGeneratorTool.h
+	M PixelDigitization/PixelChargeSmearerTool.h
+	M PixelDigitization/PixelCellDiscriminator.h
+	M PixelDigitization/PixelNoisyCellGenerator.h
+	M PixelDigitization/PixelDistortionsSimpleSurfaceChargesGenerator.h
+	M PixelDigitization/PixelChargeSmearer.h
+	M PixelDigitization/PixelDiodeCrossTalkGeneratorTool.h
+	M PixelDigitization/PixelDiodeCrossTalkGenerator.h
+	M PixelDigitization/PixelTimeWalkGeneratorTool.h
+	M PixelDigitization/PixelTimeWalkGenerator.h
+	M PixelDigitization/PixelGangedMergerTool.h
+	M PixelDigitization/SpecialPixelGeneratorTool.h
+	M share/PixelDigiTool_jobOptions.py
+	M cmt/requirements
+	M src/PixelDiodeCrossTalkGeneratorTool.cxx
+	M src/PixelDiodeCrossTalkGenerator.cxx
+	M src/PixelTimeWalkGeneratorTool.cxx
+	M src/PixelTimeWalkGenerator.cxx
+	M src/PixelGangedMergerTool.cxx
+	M src/SpecialPixelGeneratorTool.cxx
+	M src/PixelGangedMerger.cxx
+	M src/SpecialPixelGenerator.cxx
+	M src/PixelDigitizationTool.cxx
+	M src/PixelDigitization.cxx
+	M src/PixelCellDiscriminatorTool.cxx
+	M src/PixelChargeSmearerTool.cxx
+	M src/PixelDistortionsSimpleSurfaceChargesGeneratorTool.cxx
+	M src/PixelNoisyCellGeneratorTool.cxx
+	M src/PixelCellDiscriminator.cxx
+	M src/PixelNoisyCellGenerator.cxx
+	M src/PixelDistortionsSimpleSurfaceChargesGenerator.cxx
+	M src/PixelChargeSmearer.cxx
+	* tagged as PixelDigitization-00-10-00
+	
+2009-12-18  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+	* Start work on decoupling the various helper classes from
+	PixelDigitizationTool. At the same time de-AlgTool where advisable.
+	For the moment provide PixelDistortionsSimpleSurfaceChargesGeneratorHelper
+	which is to replac PixelDistortionsSimpleSurfaceChargesGeneratorTool
+
+	A      PixelDigitization/PixelDistortionsSimpleSurfaceChargesGeneratorHelper.h
+	A      src/PixelDistortionsSimpleSurfaceChargesGeneratorHelper.cxx
+
+	M      cmt/requirements
+
+
+2009-12-18  Peter Sherwood  <sherwood@lxplus246.cern.ch>
+
+	* Bug removal
+	M      PixelDigitization/PixelDigitizationTool.h
+	M      src/PixelDigitizationTool.cxx
+[
+2009-12-12   Peter Sherwood  <peter@peter-4.home>
+
+	* python control code related changes by J Chapman
+	M      python/JobOptCfg.py
+	M      cmt/requirements
+	M      src/PixelDigitizationTool.cxx
+	
+	A      share/PixelDigiTool_jobOptions.py
+
+
+2009-12-10  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+	* Supplied a dummy method to  PixelDistortionsSimpleSurfaceChargesGenerator.h
+	required by public interface change to a base class in SiDigitization
+	* removed some dead code left over from development in PixelDigitizationTool.cxx
+	* replaced a line accidently removed from cmt/requirements
+	
+	M      PixelDigitization/PixelDistortionsSimpleSurfaceChargesGenerator.h
+	M      cmt/requirements
+	M      src/PixelDigitizationTool.cxx
+	M      src/PixelDistortionsSimpleSurfaceChargesGenerator.cxx
+
+2009-12-09  Peter Sherwood  <sherwood@pcucl05.cern.ch>
+
+	* Start work on convsersion to Tool based digtization
+	Pixel digitization has many helper classes that have references
+	to the digitization algorithmm, which makes them unusable in the
+	present context. For the moment I make the minimum change: copy the
+	code of these classes and change the call back reference to the
+	PixelDigitizationTool
+	
+	A PixelDigitizationTool.h
+	A PixelCellDiscriminatorTool.h
+	A PixelChargeSmearerTool.h
+	A PixelDistortionsSimpleSurfaceChargesGeneratorTool.h
+	A PixelNoisyCellGeneratorTool.h
+	A PixelDiodeCrossTalkGeneratorTool.h
+	A PixelTimeWalkGeneratorTool.h
+	A PixelGangedMergerTool.h
+	A SpecialPixelGeneratorTool.h
+
+	A PixelDiodeCrossTalkGeneratorTool.cxx
+	A PixelTimeWalkGeneratorTool.cxx
+	A SpecialPixelGeneratorTool.cxx
+	A PixelGangedMergerTool.cxx
+	A PixelDigitizationTool.cxx
+	A PixelCellDiscriminatorTool.cxx
+	A PixelChargeSmearerTool.cxx
+	A PixelDistortionsSimpleSurfaceChargesGeneratorTool.cxx
+	A PixelNoisyCellGeneratorTool.cxx
+	
+	M components/PixelDigitization_entries.cxx
+	M cmt/requirements
+
+2009-08-04 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Only retrieve PixelCablingSvc if needed (ie when m_doRDOforSPM true)
+	* tagged as PixelDigitization-00-09-05
+	
+2009-06-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Revert last change as it is now the default
+	* tagged as PixelDigitization-00-09-04
+	
+2009-06-15 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Set LorentzAngleSvc to retrieve MagFieldTool during init.
+	* tagged as PixelDigitization-00-09-03
+
+2009-05-22 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Removed debug printout from PixelDiodeCrossTalkGenerator.cxx
+	* tagged as PixelDigitization-00-09-02	
+
+2009-05-21 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Removed call to SiTotalCharge::mainCharge()
+	* to avoid run time problems with gcc43 (bug #50555)
+	* tagged as PixelDigitization-00-09-01	
+
+2009-05-10 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Retrieve PixelID from the detector store (migration in 15.2.0)
+	* tagged as PixelDigitization-00-09-00	
+
+2009-03-18 Fares Djama <djama@cppm.in2p3.fr>
+	* Remove unnecessary calls to calibration DB
+	* tagged as PixelDigitization-00-08-18
+	
+2009-03-18 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Remove obsolete jobOptions from the requirements
+	* tagged as PixelDigitization-00-08-17
+	
+2009-03-07 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fix bug inserted when importing code from 15.4.1. nigthlies
+	* tagged as PixelDigitization-00-08-16
+	
+2009-03-06 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Implement fix for bug 47684, as tested on 14.5.1 nightlies
+	* tagged as PixelDigitization-00-08-15
+	
+2009-03-05 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Use ISiPropertiesSvc 
+	* tagged as PixelDigitization-00-08-14
+	
+2009-02-24 Fares Djama <djama@cppm.in2p3.fr>
+	* Re introduce collisions data tunings (+ the cosmics)
+	* tagged as PixelDigitization-00-08-13
+	
+2009-02-24 Fares Djama <djama@cppm.in2p3.fr>
+	* SPECIAL TAG FOR COSMICS PRODUCTION
+	* tagged as PixelDigitization-00-08-12
+	
+2009-02-20 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDigitization.py: Load PixelDCSSvc and SiLorentzAngleSvc
+	* tagged as PixelDigitization-00-08-11
+	
+2009-02-20 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fixed bug 46886 in PixelTimeWalkGenerator.cxx
+	* tagged as PixelDigitization-00-08-10
+
+2009-02-19 Fares Djama <djama@cppm.in2p3.fr> 
+	* Remove an unnecessary include
+	* tagged as PixelDigitization-00-08-09
+
+2009-02-17 Fares Djama <djama@cppm.in2p3.fr> 
+	* Fix checkreq warnings
+	* tagged as PixelDigitization-00-08-08
+
+2009-02-13 Fares Djama <djama@cppm.in2p3.fr> 
+	* Adding missing files in cvs
+	* tagged as PixelDigitization-00-08-07
+
+2009-02-12 Fares Djama <djama@cppm.in2p3.fr> 
+	* Cleaning of comments
+	* tagged as PixelDigitization-00-08-06
+
+2009-02-12 Fares Djama <djama@cppm.in2p3.fr> + J. Chapman
+	* Adding PixelRandomDisableGeneratorTool
+	* Finish implementation of improvment list items.
+	* tagged as PixelDigitization-00-08-05
+
+2009-02-04 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Update access to PixelConditionsServices in MIG6
+	* tagged as PixelDigitization-00-08-04
+
+2009-02-03 Fares Djama <djama@cppm.in2p3.fr>
+        * Recommendations from software improvments lists included
+	* tagged as PixelDigitization-00-08-03
+
+2009-01-24 Fares Djama <djama@cppm.in2p3.fr>
+	* Software Improvment not finished
+	* THIS IS AN INTERMEDIATE TAG TO BE USED FOR MIG6
+	* tagged as PixelDigitization-00-08-02
+
+2009-01-24 Fares Djama
+	* Software Improvment not finished
+	* THIS IS AN INTERMEDIATE TAG TO BE USED FOR MIG6
+	* tagged as PixelDigitization-00-08-01
+
+2009-01-24 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Try to fix runtime errors in MIG6
+	* tagged as PixelDigitization-00-07-20
+
+2009-01-22 David Quarrie <David.Quarrie@cern.cg>
+	* cmt/requirements: Accommodate changes in the SiDigitization package and dependencies
+	* tagged as PixelDigitization-00-07-19
+	
+2009-01-07 Fares Djama
+	* Move to ServiceHandle
+	* Access to event and detector stores in AthAlgTool fashion
+	* tagged as PixelDigitization-00-07-18
+
+2009-01-04 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Code cleanup and fix of checkreq warnings
+	* tagged as PixelDigitization-00-07-17
+
+2008-12-18 Fares Djama
+	* Merge main line with 00-07-13-04 branch
+	* tagged as PixelDigitization-00-07-16
+
+2008-11-28 Fares Djama
+	* Merge main line with 00-07-13-03 branch
+	* tagged as PixelDigitization-00-07-15
+
+2008-11-23 Markus Elsing
+	* use PixelCabling package
+	* tagged as PixelDigitization-00-07-14
+
+2008-12-10 Fares Djama <djama@cppm.in2p3.fr>
+        * Access to special pixel map via call back function:
+	* Should improve CPU performance.
+	* Tagged as Pixel-Digitization-00-07-13-04
+
+2008-11-28 Fares Djama <djama@cppm.in2p3.fr>
+	* Changes in PixelDigitization_jobOptions.py to change few pileup relevant parameters according
+	* to luminosity and bunch spacing.
+	* Tagged as Pixel-Digitization-00-07-13-03
+
+2008-11-25 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fix FE chip convention in PixelNoisyCellGenerator::addNoisyPixels
+	* Tagged as Pixel-Digitization-00-07-13-02
+
+2008-11-12 Fares Djama <djama@cppm.in2p3.fr>
+	* Remove a deprecated header
+	* Tagged as Pixel-Digitization-00-07-13
+
+2008-11-12 Fares Djama <djama@cppm.in2p3.fr>
+	* Restore protection against large BCID in PixelCellDiscriminator
+	* Improve robustness of determination of earliest hit in PixelTimeWalkGenerator
+	* Tagged as Pixel-Digitization-00-07-12
+
+2008-10-29 Fares Djama <djama@cppm.in2p3.fr>
+	* Correct bug in time hit determination
+	* Up date of PixelRTTDigitization.py
+	* Tagged as Pixel-Digitization-00-07-11
+
+2008-09-08 Fares Djama <djama@cppm.in2p3.fr>
+	* Correct bug in computation of ToT dispersion
+	* Tagged as Pixel-Digitization-00-07-10 
+
+2008-07-15 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* PixelDigitization_jobOptions.py: fixes for TimeBCN setting from 
+	* bunch spacing
+	* PixelDigitization.cxx: fixed wrong default value for t0
+	* Tagged as Pixel-Digitization-00-07-09 
+
+2008-07-15 Fares Djama <djama@cppm.in2p3.fr>
+	* Correct bug in PixelDigitization_jobOptions.py
+	* Tagged as Pixel-Digitization-00-07-08 
+	
+2008-07-10 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* python/JobOptCfg: modified setAllDefaults to allow auditing
+	* PixelDigitization.cxx: default values for Input/OututObjectName
+	* Tagged as Pixel-Digitization-00-07-07 
+
+2008-07-10 Fares Djama <djama@cppm.in2p3.fr>
+	* Extend shape of the noise up to ToT=255
+	* Use CalibCondDB for charge noise computation (was hard coded)
+	* Put default values for 2008 run: hit latency = 255 and 5 BCO read-out
+	* Tagged as Pixel-Digitization-00-07-06 
+
+2008-06-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Replace use of deprecated methods. Replace use of SiDiode
+	  and SiReadoutCell with SiCellId and SiReadoutCellId.
+	* Tagged as PixelDigitization-00-07-05
+
+2008-05-21 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* insert updates from the 00-06-09-branch
+	* Tag as PixelDigitization-00-07-04
+
+2008-05-21 Fares Djama <djama@cppm.in2p3.fr>
+	* Use PixelConditionsSummarySvc service to mask dead pixels
+	* Tag as PixelDigitization-00-06-09-09
+
+2008-05-19 Attilio Andreazza <attilio.Andreazza@mi.infn.it>
+	* Updates python jobOptions to use jobproperties
+	* Tag as PixelDigitization-00-06-09-08
+
+2008-05-08 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* insert updates from the 00-06-09-branch
+	* Tag as PixelDigitization-00-07-03
+
+2008-04-25 Fares Djama <djama@cppm.in2p3.fr>
+	* Fix a memory leak in PixelNoisyCellGenerator * Improve verbosity
+	in SpecialPixelGenerator * Tag as PixelDigitization-00-06-09-07
+
+2008-04-08 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* insert updates from the 00-06-09-branch
+	* Tag as PixelDigitization-00-07-02
+
+2008-03-26 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* SpecialPixelGenerator: fix unitialized variable.
+	* Tag as PixelDigitization-00-07-01
+
+2008-04-08 Attilio Andreazza <attilio.Andreazza@mi.infn.it>
+	* Add feature for removal of hits with ToT exceeding LVL1 laency
+	* Tag as PixelDigitization-00-06-09-06
+
+2008-04-08 Attilio Andreazza <attilio.Andreazza@mi.infn.it>
+	* Add feature for hit duplication
+	* Tag as PixelDigitization-00-06-09-05
+
+2008-04-07 Fares Djama <djama@cppm.in2p3.fr>
+	* Generate thermal noise according to the noise ToT distribution seen in
+	  cosmic tests
+	* Tag as PixelDigitization-00-06-09-04
+
+2008-04-03 Fares Djama <djama@cppm.in2p3.fr>
+	* Correct access to bunchSpacing in PixelDigitization_jobOptions.py
+	* Tag as PixelDigitization-00-06-09-03
+
+2008-03-30 Fares Djama <djama@cppm.in2p3.fr>
+	* Added bunchSpacing parameter and defining TimeBCN accordingly in PixelDigitization_jobOptions.py
+	* BCID computation done starting from the earliest charge
+	* Replace Gaudi.Python by Gaudi.Kernel in phyton/JobOptCfg.py
+	* Tag as PixelDigitization-00-06-09-02
+
+2008-03-26 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* SpecialPixelGenerator: fix unitialized variable.
+	* open new branch for 14.1.0, to avoid conflicts with MIG2
+	* Tag as PixelDigitization-00-06-09-01
+
+2008-03-22 Markus Elsing
+	* migratoin to new IDC
+	* Tag as PixelDigitization-00-07-00
+
+2008-03-26 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* PixelDigitization/NoisyCellGenerator/SpecialPixelGenerator:
+	  changed the interface to use the new version of SpecialPixelMaps
+	* Tag as PixelDigitization-00-06-09
+
+2008-03-03 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* PixelDistortionsSimpleSurfaceChargesGenerator: on behalf of 
+	  Umberto De Sanctis: do not apply distortions to hits from 
+	  delta rays.
+	* Tag as PixelDigitization-00-06-08
+
+2008-03-03 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* PixelDistortionsSimpleSurfaceChargesGenerator: protection againt
+	  unreferenced genpart, added debug printout
+	* Tag as PixelDigitization-00-06-07
+
+2008-03-01 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* PixelDistorsionsSimpleSurfaceChargeGenerator:
+	  corrected bug in compilation and inserted a temporary fix
+	  for Savannah bug 34022
+	* Tag as PixelDigitization-00-06-06
+
+2008-02-29 Fares Djama <djama@cppm.in2p3.fr>
+        * Modify PixelDigitization_jobOptions.py: use GaudiKernel instead of
+	GaudiPython.
+
+2008-02-26 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Use new PixelDistortionsTool to get module distortions. This is
+	  set on by default.
+
+2008-02-26 Fares Djama <djama@cppm.in2p3.fr>
+        * Modify PixelDigitization_jobOptions.py to use new digitization flags.
+
+2008-02-21 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* PixelDistorsionsSimpleSurfaceChargeGenerator:
+	removed some leftover debug printout
+	* PixelDigitization: 
+	fixed a warning about order of data member initialization 
+	in constructor, added doxygen documentation about bow distortion flags
+	* share/*py:
+	inserted list of new flags in steering jobOptions files
+	* Tagged as version PixelDigitization-00-06-01
+
+
+2008-02-18 Fares Djama <djama@cppm.in2p3.fr> and Attilio Andreazza
+          <attilio.andreazza@mi.infn.it>
+	  * PixelNoisyCellGenerator: added a new property (SpmNoiseOccu= Noise
+	  occupancy from SPM).
+	  * Tagged as version PixelDigitization-00-06-00
+	  
+2008-02-18 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* PixelDistorsionsSimpleSurfaceChargeGenerator:
+	updated class from Umberto De Sanctis
+
+2008-02-15 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* PixelDistortionsSimpleSurfaceChargeGenerator: 
+	added new class to implement distortions (Umberto De Sanctis)
+	* PixelDigitization: options to use pixel distortions
+	* Tagged as version PixelDigitization-00-05-49
+
+2008-02-15 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* PixelNoisyCellGenerator: implemented usage of noisy pixel map
+	  (thanks to Fares Djama)
+	* SpecialPixelGenerator: protected the interface in case of mission
+	  module map
+	* PixelDigitization: added method to retrieve the special pixel map
+	* Tagged as version PixelDigitization-00-05-48
+
+2008-02-09 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Updated jobOption for RTT jobs
+	* Tagged as version PixelDigitization-00-05-47
+
+2007-11-21 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fixed jobOption for RTT jobs
+	* Tagged as version PixelDigitization-00-05-46
+
+2007-10-30 Attilio Andreazza <attilio.andreazza@mi.infn.it>
+	* Fixed random inefficiency
+	* Fixed import of GaudiHandle
+	* Removed call to AuditorSvc() (no more supported in 13.1.X)
+
+2007-08-02 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added threshold noise job options (PixelDigitization) - previously zero if NOT calib. cond db was used
+	* More doxygen... most of it is done
+	* Tagged as PixelDigitization-00-05-42
+	
+2007-07-31 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Changed PixelDigitization::addNoise() such that it will add noise
+	  to ALL pixels, merging the charges if it's already hit
+	* More docs
+	
+2007-07-27 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added a mainpage.h
+
+2007-07-16 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Fetches now a ptr to the map instead of making a copy
+	* Tagged as PixelDigitization-00-05-41
+
+2007-07-11 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Conforms now to new SpecialPixelMap
+	* Now the in-efficiency probability is actually used - fixed a bug
+	* Tagged as PixelDigitization-00-05-40
+	
+2007-07-06 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added PixelRTTDigitization.py to jobOption files in requirements
+	* Added a random pixel disabler - this is to simulate random event-by-event inefficiencies
+	* Uses SpecialPixelMapSvc
+	
+2007-06-12 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Now uses the new SiHelper with the maskOut flag.
+	  This was change in order to accomodate special pixels that will NOT be masked out.
+	* Tagged as PixelDigitization-00-05-38
+
+2007-06-06 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added new file: PixelRTTDigitization.py
+
+2007-05-27 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* PixelDigitization:
+		- updated probabilities m_spmXXXX for special pix map generation
+		- CalibDB is used by default
+	* SpecialPixelGenerator:
+		- now uses pixelUseful() when masking special pixels
+	* Tagged as PixelDigitization-00-05-36
+
+2007-05-25 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* DigitizationTst.py
+		- default input and output files should now be accessible by any user
+	* PixelDigitization.cxx
+		- in createRDOforSPM() the loop is now over ALL pixels in a module.
+		  This is required in order to catch the recently introduced bad
+		  regions properly.
+	* Some cleanup and additional comments
+	* Tagged as PixelDigitization-00-05-35
+
+2007-05-24 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* PixelDigitization.cxx:
+		- Fixed unchecked status codes
+	* Tagged as PixelDigitization-00-05-34
+
+2007-05-18 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* PixelDigitization.cxx:
+		- Fixed bug - added m_processedElements.clear() before resize() statement
+		- Removed m_specialPixelMapTool->create() (C.Ruwiedel)
+	* SpecialPixelgenerator.cxx:
+		- Removed expensive merge between fetched pixel map and empty map
+		  in updatePixelMap()
+	* Tagged as PixelDigitization-00-05-33
+	
+2007-04-18 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Remove dependecy on InDetRawUtils
+	* tagged as PixelDigitization-00-05-32
+
+2007-04-18 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Remove dependecy on InDetRawUtils
+	* Incorporate fixes from Francesco de Lorenzi:
+	* PixelDiodeCrossTalkGenerator.cxx: take into account hit time in
+	  xtalk. 
+	* PixelDigitization.cxx: Fix some property defaults.  
+	* PixelCellDiscriminator.cxx: Bug fix in check that bunch number
+	  is in range.
+	* tagged as PixelDigitization-00-05-31
+	
+2007-04-10 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* removed any init of rndm seeds
+	* updated jobOption file to conform with latest Digitization
+	* tagged as PixelDigitization-00-05-29
+	
+2007-04-04 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* commited modifications by Francesco de Lorenzi: implementing ComTime
+	  for cosmics timing.
+	* added new flag UseComTime -> if true, use ComTime
+	* tagged as PixelDigitization-00-05-28 and collected for 13.0.0
+	
+2007-04-03 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* more cleanup and various fixes
+	* removed obsolete PixelDiodeNoiseGenerator
+	* added the possibility to create RDOs of the special pixels - this allows the
+	  map to be studied using some other tool
+	* added script Monitoring.py - adds monitoring using PixelMonitoring package
+	* tagged as PixelDigitization-00-05-27
+	
+2007-03-28 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* moved to ServiceHandle<IAtRndmGenSvc>
+	* tagged as PixelDigitization-00-05-26
+	
+2007-03-27 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* fixed wrong init of Pixel1RawData
+	* removed curvature/divergence params
+	* fixed requirements file - checkreq warnings
+	
+2007-03-24 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* New class: PixelGangedMerger - handles ganged pixels
+	* New class: PixelCellDiscriminator - replaces SiCellDiscriminator
+	* Tagged as PixelDigitization-00-05-25
+	
+2007-03-16 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Added new generator PixelChargeSmearer - smears already existing charged diodes
+	* PixelCrossTalkGenerator now uses cond db access
+	* Removed obsolete charge processes in PixelDigitization
+	
+2007-03-13 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Cond DB access code in place and it works ( calib+special pixels )
+	* Added new generator for special pixels map: SpecialPixelGenerator
+	  - either reads from db or creates random maps
+	* PixelDigitization:
+	  - simulates Interval Of Validity (IOV) for generated special pixel maps
+	  - accessors to all calib consts
+	* New members in configurable for simulated IOV
+	* ------- NOTE -------
+	this is a intermediate checkin, functional with 12.5.0, should not be tagged
+	
+
+2007-02-21 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* Implemented a configurable PixelDigitization class
+	  New file: python/JobOptCfg.py -> contains class inheriting from the
+	  automatically generated class in genconf.
+	* Cleaned up main PixelDigitization class
+	* Added first support for conditions database access
+	  NOT YET FULLY IMPLEMENTED...
+	* PixelNoisyCellGenerator modified, PixelDiodeNoiseGenerator is now obsolete
+	* Tagged as PixelDigitization-00-05-24
+
+2007-01-15 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Remove symlinks
+
+2007-01-14 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Fix compile error
+
+2007-01-14 David Quarrie <David.Quarrie@cern.ch>
+	* Backwards compatible changes for Gaudi v19 compatibility
+
+2006-12-12 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* PixelDigitization.cxx/h
+	  Moved to IAtRndmGenSvc. PixelDigitization now initialises a
+	  HepRandomEngine pointer with a given name and seeds.
+	* PixelDiodeNoiseGenerator.cxx/h
+	  Added HepRandomEngine
+	  Modified noise charge = offset + variation (no abs value)
+	* PixelNoisyCellGenerator.cxx/h
+	  Added HepRandomEngine
+	  Modified noise charge = offset + variation (no abs value)
+	* PixelSimpleSurfaceChargesGenerator.cxx/h
+	  Added HepRandomEngine
+	* PixelTimeWalkGenerator.cxx/h
+	  Added HepRandomEngine
+	* share/PixelDigitization_jobOptions.py
+	  added AtRndmGenSvc and seed control
+	* cmt/requirements
+	  added AthenaKernel
+	* tag PixelDigitization-00-05-20
+	
+2006-11-27 Grant Gorfine <gorfine@cern.ch>
+	* PixelDigitization.cxx: Fix to work for Endcap A cosmic
+	  geometry.
+	
+2006-10-09 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* requirements
+	  Fixed checkreq warning
+	
+2006-07-04 Fredrik Tegenfeldt <fredrik.tegenfeldt@cern.ch>
+	* PixelDigitization.cxx/h, PixelDigitization_jobOptions.py:
+	  Made TOT parametrization controllable from job obtion file
+	  Cleaned up the code and added more comments
+
+2006-06-12 Marian Zdrazil <mzdrazil@lbl.gov>
+        * Implemented modifications needed in the Pixel EndCap C Cosmics
+          simulation. Remove EndCap A and Barrel modules from the digitization.
+          Eventually, we should further modify the code to be able to access
+          the conditions database (COOL) via InnerDetector/InDetConditions/Pixel_ConditionsAlgs
+          that does not exist yet. So, does not exist the dataset for pixel
+          detector in the condDB.    
+
+2006-03-04 Grant Gorfine <gorfine@nikhef.nl>        
+	* PixelSimpleSurfaceChargesGenerator, PixelDigitization_jobOptions.py: 
+	  Fixed potential division by very small number and wrong step
+	  length calculation.
+	  Make use of numberOfSteps (as in SCT). G4step is split into
+	  sub-steps and then split into sub-charges. Changed default job
+	  options properties to reproduce old behaviour (one charge per step). 
+
+2005-05-13 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Enable noise in elements without hits
+
+2005-01-31 Davide Costanzo <DCostanzo@lbl.gov>
+        * set extra noise =0 in the default jobO
+
+2004-09-07 Davide Costanzo <DCostanzo@lbl.gov>
+        * refix a memory leak in PixelNoisyDiodeGenerator
+
+2004-08-31 Grant Gorfine <gorfine@nikhef.nl>
+	* PixelSimpleSurfaceChargesGenerator: Use readoutSide()
+	  method in design to determine readout side.
+
+2004-08-06 Frederick Luehring <luehring@indiana.edu>
+	* cmt/requirements: Redo CLHEP migration
+
+2004-08-05 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirements: CLHEP migration
+
+2004-07-17 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirements. remove .txt from the cmt pattern
+
+2004-06-28 Davide Costanzo <DCostanzo@lbl.gov>
+	* retire jobOs.txt
+
+2004-05-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* install python
+
+2004-05-19 Davide Costanzo <DCostanzo@lbl.gov>
+	* add python jo
+
+2004-05-06 Davide Costanzo <DCostanzo@lbl.gov>
+	* Use HepMcParticleLink
+
+2004-05-01 Davide Costanzo <DCostanzo@lbl.gov>
+	* upodate default jobO as discussed with Sasha Rozanov
+
+2004-04-07  Markus Elsing  <markuse@lxplus033.cern.ch>
+
+	* replace Identifier32 with Identifier
+
+2004-04-02 Grant Gorfine <gorfine@nikhef.nl>
+	* PixelSimpleSurfaceChargesGenerator: Use TimedHitPtr.  
+
+2003-03-25 Davide Costanzo <DCostanzo@lbl.gov>
+	* move to InDetSimDataCollection
+
+2004-03-23 Grant Gorfine <gorfine@nikhef.nl>
+	* PixelDigitization: Process elements without hits.  
+
+2004-03-12 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Mod to req file
+
+2003-02-23 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Remove some hardwired numbers
+	* Remove conversion factors
+
+2003-02-11 Davide Costanzo <DCostanzo@lbl.gov>
+	* req cleanup
+
+2003-01-26 Davide Costanzo <DCostanzo@lbl.gov>
+        * Change of the SiDigitization data members for pile-up
+
+2003-01-14 Davide Costanzo <DCostanzo@lbl.gov>
+        * Corectly symling the RDOcollections
+
+2003-12-19  Steven Goldfarb  <Steven.Goldfarb@cern.ch>
+
+	* tagging PixelDigitization-00-03-10
+	* cmt/requirements: commented out PixelDigitization_libraries pattern
+
+2003-11-20 Davide Costanzo <DCostanzo@lbl.gov>
+        * Use InstallArea for the jobO
+
+2003-11-19 Grant Gorfine <gorfine@nikhef.nl>
+        * src/PixelDigitization.cxx: Fix manager default name.
+	* share/PixelDigitizationOptions.txt Remove obsolete properties. 
+	  Change DiodeCrossTalk by factor of 10 due to change of
+	  units. 
+	  
+2003-11-18 Grant Gorfine <gorfine@nikhef.nl>
+	* PixelSimpleSurfaceChargesGenerator.cxx: Use hitLocalToLocal
+	  method to convert to reconstruction local position.
+
+2003-11-17 Thijs Cornelissen <tgcornel@nikhef.nl>
+        * Move to InDetReadoutGeometry
+
+2003-10-23 Frederick Luehring <luehring@indiana.edu>
+        * Move package to InDetDigitization
+        * Tag as PixelDigitization-00-03-05
+
+2003-09-08 Davide Costanzo <DCostanzo@lbl.gov>
+	* Get the tg lorentz from the element
+
+2003-08-18 Davide Costanzo <DCostanzo@lbl.gov>
+	* Get the thickness from the design
+
+2003-08-18 Davide Costanzo <DCostanzo@lbl.gov>
+	* Use SiDetectorElement instead of Design
+
+2003-08-06 Davide Costanzo <DCostanzo@lbl.gov>
+	* fix identifier print out
+
+2003-07-25 Davide Costanzo <DCostanzo@lbl.gov>
+	* Efficiency of the sensor is now 100%
+	  (from Tommaso)
+
+2003-07-15 Davide Costanzo <DCostanzo@lbl.gov>
+	* Add a jobOptions fragment PixelDigitizationOptions.txt
+
+2003-07-11 Davide Costanzo <DCostanzo@lbl.gov>
+	* Making Gev/Mev selectable from jobOptions
+
+2003-07-11 Davide Costanzo <DCostanzo@lbl.gov>
+	* Output the correct RDO format (base class)
+
+2003-05-26 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* Remove a include "pixelSim.h" from PixelNoisyCellGenerator.cxx
+
+2003-05-02 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* A few bug fixes
+
+2003-04-11 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* New Tag for new version
+
+2003-03-12 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* Other fixes, also gcc3.2
+
+2003-02-02 Davide Costanzo <DCostanzo@lbl.gov>
+
+	* Fixed compilation problems
+
+2001-11-28  Jessica Leveque  <jleveque@lxplus038.cern.ch>
+
+	* Add Redigitization For Pixels
+
+2001-10-30  David Calvet  <calvet@in2p3.fr>
+
+	* Use of the new container classes and the new SiDigitization interface
+
+2001-09-30  David Calvet  <calvet@in2p3.fr>
+
+	* Update requirements file
+
+2001-09-17  David Calvet  <calvet@in2p3.fr>
+
+	* Fully compliant to CMT
+
+2001-07-09  David Calvet  <calvet@in2p3.fr>
+
+	* Changes to use StoreGate
+
+2001-06-25  David Calvet  <calvet@in2p3.fr>
+
+	* Changes to be used with release 1.3.7
+
+2001-06-06  David Calvet  <calvet@in2p3.fr>
+
+	* Use of the PixelDetectorStoreInterface from the event store
+	instead of explicit building of SiDetectorElement
+
+2001-05-09  David Calvet  <calvet@in2p3.fr>
+
+	* New PixelDiodeCrossTalkGenerator class
+	New linkset [alone] added for running without Athena
+	Use of the new class SiDetectorDesignCollection
+	Changes in the SiDigitization package
+
+2001-04-24  David Calvet  <calvet@in2p3.fr>
+
+	* First commit of package
+

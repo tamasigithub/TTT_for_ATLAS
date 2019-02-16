@@ -1,0 +1,1 @@
+XMLReaderSvc_cxx_dependencies =  ../src/XMLReaderSvc.cxx  $(bin)InDetTrackingGeometryXML_deps/XMLReaderSvc_cxx.stamp

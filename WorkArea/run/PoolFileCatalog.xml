@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="D0ECB42C-9011-F64F-AA3F-4EAA032431CF">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/j/jwang/public/ToNick/OUT.smear_pixel_mu100GeV_InclBrl4.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="CE6BB831-5871-BC4F-996E-3BD0B644ADC8">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/user.tkar/user.tkar.14778344.EXT0._000072.RDO.minbias.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="E1F268F5-F1F0-4C4B-9F20-985E0EE5A1D4">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/user.tkar/user.tkar.15675845.EXT0._000072.HITS.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="07FA67D1-9676-124F-B3E8-4A9B3662C0BB">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72.RDO.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="07FA67D1-9676-124F-B3E8-4A9B3662C0BB">
+    <physical>
+      <pfn filetype="ROOT_All" name="rec_outputs/SLHCtest72.RDO.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="5132F22C-5A18-0C4A-A37A-78543CAD9291">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="5132F22C-5A18-0C4A-A37A-78543CAD9291">
+    <physical>
+      <pfn filetype="ROOT_All" name="rec_outputs/SLHCtest72.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="FDAB9660-6FAD-914A-8001-C45DABB5F90E">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72.AOD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="EE7C008B-94C1-2548-AF6A-CC29A2A37D6F">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72_1.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="EE7C008B-94C1-2548-AF6A-CC29A2A37D6F">
+    <physical>
+      <pfn filetype="ROOT_All" name="rec_outputs/SLHCtest72_1.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="0E809E77-BB4C-4B45-9AC3-8779B24ABE69">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72_1.AOD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="F0B3C643-F429-114A-818E-2BE4C9B7CC62">
+    <physical>
+      <pfn filetype="ROOT_All" name="OUT.RDO.12807745._000010.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="F0B3C643-F429-114A-818E-2BE4C9B7CC62">
+    <physical>
+      <pfn filetype="ROOT_All" name="./OUT.RDO.12807745._000010.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="7D2FC0E1-C106-3E4E-AF62-6F7226BDFD3A">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/OUT.12807745._000010.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="CD3FA4E9-956C-654E-8CD1-AD8C3AA0E594">
+    <physical>
+      <pfn filetype="ROOT_All" name="tmp.ESD"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="8408439D-8123-9F48-AF74-5CA803CE0CB5">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/public/CMOS-Triplet-SimDigi/WorkArea/run/files/HITS.12807745._000010.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="9968FCF7-177F-344C-837A-B475C8483E00">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/public/CMOS-Triplet-SimDigi/WorkArea/run/files/OUTfast.RDO.12807745._000010.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="7203A1D1-74A4-F84A-982D-893F181C4A88">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/user.tkar/user.tkar/user.tkar.16637896.EXT0._000200.RDO.hh4b.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="10C90ECB-ECAC-2645-9B96-C889ED0AF1DE">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72_2.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="10C90ECB-ECAC-2645-9B96-C889ED0AF1DE">
+    <physical>
+      <pfn filetype="ROOT_All" name="rec_outputs/SLHCtest72_2.ESD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="54869349-8EC7-C04A-8DC0-14F89C894FB6">
+    <physical>
+      <pfn filetype="ROOT_All" name="./rec_outputs/SLHCtest72_2.AOD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="CB0DD303-C1CD-7749-945F-3CF30272DB26">
+    <physical>
+      <pfn filetype="ROOT_All" name="test_files/digi_SiOnly/RDO.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>

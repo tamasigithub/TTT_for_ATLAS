@@ -1,0 +1,1 @@
+/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/InnerDetector/InDetG4/SCT_G4_SD/python/SCT_G4_SDConfigDb.py

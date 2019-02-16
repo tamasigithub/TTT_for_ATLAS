@@ -1,0 +1,8 @@
+#!/bin/bash
+rm -rf InstallArea
+setupWorkArea.py
+cd WorkArea/cmt
+cmt broadcast cmt config
+cmt broadcast make
+cp /cvmfs/atlas.cern.ch/repo/sw/software/21.9/AtlasConditions/21.9.0/InstallArea/x86_64-slc6-gcc49-opt/share/geomodel.dtd \
+  ../../InstallArea/share/geomodel.dtd

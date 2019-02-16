@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="A3CBF809-AA01-E24A-9BD9-E02691DE52BF">
+    <physical>
+      <pfn filetype="ROOT_All" name="rec_outputs/AOD.combined.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="32CD115F-D8DE-A941-90DF-51297A823A9F">
+    <physical>
+      <pfn filetype="ROOT_All" name="EVNT.12807745._000010.pool.root.1"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="CB0DD303-C1CD-7749-945F-3CF30272DB26">
+    <physical>
+      <pfn filetype="ROOT_All" name="digi_SiOnly/RDO.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="1607EAAE-F675-C94A-9AC3-F0BE923C6B89">
+    <physical>
+      <pfn filetype="ROOT_All" name="./sim_SiOnly/HITS1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="1607EAAE-F675-C94A-9AC3-F0BE923C6B89">
+    <physical>
+      <pfn filetype="ROOT_All" name="sim_SiOnly/HITS1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="203E652A-0208-EF43-B0E5-DA274DC2CF99">
+    <physical>
+      <pfn filetype="ROOT_All" name="./digi_SiOnly/RDO1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="052E3443-FC82-5946-860A-89CABBCCE575">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/digi_full/RDO.Fullhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="6BBB62CF-2077-2F46-AEAF-FCEDC2F9EB16">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/rec_outputs/ESD.Fullhh4b_1.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="DE71CD27-66E1-EA43-96E4-2EC4F152CE25">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/rec_outputs/AOD.combined_1.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="203E652A-0208-EF43-B0E5-DA274DC2CF99">
+    <physical>
+      <pfn filetype="ROOT_All" name="digi_SiOnly/RDO1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="7796B262-95BA-F040-86DD-D4904BAA27D7">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/user.tkar/Lowpt.15326819.EXT0._009957.HITS_InclBrl4.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="278DE7C3-A2E1-9449-BFF8-E3CACEC68E59">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/user.tkar/user.tkar.15404978.EXT0._053734.HITS_InclBrl4.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="D8287D99-DB33-1741-BCDC-67AEF7C44BD7">
+    <physical>
+      <pfn filetype="ROOT_All" name="sim_SiOnly/HITS.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="D8287D99-DB33-1741-BCDC-67AEF7C44BD7">
+    <physical>
+      <pfn filetype="ROOT_All" name="./sim_SiOnly/HITS.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="ACCE44D6-D79E-F34B-9325-B1C7D00DD8B8">
+    <physical>
+      <pfn filetype="ROOT_All" name="RDO1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="ACCE44D6-D79E-F34B-9325-B1C7D00DD8B8">
+    <physical>
+      <pfn filetype="ROOT_All" name="./RDO1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="CB0DD303-C1CD-7749-945F-3CF30272DB26">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/digi_SiOnly/RDO.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="8E95A9DE-A091-CA48-96D1-64C21323D72B">
+    <physical>
+      <pfn filetype="ROOT_All" name="RDO.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="8E95A9DE-A091-CA48-96D1-64C21323D72B">
+    <physical>
+      <pfn filetype="ROOT_All" name="./RDO.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="ACCE44D6-D79E-F34B-9325-B1C7D00DD8B8">
+    <physical>
+      <pfn filetype="ROOT_All" name="RDOpu200.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="ACCE44D6-D79E-F34B-9325-B1C7D00DD8B8">
+    <physical>
+      <pfn filetype="ROOT_All" name="./RDOpu200.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>

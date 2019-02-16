@@ -1,0 +1,1 @@
+GMXReaderSvc_cxx_dependencies =  ../src/GMXReaderSvc.cxx  $(bin)InDetTrackingGeometryXML_deps/GMXReaderSvc_cxx.stamp

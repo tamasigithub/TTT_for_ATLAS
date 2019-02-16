@@ -1,0 +1,14 @@
+<shapes>
+  <box name="shCMOS_Plank"  xhalflength="CMOS_StaveL/2" yhalflength="CMOS_StaveW/2" zhalflength="CMOS_StaveT/2" />
+</shapes>
+
+<materials>
+  <material name='matCMOS_Plank' density='1.1'>
+    <materialref ref="MatStaveSupport"    fraction="1.0"/>
+  </material>
+</materials>
+
+<logvol name="CMOS_Plank" shape="shCMOS_Plank" material="matCMOS_Plank"/>
+
+
+

@@ -1,0 +1,10 @@
+libInDetTrackingGeometry.so:InDet::BeamPipeBuilder
+libInDetTrackingGeometry.so:InDet::RobustTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet::SiLayerBuilder
+libInDetTrackingGeometry.so:InDet::StagedTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet::TRT_LayerBuilder
+libInDetTrackingGeometry.so:InDet__BeamPipeBuilder
+libInDetTrackingGeometry.so:InDet__RobustTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet__SiLayerBuilder
+libInDetTrackingGeometry.so:InDet__StagedTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet__TRT_LayerBuilder

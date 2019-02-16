@@ -1,0 +1,27 @@
+#ifndef PIXELDIGITIZATION_IPIXELFASTDIGITIZATIONTOOL_H
+#define PIXELDIGITIZATION_IPIXELFASTDIGITIZATIONTOOL_H
+
+#include "GaudiKernel/IAlgTool.h"
+#include "GaudiKernel/StatusCode.h"
+
+static const InterfaceID IID_IPixelFastDigitizationTool ("IPixelFastDigitizationTool",1,0);
+
+class IPixelFastDigitizationTool : virtual public IAlgTool
+{
+
+   public:
+
+     static const InterfaceID& interfaceID();
+
+     ///alternative interface which uses the PileUpMergeSvc to obtain all
+     ///the required SubEvents.
+     virtual StatusCode processAllSubEvents() = 0;
+
+};
+
+inline const InterfaceID& IPixelFastDigitizationTool::interfaceID()
+{
+  return IID_IPixelFastDigitizationTool;
+}
+
+#endif // IPIXELFASTDIGITIZATIONTOOL_H

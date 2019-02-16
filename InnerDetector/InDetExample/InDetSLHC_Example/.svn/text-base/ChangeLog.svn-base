@@ -1,0 +1,1584 @@
+2017-08-16 Nick Styles
+	* More RTT fixes
+	* Tagging as InDetSLHC_Example-00-02-93
+	* And again in InDetSLHC_Example-00-02-94
+
+2017-08-15 Swagato Banerjee
+	* Added DigiInclinedQuads and DigiInclinedDuals
+	* Tagging as InDetSLHC_Example-00-02-92
+	
+2017-08-14 Nick Styles
+	* further updates for producing InDetStandardPlots
+	* Tagging as InDetSLHC_Example-00-02-91
+
+2017-08-14 Nick Styles
+	* Added postInclude.SiHitAnalysis.py to create Sim validation plots (needs SiHitAnalysis-00-00-01)
+	* Updated RTT tests to include and use this
+	* Tagged as InDetSLHC_Example-00-02-90 
+
+2017-08-11 Swagato Banerjee
+	* Added doStandardPlots to RecoInclinedDuals/Quads
+	* Tagging as InDetSLHC_Example-00-02-89
+
+2017-08-11 Francesco Costanza
+	* Added possibility to simulate different Pixel Service before and after PP0
+	* Tagging as InDetSLHC_Example-00-02-88
+
+2017-08-07 Swagato Banerjee
+	* GeoTag for RecoInclinedQuads : 19-00-00
+	* GeoTag for RecoInclinedDuals : 20-00-00
+	* Tagging as InDetSLHC_Example-00-02-87
+
+2017-07-13 Sharka Todorova
+        * update LightBrl configuration
+        * Tagging as InDetSLHC_Example-00-02-85
+
+2017-07-11 Swagato Banerjee
+	* Added RTT tests for InclinedQuads and InclinedDuals to InDetSLHC_Example_TestConfiguration.xml
+	* Tagging as InDetSLHC_Example-00-02-84
+
+2017-07-10 Swagato Banerjee
+	* ATLASSIM-3351: import MagFieldServices.SetupField in postInclude.SLHC_Setup_Common.py
+	* Tagging as InDetSLHC_Example-00-02-83
+
+2017-07-10 Swagato Banerjee
+	* Updated InDetSLHC_Example_TestConfiguration.xml to remove old layouts
+	* Tagging as InDetSLHC_Example-00-02-82
+
+2017-07-08 Swagato Banerjee
+	* Updated InDetSLHC_Example_TestConfiguration.xml to keep only InclBrl4 and future layouts
+	* starttstamp -> timestamp in userRunLumiOverride
+	* Tagging as InDetSLHC_Example-00-02-81
+
+2017-06-26 Ben Smart <ben.smart@cern.ch>
+	* Adding flag to share/postInclude.SLHC_Setup_InclBrl_4.py to set Lorentz angle to zero in pixel layer zero sensors (to model 3D sensors)
+
+2017-06-22 Swagato Banerjee
+	* Tagging as InDetSLHC_Example-00-02-79
+
+2017-06-16 Ben Smart <Ben.Smart@cern.ch>
+	* Fixing BCL bug causing reco to segfault
+
+2017-06-16 Swagato Banerjee
+	* "lb" -> "startlb" in userRunLumiOverride because of RunDependentSimData-00-00-69 update
+
+2017-06-09 Noemi Calace <noemi.calace@cern.ch>
+	* Adding flag in the GMXReaderSvc to add the BCL in the IdDictionary
+
+2017-06-08 Alessandro Calandri <alessandro.calandri@cern.ch
+	* Added postInclude for CMOS simulation (changes of signal/noise thresholds)
+
+2017-06-07 Nathan Readioff <nathan.peter.readioff@cern.ch>
+	* Edited python script to support InclBrl4 InclinedDuals layout
+
+2017-06-06 Nathan Readioff <nathan.peter.readioff@cern.ch>
+	* Edited python script to support InclBrl4 InclinedDuals layout
+
+
+2017-05-30 Nora Pettersson
+        * Remove PixelLorentzAngleSvc.ITkLayout = True as needed by
+				SiLorentzAngleSvc-01-00-12
+				* Update required for jobs to run wth new conditions
+				* Tagging as InDetSLHC_Example-00-02-78
+
+2017-05-24 Swagato Banerjee
+        * Updated conditionsTag to OFLCOND-MC15c-SDR-14-02
+        * Tagging as InDetSLHC_Example-00-02-77
+
+2017-05-03 Noemi Calace <noemi.calace@cern.ch>
+        * Edited python script to support AlternativeInclined: adding disk supports and service routing
+        * Tagging as InDetSLHC_Example-00-02-76
+
+2017-04-28 Simon Viel
+        * Make RTT commands easier to read (indent and reorder, no change to content)
+        * Tagging as InDetSLHC_Example-00-02-75
+
+2017-04-25 Noemi Calace <noemi.calace@cern.ch>
+        * Edited python script to support AlternativeInclined: w/o disk supports and service routing at the moment
+        * Tagging as InDetSLHC_Example-00-02-73 and 74
+
+2017-04-21 Simon Viel
+        * Harmonize postInclude.SLHC_Setup.py and postInclude.SLHC_Setup_Common.py
+        * Fix LoI-VF Setup from XML
+        * Fixed RTT commands to no longer use postInclude.SLHC_Setup.py
+            * LoI and LoIVF now tested from XML instead of from DB
+            * ATN and KV tests unchanged
+        * Removed RTT direct calls to UseFrontier.py (included in postInclude.SLHC_Setup_Common.py)
+        * Included "/Indet/IBLDist" veto in postInclude.SLHC_Setup_Common.py
+        * Tagging as InDetSLHC_Example-00-02-72
+
+2017-04-21 Simon Viel
+        * UNDO pixel conditions from database
+            * these developments should continue in InDetSLHC_Example-00-02-58-branch until ready
+        * Tagging as InDetSLHC_Example-00-02-71
+
+2017-04-21 Noemi Calace <noemi.calace@cern.ch>
+        * Edited python script to support InclBrl4 InclinedQuads layout: Adding DiskSupport and ServiceRouting
+        * Tagging as InDetSLHC_Example-00-02-70
+
+2017-04-19 Nathan Readioff <nathan.peter.readioff@cern.ch>
+	* Edited python script to support InclBrl4 InclinedQuads layout
+	* Tagging as InDetSLHC_Example-00-02-69
+
+2017-04-18 Noemi Calace <noemi.calace@cern.ch>
+        * Fixing rtt reg tests for InclBrl4_OptRing
+        * Tagging as InDetSLHC_Example-00-02-68
+
+2017-04-17 Simon Viel
+        * Configure RTT tests for latest ITk Pixel conditions from database
+        * Tagging as InDetSLHC_Example-00-02-67
+
+2017-03-29 Simon Viel
+        * Remove PixelLorentzAngleSvc.ITkLayout = True
+            * required when updating to SiLorentzAngleSvc-01-00-12
+        * Tagging as InDetSLHC_Example-00-02-66
+
+2017-03-13 Simon Viel
+        * Add InclBrl4_OptRing_25x100
+        * Tagging as InDetSLHC_Example-00-02-65
+
+2017-03-13 Simon Viel
+        * Try to fix RTT for conditions database
+        * Tagging as InDetSLHC_Example-00-02-64
+
+2017-03-10 Simon Viel
+        * Make sure to ForceGeoModel in SiliconConditionsSvc
+        * Tagging as InDetSLHC_Example-00-02-63
+
+2017-03-10 Simon Viel
+        * Update RTT to access pixel conditions from database
+        * Tagging as InDetSLHC_Example-00-02-62
+
+2017-02-28 Sharka Todorova
+        * add SLHC_Flags.LayoutOption to facilitate processing of various layouts
+        * Tagging as InDetSLHC_Example-00-02-61
+
+2017-02-24 Simon Viel
+        * Updating CaloNoiseFlags.FixedLuminosity to mu/2.9 (was mu*1.45/8*50/25)
+        * Tagging as InDetSLHC_Example-00-02-60
+
+2017-02-24 Simon Viel
+        * Merging InDetSLHC_Example-00-02-58-branch back into trunk
+        * Enable pixel conditions database, try to solve ATLASRECTS-2848
+        * Tagging as InDetSLHC_Example-00-02-59
+
+2017-02-09 Simon Viel
+        * Simplify postInclude.SLHC_Setup_Common.py, add protection
+        * Tagging as InDetSLHC_Example-00-02-58
+
+2017-02-06 Simon Viel
+        * Add RTT for InclBrl4_OptRing
+        * Remove failing AthMP Reg RTT tests
+        * Tagging as InDetSLHC_Example-00-02-57
+
+2017-01-29 Noemi Calace
+	* Adding optmised ring system for Inclined layouts
+        * Tagging as InDetSLHC_Example-00-02-56
+
+2017-01-23 Simon Viel
+        * Revert TrackingGeometry_GMX to TrackingGeometry for non-AthMP tests done with earlier geo tags
+        * Tagging as InDetSLHC_Example-00-02-55
+
+2017-01-23 Simon Viel
+        * Add missing quote to RAWtoESD preExec in AthMP RTT
+        * Change TrackingGeometry to TrackingGeometry_GMX for GMX tests
+        * Tagging as InDetSLHC_Example-00-02-54
+
+2017-01-14 Simon Viel
+        * Disable DAOD event filtering coming from DumpLArCollisionTime
+        * Fix configuration of EtaPtFilterTool
+        * Tagging as InDetSLHC_Example-00-02-53
+
+2016-11-22 Noemi Calace
+	* Still Fixing regression tests for AthMP RTT tests
+        * Tagging as InDetSLHC_Example-00-02-51 - InDetSLHC_Example-00-02-52
+
+2016-11-14 Noemi Calace
+	* Still Fixing regression tests for AthMP RTT tests
+        * Tagging as InDetSLHC_Example-00-02-50
+
+2016-11-10 Noemi Calace
+	* Fixing regression tests for AthMP RTT tests
+        * Tagging as InDetSLHC_Example-00-02-49
+
+2016-11-09 Simon Viel
+        * Reduce number of events in AthenaMP RTT to prevent timing out
+        * Tagging as InDetSLHC_Example-00-02-48
+
+2016-11-03 Simon Viel
+        * Disable improved pattern reco for ExtBrl, as hard-coded cuts may not be valid for 100 micron thickness
+        * Enable cluster merging for ExtBrl4_25x100 as it is aware of cluster size
+        * Tagging as InDetSLHC_Example-00-02-47
+
+2016-11-03 Simon Viel
+        * Fix 25x100 vs 50x50 pixels in RTT
+        * Remove Step 1.2 tests with pileup from RTT
+        * Tagging as InDetSLHC_Example-00-02-46
+
+2016-10-28 Simon Viel
+        * One more attempt for AthenaMP RTT tests
+        * Remove AthenaMP mu200 as this exceeds the available memory for RTT
+        * Add preInclude.SLHC_Calorimeter_muMU.py for MU = 60, 80, 140
+        * Tagging as InDetSLHC_Example-00-02-45
+
+2016-10-27 Simon Viel
+        * Attempt to fix RTT tests with AthenaMP introduced in 00-02-41
+        * Fix ExtBrl pixel cluster merging configuration problem introduced in 00-02-42
+        * Tagging as InDetSLHC_Example-00-02-44
+
+2016-10-27 Noemi Calace
+	* Removing BremCalo flags configuration from share/preInclude.SLHC.Reco.py
+        * Tagging as InDetSLHC_Example-00-02-43
+
+2016-10-27 Noemi Calace
+        * Making consistent InDetPixelClusterOnTrackTool and InDetPixelClusterOnTrackToolDigital: OBO R.Jansky
+	* Adding few post/pre include for truth-smeared ClusterOnTrackTool
+	* Changing the configuration in case you run reco w/o clustering tool
+        * Tagging as InDetSLHC_Example-00-02-42
+
+2016-10-25 Simon Viel
+        * New RTT tests for Step 1.6 with AthenaMP
+        * Tagging as InDetSLHC_Example-00-02-41
+
+2016-10-25 Simon Viel
+        * Update values for ITk digitization in postInclude.SLHC_Digitization_lowthresh.py
+        * Tagging as InDetSLHC_Example-00-02-40
+
+2016-10-25 Simon Viel
+        * Set InDetPixelClusterOnTrackTool.CorrectDigitalCentroid=True in postInclude.DigitalClustering.py
+            * Requires SiClusterOnTrackTool-03-01-03-04
+        * Tagging as InDetSLHC_Example-00-02-39
+
+2016-10-15 Simon Viel
+        * Move Execs into Includes for ITk LTF Step 1.6
+            * Created
+                 preInclude.SLHC_Calorimeter_mu0.py
+                 preInclude.SLHC_Calorimeter_mu200.py
+                 postInclude.NoJetPtFilter.py
+            * Improved
+                 preInclude.SLHC_Setup_Strip_GMX.py
+                 postInclude.SLHC_Setup_Common.py
+        * Tagging as InDetSLHC_Example-00-02-38
+
+2016-10-15 Simon Viel
+        * mark as obsolete python/SLHC_Setup_InnerInclined.py and python/SLHC_Setup_InclBrl.py
+        * make python/SLHC_Setup_IExtBrl_4.py consistent with BarrelInclinedRef-00-00-28 (required)
+        * Tagging as InDetSLHC_Example-00-02-37
+
+2016-10-13 Simon Viel
+        * Override beam pipe radius in preInclude.SLHC_Setup_ExtBrl_4_33mm.py
+        * Tagging as InDetSLHC_Example-00-02-36
+
+2016-10-12 Noemi Calace
+        * Fix mistake introduced RTT tests ExtBrl4_GMX_mu200 and InclBrl4_GMX_mu200
+        * Tagging as InDetSLHC_Example-00-02-35
+
+2016-10-10 Simon Viel
+        * Remove code duplication by creating postInclude.SLHC_Setup_Common.py
+        * Include common Execs into preInclude.SLHC.Reco.py and postInclude.SLHC_Setup_Common.py
+        * Create files for ExtBrl_4_33mm
+        * Tagging as InDetSLHC_Example-00-02-34
+
+2016-10-09 Noemi Calace
+        * Fix mistake introduced RTT tests ExtBrl4_GMX_mu200 and InclBrl4_GMX_mu200
+        * Tagging as InDetSLHC_Example-00-02-32 and InDetSLHC_Example-00-02-33
+
+2016-10-07 Noemi Calace
+        * Fix mistake introduced in previous tag
+	* Update RTT tests with Reg tests for ExtBrl4_GMX_mu200 and InclBrl4_GMX_mu200
+        * Tagging as InDetSLHC_Example-00-02-31
+
+2016-10-06 Simon Viel
+        * Fix RTT configuration
+        * Remove Step 1.2 with pileup now that Step 1.5 with pileup will be running
+        * Tagging as InDetSLHC_Example-00-02-29
+
+2016-10-05 Simon Viel
+        * RTT: add RecoExtBrl4_GMX_mu200, RecoInclBrl4_GMX_mu200
+        * fix indentation in InDetSLHC_Example_TestConfiguration.xml (tabs to spaces)
+        * Tagging as InDetSLHC_Example-00-02-28
+
+2016-09-22 Roland Jansky
+        * Migrating all cut definitions into InDetRecExample
+        * Tagging as InDetSLHC_Example-00-02-27
+
+2016-09-22 Simon Viel
+        * Specify InDetFlags.doSLHCConversionFinding = False
+              by default in preInclude.SLHC.Reco.py
+        * Rename the obsolete preInclude.SLHC_Rec.py, postInclude.SLHC_Rec.py
+              plan to delete later if no one complains
+        * Update RTT tests with Reg tests for ExtBrl4_GMX and InclBrl4_GMX
+              courtesy of Artem Basalaev
+        * Tagging as InDetSLHC_Example-00-02-26
+
+2016-09-19 Noemi Calace <noemi.calace@cern.ch>
+	* Updating the XMLSetup to implement dictionary creation on-the-fly for GMX-based strip
+        * Tagging as InDetSLHC_Example-00-02-25
+
+2016-09-13 Noemi Calace <noemi.calace@cern.ch>
+	* LoI from XML with GMX configuration
+        * Tagging as InDetSLHC_Example-00-02-24
+
+2016-08-29 Simon Viel
+        * Use DataRunNumber 240000 for GMX RTT (fixes calo conditions errors)
+        * Set ToolSvc.InDetClusterMakerTool.UsePixelCalibCondDB=True in postExec for GMX RTT
+              (fixes rdo_tot, ATLASRECTS-2848, precise values to be validated)
+        * Tagging as InDetSLHC_Example-00-02-23
+
+2016-08-29 Simon Viel
+        * Temporarily add this line in share/postInclude.SLHC_Setup_*.py
+              ToolSvc.InDetClusterMakerTool.UsePixelCalibCondDB=False
+        * Simplify RTT reco test commands (checked that this change doesn't affect the output)
+        * Tagging as InDetSLHC_Example-00-02-22
+
+2016-08-28 Simon Viel
+        * Merge in changes from InDetSLHC_Example-00-02-11-03
+            * Simplify share/*.Reco.py to remove code duplication
+            * Another attempt to turn off pseudo-tracking
+            * Fix TrackingGeometry.py in commands for ExtBrl4_GMX and InclBrl4_GMX RTT
+        * Tagging as InDetSLHC_Example-00-02-21
+
+2016-08-26 Simon Viel
+        * Remove the following from RTT commands at r2e
+              InDetFlags.doSLHCVeryForward.set_Value_and_Lock(True);InDetFlags.doPseudoTracking.set_Value_and_Lock(True)
+        * Tagging as InDetSLHC_Example-00-02-20
+
+2016-08-25 Simon Viel
+        * Set eta-dependent reco-level cuts only for reco steps (for simulation InDetFlags is not defined)
+              share/postInclude.SLHC_Setup_*.py
+        * Add "include InDetFlags" in share/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Reco.py
+        * Update RTT tests with latest GMX ExtBrl4 and InclBrl4 with FCal
+        * Tagging as InDetSLHC_Example-00-02-19
+
+2016-08-25 Simon Viel
+        * Set eta-dependent reco-level cuts only for RAWtoESD (for simulation InDetFlags is not defined)
+              share/postInclude.SLHC_Setup_*.py
+        * Tagging as InDetSLHC_Example-00-02-18
+
+2016-08-25 Simon Viel
+        * Propagate Christoph's update to all inclined and extended layouts
+              share/postInclude.SLHC_Setup_*.py
+        * Cleanup indentation and white spaces
+        * Tagging as InDetSLHC_Example-00-02-17
+
+2016-08-25 Christoph Rauchegger <christoph.rauchegger@cern.ch>
+        * Setting eta-dependent cuts for InclBrl4 and ExtBrl4 layout (in share/postInclude.SLHC_Setup_*.py)
+        * Tagging as InDetSLHC_Example-00-02-16
+
+2016-08-17 Noemi Calace <noemi.calace@cern.ch>
+	* Removing print out statements in postInclude.SLHC_LightDigitization.py
+        * Tagging as InDetSLHC_Example-00-02-15
+
+2016-08-09 Christoph Rauchegger <christoph.rauchegger@cern.ch>
+        * Changes to use run 2 ambiguity solving per default
+            removing doPixelClusterSplitting=False in some preIncludes
+        * Changes to use eta-merge reconstruction (InDetDynamicCutsTool)
+            Enable doForwardTracks and doSLHCVeryForward only when useInDetDynamicCuts is NOT used.
+        * Tagging as InDetSLHC_Example-00-02-14
+
+2016-08-02 Christoph Rauchegger <christoph.rauchegger@cern.ch>
+        * Adding if-statement for very forward configuration for ExtBrl32 layout
+        * changed: share/postInclude.SLHC_Setup_ExtBrl_32.py
+        * Tagging as InDetSLHC_Example-00-02-13
+
+2016-07-28 Christoph Rauchegger <christoph.rauchegger@cern.ch>
+        * Adding if-statement for very forward configuration for ExtBrl4 layout
+        * changed: share/postInclude.SLHC_Setup_ExtBrl_4.py
+        * Tagging as InDetSLHC_Example-00-02-12
+
+2016-07-28 Noemi Calace <noemi.calace@cern.ch>
+        * Adding new script to run with PixelLightDigitizationTool
+	* share/postInclude.SLHC_LightDigitization.py
+        * Tagging as InDetSLHC_Example-00-02-11
+
+2016-07-21 Simon Viel
+        * Fix typo in SLHC_Setup_Reco_TrackingGeometry_GMX.py
+        * Tagging as InDetSLHC_Example-00-02-10
+
+2016-07-20 Simon Viel
+        * Introducing SLHC_Setup_Reco_TrackingGeometry_GMX.py
+            with MaterialMagicTag using the full geometry tag
+        * New pattern recognition flags for extended layouts
+            Now enabled only for default pixel size (50x50 microns^2)
+            Requires the updates from Sasha Pranko in
+              SiCombinatorialTrackFinderTool_xk-01-00-34-01
+              SiTrackMakerTool_xk-01-00-42-01
+        * Tagging as InDetSLHC_Example-00-02-09
+
+2016-07-07 Jike Wang
+        * JOs for running Pixel+Strip material mapping
+
+2016-07-05 Simon Viel
+        * obo Artem Basalaev: Fix monitoring plots and reg tests for DigiExtBrl4_mu200 and RecoExtBrl4_mu200
+        * Tagging as InDetSLHC_Example-00-02-08
+
+2016-06-20 Simon Viel
+        * Fix typos in GMX RTT test
+        * Tagging as InDetSLHC_Example-00-02-06 and InDetSLHC_Example-00-02-07
+
+2016-06-20 Simon Viel
+        * Add new RTT test with GMX strips
+        * Add Artem Basalaev's monitoring plots and reg tests for DigiExtBrl4_mu200 and RecoExtBrl4_mu200
+            i.e. merge with InDetSLHC_Example-00-01-99-50
+        * Reduce number of events in LoI tests from 500 to 50
+        * Tagging as InDetSLHC_Example-00-02-05
+
+2016-06-20 Nick Styles
+	* Add new doGMX flag
+	* Building GMX strip geometries will be triggered either by setting this flag, or by using appropriate geometry tag
+	* Tagging as InDetSLHC_Example-00-02-04
+
+2016-06-17 Simon Viel
+        * XMLReaderFlags.readXMLfromDB in python/SLHC_Setup_*_25x100.py
+        * Tagging as InDetSLHC_Example-00-02-03
+
+2016-06-07 Noemi Calace <noemi.calace@cern.ch>
+	* Added new configuration for gmx based strip
+	* Added new flag for taking the right dictionary piece
+        * Tagging as InDetSLHC_Example-00-02-01 and InDetSLHC_Example-00-02-02
+
+2016-06-03 Sabine Elles
+	* Add XML-CLOB pixel geometry setup
+        * Tagging as InDetSLHC_Example-00-02-00
+
+2016-05-27 Noemi Calace <noemi.calace@cern.ch>
+        * Updating reco command in RTT tests uploading the right material on the tracking geometry
+        * Tagging as InDetSLHC_Example-00-01-99
+
+2016-05-19 Noemi Calace <noemi.calace@cern.ch>
+	* Updating scripts to run geantino + material mapping for the TrackingGeometry for LTF layouts
+	* Updating scripts to run reconstruction using COOL as MaterialSource for the TrackingGeometry for LTF layouts
+	* Tagging as InDetSLHC_Example-00-01-98
+
+2016-05-06 Simon Viel
+        * Consistently import AppMgr modules for all SLHC layouts
+        * Should have no impact on the output
+        * Tagging as InDetSLHC_Example-00-01-97
+
+2016-04-25 Simon Viel
+        * Can run digitization + reconstruction with AthenaMP at mu = 0
+        * Does not work yet with mu > 0  (but works without AthenaMP)
+        * Same as InDetSLHC_Example-00-01-95-01
+        * Tagging as InDetSLHC_Example-00-01-96
+
+2016-04-15 Simon Viel
+        * Fix input pileup HITS files for InclBrl4 RTT tests
+        * Tagging as InDetSLHC_Example-00-01-95
+
+2016-04-13 Simon Viel
+        * Fix typo in geotag for new InclBrl4 RTT tests
+        * Tagging as InDetSLHC_Example-00-01-94
+
+2016-04-12 Simon Viel
+        * InclBrl4 layout with 25 x 100 micron pixels available
+        * Add RTT tests: InclBrl4_mu200 and InclBrl4_25x100_mu200
+        * Fix RTT tests for mu200 as really 200 (was 140 so far)
+        * Tagging as InDetSLHC_Example-00-01-93
+
+2016-04-12 Noemi Calace <noemi.calace@cern.ch>
+	* Make the new configuration for the LorentzAngleSvc and the SiliconConditionsSvc
+	    work with the InDetPhysValMonitoring
+	* Tagging as InDetSLHC_Example-00-01-91 and InDetSLHC_Example-00-01-92
+
+2016-04-12 Noemi Calace <noemi.calace@cern.ch>
+	* ServiceMgr.PixelLorentzAngleSvc.ITkLayout = True moved to the postInclude of the single layouts
+            together with the lorentzAngleSvc.forceUseGeoModel() 
+	* Tagging as InDetSLHC_Example-00-01-90
+
+2016-04-11 Simon Viel
+        * Propagate latest changes to layout with 25x100 micron pixels
+        * Add an RTT test: ExtBrl4_25x100_mu200
+        * Tagging as InDetSLHCExample-00-01-89
+
+2016-04-11 Noemi Calace <noemi.calace@cern.ch>
+	* ForceUseGeoModel lines to fix the d0 bias, but in share/postInclude.SLHC_Setup_*
+	    this needs to be done only during digitization
+	* tag as as InDetSLHC_Example-00-01-88
+
+2016-04-11 Sabine Elles
+	* Add endcap ring services (in SLHC_Setup_my_layout.py files)
+	* tag as as InDetSLHC_Example-00-01-87
+	
+2016-04-11  Eric Feng  <Eric.Feng@cern.ch>
+        * Unset SLHC_Flags.SLHC_Version, which should be left blank by default
+	* share/preInclude.SLHC.py
+	* Tagging as InDetSLHC_Example-00-01-86
+
+2016-04-08 Simon Viel
+        * ExtBrl4 layout with 25 x 100 micron pixels available
+        * Tagging as InDetSLHC_Example-00-01-85
+
+2016-04-08 Simon Viel
+        * Improved pattern recognition for extended layouts turned on
+            share/postInclude.SLHC_Setup_ExtBrl_32.py
+            share/postInclude.SLHC_Setup_ExtBrl_4.py
+        * Put back the ForceUseGeoModel lines to fix the d0 bias, but in share/postInclude.SLHC_Setup_*
+            this time specifying not to call if EVNTtoHITS
+            NOTE: these lines are commented out until full-chain tests are successful
+        * RTT for ExtBrl4_mu200: point at group area for input HITS files
+        * Tagging as InDetSLHC_Example-00-01-84
+
+2016-04-08 Noemi Calace <noemi.calace@cern.ch>
+	* InDetSLHC_Example-00-01-82 not working in simulation
+	* --> Restoring InDetSLHC_Example-00-01-81	
+	* Tagging as InDetSLHC_Example-00-01-83
+
+2016-04-08 Noemi Calace <noemi.calace@cern.ch>
+	* Fixing configuration for the PixelSiliconConditionsSvc and SCT_SiliconConditionsSvc when running with FastGeoModel layouts
+	* partial fix for d0 bias, ATLASRECTS-3027
+	* svcMgr.PixelSiliconConditionsSvc.ForceUseGeoModel = True  && svcMgr.SCT_SiliconConditionsSvc.ForceUseGeoModel = True
+	* Tagging as InDetSLHC_Example-00-01-82
+
+2016-04-04  Eric Feng  <Eric.Feng@cern.ch>Nick Styles
+	* Fixes forSLHC-23-25-dev1/2/3
+	* Tagged as InDetSLHC_Example-00-01-81
+	
+2016-04-04  Eric Feng  <Eric.Feng@cern.ch>
+	* New steering text file with tilt angle updated from -10 to -11 degrees to reflect current baseline.  The Lorentz angle for 2T field, non-irradiated sensors, and the sensor as described for Step 1.5 is expected to be in the ballpark of 4.5 degrees based on preliminary measurements.
+	  data/slhcsct_local_database_SLHC-23-25-dev3.txt
+	* Tagged as InDetSLHC_Example-00-01-80
+
+2016-03-24 Simon Viel
+        * Fix RTT: cannot comment out athena commands in xml
+        * New test: ExtBrl4_mu200
+        * Tagged as InDetSLHC_Example-00-01-79
+
+2016-03-23 Simon Viel
+        * Simplify RTT
+        * Tagged as InDetSLHC_Example-00-01-78
+
+2016-03-21 Noemi Calace <noemi.calace@cern.ch>
+	* Adding scripts to run geantino+material mapping
+	* Tagged as InDetSLHC_Example-00-01-77
+
+2016-03-04  Eric Feng  <Eric.Feng@cern.ch>
+	* New steering text file with electron charge carriers in barrel and endcap modules.  The barrel module tilt in phi is changed from +10 degrees (for holes) to -10 degrees (placeholder for electrons).  The actual electron tilt angle is likely to be much higher since it drifts faster, and thus the Lorentz angle should be larger.
+	  data/slhcsct_local_database_SLHC-23-25-dev2.txt
+	* Tagged as InDetSLHC_Example-00-01-76
+
+2016-03-03 Eric Feng <Eric.Feng@cern.ch>
+	* Corrected all Strip barrel layers to have inner stereo angle of -20 mrad,
+	  and outer stereo angle of +20 mrad.  Before they were swapping from layer
+	  to layer.
+	  data/slhcsct_local_database_SLHC-23-25-dev0.txt
+	  data/slhcsct_local_database_SLHC-23-25-dev1.txt
+	* Tagged as InDetSLHC_Example-00-01-75
+
+2016-02-16 Simon Viel
+	* Fix typos in InclBrl4 RTT command
+	* Tagged as InDetSLHC_Example-00-01-74
+
+2016-02-16 Simon Viel
+	* Adding InclBrl4 to RTT
+	* Tagged as InDetSLHC_Example-00-01-73
+
+2016-02-16 Sabine Elles
+	* add InclBrl geometry
+	* Tagged as InDetSLHC_Example-00-01-72
+
+2016-02-16 Noemi Calace <noemi.calace@cern.ch>
+	* Adding scripts to run with InclBrl4 layout
+	* Tagged as InDetSLHC_Example-00-01-71
+
+2016-02-16 Eric Feng
+	* Correct 5mm shift in Strip endcaps
+	  data/slhcsct_local_database_SLHC-23-25-dev0.txt
+	  data/slhcsct_local_database_SLHC-23-25-dev1.txt
+	* Tagged as InDetSLHC_Example-00-01-70
+
+2016-02-09 Simon Viel
+        * moved doITk flag initialization to PixelDigitizationConfig.py
+          share/postInclude.SLHC_Digitization_lowthresh.py  (use this one)
+          share/postInclude.SLHC_Digitization.py
+        * NO LONGER requires a specific PixelDigitization version
+        * Tagged as InDetSLHC_Example-00-01-69
+
+2016-02-08 Simon Viel
+        * Digitization: enable doITk flag for SurfaceChargesTool
+          share/postInclude.SLHC_Digitization_lowthresh.py  (use this one)
+          share/postInclude.SLHC_Digitization.py
+        * Requires PixelDigitization-02-00-22-03
+        * Tagged as InDetSLHC_Example-00-01-68
+
+2016-02-05 Simon Viel
+	* RTT ExtBrl32, ExtBrl4, IExtBrl4
+	  Simulate 5 ttbar events, not 500 (!)
+	* Tagged as InDetSLHC_Example-00-01-67
+
+2016-02-04 Simon Viel
+        * Attempt to fix the RTT Ring and sFCal by disabling DBM
+          test/InDetSLHC_Example_TestConfiguration.xml
+          share/preInclude.NoTRT_NoDBM.py
+          share/preInclude.SLHC.NoTRT_NoDBM.Ana.py
+          share/preInclude.SLHC.NoTRT_NoDBM.Reco.py
+	* Tagged as InDetSLHC_Example-00-01-66
+
+2016-02-03 Simon Viel
+	* ttbar input file for RTT ExtBrl32, ExtBrl4, IExtBrl4
+	* Tagged as InDetSLHC_Example-00-01-65
+
+2016-02-03 Simon Viel
+	* Added RTT tests for ExtBrl32, ExtBrl4, IExtBrl4
+	* Tagged as InDetSLHC_Example-00-01-64
+
+2016-02-03 Noemi Calace <noemi.calace@cern.ch>
+	* Adding scripts to run with IExtBrl4 layout
+        * Tagged as InDetSLHC_Example-00-01-63
+
+2016-02-02 Simon Viel
+        * Enabled pixel clustering improvements relevant to extended layouts
+          share/postInclude.SLHC_Setup_ExtBrl_4.py
+          share/postInclude.SLHC_Setup_ExtBrl_32.py
+        * Tagged as InDetSLHC_Example-00-01-62
+
+2016-02-01 Simon Viel
+        * Updated values of ToTParE in
+          share/postInclude.SLHC_Digitization_lowthresh.py
+        * Will need to update other charge calibration values as well
+        * Can wait for next tag
+
+2016-01-31 Simon Viel
+        * Import ServiceMgr earlier, fixing UnboundLocalError
+          python/SLHC_Setup_*
+        * Tagged as InDetSLHC_Example-00-01-61
+
+2016-01-29 Simon Viel
+        * Proper configuration of digitization for ITk pixel chip
+          share/postInclude.SLHC_Digitization_lowthresh.py  (use this one)
+          share/postInclude.SLHC_Digitization.py
+        * Requires doITK flag introduced in PixelDigitization-02-00-22-01
+        * Tagged as InDetSLHC_Example-00-01-60
+
+2016-01-28 Simon Viel
+	* Updates on behalf of Robert Harrington
+	  for compatibility with AtlasGeoModel-00-03-40
+	* Tagged as InDetSLHC_Example-00-01-59
+
+2016-01-27 Noemi Calace <noemi.calace@cern.ch>
+	* Changed configuration to enable the automatic dictionary creation
+	* Tagged as InDetSLHC_Example-00-01-58
+
+2016-01-21 Simon Viel
+        * More updates from Sabine Elles:
+        * Updated strips detector
+          python/SLHC_Setup_ExtBrl_32.py
+          python/SLHC_Setup_ExtBrl_4.py
+          run/InDetIdDictFiles/IdDictInnerDetector_SLHC_ExtBrl_4.xml
+          run/InDetIdDictFiles/IdDictInnerDetector_SLHC_ExtBrl_32.xml
+          run/InDetIdDictFiles/IdDictInnerDetector_SLHC_InclBrl_4.xml
+        * Added test scripts for more layouts
+          run/test_G4AtlasGeo_IExtBrl4.py
+          run/test_G4AtlasGeo_ExtBrl4.py
+          run/test_G4AtlasGeo_ExtBrl32.py
+        * Call nice VP1 configuration by default
+          run/jobOptions_display_IExtBrl4.py
+          run/jobOptions_display_LoI_geomodel.py
+          run/jobOptions_display_ATLAS.py
+          run/jobOptions_display_Alpine.py
+          run/jobOptions_display_Alpine-VF.py
+          run/jobOptions_display_LoI.py
+          run/jobOptions_display_LoI_BeamPipe.py
+          run/jobOptions_display_LoI-ECRing.py
+          run/jobOptions_display_GeoModel.py
+          run/jobOptions_display_LoI-VF.py
+          run/README.sh
+        * Tagged as InDetSLHC_Example-00-01-57
+
+2016-01-13 Simon Viel
+	* ITk Extended Layout simulation with updated strips detector 
+	  python/SLHC_Setup_ExtBrl_32.py
+	  python/SLHC_Setup_ExtBrl_4.py
+	  run/InDetIdDictFiles
+	  run/jobOptions_display_ExtBrl32.py
+	  run/jobOptions_display_ExtBrl4.py
+	  run/BasicVisualisationGeoModel.vp1
+	  share/postInclude.SLHC_Setup_ExtBrl_32.py
+	  share/postInclude.SLHC_Setup_ExtBrl_4.py
+	  share/preInclude.SLHC_Setup_ExtBrl_32.py
+	  share/preInclude.SLHC_Setup_ExtBrl_4.py
+	* Tagged as InDetSLHC_Example-00-01-56
+
+2016-01-13 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  share/jobOptions_simulation_SLHC.py
+	  share/jobOptions_digitization_SLHC.py
+	  Migrated to OFLCOND-MC15c-SDR-06 conditions tag.
+	* Tagged as InDetSLHC_Example-00-01-55
+
+2016-01-07 Noemi Calace <noemi.calace@cern.ch>
+	* Adding Sabine's files for ITk description
+	* Tagged as InDetSLHC_Example-00-01-54
+
+2016-01-06 Eric Feng <Eric.Feng@cern.ch>
+	* More fixes to SLHC-23-25-dev0 and -dev1 txt files for typos and ZMIN, ZINTERMEDIATE of endcaps
+	* Tagged as InDetSLHC_Example-00-01-53
+
+2015-12-16 Nick Styles
+	* Fixes to SLHC-23-25-dev0/1 txt files
+	* Tagged as InDetSLHC_Example-00-01-52
+
+2015-12-15 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Fixed a SimsFCal problem. Made DigisFCal and RecosFCal AthenaMP jobs. 
+	* Tagged as InDetSLHC_Example-00-01-51
+
+2015-12-13 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Fixed wrong format
+	* Tagged as InDetSLHC_Example-00-01-50
+
+2015-12-09 Eric Feng  <Eric.Feng@cern.ch>
+	* New version 23-25-dev0 which updates LOI to current Strip layout
+	  data/slhcsct_local_database_SLHC-23-25-dev0.txt
+  	  data/IdDictInnerDetector_SLHC-23-25-dev0.xml
+	* Fix parsing issue with Barrel & stub comments for geantino mapping
+	* New version 23-25-dev1 with interstrip spacing of 8mm in forward modules, in addition to updates from 23-25-dev0
+	  data/slhcsct_local_database_SLHC-23-25-dev1.txt
+  	  data/IdDictInnerDetector_SLHC-23-25-dev1.xml
+
+2015-12-08 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  disabled the TrackingAxAODLOIVF test. Derivation production requires trigger
+	  information but Upgrade simulation does not have trigger information.
+	* share/postInclude.SLHC_Setup.py
+	  block the /Indet/IBLDist conditions folder to avoid crash.
+	* Tagged as InDetSLHC_Example-00-01-49
+
+2015-12-08 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/GeantinoMapping_ITk_jobOptions.py: migrated
+	  MaterialStepRecorder configuration to work with the new G4Atlas
+	  Infrastructure. ATLASSIM-1752. Code should be back-compatible.
+	* Tagged as InDetSLHC_Example-00-01-48
+
+2015-12-08 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/ExtrapolationEngineTest_ITk_jobOptions.py
+	  share/MaterialMapping_ITk_jobOptions.py
+	  share/GeantinoMapping_ITk_jobOptions.py
+	  share/TrackingGeometryTest_ITk_jobOptions.py
+	  added for easier Geatino mapping and its validation. 
+	  Usages are found in 
+	  https://twiki.cern.ch/twiki/bin/view/Atlas/UpgradeSimulationInnerTrackerMigrationRel20p3p3#Geantino_map_creation
+	* Tagged as InDetSLHC_Example-00-01-47
+
+2015-11-06  John Chapman  <John.Chapman@cern.ch>
+
+	* share/GeantinoMapping_jobOptionsOverride.py: migrated
+	MaterialStepRecorder configuration to work with the new G4Atlas
+	Infrastructure. ATLASSIM-1752. Code should be back-compatible.
+	* Tagged as InDetSLHC_Example-00-01-46
+
+2015-11-03 Goetz Gaycken
+	* Fix whitespace type.
+	* Tagged as InDetSLHC_Example-00-01-45
+
+2015-11-03 Goetz Gaycken
+	* Deactivate usage of offline calib svc in the pixel digitization
+	  tool since the necessary conditions data is not available.
+	* Tagged as InDetSLHC_Example-00-01-44
+
+2015-09-21 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Added RecosFCal test. 
+	* Tagged as InDetSLHC_Example-00-01-43
+
+2015-08-13 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/postInclude.SLHC_Setup.py
+	  Added ServiceMgr.PixelOfflineCalibSvc.HDCFromCOOL = False for
+	  RAWtoESD and ESDtoDPD to fix ATLASRECTS-2321.
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Removed unnecessary tweak in TrackingAxAODLOIVF.
+	* Tagged as InDetSLHC_Example-00-01-42
+
+2015-07-26 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Fixed bugs in SimRing and DigisFCal with AtlasProduction 20.3.X.Y-VAL.
+	* Tagged as InDetSLHC_Example-00-01-41
+
+2015-07-21 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  Added DigisFCal, updated SimMod, added RecoMod.
+	* Tagged as InDetSLHC_Example-00-01-39
+
+2015-07-06 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/jobOptions_tracking_SLHC.py - updated
+	  to run AtlasProduction 20.1.5.11.
+	* Tagged as InDetSLHC_Example-00-01-38
+
+2015-06-14 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - added
+	  SimMod and DigiMod using SLHC_Flags.SLHC_Version="SLHC-23-24-dev12". 
+	* Tagged as InDetSLHC_Example-00-01-36
+
+2015-06-10 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - changed 
+	  --skipFileValidation to --outputFileValidation False. 
+	  Added some commands to disable dumpUnassociatedHits. 
+	* Tagged as InDetSLHC_Example-00-01-35
+
+2015-06-08 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - disabled 
+	  CheckFileRunner0 in PhysvalLOIVF and PhysvalRing. 
+	* Tagged as InDetSLHC_Example-00-01-34
+
+2015-05-25 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - added
+	  TrackingAxAODLOIVF to test Tracking axAOD production. 
+	* Tagged as InDetSLHC_Example-00-01-33
+
+2015-05-22 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - added
+	  PhysvalLOIVF and PhysvalRing to test Physics Validation
+	  Ntuple production.
+	* Tagged as InDetSLHC_Example-00-01-32
+
+2015-05-15 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - fixed
+	  wrong settings. 
+	* Tagged as InDetSLHC_Example-00-01-31
+
+2015-05-12 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - fixed
+	  its invalid format by checking python /afs/cern.ch/user/r/rtt/public/validateXML.py
+	* Tagged as InDetSLHC_Example-00-01-30
+
+2015-05-10 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - added
+	  SimRing, DigiRing, RecoRing, SimsFCal.
+	* Tagged as InDetSLHC_Example-00-01-29
+
+2015-05-06 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - changed 
+	  'BTaggingFlags.CalibrationTag="BTagCalibALL-07-09"' to
+	  'BTaggingFlags.CalibrationTag="BTagCalibRUN12-08-05"' to 
+	  fix the crash of RTT RecoLOIVF test. 
+	* Tagged as InDetSLHC_Example-00-01-28
+
+2015-03-09 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - replaced 
+	  RecJobTransforms/UseFrontier.py by PyJobTransforms/UseFrontier.py.
+	* Tagged as InDetSLHC_Example-00-01-27
+
+2015-02-26 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/preInclude.SLHC.SiliconOnly.Reco.py,
+	  share/preInclude.SLHC.NoTRT.Reco.py - add
+	  InDetFlags.doSLHCVeryForward=True in RAWtoESD. 
+	* Tagged as InDetSLHC_Example-00-01-26
+
+2015-02-15 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - fix a typo
+	* Tagged as InDetSLHC_Example-00-01-25
+
+2015-02-14 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/postInclude.SLHC_Digitization_lowthresh.py - comment
+	  out DiscrThresh, IntimeThresh, ToTParE to avoid the problem
+	  reported in ATLASSIM-1832.
+	* test/InDetSLHC_Example_TestConfiguration.xml, 
+	  share/jobOptions_simulation_SLHC.py, 
+	  share/jobOptions_digitization_SLHC.py - update
+	  conditions tag to OFLCOND-MC12-ITK-27-00.
+	* Tagged as InDetSLHC_Example-00-01-24
+
+2015-02-10 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - add
+	 --preExec 'BTaggingFlags.CalibrationTag="BTagCalibALL-07-09"'
+	 to the RecoLOIVF job of RTT to fix the bug in devval.
+	* Tagged as InDetSLHC_Example-00-01-23
+
+2015-02-05 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/preInclude.SLHC.NoTRT.Ana.py and 
+	  share/preInclude.SLHC.SiliconOnly.Ana.py - add
+	* Tagged as InDetSLHC_Example-00-01-22
+
+2015-01-22 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - add
+	  sim-digi-reco chain with the LOI-VF geometry to RTT.
+	* Tagged as InDetSLHC_Example-00-01-21
+
+2015-01-06 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - remove
+	  Ele1SLHCRTT test.
+	* Tagged as InDetSLHC_Example-00-01-20
+
+2014-12-20 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - fix
+	  Ele1SLHCRTT test partially.
+	* Tagged as InDetSLHC_Example-00-01-19
+
+2014-12-17 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - update to 
+	  use xrdcp command instead of direct access from Dig_tf.py.
+	* Tagged as InDetSLHC_Example-00-01-18
+
+2014-12-16 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/jobOptions_display_SLHC.py - updated for rel 20.
+	* Tagged as InDetSLHC_Example-00-01-17
+
+2014-12-11 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - fix 
+	  invalid xml format. 
+	* Tagged as InDetSLHC_Example-00-01-16
+
+2014-12-09 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - add 
+	  --geometryVersion to Reco_tf.py command. 
+	* Tagged as InDetSLHC_Example-00-01-15
+
+2014-12-08 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - update pileup 
+	  fles of the Digi_tf_SLHC_single_particle_intime_pileup_digi 
+	  ATN test. 
+	* Tagged as InDetSLHC_Example-00-01-14
+
+2014-12-07 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml - remove
+	  obsolete RTT tests (MinBiasSLHCRTT, MinBiasSLHCRTTKalman, 
+	  Mu1SLHCRTT, Mu1SLHCRTTKalman) and add AOD to SLHCReco. 
+	* Tagged as InDetSLHC_Example-00-01-13
+
+2014-12-07 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/preInclude.SLHC.SiliconOnly.Reco.py, 
+	  share/preInclude.SLHC.NoTRT.Reco.py - update flags 
+	  to cope with IsoGetter in release 20. 
+	* Tagged as InDetSLHC_Example-00-01-12
+
+2014-12-05 Susumu Oda <Susumu.Oda@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml,
+	  share/jobOptions_simulation_SLHC.py, 
+	  share/jobOptions_digitization_SLHC.py - update geometry from 
+	  ATLAS-SLHC-01-03-00 to ATLAS-P2-ITK-01-00-00. 
+	* cmt/requirements - fix checkreq.py warnings
+	* Tagged as InDetSLHC_Example-00-01-11
+
+2014-12-04 Susumu Oda <Susumu.Oda@cern.ch>
+	* share/preInclude.SLHC.SiliconOnly.Reco.py,
+	  share/preInclude.SLHC.NoTRT.Reco.py - updates to use
+	the new foler /GLOBAL/TrackingGeo/LayerMaterialITK.
+	* Tagged as InDetSLHC_Example-00-01-10
+
+2014-08-08  John Chapman  <John.Chapman@cern.ch>
+
+	* share/postInclude.SLHC_Digitization_lowthresh.py,
+	share/postInclude.SLHC_Digitization.py,
+	share/jobOptions_SLHC_nn_prodTrainingSample_standAlone.py - tweak
+	code to properly configure PixelDigitizationTool in 19.2
+	onwards (PileUpTools now use PublicToolHandles rather than
+	PrivateToolHandles). Also tidy up SCT_FrontEnd configuration.
+	* Tagged as InDetSLHC_Example-00-01-07
+
+2014-07-18 Andreas Korn
+
+	* fixed for new mag field service
+	* Tagged as InDetSLHC_Example-00-01-06
+	
+2014-07-10  John Chapman  <John.Chapman@cern.ch>
+
+	* share/postInclude.SLHC_Digitization_lowthresh.py,
+	share/postInclude.SLHC_Digitization.py,
+	share/jobOptions_SLHC_nn_prodTrainingSample_standAlone.py - tweak
+	to properly configure PixelDigitizationTool when PileUpToolsAlg or
+	DigiAlg are not being used. Should fix ATN jobs in 17.7.
+	* Tagged as InDetSLHC_Example-00-01-05
+
+2014-07-09  John Chapman  <John.Chapman@cern.ch>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml - drop duplicate
+	ATN jobs using --DBRelease=current as cvmfs is no-longer available
+	when ATN jobs are run. Drop DBRelease argument from
+	Digi_trf_SLHC_single_particle_intime_pileup_digi_currentDB ATN job
+	and rename to Digi_trf_SLHC_single_particle_intime_pileup_digi.
+	* Tagged as InDetSLHC_Example-00-01-04
+
+2014-07-09  John Chapman  <John.Chapman@cern.ch>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml - update ATN, KV
+	and RTT jobs using AtlasG4_trf.py and Digi_trf.py to use
+	AtlasG4_tf.py and Digi_tf.py. ATLASSIM-533
+	* Tagged as InDetSLHC_Example-00-01-03
+
+2014-06-23  John Chapman  <John.Chapman@cern.ch>
+
+	* share/jobOptions_tracking_SLHC_trf_UtopiaTest.py - TrkDetFlag
+	syntax fix - see ATLASSIM-510.
+	* Tagged as InDetSLHC_Example-00-01-02
+
+2014-03-31  John Chapman  <John.Chapman@cern.ch>
+
+	* share/GeantinoMapping_jobOptionsOverride.py,
+	share/jobOptions_geomtest_SLHC.py,
+	share/jobOptions_simulation_SLHC.py,
+	share/test_G4AtlasGeo_SLHC_test.py - protection against
+	CopyEventWeight Algorithm moving to EvgenProdTools package.
+	* Tagged as InDetSLHC_Example-00-01-01
+
+2014-03-25  John Chapman  <John.Chapman@cern.ch>
+
+	* share/postInclude.SLHC_Digitization.py,
+	share/postInclude.SLHC_Digitization_lowthresh.py - revised strategy for
+	getting hold of the PixelDigitization(Tool), which should work for
+	17.3.X and 19.0.X. ATLASSIM-64.
+	* Tagged as InDetSLHC_Example-00-01-00
+
+2014-03-18  John Chapman  <John.Chapman@cern.ch>
+
+	* share/postInclude.SLHC_Digitization.py,
+	share/postInclude.SLHC_Digitization_lowthresh.py - add missing
+	import of CfgGetter.getPublicTool. ATLASSIM-64.
+	* Tagged as InDetSLHC_Example-00-00-99
+
+2014-03-14  John Chapman  <John.Chapman@cern.ch>
+
+	* share/postInclude.SLHC_Digitization.py,
+	share/postInclude.SLHC_Digitization_lowthresh.py - fix to make
+	compatible with the new digitization configuration in
+	19.0.1. ATLASSIM-64.
+	* Tagged as InDetSLHC_Example-00-00-98
+
+2014-02-14  Andreas Korn <Andreas.Korn@cern.ch>
+	* share/jobOptions_simulation_SLHC.py,
+	changed CopyEventWeight include
+	* Tagged as InDetSLHC_Example-00-00-97
+
+2013-12-02  John Chapman  <John.Chapman@cern.ch>
+	* share/jobOptions_simulation_SLHC.py,
+	share/jobOptions_geomtest_SLHC.py - replace SimFlags with
+	simFlags.
+	* Tagged as InDetSLHC_Example-00-00-96
+
+2013-11-29  John Chapman  <John.Chapman@cern.ch>
+	* share/jobOptions_simulation_SLHC.py,
+	share/test_G4AtlasGeo_SLHC_test.py,
+	share/jobOptions_geomtest_SLHC.py,
+	share/GeantinoMapping_jobOptionsOverride.py - switch to use
+	ParticleGun rather than ParticleGenerator.
+	* Tagged as InDetSLHC_Example-00-00-95
+
+2013-10-11  John Chapman  <John.Chapman@cern.ch>
+	* share/postInclude.SLHC_Digitization_lowthresh.py,
+	share/postInclude.SLHC_Digitization.py,
+	share/jobOptions_SLHC_nn_prodTrainingSample_standAlone.py - update
+	syntax to work with PixelDigitization-01-00-00
+	onwards. ATLASSIM-196. Should be back-compatible.
+	* Tagged as InDetSLHC_Example-00-00-94
+
+2013-06-05 Nick Styles <nicholas.styles -at- cern.ch>
+	* Removed lines locking number of collisions to 1 from 
+	preInclude.SLHC_Rec.py	
+	* Tagged as InDetSLHC_Example-00-00-93
+
+2013-04-19 Nick Styles <nicholas.styles -at- cern.ch>
+	* Added "slimmed" version of VF pixel geometry (SLHC-24-24-dev4) 
+	and four strip barrel layer geometry from Vivek Jain (SLHC-23-24-dev23)
+	* Modified postInclude.DigitalClustering.py to turn on strip cluster
+	position corrections. Constant still tuned for SCT, need re-tuning for
+	ITK strips eventually
+	* Tagged as InDetSLHC_Example-00-00-92
+
+2013-04-12 Peter Vankov <peter.vankov -at- cern.ch>
+	* Added second version of Very Forward pixel geometry, SLHC-24-24-dev3
+        * tagged as InDetSLHC_Example-00-00-91
+
+2013-04-12 Peter Vankov <peter.vankov -at- cern.ch>
+	* modified jobOptions_tracking_SLHC_trf_UtopiaTest.py
+        * tagged as InDetSLHC_Example-00-00-90
+
+2013-04-11 Peter Vankov <peter.vankov -at- cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml modified to work with LoI layout
+        * tagged as InDetSLHC_Example-00-00-89
+
+2013-03-21 Nick Styles <nicholas.styles -at- cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml modified KV test options
+	for SimulHITSZeeJetInDetSLHC, temporary fix for BField
+        * tagged as InDetSLHC_Example-00-00-88
+
+2013-03-24 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	raised to 30 min timelimit of 
+	Digi_trf_SLHC_single_particle_intime_pileup_digi_currentDB
+	test
+	* tag as InDetSLHC_Example-00-00-87
+	
+2013-03-21 Nick Styles <nicholas.styles -at- cern.ch>
+	* added job options for nightly tests, and updated test definitions
+        * tagged as InDetSLHC_Example-00-00-86
+
+201-03-13 Peter Vankov <peter.vankov -at- cern.ch>
+	* first working vesrion of Very Forward pixel geometry added
+        * tagged as InDetSLHC_Example-00-00-83
+
+2012-11-29 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	* share/preInclude.SLHC_Rec.py
+	removing the lock to 
+	doBremRecovery
+	doCaloSeededBrem 
+	doForwardTracks
+	* tagged as InDetSLHC_Example-00-00-80
+	
+2012-11-22 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	obo B.Petersen
+	* share/preInclude.SLHC_Rec.py 
+	  add changes to run the L1 trigger sim
+	* tagged as InDetSLHC_Example-00-00-78
+	
+2012-11-22 Andreas Schaelicke <andreas.schaelicke@cern.ch>
+	* tagging  InDetSLHC_Example-00-00-77
+
+2012-11-20 Andreas Schaelicke <andreas.schaelicke@cern.ch>
+	* modified jobOptions_tracking_SLHC_trf.py
+	to avoid running of tracking during AOD/D3PD production.
+
+2012-11-20 Peter Vankov <peter.vankov -at- cern.ch>
+	* modified preInclude.SLHC_Rec.py
+        * tagged as InDetSLHC_Example-00-00-76
+
+2012-11-12 Peter Vankov <peter.vankov -at- cern.ch>
+	* modified jobOptions_tracking_SLHC_trf.py
+        * tagged as InDetSLHC_Example-00-00-75
+
+2012-10-17 Peter Vankov <peter.vankov -at- cern.ch>
+	* added postInclude.nHoleTrkVal.py for obtaining  the nHoles info in TrkVal ntuple
+        * tagged as InDetSLHC_Example-00-00-74
+
+2012-10-08 Peter Vankov <peter.vankov -at- cern.ch>
+	* new dev15 LoI-ITk geom (fixed DELTAPHI for SSctFwdSensor#21 and SSctFwdSpine#21)
+        * tagged as InDetSLHC_Example-00-00-73
+
+2012-09-26 Peter Vankov <peter.vankov -at- cern.ch>
+	* new dev14 LoI-ITk geom (fixed EOS material)
+        * tagged as InDetSLHC_Example-00-00-72
+
+2012-09-19 Peter Vankov <peter.vankov -at- cern.ch>
+	* new dev13 LoI-ITk geom (fixed G4 Volume overlaps)
+        * tagged as InDetSLHC_Example-00-00-71
+
+2012-09-19 Peter Vankov <peter.vankov -at- cern.ch>
+	* committing changes in LoI-ITk geom and script & jobOption improvements
+        * tagged as InDetSLHC_Example-00-00-70
+
+2012-09-12 Tiago Perez <Tiago.Perez@desy.de>
+	* tagged as InDetSLHC_Example-00-00-69
+	* Scripts and JobOptions to produce NN input on hte grid
+	* Scripts and JobOptions to run tracking with Splitting On.
+
+2012-05-30 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	change Evgen file input name to KV tests
+
+	* tagged as InDetSLHC_Example-00-00-66
+
+2012-05-30 Silvia Miglioranzi <Silvia.Miglioranzi@cern.ch>
+	* share/preInclude.SLHC_Rec.py
+	* share/jobOptions_tracking_SLHC.py
+	* share/jobOptions_tracking_SLHC_trf.py
+	moved to InDetFlags.doSharedHits=True
+
+	* tagged as InDetSLHC_Example-00-00-64
+
+	obo Andreas Korn
+	* tag InDetSLHC_Example-00-00-63 contains:
+	* share/postInclude.SLHC_Digitization_lowthresh.py
+	* data/slhcsct_local_database_SLHC-23-24-dev2.txt
+	* data/IdDictInnerDetector_SLHC-23-24-dev2.xml
+
+2012-05-25 Peter Vankov <peter.vankov@cern.ch>
+	* add Cartigny 7disk geometry, SLHC-23-24-dev1, files (.txt, .xml)
+        * small adjustment in jobOptions_simulation_SLHC.py 
+	* tagged as InDetSLHC_Example-00-00-62
+
+2012-05-11 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+        * share/jobOptions_tracking_SLHC.py
+	use athenaCommonFlags.FilesInput to specify the RDO
+	input file
+
+	obo A. Korn
+	* data/
+	added set of thin sensor high granularity layouts
+
+	* tagged as InDetSLHC_Example-00-00-61
+
+2012-04-14 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+	* share/postInclude.SLHC_Digitization.py
+	modified stream syntax.
+
+	* tagged as InDetSLHC_Example-00-00-60
+	
+2012-03-14 J Tseng
+	* add reconstruction fragments
+	* tagged as InDetSLHC_Example-00-00-59
+
+2012-03-01 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	changed definition of errorMessage for ATNs
+
+	* tagged as InDetSLHC_Example-00-00-57
+
+2012-02-28 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	fixed typo in removing input file name
+
+	* tagged as InDetSLHC_Example-00-00-56
+
+2012-02-21 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	added ESDtoESD transform test plus add AOD output in
+        existing one
+
+	* tagged as InDetSLHC_Example-00-00-55
+
+2012-02-16 Peter Vankov <peter.vankov@cern.ch>
+	* added .xml file for a geometry without stereo-angle in the full Si-strip detector
+	* added .xml file for a geometry without stereo-angle in the 3 inner, 
+          barrel layers and the 3 outer rings of all Si endcap discs
+	
+
+2012-02-15 J Tseng
+	* added preInclude to use full detector, but without TRT
+	* tagged as InDetSLHC_Example-00-00-54
+
+2012-02-03 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.ch>
+	* share/InDetPerformanceRTT_jobOptions_IBL.py
+	* share/InDetPerformanceRTT_jobOptions_SLHC.py
+	* share/jobOptions_SLHC_nn_tracking.py
+	* share/jobOptions_fatras_SLHC.py
+	* share/jobOptions_fatras_SLHC_refit.py
+	* share/jobOptions_tracking_SLHC.py
+	* share/jobOptions_tracking_SLHC_trf.py
+	* share/jobOptions_tracking_pileup_SLHC.py
+	removed the obsolete doSingleSpBackTracking flag (to be
+	compatible with IDRE)
+
+	* tagged as InDetSLHC_Example-00-00-53
+
+2012-01-19 Tiago Perez  <tperez@cern.ch>
+
+	* added share/jobOptions_SLHC_nn*.py
+	JobOptions to generate training ntuples for the cluster splitting NN
+
+2011-10-31 Nick Styles  <nicholas.styles@desy.de>
+
+        * added text/xml files for SLHC-20-20 (extra pixel layer) and SLHC-21-20 (larger radius outer pixel layer)
+
+	* tagged as InDetSLHC_Example-00-00-51 
+
+2011-09-27 Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+        (obo Andreas Korn):
+        * test/InDetSLHC_Example_TestConfiguration.xml
+         minor fix for the RTT test
+
+	* tagged as InDetSLHC_Example-00-00-50
+
+2011-09-12  Nick Styles <nicholas.styles@desy.de>
+
+	* added preInclude.JetTagD3PDs.py and 
+	preInclude.JetTagD3PDs_SLHC_Setup.py for producing JetTagD3PD
+
+	* tagged as InDetSLHC_Example-00-00-49
+
+2011-09-09  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+        * cmt/requiremets
+	fix for typo in declare_runtime extras
+
+	* tagged as InDetSLHC_Example-00-00-48
+
+2011-09-06  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	fixes for kv tests implemented
+	fix for atn test (remove/updated obsolete options/arguments):
+	Digi_trf_SLHC_single_particle_intime_pileup_digi_currentDB
+
+	(obo Andreas Korn):
+	* cmt/requirements
+	fix for "private tags" implemented
+
+	* tagged as InDetSLHC_Example-00-00-47
+
+2011-08-30  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+        (obo Andreas Korn):
+        * cmt/requirements
+        fix for runtime files (some were declared twice)
+
+	* tagged as InDetSLHC_Example-00-00-46
+
+2011-08-30  Andreas Korn  <Andreas.Korn@cern.de>
+
+        * test/InDetSLHC_Example_TestConfiguration.xml
+        * cmt/requirements
+	* share/InDetPerformanceRTT_jobOptions_IBL.py
+	* share/InDetPerformanceRTT_jobOptions_SLHC.py
+	* scripts/ added
+	* ExtraFiles/ added
+        added rtt tests
+
+	* tagged as InDetSLHC_Example-00-00-45
+
+2011-08-23  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	added kv tests for sim-digi-reco transforms
+
+	* tagged as InDetSLHC_Example-00-00-44
+
+2011-08-16  Nick Styles  <nicholas.styles@desy.de>
+
+	* share/jobOptions_geantinosimulation_SLHC.py
+	* share/jobOptions_materialmapping_SLHC.py    
+	* share/jobOptions_materialvalidation_SLHC.py
+	Moved to using TrkG4Action package (included in releases)
+	rather than UserG4Action
+	
+	* tagged as InDetSLHC_Example-00-00-43
+
+2011-08-15  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+	* share/jobOptions_tracking_SLHC_trf.py fixed maxevent bug
+	  to submit to pathena
+	* test/InDetSLHC_Example_TestConfiguration.xml
+	  moved Reco_trf.py test in the correct place after
+	  corresponding Digi_trf.py test
+
+	* tagged as InDetSLHC_Example-00-00-42
+
+2011-07-22  Silvia Miglioranzi  <Silvia.Miglioranzi@cern.de>
+
+	* share/jobOptions_tracking_SLHC.py
+	* share/jobOptions_tracking_SLHC_trf.py were updated
+	  to force doPixelClusterSplitting=False only when available
+
+	* test/InDetSLHC_Example_TestConfiguration.xml added
+	  Reco_trf.py atn test
+
+	* tagged as InDetSLHC_Example-00-00-41
+
+2011-07-21  Nick Styles  <nicholas.styles@desy.de>
+
+	* share/jobOptions_simulation_SLHC.py
+	share/jobsOptions_geantinosimulation_SLHC.py - updated to reflect 
+	changes made to AtlasG4Apps.
+
+	* tagged as InDetSLHC_Example-00-00-39
+
+	*share/jobsOptions_tracking_SLHC_trf.py - added. topOptions file for 
+	running reco_trf with SLHC layout
+
+	* tagged as InDetSLHC_Example-00-00-40
+
+
+2011-07-06  John Chapman  <John.Chapman@cern.ch>
+
+	* python/SLHC_Setup.py - fix bug in search_file method - already
+	fixed in InDetIBL_Example.
+
+	* tagged as InDetSLHC_Example-00-00-38
+
+2011-04-27  John Chapman  <John.Chapman@cern.ch>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml - update pileup
+	digitization test job with temporary preInclude hack
+
+	* Add share/preInclude.digitization_metadata_hacks.py - deal with
+	the fact that the magnetic field used when simulating the current
+	background HITS files was configured via Oracle while the magnetic
+	field used during signal simulation configured via COOL.
+	
+	* share/jobOptions_geantinosimulation_SLHC.py,
+	share/jobOptions_simulation_SLHC.py,
+	share/jobOptions_geomtest_SLHC.py,
+	share/jobOptions_simulation_multiple_SLHC.py,
+	share/jobOptions_simulation_pileup_SLHC.py - add missing SimFlags.load_atlas_flags() line
+
+	* tagged as InDetSLHC_Example-00-00-37
+
+
+2011-03-25  John Chapman  <John.Chapman@cern.ch>
+
+	* cmt/requirements - tidy up requirements file.  * tagged as
+	InDetSLHC_Example-00-00-36
+
+2011-03-23  John Chapman  <John.Chapman@cern.ch>
+
+	* test/InDetSLHC_Example_TestConfiguration.xml - tweak command
+	definitions
+	* tagged as InDetSLHC_Example-00-00-35
+
+2011-03-23  John Chapman  <John.Chapman@cern.ch>
+
+	* add share/preInclude.SiliconOnly.py - configures DetFlags for
+	Pixel and SCT only
+	* add share/preInclude.SLHC.py - configure SLHC_JobProperties
+	* add share/preInclude.OverrideBFieldTag.py - allows use of
+	temporary BField tag
+	* add share/postInclude.SLHC_Digitization.py - tweaks for Pixel
+	and SCT digitization specific for SLHC configurations
+	* add share/postInclude.SLHC_Setup.py - sets path variables
+	* add test/InDetSLHC_Example_TestConfiguration.xml - example
+	commands using the job transforms for Simulation and Digitization
+	* share/jobOptions_geantinosimulation_SLHC.py,
+	share/jobOptions_digitization_pileup_SLHC.py,
+	share/jobOptions_simulation_SLHC.py,
+	share/jobOptions_digitization_SLHC.py,
+	share/jobOptions_simulation_multiple_SLHC.py,
+	share/jobOptions_simulation_pileup_SLHC.py - switch to using the
+	above new python fragments
+	* tagged as InDetSLHC_Example-00-00-34
+
+
+2011-03-07 Peter Vankov < Peter.Vankov -at- cern.ch >
+	   * update of jobOptions_digitization_SLHC.py,
+	   * update of jobOptions_tracking_SLHC.py and
+	   * some cleaning of the scripts
+	   * tagged as InDetSLHC_Example-00-00-33
+
+2011-03-04 Nicholas Styles < Nicholas.Styles -at- cern.ch >
+	   * change to jobOptions
+	   * tagged as InDetSLHC_Example-00-00-32
+
+2011-03-02 Nicholas Styles < Nicholas.Styles -at- cern.ch >
+	   * change to jobOptions
+	   * tagged as InDetSLHC_Example-00-00-31
+
+2011-02-22 Andreas.Salzburger < Andreas.Salzburger -at- cern.ch >
+	   * change to ATLAS-SLHC-01-00-00
+	   * tagged as InDetSLHC_Example-00-00-30
+	
+2011-02-15 Andreas.Salzburger < Andreas.Salzburger -at- cern.ch >
+	   * first running version with SLHC-19-20
+	   * tagged as InDetSLHC_Example-00-00-29
+
+2011-02-09 Grant Gorfine  < Grant.Gorfine -at- cern.ch > for Nick Styles
+           * Update material mapping joboptions.
+	   * tagged as InDetSLHC_Example-00-00-28
+	
+2011-02-09 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Add SLHC-19-20-dev1 to fix stagger of rings in pixel endcap,
+	     and fix volume clashes of routed services with pixel envelope. 
+	   * jobOptions_digitization_SLHC.py, jobOptions_simulation_SLHC.py
+	     jobOptions_geomtest_SLHC.py updated to ATLAS-SLHC-01-00-00
+	   * tagged as InDetSLHC_Example-00-00-27
+	
+2011-02-09 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * python/SLHC_Setup.py, python/SLHC_JobProperties.py:
+	     Use fully DB driven version if SLHC_VERSION="" or "None"
+	   * Update share/jobOptions_display_SLHC.py to
+	     ATLAS-SLHC-01-00-00
+	   * tagged as InDetSLHC_Example-00-00-26
+	
+2011-02-08 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Modify some text files to reflect changes in some DB tables
+	     names and parameters for strip detector
+	   * Changes from jtseng (03/02/11): Update to version with 
+	     corrected strip endcap rings (version 19-20)
+	   * tagged as InDetSLHC_Example-00-00-25
+	
+2009-11-05 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Add SLHC-12-13-dev8. Modifies pixel and strip layers
+	     to have material closer to recommended numbers.
+	     Strip sensor thickness changed to 320 um.
+	   * tagged as InDetSLHC_Example-00-00-24
+
+2009-11-03 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Add SLHC-12-13-dev7 (includes PST)
+	   * Remove PST lines in dev5 and dev6 to reproduce buggy version.
+	   * tagged as InDetSLHC_Example-00-00-23
+
+2009-11-02 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Add SLHC-12-13-dev6 (completed services)
+	   * tagged as InDetSLHC_Example-00-00-22	
+	
+2009-10-31 Grant Gorfine  < Grant.Gorfine -at- cern.ch >
+	   * Add SLHC-12-13-dev5 (includes services but not yet complete)
+	   * tagged as InDetSLHC_Example-00-00-21
+
+2009-10-26 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * adding SLHC-15-14-dev4 and 15-15-dev4
+           * tagged as InDetSLHC_Example-00-00-20
+
+2009-10-26 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * adding SLHC-12-13-dev4 and 15-13-dev4
+           * tagged as InDetSLHC_Example-00-00-19
+
+2009-10-13 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * update to SLHC-12-13-dev3
+           * tagged as InDetSLHC_Example-00-00-18 
+
+2009-10-08 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Modify 12-13-dev1 and 12-13-dev2 to reproduce buggy pixel
+	     disk z positions
+	   * Add 12-13-dev3 with correct pixel disk z positions. 
+	   * tagged as InDetSLHC_Example-00-00-17
+
+2009-10-07 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Update 12-13-dev version. 
+
+2009-09-26 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Add 12-13-dev2 version of UTOPIA target
+	   * Add overlap test: jobOptions_geomtest_SLHC.py
+	   * tagged as InDetSLHC_Example-00-00-16
+
+2009-09-14 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * new tag for dev1 version of UTOPIA target
+	   * tagged as InDetSLHC_Example-00-00-15
+
+2009-09-14 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Fixes to Utopia txt/xml file
+	   * tagged as InDetSLHC_Example-00-00-14
+
+2009-09-11 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * full chain material maps creation
+           * tagged as InDetSLHC_Example-00-00-13
+
+2009-09-12 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Add first version of Utopia layout txt/xml file
+	   * tagged as InDetSLHC_Example-00-00-12
+
+2009-09-10 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Retag as forgot to do update.
+	   * Additional file from Andi: jobOptions_geantinosimulation_SLHC.py  
+	   * tagged as InDetSLHC_Example-00-00-11
+
+2009-09-10 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Pass text file name to GeometryDBSvc
+	   * Add example of reading hits/rdo pool file in jobOptions_display_SLHC.py
+	   * Small fix in slhcsct_local_database_SLHC-03-03-upgPixelEndcaps.txt
+	   * tagged as InDetSLHC_Example-00-00-10
+
+2009-08-27 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	   * Remove SCT endcap from 06-xx and 09-03 xml files 
+	   * Change DetDescrVersion to ATLAS-SLHC-00-00-00 and remove
+	     override of InnerDetector tag.
+	   * tagged as InDetSLHC_Example-00-00-09
+
+2009-08-24 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * added jobOptions_trkgeometry_SLHC.py template
+           * tagged as InDetSLHC_Example-00-00-08
+
+2009-08-21 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+           * fixes to the text files
+           * tagged as InDetSLHC_Example-00-00-07
+
+2009-08-20 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * imported new text files from Grant
+           * tagged as InDetSLHC_Example-00-00-06
+
+2009-08-18 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * first full chain test:
+              - simulation / digitization / tracking / fatras
+           * tagged as InDetSLHC_Example-00-00-05
+
+2009-08-18 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * first working version including Tracking / Fatras
+           * tagged as InDetSLHC_Example-00-00-04
+
+2009-07-30 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * change in xml pickup
+           * tagged as InDetSLHC_Example-00-00-03
+
+2009-07-25 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * version with txt/xml in InstallArea
+           * tagged as InDetSLHC_Example-00-00-01 & InDetSLHC_Example-00-00-02
+
+2009-07-24 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+           * initial version created
+           * tagged as InDetSLHC_Example-00-00-00
+

@@ -1,0 +1,1 @@
+BarrelBuilderXML_cxx_dependencies =  ../src/BarrelBuilderXML.cxx  $(bin)InDetTrackingGeometryXML_deps/BarrelBuilderXML_cxx.stamp

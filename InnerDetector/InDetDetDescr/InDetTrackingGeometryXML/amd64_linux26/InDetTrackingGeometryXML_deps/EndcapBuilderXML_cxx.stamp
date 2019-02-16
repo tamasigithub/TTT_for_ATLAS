@@ -1,0 +1,1 @@
+EndcapBuilderXML_cxx_dependencies =  ../src/EndcapBuilderXML.cxx  $(bin)InDetTrackingGeometryXML_deps/EndcapBuilderXML_cxx.stamp

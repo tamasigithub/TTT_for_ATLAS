@@ -1,0 +1,24 @@
+<assembly name="CMOS_Module">
+  <transform>
+    <transformation name="MoveCMOS_SensorUp">
+      <translation z="CMOS_SensorT / 2."/>
+    </transformation>
+    <logvolref ref="CMOS_Sensor"/> 
+  </transform>
+  <transform>
+    <transformation name="MoveCMOS_DeadSiDown">
+      <translation z="-CMOS_DeadT / 2."/>
+    </transformation>
+    <logvolref ref="CMOS_DeadSi"/> 
+  </transform>
+</assembly>
+
+<assembly name="CMOS_Face">
+  <multicopy name="CopyCMOS_ModulesToFace" n="CMOS_N_SensorsStave">
+    <transformation name="PlaceCMOS_ModulesOnFace">
+      <translation x="CMOS_SensorL + CMOS_SensorGap"/>
+    </transformation>
+    <assemblyref ref="CMOS_Module"/>
+  </multicopy>
+</assembly>
+

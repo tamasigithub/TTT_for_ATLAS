@@ -1,0 +1,18 @@
+<!-- Values from Tamasi Kar talk at https://indico.cern.ch/event/686348 -->
+<defines>
+  <var name="CMOS_SensorW" value="80.0"/>
+  <var name="CMOS_SensorL" value="80.0"/>
+  <var name="CMOS_SensorT" value="0.050"/>
+  <var name="CMOS_DeadT" value="0.050"/>
+
+  <var name="CMOS_N_SensorsStave" value="17"/>
+  <var name="CMOS_N_Staves" value="70"/>
+  <var name="CMOS_SensorGap" value="0.4"/>
+  <var name="CMOS_StaveW" value="CMOS_SensorW + 5."/>
+  <var name="CMOS_StaveL" value="(CMOS_SensorL + CMOS_SensorGap) * CMOS_N_SensorsStave + CMOS_SensorGap"/>
+  <var name="CMOS_StaveT" value="5."/>
+
+  <var name="CMOS_TripletSpacing" value="20."/>
+  <var name="CMOS_Radius" value="857."/>
+  <var name="CMOS_Castellation" value="8."/>
+</defines>

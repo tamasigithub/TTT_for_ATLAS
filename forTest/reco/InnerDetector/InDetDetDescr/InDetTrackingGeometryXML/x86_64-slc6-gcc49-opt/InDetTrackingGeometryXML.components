@@ -1,0 +1,14 @@
+libInDetTrackingGeometryXML.so:InDet::BarrelBuilderXML
+libInDetTrackingGeometryXML.so:InDet::EndcapBuilderXML
+libInDetTrackingGeometryXML.so:InDet::GMXReaderSvc
+libInDetTrackingGeometryXML.so:InDet::LayerProviderXML
+libInDetTrackingGeometryXML.so:InDet::SiModuleProvider
+libInDetTrackingGeometryXML.so:InDet::StaveBuilderXML
+libInDetTrackingGeometryXML.so:InDet::XMLReaderSvc
+libInDetTrackingGeometryXML.so:InDet__BarrelBuilderXML
+libInDetTrackingGeometryXML.so:InDet__EndcapBuilderXML
+libInDetTrackingGeometryXML.so:InDet__GMXReaderSvc
+libInDetTrackingGeometryXML.so:InDet__LayerProviderXML
+libInDetTrackingGeometryXML.so:InDet__SiModuleProvider
+libInDetTrackingGeometryXML.so:InDet__StaveBuilderXML
+libInDetTrackingGeometryXML.so:InDet__XMLReaderSvc

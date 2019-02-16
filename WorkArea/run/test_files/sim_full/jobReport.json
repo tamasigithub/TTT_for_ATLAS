@@ -1,0 +1,158 @@
+{
+  "cmdLine": "'/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasProduction/20.20.10.7/InstallArea/share/bin/Sim_tf.py' '--conditionsTag' 'default:OFLCOND-MC15c-SDR-14-03' '--truthStrategy' 'MC15aPlus' '--DataRunNumber' '242000' '--preInclude' 'all:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py,InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py' '--postExec' 'EVNTtoHITS:ServiceMgr.DetDescrCnvSvc.DoInitNeighbours = False; from AthenaCommon import CfgGetter;CfgGetter.getService(\"ISF_MC15aPlusTruthService\").BeamPipeTruthStrategies+=[\"ISF_MCTruthStrategyGroupIDHadInt_MC15\"];' '--postInclude' 'all:PyJobTransforms/UseFrontier.py,InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/postInclude.SLHC_Setup.py' '--preExec' 'all:from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags;SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption=\"InclinedDuals\"' '--geometryVersion' 'default:ATLAS-P2-ITK-20-00-00_VALIDATION' '--outputHITSFile=./HITS.Fullhh4b.pool.root' '--maxEvents=10' '--inputEVNTFile=/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/EVNT.12807745._000010.pool.root.1'", 
+  "created": "2019-01-24T16:30:33", 
+  "executor": [
+    {
+      "asetup": null, 
+      "errMsg": "", 
+      "exeConfig": {
+        "inputs": [
+          "EVNT"
+        ], 
+        "outputs": [
+          "HITS"
+        ], 
+        "script": "athena.py", 
+        "substep": "sim"
+      }, 
+      "logfileReport": {
+        "countSummary": {
+          "CATASTROPHE": 0, 
+          "CRITICAL": 0, 
+          "DEBUG": 2, 
+          "ERROR": 0, 
+          "FATAL": 0, 
+          "IGNORED": 0, 
+          "INFO": 2845, 
+          "UNKNOWN": 6839, 
+          "VERBOSE": 0, 
+          "WARNING": 28
+        }, 
+        "details": {
+          "WARNING": [
+            {
+              "count": 1, 
+              "firstLine": 8165, 
+              "message": "-------- WWWW ------- G4Exception-START -------- WWWW -------\n*** G4Exception : GeomNav1002\nissued by : G4Navigator::ComputeStep()\nTrack stuck or not moving.\nTrack stuck, not moving for 10 steps\nin volume -LArMgr::LAr::EMEC::Pos::InnerWheel- at point (248.324,-599.534,3979.91)\ndirection: (0.677489,0.180601,0.713016).\nPotential geometry or navigation problem !\nTrying pushing it of 1e-07 mm ...Potential overlap in geometry!\n\n*** This is just a warning message. ***\n-------- WWWW -------- G4Exception-END --------- WWWW -------"
+            }, 
+            {
+              "count": 1, 
+              "firstLine": 8184, 
+              "message": "-------- WWWW ------- G4Exception-START -------- WWWW -------\n*** G4Exception : GeomNav1002\nissued by : G4Navigator::ComputeStep()\nTrack stuck or not moving.\nTrack stuck, not moving for 10 steps\nin volume -LArMgr::LAr::EMEC::Neg::InnerWheel- at point (638.708,-44.3002,-3925.85)\ndirection: (0.161978,0.718565,-0.676334).\nPotential geometry or navigation problem !\nTrying pushing it of 1e-07 mm ...Potential overlap in geometry!\n\n*** This is just a warning message. ***\n-------- WWWW -------- G4Exception-END --------- WWWW -------"
+            }, 
+            {
+              "count": 1, 
+              "firstLine": 8223, 
+              "message": "-------- WWWW ------- G4Exception-START -------- WWWW -------\n*** G4Exception : GeomNav1002\nissued by : G4Navigator::ComputeStep()\nTrack stuck or not moving.\nTrack stuck, not moving for 10 steps\nin volume -LArMgr::LAr::EMEC::Pos::InnerWheel- at point (489.491,439.956,4033.53)\ndirection: (0.171091,-0.437511,-0.882786).\nPotential geometry or navigation problem !\nTrying pushing it of 1e-07 mm ...Potential overlap in geometry!\n\n*** This is just a warning message. ***\n-------- WWWW -------- G4Exception-END --------- WWWW -------"
+            }
+          ]
+        }
+      }, 
+      "metaData": {}, 
+      "name": "EVNTtoHITS", 
+      "rc": 0, 
+      "statusOK": true, 
+      "validation": true
+    }
+  ], 
+  "exitAcronym": "OK", 
+  "exitCode": 0, 
+  "exitMsg": "OK", 
+  "exitMsgExtra": "", 
+  "files": {
+    "input": [
+      {
+        "dataset": null, 
+        "nentries": 10000, 
+        "subFiles": [
+          {
+            "file_guid": "32CD115F-D8DE-A941-90DF-51297A823A9F", 
+            "name": "EVNT.12807745._000010.pool.root.1"
+          }
+        ], 
+        "type": "EVNT"
+      }
+    ], 
+    "output": [
+      {
+        "argName": "outputHITSFile", 
+        "dataset": null, 
+        "subFiles": [
+          {
+            "file_guid": "2207D04A-09E2-7442-9C6E-19B37FEFE325", 
+            "file_size": 10567187, 
+            "name": "HITS.Fullhh4b.pool.root", 
+            "nentries": 10
+          }
+        ], 
+        "type": "HITS"
+      }
+    ]
+  }, 
+  "name": "Sim_tf", 
+  "reportVersion": "2.0.6", 
+  "resource": {
+    "dbDataTotal": 4205167, 
+    "dbTimeTotal": 66.12, 
+    "executor": {
+      "EVNTtoHITS": {
+        "cpuTime": 3648, 
+        "dbData": 4205167, 
+        "dbTime": 66.12, 
+        "memory": {
+          "Avg": {
+            "avgPSS": 2350606, 
+            "avgRSS": 2355004, 
+            "avgSwap": 0, 
+            "avgVMEM": 3114730
+          }, 
+          "Max": {
+            "maxPSS": 2687604, 
+            "maxRSS": 2691260, 
+            "maxSwap": 0, 
+            "maxVMEM": 3474140
+          }
+        }, 
+        "nevents": 10, 
+        "postExe": {
+          "cpuTime": 35, 
+          "wallTime": 1
+        }, 
+        "preExe": {
+          "cpuTime": 0, 
+          "wallTime": 5
+        }, 
+        "total": {
+          "cpuTime": 3684, 
+          "wallTime": 4212
+        }, 
+        "validation": {
+          "cpuTime": 0, 
+          "wallTime": 3
+        }, 
+        "wallTime": 4204
+      }
+    }, 
+    "machine": {
+      "cpu_family": "6", 
+      "linux_distribution": [
+        "Scientific Linux CERN SLC", 
+        "6.10", 
+        "Carbon"
+      ], 
+      "model": "60", 
+      "model_name": "Intel Core Processor (Haswell, no TSX, IBRS)", 
+      "node": "lxplus099.cern.ch", 
+      "platform": "Linux-2.6.32-754.9.1.el6.x86_64-x86_64-with-redhat-6.10-Carbon"
+    }, 
+    "transform": {
+      "cpuEfficiency": 0.863, 
+      "cpuPWEfficiency": 0.863, 
+      "cpuTime": 5, 
+      "cpuTimeTotal": 3684, 
+      "externalCpuTime": 36, 
+      "processedEvents": 10, 
+      "wallTime": 4233
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "cmdLine": "'/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasReconstruction/20.20.10/InstallArea/share/bin/Reco_tf.py' '--inputRDOFile' './OUT.RDO.12807745._000010.pool.root' '--outputESDFile' './rec_outputs/SLHCtest72_2.ESD.pool.root' '--outputAODFile' './rec_outputs/SLHCtest72_2.AOD.pool.root' '--digiSteeringConf' 'StandardInTimeOnlyTruth' '--conditionsTag' 'default:OFLCOND-MC15c-SDR-14-03' '--postInclude' 'all:InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_lowthresh.py' 'RAWtoESD:InDetSLHC_Example/postInclude.DigitalClustering.py,InDetSLHC_Example/postInclude.NoJetPtFilter.py' '/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/InnerDetector/InDetRecAlgs/TripletTrackFinder/share/TripletReader_postInclude.py' '--preExec' 'all:from AthenaCommon.GlobalFlags import globalflags; globalflags.DataSource.set_Value_and_Lock(\"geant4\");from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags;SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption=\"InclinedDuals\";' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=[\"SimLayout\",\"PhysicsList\"];' 'ESDtoDPD:rec.DPDMakerScripts.set_Value_and_Lock([\"InDetPrepRawDataToxAOD/InDetDxAOD.py\",\"PrimaryDPDMaker/PrimaryDPDMaker.py\"]);' '--preInclude' 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py,InDetSLHC_Example/preInclude.SLHC_Calorimeter_mu0.py' 'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py' 'default:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry_GMX.py' 'RDOMergeAthenaMP:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py' 'POOLMergeAthenaMPAOD0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' 'POOLMergeAthenaMPDAODIDTRKVALID0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' '/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/InnerDetector/InDetRecAlgs/TripletTrackFinder/share/TripletReader_preInclude.py' '--DataRunNumber' '242000' '--postExec' 'HITtoRDO:pixeldigi.EnableSpecialPixels=False; CfgMgr.MessageSvc().setError+=[\"HepMcParticleLink\"];' 'RAWtoESD:ToolSvc.InDetSCT_ClusteringTool.useRowInformation=True;' '--geometryVersion' 'default:ATLAS-P2-ITK-20-00-00' '--maxEvents' '10'", 
+  "created": "2019-01-22T16:36:38", 
+  "executor": [
+    {
+      "asetup": null, 
+      "errMsg": "Non-zero return code from RAWtoESD (65)", 
+      "exeConfig": {
+        "inputs": [
+          "RDO"
+        ], 
+        "outputs": [
+          "ESD"
+        ], 
+        "script": "athena.py", 
+        "substep": "r2e"
+      }, 
+      "logfileReport": {
+        "countSummary": {
+          "CATASTROPHE": 0, 
+          "CRITICAL": 0, 
+          "DEBUG": 12, 
+          "ERROR": 1, 
+          "FATAL": 2, 
+          "IGNORED": 1, 
+          "INFO": 12770, 
+          "UNKNOWN": 3329, 
+          "VERBOSE": 3, 
+          "WARNING": 78
+        }, 
+        "details": {
+          "ERROR": [
+            {
+              "count": 1, 
+              "firstLine": 9146, 
+              "message": "AthenaEventLoopMgr                                  ERROR Terminating event processing loop due to errors"
+            }
+          ], 
+          "FATAL": [
+            {
+              "count": 1, 
+              "firstLine": 9134, 
+              "message": "InDetPixelClusterization                            FATAL Could not find the data object PixelRDOs !"
+            }, 
+            {
+              "count": 1, 
+              "firstLine": 9140, 
+              "message": "InDetSCT_Clusterization                             FATAL Could not find the data object SCT_RDOs !"
+            }
+          ], 
+          "IGNORED": [
+            {
+              "count": 1, 
+              "firstLine": 9135, 
+              "message": "AlgErrorAuditor                                     ERROR Illegal Return Code: Algorithm InDetPixelClusterization reported a FATAL, but returned a StatusCode \"SUCCESS\""
+            }
+          ]
+        }
+      }, 
+      "metaData": {}, 
+      "name": "RAWtoESD", 
+      "rc": 65, 
+      "statusOK": false, 
+      "validation": false
+    }, 
+    {
+      "errMsg": null, 
+      "exeConfig": {
+        "script": "athena.py", 
+        "substep": "e2a"
+      }, 
+      "name": "ESDtoAOD", 
+      "rc": -1, 
+      "statusOK": false, 
+      "validation": false
+    }
+  ], 
+  "exitAcronym": "TRF_EXEC_FAIL", 
+  "exitCode": 65, 
+  "exitMsg": "Non-zero return code from RAWtoESD (65); Logfile error in log.RAWtoESD: \"InDetPixelClusterization                            FATAL Could not find the data object PixelRDOs !\"", 
+  "exitMsgExtra": "", 
+  "files": {
+    "input": [
+      {
+        "dataset": null, 
+        "nentries": 20, 
+        "subFiles": [
+          {
+            "file_guid": "F0B3C643-F429-114A-818E-2BE4C9B7CC62", 
+            "name": "OUT.RDO.12807745._000010.pool.root"
+          }
+        ], 
+        "type": "RDO"
+      }
+    ], 
+    "output": [
+      {
+        "argName": "outputAODFile", 
+        "dataset": null, 
+        "subFiles": [
+          {
+            "file_guid": null, 
+            "file_size": null, 
+            "name": "SLHCtest72_2.AOD.pool.root", 
+            "nentries": null
+          }
+        ], 
+        "type": "AOD"
+      }, 
+      {
+        "argName": "outputESDFile", 
+        "dataset": null, 
+        "subFiles": [
+          {
+            "file_guid": null, 
+            "file_size": null, 
+            "name": "SLHCtest72_2.ESD.pool.root", 
+            "nentries": null
+          }
+        ], 
+        "type": "ESD"
+      }
+    ]
+  }, 
+  "name": "Reco_tf", 
+  "reportVersion": "2.0.6", 
+  "resource": {
+    "dbDataTotal": 27412768, 
+    "dbTimeTotal": 72.33, 
+    "executor": {
+      "ESDtoAOD": {
+        "cpuTime": null, 
+        "postExe": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "preExe": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "total": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "validation": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "wallTime": null
+      }, 
+      "RAWtoESD": {
+        "cpuTime": 103, 
+        "dbData": 27412768, 
+        "dbTime": 72.33, 
+        "memory": {
+          "Avg": {
+            "avgPSS": 629632, 
+            "avgRSS": 633401, 
+            "avgSwap": 0, 
+            "avgVMEM": 1207989
+          }, 
+          "Max": {
+            "maxPSS": 1120862, 
+            "maxRSS": 1124824, 
+            "maxSwap": 0, 
+            "maxVMEM": 2051060
+          }
+        }, 
+        "postExe": {
+          "cpuTime": 5, 
+          "wallTime": 1
+        }, 
+        "preExe": {
+          "cpuTime": 2, 
+          "wallTime": 2
+        }, 
+        "total": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "validation": {
+          "cpuTime": null, 
+          "wallTime": null
+        }, 
+        "wallTime": 342
+      }
+    }, 
+    "machine": {
+      "cpu_family": "6", 
+      "linux_distribution": [
+        "Scientific Linux CERN SLC", 
+        "6.10", 
+        "Carbon"
+      ], 
+      "model": "94", 
+      "model_name": "Intel Core Processor (Skylake, IBRS)", 
+      "node": "lxplus115.cern.ch", 
+      "platform": "Linux-2.6.32-754.6.3.el6.x86_64-x86_64-with-redhat-6.10-Carbon"
+    }, 
+    "transform": {
+      "cpuEfficiency": 0.3134, 
+      "cpuPWEfficiency": 0.0199, 
+      "cpuTime": 7, 
+      "cpuTimeTotal": 0, 
+      "externalCpuTime": 7, 
+      "wallTime": 351
+    }
+  }
+}

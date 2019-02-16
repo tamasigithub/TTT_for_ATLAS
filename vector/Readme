@@ -1,0 +1,17 @@
+A Class for Cartesian 3-vectors.
+
+Vectors can have usual vector arithmetic applied: addition (+), scalar multiplication (*), 
+inner (dot)-product (*), outer (cross)-product (^), normalisation etc. Also rotated. 
+
+See Cartesian3Vector.h for the possibilities. Note ^ and * are used for cross and dot 
+respectively to give the correct precedance.
+
+Placements: useful for dealing with positions and orientations of bodies in 3D. They containg a 
+3-vector for the position, and two 3-vectors for orientation: inplane, which is the direction 
+cosines of some vector in the plane of the body, and normal, which must be normal to inplane. 
+It is up to the user to choose just what he means by htese vectors.
+
+Note that a body needs only 6 parameters to define its position and orientation. Placements have 
+9, but two are not free because the direction cosine vectors have unit length; and one more is 
+fixed by the requirement that the two direction-cosine vectors are perpendicular.
+ 

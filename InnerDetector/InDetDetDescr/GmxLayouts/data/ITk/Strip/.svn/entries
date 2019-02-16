@@ -1,0 +1,52 @@
+10
+
+dir
+812908
+svn+ssh://jwang@svn.cern.ch/reps/atlasoff/InnerDetector/InDetDetDescr/GmxLayouts/trunk/data/ITk/Strip
+svn+ssh://jwang@svn.cern.ch/reps/atlasoff
+
+
+
+2018-01-29T23:51:07.739790Z
+812826
+hessey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4525493e-7705-40b1-a816-d608a930855b
+
+4Layer
+dir
+
+LTFwithBCL
+dir
+
+LTFwithCMOS
+dir
+
+LoI
+dir
+
+LTF
+dir
+
+LTF_LongStrip
+dir
+
+LTF_Step2.2MaterialScaled
+dir
+
+Sandbox
+dir
+

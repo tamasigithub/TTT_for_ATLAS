@@ -1,0 +1,178 @@
+# --Beg SiHitAnalysis.components
+# --Date inserted: 2019-01-29 18:44:38.655530
+libSiHitAnalysis.so:SiHitAnalysis
+# --End SiHitAnalysis.components
+
+
+# --Beg InDetTrackingGeometryXML.components
+# --Date inserted: 2019-01-29 18:51:15.415146
+libInDetTrackingGeometryXML.so:InDet::BarrelBuilderXML
+libInDetTrackingGeometryXML.so:InDet::EndcapBuilderXML
+libInDetTrackingGeometryXML.so:InDet::GMXReaderSvc
+libInDetTrackingGeometryXML.so:InDet::LayerProviderXML
+libInDetTrackingGeometryXML.so:InDet::SiModuleProvider
+libInDetTrackingGeometryXML.so:InDet::StaveBuilderXML
+libInDetTrackingGeometryXML.so:InDet::XMLReaderSvc
+libInDetTrackingGeometryXML.so:InDet__BarrelBuilderXML
+libInDetTrackingGeometryXML.so:InDet__EndcapBuilderXML
+libInDetTrackingGeometryXML.so:InDet__GMXReaderSvc
+libInDetTrackingGeometryXML.so:InDet__LayerProviderXML
+libInDetTrackingGeometryXML.so:InDet__SiModuleProvider
+libInDetTrackingGeometryXML.so:InDet__StaveBuilderXML
+libInDetTrackingGeometryXML.so:InDet__XMLReaderSvc
+# --End InDetTrackingGeometryXML.components
+
+
+# --Beg SCT_G4_SD.components
+# --Date inserted: 2019-01-29 18:51:53.578255
+libSCT_G4_SD.so:SctSensorSDTool
+libSCT_G4_SD.so:SctSensor_CTBTool
+# --End SCT_G4_SD.components
+
+
+# --Beg G4UserActions.components
+# --Date inserted: 2019-01-29 18:53:30.528896
+libG4UserActions.so:G4UA::CosmicPerigeeActionTool
+libG4UserActions.so:G4UA::FastIDKillerTool
+libG4UserActions.so:G4UA::FluxRecorderTool
+libG4UserActions.so:G4UA::G4SimTimerTool
+libG4UserActions.so:G4UA::G4TrackCounterTool
+libG4UserActions.so:G4UA::HIPKillerTool
+libG4UserActions.so:G4UA::HIPLArVolumeAcceptTool
+libG4UserActions.so:G4UA::HitWrapperTool
+libG4UserActions.so:G4UA::LengthIntegratorTool
+libG4UserActions.so:G4UA::LooperKillerTool
+libG4UserActions.so:G4UA::MomentumConservationTool
+libG4UserActions.so:G4UA::PhotonKillerTool
+libG4UserActions.so:G4UA::ScoringPlaneTool
+libG4UserActions.so:G4UA::ScoringVolumeTrackKillerTool
+libG4UserActions.so:G4UA::StoppedParticleActionTool
+libG4UserActions.so:G4UA__CosmicPerigeeActionTool
+libG4UserActions.so:G4UA__FastIDKillerTool
+libG4UserActions.so:G4UA__FluxRecorderTool
+libG4UserActions.so:G4UA__G4SimTimerTool
+libG4UserActions.so:G4UA__G4TrackCounterTool
+libG4UserActions.so:G4UA__HIPKillerTool
+libG4UserActions.so:G4UA__HIPLArVolumeAcceptTool
+libG4UserActions.so:G4UA__HitWrapperTool
+libG4UserActions.so:G4UA__LengthIntegratorTool
+libG4UserActions.so:G4UA__LooperKillerTool
+libG4UserActions.so:G4UA__MomentumConservationTool
+libG4UserActions.so:G4UA__PhotonKillerTool
+libG4UserActions.so:G4UA__ScoringPlaneTool
+libG4UserActions.so:G4UA__ScoringVolumeTrackKillerTool
+libG4UserActions.so:G4UA__StoppedParticleActionTool
+# --End G4UserActions.components
+
+
+# --Beg InDetTrackingGeometry.components
+# --Date inserted: 2019-01-29 18:57:43.990976
+libInDetTrackingGeometry.so:InDet::BeamPipeBuilder
+libInDetTrackingGeometry.so:InDet::RobustTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet::SiLayerBuilder
+libInDetTrackingGeometry.so:InDet::StagedTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet::TRT_LayerBuilder
+libInDetTrackingGeometry.so:InDet__BeamPipeBuilder
+libInDetTrackingGeometry.so:InDet__RobustTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet__SiLayerBuilder
+libInDetTrackingGeometry.so:InDet__StagedTrackingGeometryBuilder
+libInDetTrackingGeometry.so:InDet__TRT_LayerBuilder
+# --End InDetTrackingGeometry.components
+
+
+# --Beg PixelCabling.components
+# --Date inserted: 2019-01-29 18:58:15.202350
+libPixelCabling.so:PixelCablingSvc
+libPixelCabling.so:PixelFillCablingData
+libPixelCabling.so:PixelFillCablingData_Final
+# --End PixelCabling.components
+
+
+# --Beg SCT_Digitization.components
+# --Date inserted: 2019-01-29 19:04:16.219469
+libSCT_Digitization.so:SCT_Amp
+libSCT_Digitization.so:SCT_DetailedSurfaceChargesGenerator
+libSCT_Digitization.so:SCT_Digitization
+libSCT_Digitization.so:SCT_DigitizationTool
+libSCT_Digitization.so:SCT_FrontEnd
+libSCT_Digitization.so:SCT_FrontEndDev
+libSCT_Digitization.so:SCT_RandomDisabledCellGenerator
+libSCT_Digitization.so:SCT_StripDiscriminator
+libSCT_Digitization.so:SCT_SurfaceChargesGenerator
+libSCT_Digitization.so:SCT_TimeWalkGenerator
+# --End SCT_Digitization.components
+
+
+# --Beg SiClusterizationTool.components
+# --Date inserted: 2019-01-29 19:10:28.951444
+libSiClusterizationTool.so:InDet::ClusterMakerTool
+libSiClusterizationTool.so:InDet::MergedPixelsTool
+libSiClusterizationTool.so:InDet::NnClusterizationFactory
+libSiClusterizationTool.so:InDet::NnPixelClusterSplitProbTool
+libSiClusterizationTool.so:InDet::NnPixelClusterSplitter
+libSiClusterizationTool.so:InDet::PixelGangedAmbiguitiesFinder
+libSiClusterizationTool.so:InDet::SCT_ClusteringTool
+libSiClusterizationTool.so:InDet::TotPixelClusterSplitter
+libSiClusterizationTool.so:InDet::TruthClusterizationFactory
+libSiClusterizationTool.so:InDet::TruthPixelClusterSplitProbTool
+libSiClusterizationTool.so:InDet::TruthPixelClusterSplitter
+libSiClusterizationTool.so:InDet__ClusterMakerTool
+libSiClusterizationTool.so:InDet__MergedPixelsTool
+libSiClusterizationTool.so:InDet__NnClusterizationFactory
+libSiClusterizationTool.so:InDet__NnPixelClusterSplitProbTool
+libSiClusterizationTool.so:InDet__NnPixelClusterSplitter
+libSiClusterizationTool.so:InDet__PixelGangedAmbiguitiesFinder
+libSiClusterizationTool.so:InDet__SCT_ClusteringTool
+libSiClusterizationTool.so:InDet__TotPixelClusterSplitter
+libSiClusterizationTool.so:InDet__TruthClusterizationFactory
+libSiClusterizationTool.so:InDet__TruthPixelClusterSplitProbTool
+libSiClusterizationTool.so:InDet__TruthPixelClusterSplitter
+# --End SiClusterizationTool.components
+
+
+# --Beg FastSiDigitization.components
+# --Date inserted: 2019-01-29 19:11:46.495469
+libFastSiDigitization.so:PixelFastDigitization
+libFastSiDigitization.so:PixelFastDigitizationTool
+libFastSiDigitization.so:SCT_FastDigitization
+libFastSiDigitization.so:SCT_FastDigitizationTool
+libFastSiDigitization.so:SCT_SmearedDigitizationTool
+libFastSiDigitization.so:SiSmearedDigitization
+libFastSiDigitization.so:SiSmearedDigitizationTool
+# --End FastSiDigitization.components
+
+
+# --Beg PixelDigitization.components
+# --Date inserted: 2019-01-29 19:13:51.537650
+libPixelDigitization.so:BichselSimTool
+libPixelDigitization.so:CalibSvc
+libPixelDigitization.so:ChargeCollProbSvc
+libPixelDigitization.so:DBMChargeTool
+libPixelDigitization.so:Ibl3DBichselChargeTool
+libPixelDigitization.so:Ibl3DChargeTool
+libPixelDigitization.so:IblPlanarBichselChargeTool
+libPixelDigitization.so:IblPlanarChargeTool
+libPixelDigitization.so:PixelBarrelBichselChargeTool
+libPixelDigitization.so:PixelBarrelChargeTool
+libPixelDigitization.so:PixelCellDiscriminator
+libPixelDigitization.so:PixelChargeSmearer
+libPixelDigitization.so:PixelDigitization
+libPixelDigitization.so:PixelDigitizationTool
+libPixelDigitization.so:PixelDiodeCrossTalkGenerator
+libPixelDigitization.so:PixelECBichselChargeTool
+libPixelDigitization.so:PixelECChargeTool
+libPixelDigitization.so:PixelGangedMerger
+libPixelDigitization.so:PixelLightDigitizationTool
+libPixelDigitization.so:PixelNoisyCellGenerator
+libPixelDigitization.so:PixelRandomDisabledCellGenerator
+libPixelDigitization.so:SpecialPixelGenerator
+libPixelDigitization.so:SurfaceChargesTool
+libPixelDigitization.so:TimeSvc
+# --End PixelDigitization.components
+
+
+# --Beg TripletTrackFinder.components
+# --Date inserted: 2019-02-15 14:12:14.861660
+libTripletTrackFinder.so:ReadRDO
+libTripletTrackFinder.so:TripletParticleReader
+# --End TripletTrackFinder.components

@@ -1,0 +1,31 @@
+################################################################################
+# Package: SiHitAnalysis
+################################################################################
+
+# Declare the package name:
+atlas_subdir( SiHitAnalysis )
+
+# Declare the package's dependencies:
+atlas_depends_on_subdirs( PUBLIC
+                          AtlasPolicy
+                          Control/AthenaBaseComps
+                          GaudiKernel
+                          PRIVATE
+                          InnerDetector/InDetSimEvent )
+
+# External dependencies:
+find_package( CLHEP )
+find_package( ROOT COMPONENTS Core Tree MathCore Hist RIO pthread )
+
+# Component(s) in the package:
+atlas_add_component( SiHitAnalysis
+                     src/*.cxx
+                     src/components/*.cxx
+                     INCLUDE_DIRS ${ROOT_INCLUDE_DIRS} ${CLHEP_INCLUDE_DIRS}
+                     LINK_LIBRARIES ${ROOT_LIBRARIES} ${CLHEP_LIBRARIES} GaudiKernel AthenaBaseComps 
+                     PRIVATE_LINK_LIBRARIES InDetSimEvent)
+
+# Install files from the package:
+atlas_install_headers( SiHitAnalysis )
+atlas_install_joboptions( share/jobOptions_SiHitAnalysis.py )
+

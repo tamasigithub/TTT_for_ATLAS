@@ -1,0 +1,177 @@
+2016-12-12 Federica Fabbri <Federica.Fabbri@cern.ch>
+        * Fix a memory leak in PixelFastDigitizationTool.cxx
+        * Tagged as FastSiDigitization-00-01-12-02
+
+2016-12-1 Federica Fabbri <Federica.Fabbri@cern.ch>
+        * Tagging the branch FastSiDigitization-00-01-12-branch as FastSiDigitization-00-01-12-01
+        * Compatible with >= TrkDigEvent-00-02
+
+2016-11-16 Federica Fabbri <Federica.Fabbri@cern.ch>
+        * Created a new branch to develop PixelFast and SCTFast using Digitization Module
+        * Changes in PixelFastDigitizationTool.* and CMakeList / requirements
+        * Compatible with >= TrkDigEvent-00-02
+        * Branch FastSiDigitization-00-01-12-branch
+
+2016-11-06 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * check for intersection and do it if necessary
+	* Tagged as FastSiDigitization-00-01-11-05
+
+
+2016-10-27  Noemi Calace <Noemi.Calace@cern.ch>
+	* Adapting the SiSmearedDigitizationTool to be truth-based smeared digitization
+	* Tagged as FastSiDigitization-00-01-11-04
+
+2016-08-01 Federica Fabbri <Federica.Fabbri@cern.ch>
+        * Changed the function NeighbouringClusters in src/SCT_FastDigitizationTool.cxx to 
+        emulate the SCT merging function of full digitization.
+        * Added fix on PRD_MultiTruthCollection to treat the connection with hit truth link in case of merged clusters.
+        * Added configurable property for the cluster merging in pixel in src/PixelFastDigitizationTool.cxx FastSiDigitization/PixelFastDigitizationTool.h
+        * Tagged as FastSiDigitization-00-01-11-03
+
+2016-04-14 Federica Fabbri <Federica.Fabbri@cern.ch>
+        * Added PixelClusterAmbiguitiesMap and m_pixPrdTruth initialization in
+          src/PixelFastDigitizationTool.cxx in function PixelFastDigitizationTool::mergeEvent()
+        * Tagged as FastSiDigitization-00-01-11-02
+
+2016-03-23 Olivier Arnaez <Olivier.Arnaez@cern.ch>
+	* Added PixelClusterAmbiguitiesMapName in FastSiDigitizationConfig.py
+	* ATLASSIM-2682
+	* Tagged as FastSiDigitization-00-01-11-01
+	
+2016-02-05 Federica Fabbri <federica.fabbri@cern.ch>
+       * Added share/preInclude.FastPixelDigi_ITK.py to run fast pixel digi 
+	LoI geometry
+       * Added share/preInclude.RecoPixelFastDigi.py to run reconstruction on 
+	FastPixelDigi output
+	
+2015-11-27  John Chapman  <John.Chapman@cern.ch>
+
+	* python/FastSiDigitizationConfig.py (FastClusterMakerTool): tweak
+	logic in FastClusterMakerTool CfgGetter method. ATLASSIM-2407
+
+	* cmt/requirements - add use statements for CxxUtils and
+	StoreGate. ATLASSIM-2407
+
+	* FastSiDigitization/SCT_FastDigitizationTool.h,
+	src/SCT_FastDigitizationTool.cxx - switch to using
+	SG::WriteHandles separate out the creation of output containers
+	and checking for neighbouring clusters into separate methods. Use
+	CHECK macro wherever possible. Make variables const wherever
+	possible. Rename some local variables to make code easier to
+	read. Improve logic in cluster merging
+	code. Whitespace-cleanup. ATLASSIM-2407
+	* Tagged as FastSiDigitization-00-01-10
+
+2015-11-25  Vladimir Lyubushkin
+	* src/SCT_FastDigitizationTool.cxx - Fix for assigning to
+	nonexistent elements of AmgSymMatrix. ATLASSIM-2407
+	* Tagged as FastSiDigitization-00-01-09
+
+2015-11-03  Noemi Calace <Noemi.Calace@cern.ch>
+	* Avoiding smearing putside the module
+	* Tagged as FastSiDigitization-00-01-08
+
+2015-10-30  Noemi Calace <Noemi.Calace@cern.ch>
+	* Applying rotation to the local covariance matrix in case you have PlanarSurfaces with Trapezoidal shape
+	* Tagged as FastSiDigitization-00-01-07
+
+2015-10-26  Noemi Calace <Noemi.Calace@cern.ch>
+	* Found a bug in the creation of the SCT clusters for SiSmearedDigitizationTool
+	* Tagged as FastSiDigitization-00-01-06
+
+2015-10-19  Noemi Calace <Noemi.Calace@cern.ch>
+	* Addind the lorentzAngleSvc in FastSiDigitizationConfig.py
+	* Tagged as FastSiDigitization-00-01-05
+
+2015-10-12  Noemi Calace <Noemi.Calace@cern.ch>
+	* Many changes to merge branchtag FastSiDigitization-00-00-02-04 with the latest tag FastSiDigitization-00-01-03
+	* Tagged as FastSiDigitization-00-01-04
+
+2015-08-14  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelFastDigitizationTool.cxx,
+	src/SCT_FastDigitizationTool.cxx,
+	FastSiDigitization/SCT_FastDigitizationTool.h,
+	FastSiDigitization/PixelFastDigitizationTool.h - veto writing
+	geantinos into PRD Truth. Fix for truth seeded reco running.
+	* python/FastSiDigitizationConfig.py,
+	python/FastSiDigitizationConfigDb.py - fix random number stream
+	configuration, so that we can freely mix full and fast digi when
+	digitizing the hard-scatter and pile-up Hits separately. Requires
+	Digitization-01-16-00 or later. Set HardScatterSplittingMode to
+	zero for PixelFastDigitizationToolSplitNoMergePU and
+	SCT_FastDigitizationToolSplitNoMergePU. ATLASSIM-2174.
+	* Tagged as FastSiDigitization-00-01-03
+
+2015-08-13  John Chapman  <John.Chapman@cern.ch>
+
+	* python/FastSiDigitizationConfig.py,
+	python/FastSiDigitizationConfigDb.py - add
+	PixelFastDigitizationToolSplitNoMergePU and
+	SCT_FastDigitizationToolSplitNoMergePU
+	configurations. ATLASSIM-2163, ATLASSIM-2165
+	* src/PixelFastDigitizationTool.cxx,
+	src/SCT_FastDigitizationTool.cxx,
+	FastSiDigitization/SCT_FastDigitizationTool.h,
+	FastSiDigitization/PixelFastDigitizationTool.h - add
+	HardScatterSplittingMode for truth seeded reco
+	studies. ATLASSIM-2163, ATLASSIM-2165
+	* Tagged as FastSiDigitization-00-01-02
+
+2015-08-13  John Chapman  <John.Chapman@cern.ch>
+
+	* src/PixelFastDigitization.cxx,
+	FastSiDigitization/PixelFastDigitization.h,
+	src/SCT_FastDigitization.cxx,
+	FastSiDigitization/SCT_FastDigitization.h - update to match
+	versions in FastSiDigitization-00-00-00-09.
+	* src/SCT_FastDigitizationTool.cxx,
+	FastSiDigitization/SCT_FastDigitizationTool.h - update logic to
+	match the version in FastSiDigitization-00-00-00-09.
+	* src/PixelFastDigitizationTool.cxx,
+	FastSiDigitization/PixelFastDigitizationTool.h - update logic to
+	match the version in FastSiDigitization-00-00-00-09.
+	* Tagged as FastSiDigitization-00-01-01
+
+2015-08-13  John Chapman  <John.Chapman@cern.ch>
+	* cmt/requirements: add declare_python_modules pattern + slight
+	tidying.
+	* add python/FastSiDigitizationConfigDb.py,
+	python/FastSiDigitizationConfig.py - CfgGetter methods for
+	SCT_FastDigitizationTool and PixelFastDigitizationTool. Based on
+	versions in FastSiDigitization-00-00-00-09.
+	* share/SCT_Digitization_jobOptions.py,
+	share/PixelDigiTool_jobOptions.py,
+	share/PixelDigitization_jobOptions.py - update to match versions
+	in FastSiDigitization-00-00-00-09. Basically they now use the
+	CfgGetter methods.
+	* remove cmt/version.cmt which should not be in SVN.
+	* Tagged as FastSiDigitization-00-01-00
+
+2015-06-30 Vladimir Lyubushkin <Vladimir.Lyubushkin@cern.ch>
+	* Try to fix Coverity defects, ATLASSIM-2086
+	* Tagged as FastSiDigitization-00-00-02-02
+
+2015-04-22 Vladimir Lyubushkin <Vladimir.Lyubushkin@cern.ch>
+	* Fix include guard in FastSiDigitization/FastSiDigitization/SiSmearedDigitizationTool.h, ATLASSIM-1862
+
+2014-10-17 Noemi Calace <ncalace@cern.ch>
+	* Added PlanarCluster in SiSmearedDigitizationTool
+	* Tagged as FastSiDigitization-00-00-02-00 for MIG5
+
+2014-05-15 Noemi Calace <ncalace@cern.ch>
+	* Added root file as output to check the smearing:
+	* src/SiSmearedDigitization.cxx
+	* src/SiSmearedDigitizationTool.cxx
+	* FastSiDigitization/SiSmearedDigitizationTool.h
+
+2014-05-15 Noemi Calace <ncalace@cern.ch>
+	* Initial commit: 
+	* src/SiSmearedDigitization.cxx
+	* FastSiDigitization/SiSmearedDigitization.h
+	* FastSiDigitization/ISiSmearedDigitizationTool.h
+	* src/SiSmearedDigitizationTool.cxx
+	* FastSiDigitization/SiSmearedDigitizationTool.h
+	* share/SiSmearing_noPU.py
+	* share/SiSmearing_jobOptions.py
+	

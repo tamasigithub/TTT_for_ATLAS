@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="32CD115F-D8DE-A941-90DF-51297A823A9F">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/EVNT.12807745._000010.pool.root.1"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="2207D04A-09E2-7442-9C6E-19B37FEFE325">
+    <physical>
+      <pfn filetype="ROOT_All" name="./HITS.Fullhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>

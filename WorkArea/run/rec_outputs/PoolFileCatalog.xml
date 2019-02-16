@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="FDAB9660-6FAD-914A-8001-C45DABB5F90E">
+    <physical>
+      <pfn filetype="ROOT_All" name="SLHCtest72.AOD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="0E809E77-BB4C-4B45-9AC3-8779B24ABE69">
+    <physical>
+      <pfn filetype="ROOT_All" name="SLHCtest72_1.AOD.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>

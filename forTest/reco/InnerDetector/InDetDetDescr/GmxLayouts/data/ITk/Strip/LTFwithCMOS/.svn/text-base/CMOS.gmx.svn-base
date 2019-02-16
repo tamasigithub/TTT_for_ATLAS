@@ -1,0 +1,117 @@
+<!-- Overall control of CMOS triplet trigger layout -->
+
+<!-- CNL_n meanings for CMOS:
+
+    n    Meaning           Range
+===================================
+    0    SCT               0
+    1    SCTBarrel         0
+    2    StripB            0
+    3    CMOS_TriggerLayer 0
+    4    CMOS_Castle       0 - 34
+    5    CMOS_TripletPair  0 - 1
+    6    CMOS_Triplet      0 - 1
+    7    CMOS_Stave        0 - 2
+    8    CMOS_Face         0
+    9    Module            0 - 16
+    10   Sensor            0
+
+indexes: barrel_endcap: 0
+         layer_wheel:   4 - 6 (barrel is 0 - 3)
+         phi_module     0 - 69
+         eta_module:  -17 - -1; 1 - 17
+         side:          0
+-->
+
+
+
+&CMOS_Defines;
+&CMOS_Sensor;
+&CMOS_Face;
+&CMOS_Plank;
+
+<assembly name="CMOS_Stave">
+  <transform name="PlaceCMOS_PlankInCMOS_Stave">
+    <transformation name="ShiftCMOS_PlankDownSoSiliconSensorHasZ_Is0">
+      <translation z="-(CMOS_StaveT/2 + CMOS_DeadT + CMOS_SensorT/2)"/>
+    </transformation>
+    <logvolref ref="CMOS_Plank"/>
+  </transform>
+  <transform name="PlaceCMOS_FaceInCMOS_Stave">
+    <transformation name="ShiftCMOS_FaceUpSoSiliconSensorHas_ZIs0">
+      <translation x="-(CMOS_N_SensorsStave - 1.) * (CMOS_SensorL + CMOS_SensorGap) / 2."
+                   z="CMOS_SensorT/2"/>
+    </transformation>
+    <assemblyref ref="CMOS_Face"/>
+  </transform>
+</assembly>
+
+<assembly name="CMOS_Triplet">
+  <index ref="layer_wheel" value="4"/>
+  <transform name="PlaceInnerCMOS_Stave">
+    <transformation name="ShiftCMOS_InnerStave">
+      <translation z="CMOS_TripletSpacing"/> <!-- Rotated later -PI/2, puts this at low x hence + sign -->
+    </transformation>
+    <assemblyref ref="CMOS_Stave"/>
+  </transform>
+
+  <index ref="layer_wheel" value="5"/>
+  <assemblyref ref="CMOS_Stave"/>
+
+  <index ref="layer_wheel" value="6"/>
+  <transform name="PlaceOuterCMOS_Stave">
+    <transformation name="ShiftCMOS_OuterStave">
+      <translation z="-CMOS_TripletSpacing"/>
+    </transformation>
+    <assemblyref ref="CMOS_Stave"/>
+  </transform>
+</assembly>
+
+<assembly name="CMOS_TripletPair">
+  <index ref="eta_module" value="CNL_9 + 1"/>
+  <transform name="PlacePosZ_CMOS_Triplet">
+    <transformation name="CMOS_TripletShiftPos">
+      <translation x="CMOS_StaveL/2"/>
+    </transformation>
+    <assemblyref ref="CMOS_Triplet"/>
+  </transform>
+  <index ref="eta_module" value="-(CNL_9 + 1)"/>
+  <transform name="PlaceNegZ_CMOS_Triplet">
+    <transformation name="CMOS_TripletShiftNeg">
+      <translation x="-CMOS_StaveL/2"/>
+      <rotation zcos="1." angle="PI"/>
+    </transformation>
+    <assemblyref ref="CMOS_Triplet"/>
+  </transform>
+</assembly>
+
+<assembly name="CMOS_Castle">
+  <transform name="PlaceInnerTriplet">
+    <transformation name="CMOS_TripletInner">
+      <rotation zcos="1." angle="-2. * PI / CMOS_N_Staves / 2."/>
+      <translation x="CMOS_Radius - CMOS_Castellation/2."/>
+      <rotation ycos="1." angle="-PI/2."/>
+    </transformation>
+    <assemblyref ref="CMOS_TripletPair" zeroid="true"/>
+  </transform>
+  <transform name="PlaceOuterTriplet">
+    <transformation name="CMOS_TripletOuter">
+      <rotation zcos="1." angle="2. * PI / CMOS_N_Staves / 2."/>
+      <translation x="CMOS_Radius + CMOS_Castellation/2."/>
+      <rotation ycos="1." angle="-PI/2."/>
+    </transformation>
+    <assemblyref ref="CMOS_TripletPair"/>
+  </transform>
+</assembly>
+
+<assembly name="CMOS_TriggerLayer">
+  <index ref="side" value="0"/>
+  <index ref="phi_module" value="CNL_4 * 2 + CNL_5"/>
+  <multicopy name="CMOS_PlaceCastles" n = "CMOS_N_Staves/2.">
+    <transformation name="CMOS_RotateCastles">
+      <rotation zcos="1." angle="2. * PI / CMOS_N_Staves * 2."/>
+    </transformation>
+    <assemblyref ref="CMOS_Castle"/>
+  </multicopy>
+</assembly>
+

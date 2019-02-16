@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="8CFE45B7-42B3-FC47-A853-4A386BD363B1">
+    <physical>
+      <pfn filetype="ROOT_All" name="/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/WorkArea/run/test_files/sim_SiOnly/HITS.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="203E652A-0208-EF43-B0E5-DA274DC2CF99">
+    <physical>
+      <pfn filetype="ROOT_All" name="RDO1.SiOnlyhh4b.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>

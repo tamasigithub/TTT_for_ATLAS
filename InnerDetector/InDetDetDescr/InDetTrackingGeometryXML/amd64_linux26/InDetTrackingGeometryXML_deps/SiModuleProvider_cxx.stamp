@@ -1,0 +1,1 @@
+SiModuleProvider_cxx_dependencies =  ../src/SiModuleProvider.cxx  $(bin)InDetTrackingGeometryXML_deps/SiModuleProvider_cxx.stamp

@@ -1,0 +1,1 @@
+StaveBuilderXML_cxx_dependencies =  ../src/StaveBuilderXML.cxx  $(bin)InDetTrackingGeometryXML_deps/StaveBuilderXML_cxx.stamp

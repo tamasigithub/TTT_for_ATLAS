@@ -1,0 +1,8 @@
+<shapes>
+  <box name="shCMOS_Sensor" xhalflength="CMOS_SensorL / 2" yhalflength="CMOS_SensorW / 2" zhalflength="CMOS_SensorT / 2" />
+  <box name="shCMOS_DeadSi" xhalflength="CMOS_SensorL / 2" yhalflength="CMOS_SensorW / 2" zhalflength="CMOS_DeadT / 2" />
+</shapes>
+
+<logvol name="CMOS_Sensor" shape="shCMOS_Sensor" material="SiMetal" sensitive="CMOS_TriggerSensor"/>
+<logvol name="CMOS_DeadSi" shape="shCMOS_DeadSi" material="SiMetal"/>
+

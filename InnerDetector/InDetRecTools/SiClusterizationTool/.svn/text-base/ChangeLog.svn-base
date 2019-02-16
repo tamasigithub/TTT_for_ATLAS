@@ -1,0 +1,782 @@
+2017-08-25 Nora Pettersson
+		* Temporary commenting out random svc (not used...)
+		* Tagged as SiClusterizationTool-04-00-33-54
+
+2017-08-21 Edward Moyse
+  	* Applied Simon Viels' / Felix's fixes from SiClusterizationTool-04-00-33-02:
+   		* obo Felix Cormier
+   		* Use random svc in initialization, ATLASRECTS-3980
+   		* Tagged as SiClusterizationTool-04-00-33-02
+	* Tagged as SiClusterizationTool-04-00-33-53
+
+2017-07-04 Noemi Calace
+	* Properly fixed adjacent function to work with cluster on different rows
+	* Tagged as SiClusterizationTool-04-00-33-52
+
+2017-07-04 Noemi Calace
+	* Swapping last/first strip in order to prevent clusters with width=0.
+	* Tagged as SiClusterizationTool-04-00-33-51
+
+2017-06-27 Nick Styles
+	* Remove unnecceaary (and incorrect in ITK cases) static_casts
+	* Tagged as SiClusterizationTool-04-00-33-50
+
+2016-08-29 Roland Jansky
+	* Add flag to enable/disable Lorentz correction of pixel clusters
+	* Tagged as SiClusterizationTool-04-00-33-00
+
+2106-06-21 Nick Styles
+	* Remove conversion rad->mm in ClusterMakerTool for Annulus
+	* (StripStereoAnnulusDesign now returns pitch in mm)
+	* Tagged as SiClusterizationTool-04-00-33
+
+2016-06-17 Susumu Oda <Susumu.Oda@cern.ch>
+	* Add testTimeBins01X and testTimeBinsX1X methods, and
+	  m_innermostBarrelX1X, m_innertwoBarrelX1X, and m_majority01X variables
+          to SCT_ClusteringTool.
+	  for https://its.cern.ch/jira/browse/ATLASRECTS-2866
+	* Tagged as SiClusterizationTool-04-00-32
+
+2016-06-10 Alex Alonso 
+	* Add ToT cut to MergedPixelsTool 
+	* Tagged as SiClusterizationTool-04-00-31
+
+2016-05-11 Igor Gavrilenko
+	* Added coorection to cluster covariances for new strip endcap sensors 
+	* (requires InDetReadoutGeometry InDetReadoutGeometry-02-00-36 or later)
+	* Tagged as SiClusterizationTool-04-00-30
+
+2016-05-11 Nick Styles
+	* Added fix to cluster covariances for new strip endcap sensors 
+	* (requires InDetReadoutGeometry InDetReadoutGeometry-02-00-36 or later)
+	* Tagged as SiClusterizationTool-04-00-29
+
+2016-05-03 Sasha Pranko <Aliaksandr.Pranko@cern.ch>
+	* Fixed bug in MergedPixelsTool (ITK part; improved tails in size of merged clusters)
+	* Tag as SiClusterizationTool-04-00-28
+
+2016-04-21 Nick Styles
+	* Add updates for ITK strip sensors with row index
+	* Tagging as SiClusterizationTool-04-00-26
+	* Added some missing updates in SiClusterizationTool-04-00-27
+
+2016-04-12 Roland Jansky
+	* Adding in TruthClusterizationFactory/Splitter/SplitProbTool to be used for ITk (or general studies)
+	* Tagging as SiClusterizationTool-04-00-25
+
+2016-03-18 Sasha Pranko <Aliaksandr.Pranko@cern.ch>
+	* Merged branch 04-00-22-01 (ITK developments) into trunk
+	* Tag as SiClusterizationTool-04-00-24
+
+2016-03-10 Susumu Oda <Susumu.Oda@cern.ch>
+	* Change strip_less_than of src/SCT_ClusteringTool.cxx to use
+	  identify instead of getStrip.
+	  https://its.cern.ch/jira/browse/ATLASSIM-1907
+	* Tag as SiClusterizationTool-04-00-23
+
+2015-10-21 Nick Barlow
+	* Fixes to SCT_ClusteringTool code that adds "hitsInThirdTimeBin"
+	info to SCT_Clusters (fix ATLASRECTS-2510).  
+	* Tag as SiClusterizationTool-04-00-22
+	
+	
+2015-10-15 Shaun Roe
+	* Coverity fixes:
+31564 14/10/2015 (Medium) Using invalid iterator :/InnerDetector/InDetRecTools/SiClusterizationTool/src/SCT_ClusteringTool.cxx in function "clusterize"
+31562 14/10/2015 (Medium) Unchecked dynamic_cast :/InnerDetector/InDetRecTools/SiClusterizationTool/src/SCT_ClusteringTool.cxx in function "clusterize"
+31568 14/10/2015 (Medium) Dereference before null check :/InnerDetector/InDetRecTools/SiClusterizationTool/src/SCT_ClusteringTool.cxx in function "clusterize"
+
+
+2015-09-24 Nick Barlow
+	* Add timing information to SCT clusters in SCT_ClusteringTool
+	* Tagged as SiClusterizationTool-04-00-20
+
+2015-08-31 Shaun Roe
+	* Fix coverity:
+13933 09/07/2014 (Medium) Unchecked dynamic_cast :/InnerDetector/InDetRecTools/SiClusterizationTool/src/ClusterMakerTool.cxx in function "pixelCluster"
+	* Tagged as SiClusterizationTool-04-00-19
+
+2015-08-10 Nick Styles
+	* Updates for case where HitDiscCnfg may change during job
+	* Move ToT overflow setting out of initialize, into methods
+	* Tagged as SiClusterizationTool-04-00-18
+
+2015-08-04 Fares Djama
+	* Protection for RUN1 geometry
+	* Tagged as SiClusterizationTool-04-00-17
+
+2015-08-03 Fares Djama
+	* Implement overflow for IBL ToT
+	* Tagged as SiClusterizationTool-04-00-16
+
+2015-05-11 Nick Styles
+	* Fix for ATLASRECTS-1638
+	* Tagged as SiClusterizationTool-04-00-15
+
+2015-02-11 Shaun Roe
+	* NnNormalization returns a NaN for norm_pitch, back_pitch instead of throwing
+	* [CERN-JIRA] (ATLASRECTS-1827) 
+	* tag as SiClusterizationTool-04-00-14
+
+2015-02-03 Shaun Roe
+	* Retrieve m_clusterMaker in initialize method of SCT_ClusteringTool
+	* Update for C++14
+	* tag as SiClusterizationTool-04-00-13
+
+2014-12-1 Shaun Roe
+	* Coverity resource leaks cleaned up (25075 et al)
+	* tag as SiClusterizationTool-04-00-12
+
+2014-11-26 Shaun Roe
+	* clear up remaining 'medium' impact coverity defects
+	* tag as SiClusterizationTool-04-00-11
+
+2014-11-25 Shaun Roe
+	* Clean up NnNormalization, separate header and implementation
+	* Introduce package specific exception instead of generic 'throw'
+	* Tag as  SiClusterizationTool-04-00-10
+
+2014-10-15 Anthony Morley
+  *  Correct header file
+  *  Tagging SiClusterizationTool-04-00-09
+
+2014-10-13 Anthony Morley
+  * Add the ability to calculate split prob with track info
+  * Tagging SiClusterizationTool-04-00-08
+
+2014-07-14 Francesco De Lorenzi
+  * fix InputsInfo for RunII calibration
+  * Tagging SiClusterizationTool-04-00-06
+
+2014-06-30 Francesco De Lorenzi
+        * Bug fix in RunII position
+	* Tagging SiClusterizationTool-04-00-05
+
+2014-05-22 Francesco De Lorenzi
+        * Adapt NN clustering for RunII
+        * Tagging SiClusterizationTool-04-00-04
+
+
+2014-05-18 Matthew Klein < matthew.henry.klein -at- cern.ch >
+	* Fix for IBL compatibility
+	* Tagging SiClusterizationTool-04-00-03
+
+2014-05-06 Nick Styles < nicholas.styles -at- cern.ch >
+        * Use IBL parameter svc
+	* Tagging SiClusterizationTool-04-00-02
+
+2013-11-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * unitialized value fix
+	* Tagging SiClusterizationTool-04-00-01
+
+
+2013-08-09 Niels van Eldik
+	* Tagging SiClusterizationTool-04-00-00
+	* migrate to Eigen
+
+2012-01-11 Niels van Eldik
+	* Tagging SiClusterizationTool-03-00-01
+	* fix tag
+
+2012-11-02 Niels van Eldik
+	* Tagging SiClusterizationTool-03-00-00
+	* reduce malloc
+
+2012-09-30  scott snyder  <snyder@bnl.gov>
+
+	* Tagging SiClusterizationTool-02-28-08.
+	* Fix another compilation warning.
+
+2012-09-29  scott snyder  <snyder@bnl.gov>
+
+	* Tagging SiClusterizationTool-02-28-07.
+	* Fix gcc 4.7 compilation warnings and c++0x compatibility.
+	* Tagging SiClusterizationTool-02-28-06.
+	* Updates for clhep2.
+
+2012-01-29  Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Fix bugs 91587 and 93160 in MergedPixelsTool
+	* Tagging as SiClusterizationTool-02-28-05
+
+2012-01-29  Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Fix inconsinstencies in PixelGangefAmbiguities finder 
+	* bug #89457
+	* and better rejection of fake clusters in busy environment (obo Thijs)
+	* Tagging as SiClusterizationTool-02-28-04
+
+2011-10-08 Katharine Leney
+	* Fix checkreq warnings
+	* Tagging as SiClusterizationTool-02-28-03
+
+2011-08-18 Giacinto Piacquadio
+	* add option not to use beam spot info during clustering (savannah bug 83849)
+	* tag as SiClusterizationTool-02-28-02
+	
+2011-08-15 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* update to "BeginEvent" incident
+	* tag as SiClusterizationTool-02-28-01
+
+2011-08-09 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* COOL binding for NN
+	* tag as SiClusterizationTool-02-28-00
+	
+2011-08-08 Markus Elsing
+	* make SplitMap const in SG
+	* tag as SiClusterizationTool-02-27-27
+
+2011-08-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* make a tag with ToTSplitter setup
+	* tag as SiClusterizationTool-02-27-26
+
+2011-07-12  Patricia Ward  <ward@lxplus246.cern.ch>
+	* src/SCT_ClusteringTool.cxx (InDet): 
+	* Extend error message when casting to SCT3_RawData fails
+	* tag as SiClusterizationTool-02-27-25
+
+2011-07-02 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Additional fix for compatibility with new layouts bug 81897 
+	* tag as SiClusterizationTool-02-27-24
+
+2011-06-27 Andreas Salzburger
+	* change to 1-pixel logics
+	* tag as SiClusterizationTool-02-27-23
+
+2011-06-26 Giacinto Piacquadio
+	* put new calibration (without tracks) in
+	* make pixel clustering robust against variations in Lorentz shift
+	* tag as SiClusterizationTool-02-27-21 && 22
+
+2011-05-19 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Fix has genged flag for compatibility with new layouts bug 81897 
+	* tag as SiClusterizationTool-02-27-20
+
+
+2011-05-14 Andreas salzburger < Andreas.Salzburger -at- cern.ch >
+	* omegax/omegay
+	* tag as SiClusterizationTool-02-27-19
+
+2011-05-12 Thijs Cornelissen
+	* check for layer boundaries before assigning hit to module
+	* important bug fix
+	* tag as SiClusterizationTool-02-27-18
+
+2011-05-03 Giacinto Piacquadio
+	* corrected 1-particle cluster Y error calibration
+	* tag as SiClusterizationTool-02-27-17
+
+2011-04-28 Giacinto Piacquadio
+	* change back to +/- 3 sigmas
+	* tag as SiClusterizationTool-02-27-16
+
+2011-04-28 Giacinto Piacquadio
+	* update calibration files with correct errors
+	* change outlier removal for error calibration from -/+3 sigma to -/+5 sigma
+	* tag as SiClusterizationTool-02-27-15
+	
+2011-04-27 Giacinto Piacquadio
+	* update calibration files
+	* tag as SiClusterizationTool-02-27-14
+
+2011-04-26 Giacinto Piacquadio < giacinto.piacquadio -at- cern.ch>
+	* Fix mem leak in NnClusterizationFactory
+	* Tag as SiClusterizationTool-02-27-13
+	
+2011-04-18 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* cleaned output
+	* Tag as SiClusterizationTool-02-27-12
+
+2011-04-14 Giacinto Piacquadio <giacinto.piacquadio -at- cern.ch>
+	* bug fix (split prob 1 == split prob 2 is wrong!) 
+	* Tag as SiClusterizationTool-02-27-11
+	
+2011-04-12 Giacinto Piacquadio <giacinto.piacquadio -at- cern.ch>
+	* add protection for msgstream (if statement) for GangedPixelAmbiguityFinder
+	* Tag as SiClusterizationTool-02-27-10
+	
+2011-04-07 Giacinto Piacquadio <giacinto.piacquadio -at- cern.ch>
+	* change to logic of NN position estimate
+	(only compute positions for chosen number of subcluters)
+	* Tag as SiClusterizationTool-02-27-07
+
+2011-04-06 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* first version with TotClusterSplitter implemented
+	* Tag as SiClusterizationTool-02-27-06
+
+2011-04-06 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* fix clusterSplit logics , add screen output
+	* Tag as SiClusterizationTool-02-27-03
+	* Tag as SiClusterizationTool-02-27-04
+	* Tag as SiClusterizationTool-02-27-05
+
+2011-04-05 Giacinto Piacquadio <giacinto.piacquadio -at- cern.ch>
+	* add improved error treatment in NN clustering
+	* add nn clustering for IBL
+	* small bug fix to MergedPixelsTools (storage of prob values)
+	* temporary fix for ganged pixels in case of split clusters from NN
+	* Tag as SiClusterizationTool-02-27-02
+
+2011-04-04 Andreas Salzburger <Andreas.Salzburger -at- cern.ch >
+	* adding Nn config files
+	* Tag as SiClusterizationTool-02-27-01
+
+2011-03-24 Andreas Salzburger <Andreas.Salzburger -at- cern.ch >
+	* first integration of PixelTF code to trunk
+	* Tag as SiClusterizationTool-02-27-00
+
+2011-01-26 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+        * Fix bug 77028
+	* Tag as SiClusterizationTool-02-26-13
+
+2010-12-28 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Fix checkreq warning
+	* Tag as SiClusterizationTool-02-26-12
+
+2010-11-25 Carl Gwilliam
+	* Merge in changes from IBL branch
+	* Tag as SiClusterizationTool-02-26-11
+	
+2010-11-22 Carl Gwilliam
+	* Add ability to only accept cluster with certain time bin
+	patterns (no change in default)
+	* Tag as SiClusterizationTool-02-26-10
+
+2010-06-28 Shaun Roe <shaun.roe@cern.ch>
+	* Remove range checks in SCT_ClusteringTool::DimensionAndPosition to answer bug 69175
+	* Tag as SiClusterizationTool-02-26-08
+
+2010-04-12 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Improve isFake flag also to some clusters with >1 row width
+	* Use always bottom left corner for cluster identifier (bug 56381)
+	* Tag as SiClusterizationTool-02-26-07
+
+2010-03-07 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Restrict isFake flag only to clusters with 1 row width
+	* Tag as SiClusterizationTool-02-26-06
+
+2010-03-05 Thijs Cornelissen <thijs.cornelissen@cern.ch>
+	* Fix isGanged flag for clusters with >1 pixel
+	* Tag as SiClusterizationTool-02-26-05
+
+2009-10-01 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* MergedPixelTool add protection for calling the tool 
+	* without configuring the DB services.
+	* Tag as SiClusterizationTool-02-26-04
+
+2009-07-21 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* MergedPixelTool remove hardcoded numbers for CTB simulation.
+	* Tag as SiClusterizationTool-02-26-03
+
+2009-06-23 Carl Gwilliam
+	* Remove unnecessary dependency on SCT_ConditionsServices (bug #52145)
+	* Tag as SiClusterizationTool-02-26-02
+	
+2009-06-17 Markus Elsing
+	* fixes for SLHC (no hardcoding of 767)
+	* tag SiClusterizationTool-02-26-01
+
+2009-05-13 Tommaso Lari <Tommaso.Lari@cern.ch>
+        * Changes to handle duplication of Pixel RDO with low TOT: if a pixel RDO
+	with the same identifier as an RDO already included to a cluster is found,
+	the RDO is not added to the cluster nor it forms an other cluster. Only one
+	copy is kept in the cluster, the one with the larger LVL1.
+	* In practical term, a new method (isDuplicated) is added to PixelClusteringToolBase
+	and some changes are made to MergedPixelsTool
+	* tag as SiClusterizationTool-02-26-00
+
+2009-05-04 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Move computation of the TOT/charge balance of
+	pixel clusters (omega) from MergedPixelsTool
+	to ClusterMakerTool, so that the calibrated charge
+	is used if available.
+	* Tag as SiClusterizationTool-02-25-00
+
+2009-03-15  Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Fix requirements according to checkreq warnings 
+	* Tag as SiClusterizationTool-02-24-04
+
+2009-02-04  Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* Use abstract interfaces for pixel conditions 
+	* Tag as SiClusterizationTool-02-24-03
+
+2008-12-15 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Added protections for printout messages
+	*  Tag as SiClusterizationTool-02-24-02
+
+2008-12-15 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Some more cleanup according to the suggestion from Kirill Prokofiev.
+	In paricular, an include of MsgStream.h has been removed from 
+	SCT_Clusterization.h and number version of packages in the 
+	requirements has been removed.
+	* Tag as SiClusterizationTool-02-24-01
+	
+2008-12-15 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Cleanup recommendations implemented
+	* Tag as SiClusterizationTool-02-24-00
+
+2008-12-15 Shaun Roe
+	* Fix compilation warnings in 15.X.0-MIG6
+	* Tag as SiClusterizationTool-02-23-18
+
+2008-11-28  Carl Gwilliam
+	* Fix CheckReq warnings
+	* Tag as SiClusterizationTool-02-23-17
+
+2008-08-25  Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* fix incorrect test on unitialized ServiceHandle
+	* in ClusterMakerTool::pixelCluster
+	* Tag as SiClusterizationTool-02-23-16
+
+2008-08-21  Jiri Masik  <Jiri.Masik@cern.ch>
+	* use ServiceHandles/ToolHandles, it fixes confusing messages
+	about tool retrieval (http://savannah.cern.ch/bugs/?38267)
+2008-07-28 Carl Gwilliam
+	* Fix checking of StatusCodes
+	* Tag as SiClusterizationTool-02-23-14
+2008-07-25 Carl Gwilliam
+	* Set conditions access on by default
+	* Tag as SiClusterizationTool-02-23-13
+2008-07-09 Carl Gwilliam
+	* General code cleanup
+	* Tag as  SiClusterizationTool-02-23-12
+2008-06-14 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* PixelClusteringToolBase, MergedPixelTool
+	* Moved MsgStream to be a class member (bugs #36171)
+	* reinserted the <<identifier debug printout.
+	* Tag as SiClusterizationTool-02-23-11
+
+2008-05-14 Shaun Roe
+	* remove problem <<Identifier statements in MergedPixelTool
+	* tag as Tag as SiClusterizationTool-02-23-10
+
+2008-05-06 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* MergedPixelTool
+	* added reserve for vectors and ClusterCollection (bugs #36171)
+	* Tag as SiClusterizationTool-02-23-08
+
+2008-04-29 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* ClusterMakerTool, MergedPixelTool
+	* added reserve for vector (bugs #36135, #36136, #36126)
+	* Tag as SiClusterizationTool-02-23-06
+
+2008-04-18 Carl Gwilliam
+	* Change service handle from SCT_ConditionsSummarySvc to IInDetConditionsSvc to fix segv
+	* Remove duplicated typedef
+	* Tag as SiClusterizationTool-02-23-05
+2008-04-16 Shaun Roe
+	* remove unchecked status code in SCT_Clustering Tool initialize
+	* tag as SiClusterizationTool-02-23-04
+2008-04-14 Carl Gwilliam
+        * Check vector is non-zero before using for previous strip
+	* Use first strip id for cluster id (rather than centre strip) 
+2008-04-09 Shaun Roe
+	* Introduce range checking on the strip numbers
+	* Tag as SiClusterizationTool-02-23-02
+2008-04-09 Shaun Roe
+	* Found bugs in clustering code I introduced, fixed them
+	* tag as SiClusterizationTool-02-23-01
+
+2008-04-08 Shaun Roe
+	* Trying to re-introduce clustering using dead strip information from SCT_ConditionsServices
+	* Many changes!
+	* tag as SiClusterizationTool-02-23-00
+
+2008-03-19 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* MergedPixelTool, PixelClusteringToolBase, 
+	  inserted access to PixelConditionsServices for bad pixel maps 
+	* removed obsolete and unused SimplePixelClusteringTool
+	* tag SiClusterizationTool-02-22-00
+
+2008-03-15 Shaun Roe 
+	* Tidy up SCT_ClusteringTool prior to introducing 'bad strip' code
+	* tag as SiClusterizationTool-02-21-01
+
+2008-03-13 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Made makeCluster method of MergedPixelsTool public 
+	for use in FATRAS.
+
+2008-02-21 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* MergedPixelTool, correcto for initialized Lvl1 vector
+	(savannah bug #33795)
+	* tagged as SiClusterizationTool-02-20-05
+
+2008-02-21 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	* many updates to use the update PixelCluster inserted in 
+	InDetPrepRawData-00-08-00
+        * ClusterMakerTool: added access to Condition DB to calibrate
+	pixel charge from ToT. Added new interfaces to the PixelCluster
+	constructor to store also the charge and ToT information.
+	* PixelGangedAmbiguitiesFinder: even if the internal solving of 
+	ganged ambiguity cannot is not turned on, flag the PixelClusters that
+	would have been removed.
+	* MergedPixelsTool and SimplePixelClusteringTool: updated calling 
+	sequence to match ClusterMakerTool.
+	* Tag as SiClusterizationTool-02-20-04
+	
+2008-01-11 Attilio Andreazza <Attilio.Andreazza@cern.ch>
+	*  PixelGangedAmbiguitiesFinder found small bug, causing last cluster
+	in a collection never to be flagged as ganged.
+	* Tag as SiClusterizationTool-02-20-01
+
+2008-01-04 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Error parametrizations (except the CTB one) removed, they are now  
+	taken from InDetConditions packages.
+	
+2008-01-03 Attilio Andreazza <Attilio.Andreazza@mi.infn.it>
+	* PixelGangedAmbiguitiesFinder modified to allow for stand-alone
+	solving of ambiguities when a pixel is a single hit cluster, while
+	the ganged one is part of a multi hit cluster. This feature can be 
+        activated by JobOption "InternalSolving"
+        * Tag as SiClusterizationTool-02-19-01
+
+2007-11-02 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Added a joboption property (scceptDiagonalClusters) to determine
+	wether pixel with just a pixel corner in common are to be 
+	clustered together. Default in the code is true.
+	* Added a joboption property (splitClusters) to put a limitation 
+	on the maximum cluster size. Groups of continuos pixels exceeding 
+	this maximum will form different clusters, which is possibly a 
+	good idea for the core of high pt tracks, where clusters created 
+	by different particles may overlap. Default is no limitation on 
+	cluster size.
+	* areneighbours methods of MergedPixelTool and 
+	SimplePixelClusteringTool have been moved to the base class (they 
+	were identical anyway) and updated to implemented the different 
+	clustering options mentioned above
+
+2007-07-23 Edward.Moyse@cern.ch
+	* SCT_ClusteringTool: added lines to set hash and index (needed for EL persistency)
+
+2007-07-12 Shaun Roe <shaun.roe@cern.ch>
+	* Remove code which was valid for CTB 2004, introduced new clusterize method
+	* Tag as SiClusterizationTool-02-18-03
+
+2007-06-21 Shaun Roe <shaun.roe@cern.ch>
+	* Update documentation for SCT classes
+	* Tag as SiClusterizationTool-02-18-02
+ 
+2007-05-25 Andreas Wildauer
+	* clusters now also store the hash id and the index in the coll
+	* necessary for proper persistification of EL to IDC on the RIO objects
+
+2007-03-15 Andreas Wildauer
+	* adjusted to constructor changes in InDetPrepRawData-00-06-00
+	* tagged SiClusterizationTool-02-17-00
+
+2007-03-08 Andreas Wildauer <andreas.wildauer@cern.ch>
+	* adjusted to constructor changes in InDetPrepRawData-00-05-00
+	* tagged SiClusterizationTool-02-16-00
+
+2006-12-08 Andreas Wildauer <andreas.wildauer@cern.ch>
+	* adjusted to toolhandle
+	* restructuring of some tools was necessary
+	* made proper interfaces and added a PixelClusteringToolBase class
+	* tagged: SiClusterizationTool-02-15-00
+27-09-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	First working version, tag 00-00-01
+	Contains the actual silicon Clustering algorithms, looping on 
+	a RDO collection and producing a SiClusterCollection.
+16-10-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-01-00
+	New SiCluster interface (fills SiWidth)
+	PrepRawData -> TrkPrepRawData
+17-10-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-01-01
+	some changes in SiCluster interface
+27-10-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-01-02
+	reference frame bugs fixed
+29-10-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-02-00
+	using namespace InDetReco
+01-11-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-03-00
+	using GeoModel detector description
+07-11-2003  Veronique Boisvert  <boisvert@lxplus027.cern.ch>
+
+	* cmt/requirements: added the pattern for jobO
+14-11-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-03-02
+	using new namespace in TrkPrepRawdata
+17-11-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-03-03
+	job Options update
+21-11-2003 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-03-04
+	Added README file
+	Using an other method to get strip local position
+9-01-2004  Veronique Boisvert  <boisvert@lxplus065.cern.ch>
+
+	* all src: mods due to namespace and access functions of
+	LocalPosition from TrkEventUtils
+
+9-01-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-03-05
+	updated jobOption files
+28-01-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-00
+	* PixelGangedAmbiguitiesFinder: it is a new AlgTool, 
+          it loops on the clusters of a collection, finds the clusters which 
+	  have a ganged pixel in common, and add these pairs to a map 
+	  ( TrkPrepRawData/PixelClusterAmbiguities )
+	* everywhere: using Trk namespace instead of Tracking
+	* I_PixelClusteringAlg, I_SCT_ClusteringAlg (and derived classes): 
+	  removed clusterNumber from execute member, it can be taken from 
+	  the size() method of the return ClusterCollection. 
+31-01-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-01
+	* Fill PixelGangedAmbiguities map
+	* Bug fix in SCT_ClusteringAlg.cxx (the RDO list included in the 
+	cluster did not include the last strip!)
+03-02-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-02
+	* Bug fix in requirements
+13-02-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-03
+	* Less verbose output from PixGangedAmbiguitiesFinder
+02-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-04
+	* updated requirement file
+2004-03-04  Steven Goldfarb  <Steven.Goldfarb@cern.ch>
+	* cmt/requirements: retagging for 7.7.0
+09-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-06
+	* updated requirement file
+11-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-07
+	* use new TrkPrepRawData interfaces
+11-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-08
+	* bug fixes
+12-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-09
+	* bug fix
+14-03-2004 Thijs Cornelissen <tgcornel@nikhef.nl>
+	Fix SCT clustering algorithm (was only producing 1-strip clusters)
+22-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-13
+	* ganged pixels Identifier in cluster rdo list is now the identifier
+	of the cell connected to readout
+24-03-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-14
+	some bug fixes
+07-04-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-16
+	* same as 00-04-13 (minus some printouts)
+26-04-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-17
+	* bug fix in MergedPixelAlgs (thanks to Edward Moyse to find it out!)
+11-05-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-18
+	* removed jobOption files (use those in InDetPrepRawDataFormation 
+	instead)
+27-05-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-19
+	* SiTrackerDetectorManager -> SiDetectorManager
+	* added include_path none
+25-08-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-21
+	* ganged pixel flag of clusters set (in GangedAmbiguitiesFinder.cxx)
+25-08-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-04-22
+	* bug fix in GangedAmbiguitiesFinder.cxx
+10-09-2004 Tommaso Lari <Tommaso.Lari@cern.ch>
+	tag 00-05-00
+	* migration TrkPrepRawData -> InDetPrepRawData
+04-10-2004 Paul Bell <paul.bell@cern.ch>
+	Tagged as 00-06-00
+	* Add provision for dealing with bad channels, motivated
+	by CTB 2004. Default operation unchanged
+11-02-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 00-07-00
+	* pixel cluster position can be computed with charge interpolation 
+	algorithm, according to the flag given to the clusterize() method.
+19-02-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-00-00
+	* Changed file and class names from Alg into Tool   
+20-02-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-00-01
+	* typo fixed (I_PixelClusterinTool.h was duplicate of 
+	  I_PixelClusteringTool.h)
+21-02-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-01-00
+	* I_PixelClusterinTool -> IPixelClusteringTool  
+	* I_SCTClusteringTool -> ISCTClusteringTool
+27-02-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-01-01
+	* Added use statement in requirements file.
+10-03-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-01-02
+	* Removed rendundant line in requirements
+13-04-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-02-00
+	* Changed namespace to InDet
+25-06-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 01-03-00
+	* Fixed a number of bugs in TOT interpolation code (in both 
+	  PixelClusteringTools). 
+08-07-2005  Tommaso Lari <tommaso.lari@cern.ch>
+	Tagged as 02-00-00
+	* Added ClusterMaker class (previously GlobalPositonMAker class in 
+	InDetPrepRawDataFormation). Clustering tools are now given a pointer 
+	to the ClusterMaker class, which they call to compute errors and 
+	global positions. In case no pointer is set, clusters are created 
+	without errors and with local position only.
+	* No TOT interpolation for clusters with ganged pixel cells.
+18-08-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tag as SiClusterizationTool-02-01-00
+	* bug fix in clustering tool header 
+	* Added the modifications made by M. Elsing in the branch tag 
+	SiClusterizationTool-01-03-00-05 (use DD to identify ganged 
+	pixels in clustering tools and PixelGangedAmbiguitiesFinder,
+	bug fix in filling the ganged pixel map in 
+	PixelGangedAmbiguitiesFinder)
+19-08-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tag as SiClusterizationTool-02-01-01
+	* bug fixes in PixelGangedAmbiguitiesFinder
+24-08-2005 Tommaso Lari <tommaso.lari@cern.ch>
+	Tag as SiClusterizationTool-02-01-02
+	* bug fixes in getting the hash id of RDO collections in  
+	clustering toold (removes a compilation warning)
+20-09-2005 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix bug in clustermaker
+21-09-2005 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Fix mem leaks
+26-09-2005 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Improved charge interpolation algorithm
+27-09-2005 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Improved charge interpolation algorithm also in 
+	SimplePixelClusteringAlg (was only in MergedClustersAlg).
+02-12-2005  Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Added SCT end-cap rotation (from SiClusterOnTrackTool)
+	* tagged as SiClusterizationTool-02-03-00
+02-12-2005  Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Added TOT interpolation for CTB (w/o magnetic field)
+	* tagged as SiClusterizationTool-02-04-00
+15-12-2005 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Commented out SCT end-cap matrix rotation (will come later)
+	* Changed includes to TrkEventPrimitives
+	* tagged as SiClusterizationTool-02-06-00
+03-2-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Fills the new Omegax and Omegay data members of PixelCluster 
+	class (used for TOT interpolation)
+	* tagged as SiclusterizationTool-02-08-00
+14-3-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Bug fix: can now set error strategy for pixels and sct separately 
+16-3-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Bug fix again (error parameterization for pixels was never used)
+21-3-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* References to SiWidth changed according to class having moved to 
+	InDetPrepRawData
+07-4-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* New errors for 2-strip SCT clusters
+02-6-2006 Thijs Cornelissen <tgcornel@nikhef.nl>
+	* Sort SCT RDOs before clustering
+26-7-2006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* Some code cleanup to comply with ATLAS rules
+16-11-1006 Tommaso Lari <Tommaso.Lari@cern.ch>
+	* New error parametrization for CTB (B off), selectable 
+	with PixelClusterization.ErrorStrategy=10
+	* tag as 02-13-0
+24-11-2006 Tommaso Lari <Tommaso.Lari@mi.infn.it>
+        * Larger errors for SCT cluster sizes >= 3
+        * tag as 02-14-00

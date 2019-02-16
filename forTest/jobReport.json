@@ -1,0 +1,140 @@
+{
+  "cmdLine": "'/cvmfs/atlas.cern.ch/repo/sw/software/x86_64-slc6-gcc49-opt/20.20.10/AtlasReconstruction/20.20.10/InstallArea/share/bin/Reco_tf.py' '--digiSteeringConf' 'StandardInTimeOnlyTruth' '--conditionsTag' 'default:OFLCOND-MC15c-SDR-14-03' '--postInclude' 'all:InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_lowthresh.py' 'RAWtoESD:InDetSLHC_Example/postInclude.DigitalClustering.py,InDetSLHC_Example/postInclude.NoJetPtFilter.py' 'TripletTrackFinder/TripletReader_postInclude.py' '--preExec' 'all:from AthenaCommon.GlobalFlags import globalflags; globalflags.DataSource.set_Value_and_Lock(\"geant4\");from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags;SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption=\"InclinedDuals\";' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=[\"SimLayout\",\"PhysicsList\"];' 'ESDtoDPD:rec.DPDMakerScripts.set_Value_and_Lock([\"InDetPrepRawDataToxAOD/InDetDxAOD.py\",\"PrimaryDPDMaker/PrimaryDPDMaker.py\"]);' '--preInclude' 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py,InDetSLHC_Example/preInclude.SLHC_Calorimeter_mu0.py' 'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py' 'default:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry_GMX.py' 'RDOMergeAthenaMP:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py' 'POOLMergeAthenaMPAOD0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' 'POOLMergeAthenaMPDAODIDTRKVALID0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' 'TripletTrackFinder/TripletReader_preInclude.py' '--DataRunNumber' '242000' '--postExec' 'HITtoRDO:pixeldigi.EnableSpecialPixels=False; CfgMgr.MessageSvc().setError+=[\"HepMcParticleLink\"];' 'RAWtoESD:ToolSvc.InDetSCT_ClusteringTool.useRowInformation=True;' '--geometryVersion' 'default:ATLAS-P2-ITK-20-00-00' '--maxEvents=100' '--inputESDFile' 'ESD.Fullhh4b.pool.root' '--outputAODFile' 'OUT1.AOD.combinedhh4b.pool.root'", 
+  "created": "2019-02-14T19:16:10", 
+  "executor": [
+    {
+      "asetup": null, 
+      "errMsg": "", 
+      "exeConfig": {
+        "inputs": [
+          "ESD"
+        ], 
+        "outputs": [
+          "AOD"
+        ], 
+        "script": "athena.py", 
+        "substep": "e2a"
+      }, 
+      "logfileReport": {
+        "countSummary": {
+          "CATASTROPHE": 0, 
+          "CRITICAL": 0, 
+          "DEBUG": 20, 
+          "ERROR": 0, 
+          "FATAL": 0, 
+          "IGNORED": 0, 
+          "INFO": 5008, 
+          "UNKNOWN": 102152, 
+          "VERBOSE": 3, 
+          "WARNING": 181
+        }, 
+        "details": {}
+      }, 
+      "metaData": {}, 
+      "name": "ESDtoAOD", 
+      "rc": 0, 
+      "statusOK": true, 
+      "validation": true
+    }
+  ], 
+  "exitAcronym": "OK", 
+  "exitCode": 0, 
+  "exitMsg": "OK", 
+  "exitMsgExtra": "", 
+  "files": {
+    "input": [
+      {
+        "dataset": null, 
+        "nentries": 100, 
+        "subFiles": [
+          {
+            "file_guid": "870F07E9-DC70-6A4C-82BC-D28DDAE5ED9D", 
+            "name": "ESD.Fullhh4b.pool.root"
+          }
+        ], 
+        "type": "ESD"
+      }
+    ], 
+    "output": [
+      {
+        "argName": "outputAODFile", 
+        "dataset": null, 
+        "subFiles": [
+          {
+            "file_guid": "C8F28AB3-BD2C-424B-8030-82A012206F0B", 
+            "file_size": 29391393, 
+            "name": "OUT1.AOD.combinedhh4b.pool.root", 
+            "nentries": 100
+          }
+        ], 
+        "type": "AOD"
+      }
+    ]
+  }, 
+  "name": "Reco_tf", 
+  "reportVersion": "2.0.6", 
+  "resource": {
+    "dbDataTotal": 11856752, 
+    "dbTimeTotal": 9.93, 
+    "executor": {
+      "ESDtoAOD": {
+        "cpuTime": 124, 
+        "dbData": 11856752, 
+        "dbTime": 9.93, 
+        "memory": {
+          "Avg": {
+            "avgPSS": 629289, 
+            "avgRSS": 633097, 
+            "avgSwap": 0, 
+            "avgVMEM": 1212962
+          }, 
+          "Max": {
+            "maxPSS": 1479663, 
+            "maxRSS": 1483640, 
+            "maxSwap": 0, 
+            "maxVMEM": 2272880
+          }
+        }, 
+        "nevents": 100, 
+        "postExe": {
+          "cpuTime": 3, 
+          "wallTime": 1
+        }, 
+        "preExe": {
+          "cpuTime": 1, 
+          "wallTime": 2
+        }, 
+        "total": {
+          "cpuTime": 128, 
+          "wallTime": 266
+        }, 
+        "validation": {
+          "cpuTime": 0, 
+          "wallTime": 1
+        }, 
+        "wallTime": 262
+      }
+    }, 
+    "machine": {
+      "cpu_family": "6", 
+      "linux_distribution": [
+        "Scientific Linux CERN SLC", 
+        "6.10", 
+        "Carbon"
+      ], 
+      "model": "94", 
+      "model_name": "Intel Core Processor (Skylake, IBRS)", 
+      "node": "lxplus114.cern.ch", 
+      "platform": "Linux-2.6.32-754.9.1.el6.x86_64-x86_64-with-redhat-6.10-Carbon"
+    }, 
+    "transform": {
+      "cpuEfficiency": 0.5106, 
+      "cpuPWEfficiency": 0.5106, 
+      "cpuTime": 20, 
+      "cpuTimeTotal": 128, 
+      "externalCpuTime": 7, 
+      "processedEvents": 100, 
+      "wallTime": 282
+    }
+  }
+}

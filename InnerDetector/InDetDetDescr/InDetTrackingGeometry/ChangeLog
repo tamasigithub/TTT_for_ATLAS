@@ -1,0 +1,891 @@
+2017-24-05 Noemi Calace <noemi.calace@cern.ch>
+	* Fixing z-overlapping disk distribution
+	* Tagged as InDetTrackingGeometry-02-05-16
+
+2017-04-05 Noemi Calace <noemi.calace@cern.ch>
+	* Fixing CMakeLists.txt
+	* Tagged as InDetTrackingGeometry-02-05-15
+
+2017-11-04 Noemi Calace <noemi.calace@cern.ch>
+	* Allowing z-overlapping disks to fit in the same ring
+	* Tagged as InDetTrackingGeometry-02-05-14
+
+2016-02-03 Noemi Calace <noemi.calace@cern.ch>
+	* Moving the overlap descriptor to InDetTrackingGeometryUtils
+	* Need to add InDetTrackingGeometryUtils to make it work
+	* Tagged as InDetTrackingGeometry-02-05-13
+
+2016-01-20 Goetz Gaycken
+	* Fixed coverity issue 24917 (logically dead code).
+
+2015-10-19 Noemi Calace <noemi.calace@cern.ch>
+	* Trying to fix coverity issues 11701, 11702 and 31511
+	* Tagged as InDetTrackingGeometry-02-05-11 and InDetTrackingGeometry-02-05-12
+
+2015-10-12 Noemi Calace <noemi.calace@cern.ch>
+	* Trying to fix coverity issues 11701 and 11702
+	* Tagged as InDetTrackingGeometry-02-05-10
+
+2015-07-27 Noemi Calace <noemi.calace@cern.ch>
+        * Added new DiscOverlapDescriptor for SCT discs
+	* Added robustMode in Pixel and SCT Overlap Descriptors
+	* tagged as InDetTrackingGeometry-02-05-09
+
+2015-06-16 Remi Lafaye < Remi.Lafaye -at- cern.ch >
+        * Moving XML related stuff to InDetTrackingGeometryXML
+
+2015-06-12 Remi Lafaye < Remi.Lafaye -at- cern.ch >
+        * Staged tracking version 1 of python/ConfiguredSLHC_InDetTrackingGeometryBuilder.py
+        * XML-based layer providers
+
+2015-08-31 Anthony Morley
+  *  Protect against disabled detectors
+  *  InDetTrackingGeometry-02-03-03-04
+
+2015-06-09 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new robust TRT layer building - shift material layers outwards
+        * tag InDetTrackingGeometry-02-05-07
+
+2015-06-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new robust TRT layer building
+        * tag InDetTrackingGeometry-02-05-06
+
+2015-06-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new robust TRT layer building
+        * tag InDetTrackingGeometry-02-05-05
+
+2015-03-20  scott snyder  <snyder@bnl.gov>
+	* Tagging InDetTrackingGeometry-02-05-03.
+	* Fix clang warnings: mismatched header guard, unused class
+	member.
+
+2015-02-23 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * bug fix for ring layout
+        * tagged as InDetTrackingGeometry-02-05-02
+
+2015-02-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * enovelope cover introduced
+        * tagged as InDetTrackingGeometry-02-05-01
+
+2015-02-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * allow for Ring layouts
+        * tag as InDetTrackingGeometry-02-05-00
+
+2015-01-27 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * chagned StagedTrackingGeometryBuilder to use LayerProvider
+        * tag as InDetTrackingGeometry-02-04-03
+
+
+2015-01-12 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * finalize StagedTrackingGeometryBuilder to alpha version
+        * tag as InDetTrackingGeometry-02-04-02
+
+2015-01-09 Goetz Gaycken
+        * Fix coverity issues 11701, 11702 (possible resource leak).
+
+2015-01-08 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new StagedTrackingGeometry builder 
+        * tag as InDetTrackingGeometry-02-04-01
+
+2015-01-07 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new StagedTrackingGeometry builder 
+        * tag as InDetTrackingGeometry-02-04-00
+
+2014-12-18 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * fixed Zero-pointer problems
+        * tag as InDetTrackingGeometry-02-03-03
+
+2014-11-26 Susumu Oda < Susumu.Oda -at cern.ch >
+	* update of python/ConfiguredSLHC_InDetTrackingGeometryBuilder.py
+        * tag as InDetTrackingGeometry-02-03-02
+
+2014-11-26 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * fix for Zero-pointer in SurfaceArray
+        * tag as InDetTrackingGeometry-02-03-01
+
+2014-11-04 Andreas Salzburger < Andreas.Salzburger -at cern.ch >
+        * added ApproachDescriptor
+        * tag as InDetTrackingGeometry-02-03-00
+
+2014-10-27 Andreas Salzburger < Andreas.Salzburger -at cern.ch >
+        * several bundled updates
+        * tag as InDetTrackingGeometry-02-02-00
+
+2014-10-15 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update of TRT binning
+        * tagged as InDetTrackingGeometry-02-01-06
+
+2014-10-08 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update to TRT straw layer building
+        * tagged as InDetTrackingGeometry-02-01-05
+
+2014-10-08 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * fix boundary treatment
+        * tagged as InDetTrackingGeometry-02-01-04
+
+2014-10-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * make boundary treatment configurable
+        * tagged as InDetTrackingGeometry-02-01-03
+
+2014-09-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * allow for replacement of boundary surfaces
+        * tagged as InDetTrackingGeometry-02-01-02
+
+2014-08-22 Andreas salzburger < Andreas.Salzburger -at- cern.ch >
+	* updated SCT_OverlapDescriptor
+        * tagged as InDetTrackingGeometry-02-01-01
+
+2014-08-20 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* change to new geometry and extrapolation engine
+        * mig5 import tag
+        * tagged as InDetTrackingGeometry-02-01-00
+
+2014-01-06 Sharka Todorova <sarka.todorova@cern.ch>
+	* change of interface to material properties
+	* TODO beam pipe builder does not initialize material in BinnedLayerMaterial
+	* tagged as InDetTrackingGeometry-02-00-06
+
+2014-01-28 Sabine Elles elles@lapp.in2p3.fr
+	* fix bug in IBL/pixel tracking geometry builder (SiLayerBuilder)
+	* tagged as InDetTrackingGeometry-02-00-05
+
+2013-01-08 Sharka Todorova <sarka.todorova@cern.ch>
+	* hack the layer indexing (temporary : database does not match the synchronized GeometrySignature)
+	* tagged as InDetTrackingGeometry-02-00-04
+
+2013-11-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* fix unitialized value
+	* tagged as InDetTrackingGeometry-02-00-03
+
+2013-09-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* updaes to new T/P split stuff
+	* tagged as InDetTrackingGeometry-02-00-02
+
+2013-08-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* overlap descriptors still missing
+        * tagged as InDetTrackingGeometry-02-00-01
+
+2013-08-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* major updates to BinUtilties
+	* no tag 
+
+2013-07-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * migration to new AMG/Eigen
+        * Tag as InDetTrackingGeometry-02-00-00
+
+--------------------------------------------------------------------
+
+2013-04-09  Sabine elles <sabine.elles@cern.ch>
+	* Merge InDetTrackingGeometry-01-07-28-01 branch and InDetTrackingGeometry-01-07-30
+	Package meant to be used for IBL/ITK 17.3.X.Y pcache release
+	* Tag as InDetTrackingGeometry-01-07-31
+
+2012-07-26 Wolfgang Lukas < Wolfgang.Lukas -at- cern.ch >
+        * apply CLHEP patches (OBO John Chapman)
+        * tagged as InDetTrackingGeometry-01-07-29
+
+2012-06-01 Nicholas Styles < nicholas.styles -at- desy.de >
+	* fixed further small bug
+	* tagged as InDetTrackingGeometry-01-07-28
+
+2012-05-30 Nicholas Styles < nicholas.styles -at- desy.de >
+	* fixed bug in SiLayerBuilder
+	* tagged as InDetTrackingGeometry-01-07-27
+
+2012-02-14 Wolfgang Lukas < Wolfgang.Lukas -at- cern.ch >
+	* fixed Coverity warnings from PixelOverlapDescriptor and TRT_LayerBuilder
+	* tagged as InDetTrackingGeometry-01-07-25
+
+2011-09-09 Nicholas Styles < nicholas.styles -at- desy.de >
+	* fixed warnings from SCT_OverlapDescriptor
+	* tagged as InDetTrackingGeometry-01-07-24
+
+2011-08-05 Nicholas Styles < nicholas.styles -at- desy.de >
+	* added Robust overlap descriptors (for upgrade geometries)
+	* tagged as InDetTrackingGeometry-01-07-23
+
+2011-03-28 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* get beam pipe parameters from database
+	* tagged as InDetTrackingGeometry-01-07-22
+
+2011-03-28 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* allowing for beam pipe offset
+	* fix of checkreq
+	* tagged as InDetTrackingGeometry-01-07-21
+
+2011-02-23 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* allow both aequidist & non-aequdistant Z binning option
+	* tagged as InDetTrackingGeometry-01-07-20
+
+2011-02-22 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* non-aequdistant Z binning option, bugfix to that
+	* tagged as InDetTrackingGeometry-01-07-19
+
+2011-02-22 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* non-aequdistant Z binning option
+	* tagged as InDetTrackingGeometry-01-07-18
+
+2011-02-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* auto-detection of ring ordering
+	* tagged as InDetTrackingGeometry-01-07-17
+
+2011-02-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* robust check for un-sorted modules in Binned Arrays
+	* tagged as InDetTrackingGeometry-01-07-16
+
+2011-02-11 Grant Gorfine < Grant.Gorfine -at- cern.ch >
+	* Update SLHC python configuration (changes from Nick Styles)
+	* tagged as InDetTrackingGeometry-01-07-15
+
+2010-12-09 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+	* plug memory leak
+	* tagged as InDetTrackingGeometry-01-07-14
+
+2010-10-16 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+	* memory optimization, binned beam pipe
+	* tagged as InDetTrackingGeometry-01-07-13
+
+2010-10-13 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+	* update to new 2d material
+	* tagged as InDetTrackingGeometry-01-07-12
+
+2010-06-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * make beam pipe configurable via TrkDetFlags
+      * tagged as InDetTrackingGeometry-01-07-11
+
+2010-04-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * new CMT fix
+      * tagged as InDetTrackingGeometry-01-07-10
+
+2010-03-31 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * fix for ring structure in SCT ... inverse counting GeoModel / TG
+      * tagged as InDetTrackingGeometry-01-07-09
+
+2010-03-23 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * next version of non-aequidistant binning of SCT ring structure
+      * tagged as InDetTrackingGeometry-01-07-08
+
+2010-03-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * fix in phi for the non-aequidistant / reimplementing 
+      * SCT ring structure
+      * tagged as InDetTrackingGeometry-01-07-07
+
+2010-03-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * fix in phi for the non-aequidistant attempt
+      * tagged as InDetTrackingGeometry-01-07-06
+
+2009-12-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * first non-aequidistant binning attempt
+      * tagged as InDetTrackingGeometry-01-07-05
+
+2009-10-30 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * refinement in radial wrapping
+      * tagged as InDetTrackingGeometry-01-07-04
+
+2009-10-29 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * add switch for same-size disks
+      * tagged as InDetTrackingGeometry-01-07-03
+
+2009-10-15 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * fix uninitialized pointer
+      * tagged as InDetTrackingGeometry-01-07-02
+
+2009-10-12 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * added SiLayerBuilder 
+      * tagged as InDetTrackingGeometry-01-07-01 
+
+2009-10-11 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * combine PixelLayerBuilder and SCT_LayerBuilder to 
+      * SiLayerBuilder (not testet for ATLAS setup yet)
+      * tagged as InDetTrackingGeometry-01-07-00
+
+2009-10-05 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * allow for new radial warpping for SLHC setup
+      * tagged as InDetTrackingGeometry-01-06-00
+
+2009-09-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+      * protection against not/on layer call of OLD
+      * tagged as InDetTrackingGeometry-01-05-02
+
+2009-09-14 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * new overlap descriptor interface & new implementation
+      * tagged as InDetTrackingGeometry-01-05-01
+
+2009-09-12 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * new overlap descriptor interface
+      * tagged as InDetTrackingGeometry-01-05-00
+
+2009-08-21 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * bufix in stamping of layerindices for complex geometry
+      * tagged as InDetTrackingGeometry-01-04-07
+
+2009-08-21 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * bufix in stamping of layerindices for complex geometry
+      * tagged as InDetTrackingGeometry-01-04-07
+
+2009-08-18 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * update in OverlapDescriptor
+      * tagged as InDetTrackingGeometry-01-04-06
+
+2009-08-18 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * changes for SLHC release & update of steering
+      * tagged as InDetTrackingGeometry-01-04-05
+
+2009-07-24 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * changes for SLHC release
+      * tagged as InDetTrackingGeometry-01-04-04
+
+2009-06-28 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * update in rz binning
+      * tagged as InDetTrackingGeometry-01-04-03
+
+2009-06-23 Andreas Salzburger < Andreas.Salzburter -at- cern.ch >
+      * remove dbg symbols
+      * tagged as InDetTrackingGeometry-01-04-02
+
+2009-05-13 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * ID helper retrieval
+       * tagged as InDetTrackingGeometry-01-04-01
+
+2009-04-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * some cleanup in the SCT_LayerBuilder
+
+2009-04-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * phi-safe version / currentLayer fix still missing
+       * tagged as InDetTrackingGeometry-01-04-00
+
+2009-03-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * change to intersection mode for PIXEL / SCT_OverlapDescriptor
+       * tagged as InDetTrackingGeometry-01-03-02
+
+2009-02-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * update in SCT_OverlapDescriptor
+       * tagged as InDetTrackingGeometry-01-03-01
+
+2009-02-04 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * change to dual_use for the FatrasReadoutGeometry
+       * tagged as InDetTrackingGeometry-01-03-00
+
+2009-02-03 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * switch to TrkDetFlags 
+       * tagged as InDetTrackingGeometry-01-02-06
+
+2009-01-30 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * updated configuration
+       * tagged as InDetTrackingGeometry-01-02-05 
+
+2009-01-27 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * added import of InDetFlags
+       * tagged as InDetTrackingGeometry-01-02-04
+
+2009-01-26 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * adapt to automatic complex geometry for cosmics/beamhalo
+       * tagged as InDetTrackingGeometry-01-02-02 & 03
+
+2009-01-21 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * move the detStore() interface method
+       * tagged as InDetTrackingGeometry-01-02-00 & 01
+
+2009-01-08 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+       * extra check for endcap existing (SLHC check)
+       * tagged as InDetTrackingGeometry-01-01-03 & 04
+
+2008-12-18 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * move to AthenaBaseComps
+        * tagged as InDetTrackingGeometry-01-01-02
+
+2008-11-27 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * check for BeamPipe dimensions
+        * tagged as InDetTrackingGeometry-01-01-01
+
+2008-11-13 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * added SLHC python configuration 
+        * tagged as InDetTrackingGeometry-01-01-00
+
+2008-11-12 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * deleted TRT_VolumeBuilder & add RobustTrackingGeometryBuilder
+        * tagged as InDetTrackingGeometry-01-00-01 & 02
+
+2008-11-12 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * mayor code cleanup:
+	* phase-out of InDetTrackingGeometryBuilder/InDetCosmicsTrackingGB
+	* phase-out of VolumeBuilders
+	* introduction of RobustTrackingGeometryBuilder
+	* SLHC adaptions (SCT_LayerBuilder split still missing)
+	* introduction of ConfiguredInDetTrackingGeometry.py
+	* synchronisation of TRT model / real layers
+	* tagged as InDetTrackingGeometry-01-00-00
+
+2008-10-21 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * fixed layer thickness and change to dynamic layer
+        * thickness
+	* tagged as InDetTrackingGeometry-00-16-01
+
+2008-10-15 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * robust indices
+	* tagged as InDetTrackingGeometry-00-16-00
+
+2008-07-29 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * new OverlapDescriptor
+	* tagged as InDetTrackingGeometry-00-15-00
+
+2008-02-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * mini-update concerning the l0 material binning
+	* tagged as InDetTrackingGeometry-00-14-01
+
+2008-02-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * add signature
+	* tagged as InDetTrackingGeometry-00-14-00
+
+2008-01-14 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * avoid NaN
+	* tagged as InDetTrackingGeometry-00-13-03
+
+2007-07-10 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * increased tolerance due to misalignment
+        * removing header files
+	* tagged as InDetTrackingGeometry-00-13-02
+
+2007-07-09 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * increased tolerance due to misalignment
+	* tagged as InDetTrackingGeometry-00-13-01
+
+2007-05-31 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * two-dimensional material descriptions enhanced
+        * remove CTB support
+	* tagged as InDetTrackingGeometry-00-13-00
+
+2007-03-22 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * change OutputLevel for GlueVolumesDescriptor, part 2
+	* tagged as InDetTrackingGeometry-00-12-13 & 14
+
+2007-03-22 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * apply possibility to synchronise MagneticFieldProperties
+	* tagged as InDetTrackingGeometry-00-12-12
+
+2007-03-22 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * make layerAssociaiton default
+        * remove redundant files
+	* tagged as InDetTrackingGeometry-00-12-11
+
+2007-03-20 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * first configurable verison
+	* tagged as InDetTrackingGeometry-00-12-10
+
+2007-02-07 Thijs Cornelissen <Thijs.Cornelissen -at- cern.ch>
+	* Remove forward declaration
+	* tagged as InDetTrackingGeometry-00-12-09
+
+2006-01-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * and yet another one for my friend: SCT_OverlapDescriotor
+	* tagged as InDetTrackingGeometry-00-12-08
+
+2006-01-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * second adoption for SCT OverlapDescriotor
+	* tagged as InDetTrackingGeometry-00-12-07
+
+2006-01-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * adoption for SCT OverlapDescriotor (Fatras bug)
+	* tagged as InDetTrackingGeometry-00-12-06
+
+2006-12-07 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * doxygen fix
+	* tagged as InDetTrackingGeometry-00-12-05
+
+2006-11-28 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * remove build warnings from Cosmics builder
+	* tagged as InDetTrackingGeometry-00-12-04
+
+2006-11-15 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * take the risk of not branching for 12.0.4
+	* tagged as InDetTrackingGeometry-00-12-03
+
+2006-11-07 Christian Schmitt <Christian.Schmitt -at- cern.ch>
+        * Added flags for endcap C only tests
+        * tagged as InDetTrackingGeometry-00-12-02
+
+2006-10-02 Christian Schmitt <Christian.Schmitt -at- cern.ch>
+        * Added full endcap tracking geometry for SCT+TRT cosmics
+        * tagged as InDetTrackingGeometry-00-12-01
+
+2006-09-15 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * sensitive area declarations for Pixels / SCT
+	* tagged as InDetTrackingGeometry-00-12-00
+
+2006-09-06 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * package Foo statement changed
+	* tagged as InDetTrackingGeometry-00-11-05
+
+2006-09-01 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * re-inserted material description for CTB Pixel
+	* tagged as InDetTrackingGeometry-00-11-04
+
+2006-09-01 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * z min value given for TRT (is resized later)
+	* tagged as InDetTrackingGeometry-00-11-03
+
+2006-09-01 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * small fix pixel/BeamPipe radius
+	* tagged as InDetTrackingGeometry-00-11-02
+
+2006-08-30 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * Reference material included
+	* tagged as InDetTrackingGeometry-00-11-01
+
+2006-08-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * new pre/post schema introduced
+	* tagged as InDetTrackingGeometry-00-11-00
+
+2006-07-30 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * introduced bending in TRT
+	* Tagged as InDetTrackingGeometry-00-10-01
+
+2006-07-13 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * change in layer association handling
+	* Tagged as InDetTrackingGeometry-00-10-00
+
+2006-06-07 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * another overlap descriptor update
+	* Tagged as InDetTrackingGeometry-00-09-03
+
+2006-06-06 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * failsafe SCT Module orderring II
+	* Tagged as InDetTrackingGeometry-00-09-02
+
+2006-05-31 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Added colouring information to volumes
+	* Reduced the size of the pixel-sct gap
+	* Tagged as InDetTrackingGeometry-00-09-01
+
+2006-05-27 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Introduced new classes to build layers in the CTB
+	* Tagged as InDetTrackingGeometry-00-09-00
+
+2006-05-17 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * update in jobOptions output
+	* Tagged as InDetTrackingGeometry-00-08-05
+
+2006-05-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * failsafe SCT Module orderring
+	* Tagged as InDetTrackingGeometry-00-08-04
+
+2006-05-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * simplified TRT_OverlapDescriptor
+	* Tagged as InDetTrackingGeometry-00-08-03
+
+2006-05-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * production version for 12.0.0
+        * non-dense TRT Volume for STEP test
+	* Tagged as InDetTrackingGeometry-00-08-01 & 02
+
+2006-05-11 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * first production version for 12.0.0
+	* Tagged as InDetTrackingGeometry-00-08-00
+
+2006-04-27 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* test tag with new binned material (explains the crazy number)
+	* Tagged as InDetTrackingGeometry-00-07-90
+
+2006-04-13 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+        * gcc 3.44 update
+	* Tagged as InDetTrackingGeometry-00-07-01
+
+2006-04-12 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* use ITrackingVolumeHelper for gap creation
+        * bugfix in Geometry TRT_Endcap resize was wrong !
+	* Tagged as InDetTrackingGeometry-00-07-00
+
+2006-04-05 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* change to const Helper retrieval
+	* Tagged as InDetTrackingGeometry-00-06-08
+
+2006-03-06 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* update to new TrackingVolumeHelper
+	* Tagged as InDetTrackingGeometry-00-06-07
+
+2006-03-06 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* update of SCT_OverlapDescriptor
+	* Tagged as InDetTrackingGeometry-00-06-06
+
+2006-01-31 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* bugfix in InDetCosmicsTrackingGeometryBuilder for SCT endcap glueing
+	* Tagged as InDetTrackingGeometry-00-06-05
+
+2006-01-31 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* bugfix in InDetCosmicsTrackingGeometryBuilder
+	* Tagged as InDetTrackingGeometry-00-06-04
+
+2006-01-26 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* added InDetCosmicsTrackingGeometryBuilder
+	* Tagged as InDetTrackingGeometry-00-06-02 & 03
+
+2006-01-24 Tom Atkinson <t.atkinson -at- ph.unimelb.edu.au>
+	* Enlarged default TRT volume envelope
+	* Tagged as InDetTrackingGeometry-00-06-01
+
+2006-01-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* the new LayerMaterialProperties thing
+	* Tagged as InDetTrackingGeometry-00-06-00
+
+2005-12-15 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* tag it for 11.X.0
+	* Tagged as InDetTrackingGeometry-00-05-15
+
+2005-12-15 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Magnetic field now passed to sub-detector builders through constructors
+        * removed PropDirection
+
+2005-12-09 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Material change in TRT
+	* Tagged as InDetTrackingGeometry-00-05-14
+
+2005-12-08 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* getting back layers in TRT / putting back fast biaequidistant
+	* Tagged as InDetTrackingGeometry-00-05-13
+
+2005-12-06 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* getting back layers in TRT
+	* Tagged as InDetTrackingGeometry-00-05-12
+
+2005-12-05 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Added unique CTB material description
+	* Changed envelope size for SCT and Pixels
+	* Tagged as InDetTrackingGeometry-00-05-11
+
+2005-12-03 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* remove TRT EC layers for the moment (invalid read)
+        * Tagged as InDetTrackingGeometry-00-05-10
+
+2005-12-01 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* bugfix pixel volume / beampipe distance
+        * Tagged as InDetTrackingGeometry-00-05-09
+
+2005-12-01 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* bugfix pixel volume / beampipe distance
+        * Tagged as InDetTrackingGeometry-00-05-08
+
+2005-11-16 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* bugfix in SCT_LayerCreator 
+        * Tagged as InDetTrackingGeometry-00-05-06
+
+2005-11-15 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* remove #layers extend to Calo
+        * Tagged as InDetTrackingGeometry-00-05-05
+
+2005-11-08 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Changes to magnetic field initialisation in ATLAS Pixel & SCT volume builders
+	* Tagged as InDetTrackingGeometry-00-05-04
+	
+2005-11-06 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Bug fixes for magnetic field initialisation in CTB Pixel and SCT volume builders
+	* Tagged as InDetTrackingGeometry-00-05-03
+	
+2005-11-04 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Bug fix for magnetic field initialisation in CTB Geometry Builder
+	* Tagged as InDetTrackingGeometry-00-05-02
+	
+2005-11-03 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* update of material description
+        * Taggef as InDetTrackingGeometry-00-05-01
+
+2005-10-31 Andreas Salzburger <Andreas.Salzburger -at- cern.ch>
+	* introduction of ITrackingVolumeArrayCreator
+        * Taggef as InDetTrackingGeometry-00-05-00
+
+2005-10-13 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Fixes for SCT material description
+	* Tagged as InDetTrackingGeometry-00-04-04
+
+2005-10-10 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* CTB Pixel, SCT & TRT volume builders using LayerArrayCreator
+	* Inert material in CTB now using LayerArrayCreator
+	* CTB code clean up
+	* <Known problem: Extrapolation failing in TRT>
+	* Tagged as InDetTrackingGeometry-00-04-03
+	
+2005-10-08 Tom Atkinson <Tom.Atkinson -at- cern.ch>
+	* Clean up of jobOptions for CTB TrackingGeometry
+	* Bug fix in InDetCTB_GeometryBuilder
+	* Tagged as InDetTrackingGeometry-00-04-02
+	
+2005-10-07 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * modifications in the setup files
+        * tagged as InDetTrackingGeometry-00-04-01
+
+2005-09-20 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * first pre release 11 tag with adopted envelop covers
+        * tagged as InDetTrackingGeometry-00-04-00
+
+2005-09-20 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * centralized half layer material to TrkGeometry
+        * tagged as InDetTrackingGeometry-00-03-16
+
+2005-09-20 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new LayerMaterial options inposed
+        * tagged as InDetTrackingGeometry-00-03-15
+
+2005-09-14 Tom Atkinson < Tom.Atkinson -at- cern.ch >
+	* Cleaned up debug print-out for release 11
+	* Tagged as InDetTrackingGeometry-00-03-14
+
+2005-09-13 Tom Atkinson < Tom.Atkinson -at- cern.ch >
+	* Bug fixes for inert material in CTB
+	* Tagged as InDetTrackingGeometry-00-03-13
+	
+2005-09-12 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * Anna's bugfix for SCT_Overlapdescriptor
+        * tagged as InDetTrackingGeometry-00-03-12
+
+2005-08-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * bugfix in ConfiguredInDetTrackingGeometryBuilder.py
+        * tagged as InDetTrackingGeometry-00-03-11
+
+2005-08-17 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * filling the last holes in the TRT
+        * tagged as InDetTrackingGeometry-00-03-10
+
+2005-08-16 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * minor bugfix and update of JO file
+        * tagged as InDetTrackingGeometry-00-03-09
+
+2005-08-16 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * first full version with NavigationLayers
+        * tagged as InDetTrackingGeometry-00-03-08
+
+2005-08-15 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * introduction of NavigationLayers for TRT and LayerArrayCreator
+        * tagged as InDetTrackingGeometry-00-03-07
+
+2005-08-09 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * introduction of NavigationLayers for TRT
+        * tagged as InDetTrackingGeometry-00-03-06
+
+2005-08-06 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * added OverlapObject for TRT Endcap
+        * tagged as InDetTrackingGeometry-00-03-05
+
+2005-07-26 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * bugfix in DiscLayers
+        * tagged as InDetTrackingGeometry-00-03-04
+
+2005-07-23 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * TRT with full straws and Layer interlinking
+        * tagged as InDetTrackingGeometry-00-03-03
+
+2005-07-22 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * first full Layer geometry
+        * tagged as InDetTrackingGeometry-00-03-02
+
+2005-07-21 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update for cohierent nightly
+        * tagged as InDetTrackingGeometry-00-03-01
+
+2005-07-08 Tom Atkinson <t.atkinson -at- physics.unimelb.edu.au>
+	* Introduced CTB Inner Detector Tracking Geometry Builder
+	* Introduced Pixel, SCT, TRT volume builders for the CTB
+	* (CTB can use regular ATLAS layer builders)
+	* Introduced a configuration change to SCT_LayerBuilder for CTB
+	* Tagged as InDetTrackingGeometry-00-03-00
+
+2005-07-06 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update to new interface package
+        * tagged as InDetTrackingGeometry-00-02-00
+
+2005-06-28 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * introduction of OverlapObjects and TRT_LayerBuilder
+        * tagged as InDetTrackingGeometry-00-01-05
+
+2005-06-02 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * little cleanup for 10.3.0
+        * tagged as InDetTrackingGeometry-00-01-04
+
+2005-05-22 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * remove checkreq warnings
+        * tagged as InDetTrackingGeometry-00-01-03
+
+2005-04-30 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * change to default values for DC2
+        * doxygen update
+        * tagged as InDetTrackingGeometry-00-01-02
+
+2005-04-27 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * change to new templated BoundarySurfaces
+        * tagged as InDetTrackingGeometry-00-01-01
+
+2005-04-25 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * set default values and cleanup of debug ntuples
+        * tagged as InDetTrackingGeometry-00-01-00
+
+2005-04-25 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * new Structure with TRT and InDetGeometryBuilder
+        * tagged as InDetTrackingGeometry-00-00-17
+
+2005-04-01 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update to multiring structure
+        * tagged as InDetTrackingGeometry-00-00-16
+
+2005-03-31 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * bugfix for 1st SCT layer with new TrkDetDescrUtils
+        * tagged as InDetTrackingGeometry-00-00-15
+
+2005-03-30 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * update to new LayerMaterialProperties structure
+        * tagged as InDetTrackingGeometry-00-00-14
+
+2005-03-29 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* added BeamPipeBuilder
+        * update to new Layer structure
+        * tagged as InDetTrackingGeometry-00-00-13
+
+2005-03-28 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* fixed bug in z procedure of LayerBuilding for Pixels and SCT Endcap
+        * overlap problem of Pixel Encdaps unsolved
+        * still NTuple version for debugging
+        * tagged as InDetTrackingGeometry-00-00-12
+
+2005-03-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* fixed bug in SCT_Layer Builder 
+          (idHelper behaves differently for Pixel/SCT when
+          asking for min_eta and max_eta)
+        * added NTuple for debugging 
+        * tagged as InDetTrackingGeometry-00-00-11
+
+2005-03-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* added more information about material type
+        * tagged as InDetTrackingGeometry-00-00-10
+
+2005-02-24 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* remove checkreq warnings
+        * tagged as InDetTrackingGeometry-00-00-09
+
+2005-02-22 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* bugfix for discLayer counting
+        * tagged as InDetTrackingGeometry-00-00-08
+
+2005-02-21 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* added a mainpage for doxygen documentation
+        * tagged as InDetTrackingGeometry-00-00-07
+
+2005-02-18 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* adaption for Rome-Initial layout
+        * tagged as InDetTrackingGeometry-00-00-06
+
+2005-02-16 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* fixing memory leaks in Layer Builders
+        * tagged as InDetTrackingGeometry-00-00-05
+
+2005-02-11 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* update for new Trk::MagneticFieldTool
+        * tagged as InDetTrackingGeometry-00-00-03
+
+2005-01-19 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* added PixelVolumeBuilder / SCT_VolumeBuilder
+        * blind extrapolation through silicon enhanced
+        *  tagged as InDetTrackingGeometry-00-00-02
+
+2005-01-14 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* Importing files and creation import tag  InDetTrackingGeometry-00-00-01
+
+2005-01-13 Frederick Luehring <luehring -at- indiana.edu>
+	* Create package and tag as InDetTrackingGeometry-00-00-00.
+

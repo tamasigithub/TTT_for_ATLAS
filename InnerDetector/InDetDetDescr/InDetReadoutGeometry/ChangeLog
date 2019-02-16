@@ -1,0 +1,966 @@
+2017-07-18 Nick Styles
+	* Back-ported implementation of stripLength method (obo Nigel Hessey)
+	* Tagged as InDetReadoutGeometry-02-01-12-01
+
+2017-06-30 Andreas Salzburger
+        * introduced m_transformHit to restore old transformHit() behavior for SiDetectorElement
+        * created branch 
+        * tagged 02-01-12-00
+
+2017-02-23  Nigel Hessey
+        * Change warnings about sensor orientation to DEBUG: developers can still see them with log-level
+          DEBUG, but can avoid messages warning of tilted sensors, which are common in Inclined layout.
+
+M       src/SiDetectorElement.cxx
+
+2016-11-17  Charles Leggett
+	* update for const ServiceHandle
+	* tag InDetReadoutGeometry-02-01-11
+
+M       src/SiCommonItems.cxx
+
+2016-10-17 Susumu Oda <Susumu.Oda@cern.ch>
+	* Replaced endreq by endmsg.
+        * Tagged as InDetReadoutGeometry-02-01-10
+
+2016-09-07 Simon Viel
+        * Really fix PixelModuleDesign::getReadoutTechnology to consider LoI pixel chips as RD53 instead of FEI4
+              There are circuits with as little as 672 * 80 = 53760 pixels
+        * Tagged as InDetReadoutGeometry-02-01-09
+
+2016-09-01 Simon Viel
+        * Fix PixelModuleDesign::getReadoutTechnology to consider LoI pixel chips as RD53 instead of FEI4
+        * Tagged as InDetReadoutGeometry-02-01-08
+
+2016-08-18 Jike Wang
+        * merge the fixes in 02-01-06-06 and the fixes to StripBoxDesign/StripAnnulusDesign/StripStereoAnnulusDesign for ATLITKSW-24, into trunk
+        * Tagged as InDetReadoutGeometry-02-01-07
+
+2016-07-05 Nick Styles
+	* Various updates (see ATLITKSW-20)
+	* Tagged as InDetReadoutGeometry-02-01-06 
+	
+2016-06-19 Nick Styles
+	* 'De-inlined' globalPosition method for easier debugging
+	* Tagged as InDetReadoutGeometry-02-01-04
+
+2016-06-17 Nigel Hessey
+        * StripStereoAnnulusDesign now gives phiPitch in mm instead of radians. 
+
+2016-06-15 Nigel Hessey
+        * Added virtual SiDetectorDesign::sinStripAngleReco to return strip angle. Base class returns 0., good 
+        * for pixel and barrel strips. SiDetectorElement::sinStereoLocal() uses this.
+	* Tagged as InDetReadoutGeometry-02-01-01
+	* Modified cellIdFromIdentifier
+	* Tagged as InDetReadoutGeometry-02-01-02
+
+2016-06-13 Nigel Hessey
+        * Simplified calculation of SiDetectorElement::recoToHitTransform; more direct. Unnecessary re-swapping of depth 
+        * axis removed. Should give identical results for any right handed GeoModel frame
+	* Tagging as  InDetReadoutGeometry-02-01-00 for testing
+	* (second index updated since changes are quite major)
+
+2016-06-08 Simon Viel
+        * add RD53 chip in PixelModuleDesign::getReadoutTechnology
+        * Tagged as InDetReadoutGeometry-02-00-39
+
+2016-05-31 Nigel Hessey
+        * Simplify updateCache first-time code: ignore symmetries of sensors (symmetry of sensors has nothing to do 
+        * with whether they can be transformed or not)
+	* Tagged as InDetReadoutGeometry-02-00-38
+
+2016-05-31 Nigel Hessey
+        * Improved checking of sensor orientations; and separated the code for it into new method checkOrientation in 
+        * SiliconDetectorElement.
+
+2016-05-31 Nigel Hessey
+        * uncrustified SiDetectorDesign.h/.cxx and SiDetectorElement.h/.cxx
+        * Add a lot of documentation/comments to SiDetectorElement about reference frames and what each transform does
+        * Added sensorCenter() method to return the center of silicon in the local reference frame. For most
+        * sensors, this is (0, 0, 0). But for StripStereoAnnulus and StripAnnulus it is far from this
+        * m_center and m_centerCLHP now store the centre of silicon in the global frame, rather than the center of
+        * the local coordinate system in the global frame.
+        * localPos() methods have been amended to allow for this.
+
+2016-05-11 Soshi Tsuno
+        * Added new function to determine readout technology in PixelModuleDesign
+	* Tagged as InDetReadoutGeometry-02-00-37
+
+2016-05-09 Nick Styles
+	* Added new DetectorType enum for StripStereoAnnulusDesign
+	* Tagged as InDetReadoutGeometry-02-00-35 
+	* Also fixed erroneous transform shift
+	* Tagged as InDetReadoutGeometry-02-00-36
+	
+2016-04-29 Nick Styles
+	* Fix to length method of StripBoxDesign
+	* Tagged as  InDetReadoutGeometry-02-00-34
+
+2016-04-18 Shaun Roe
+	* Coverity fixes 108273, 108274:
+108273 06/04/2016 (Medium) Uninitialized scalar field :/InnerDetector/InDetDetDescr/InDetReadoutGeometry/src/StripAnnulusDesign.cxx in function "StripAnnulusDesign"
+108274 06/04/2016 (Medium) Uninitialized scalar field :/InnerDetector/InDetDetDescr/InDetReadoutGeometry/src/InDetDetectorManager.cxx in function "InDetDetectorManager"
+	* tag as Tagged as InDetReadoutGeometry-02-00-33
+2016-04-17 Nick Styles
+	* Merge changes from InDetReadoutGeometry-02-00-26-branch
+	* Tagged as InDetReadoutGeometry-02-00-32
+
+2016-04-07 Shaun Roe
+	* Coverity fix in trunk:
+108271 06/04/2016 (Medium) Argument cannot be negative :/InnerDetector/InDetDetDescr/InDetReadoutGeometry/src/StripStereoAnnulusDesign.cxx in function "getStripRow"
+	* Tagged as InDetReadoutGeometry-02-00-31
+
+2016-03-29 Nick Styles
+	* Intermediate tag to collect changes from N. Hessey, to test use of Annulus bounds
+	* [Some updates to rMin rMax still pending]
+	* Tagged as InDetReadoutGeometry-02-00-30
+
+2016-03-15 Nick Styles
+	* Remove 'static' keyword to allow petal geometries to create reoToHit transforms correctly
+	* ATLITKSW-13
+	* Tagged as InDetReadoutGeometry-02-00-29
+
+2016-03-10 Shaun Roe
+	* fix compiler warnings and coverity defect:
+105483 06/02/2016 (Medium) Uninitialized pointer field :/InnerDetector/InDetDetDescr/InDetReadoutGeometry/src/TRT_BaseElement.cxx in function "TRT_BaseElement"
+	* tag as InDetReadoutGeometry-02-00-28
+
+2016-03-07 Matthias Danninger
+	* support for dynamic global alignment folder scheme is added
+	* tag as InDetReadoutGeometry-02-00-27
+	
+2016-02-24 Jike Wang
+	* reverse Nigel's design, in which the m_depthDirection, m_etaDirection and m_phiDirection all are true
+	* they are allowed to be flipped
+	* tag as InDetReadoutGeometry-02-00-26
+
+2016-02-01 Matthias Danninger
+	* bugfixes due to JIRA ticket ATLASRECTS-2707 
+	* tag as InDetReadoutGeometry-02-00-25
+	
+2016-01-05  Jike Wang  <Jike.Wang@cern.ch>
+	* merge 02-00-17-branch (developments for upgrade GMX sensor) with trunk 
+	* Add InDetReadoutGeometry/StripAnnulusDesign.h, StripBoxDesign.h, StripStereoAnnulusDesign.h
+	* Add StripAnnulusDesign.cxx, StripBoxDesign.cxx, StripStereoAnnulusDesign.cxx
+	* tagged as InDetReadoutGeometry-02-00-24
+
+2016-01-05  RD Schaffer  <R.D.Schaffer@cern.ch>
+
+	* tagging as InDetReadoutGeometry-02-00-23
+	* src/PixelDetectorManager.cxx (InDetDD): removed use of __IDENTIFIER_64BIT__
+
+2015-11-30 Shaun Roe
+	* Clang build corrections in SiCellId OBO Scott Snyder
+	* tag as InDetReadoutGeometry-02-00-22
+
+2015-11-25 Anthony Morley
+  * Ensure local correction are applied in one particle order
+  * Tag as InDetReadoutGeometry-02-00-21 
+
+2015-10-30 Matthias Danninger
+	* add new IBL alignment DB support
+	* add IOV call-back is used for new DB
+	* tag as InDetReadoutGeometry-02-00-20
+
+
+2015-08-02 Sabine Elles
+	* add SiDetectorElementMap class
+	* tag as InDetReadoutGeometry-02-00-19
+
+2015-07-29 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * adapt to surfaces() method
+        * tag as InDetReadoutGeometry-02-00-18
+
+
+2014-12-19 Shaun Roe
+	* fix 11794, was not guarding against self assign
+	*  tag as InDetReadoutGeometry-02-00-17
+2014-12-10 Shaun Roe
+	* fix coverity 11193, 11793,11194,11794 ; operator= was returning a const ref
+	* tag as InDetReadoutGeometry-02-00-16
+2014-11-15 Shaun Roe
+	* Correct coverity defect 11955, undefined member variables in c'tor
+	* tag as InDetReadoutGeometry-02-00-15
+
+2014-02-24 Nick Styles <nicholas.styles -at- cern.ch>
+	* Merged changes from devval branch back into trunk
+	* Added new function for queryin innermost/next-to-innermost layer (to replace isBlayer eventually)
+	* Tagged as InDetReadoutGeometry-02-00-14
+
+2014-02-24 Nick Styles <nicholas.styles -at- cern.ch>
+	* Fixed intialization problem for transfrom
+	* Tagged as InDetReadoutGeometry-02-00-13
+
+2014-01-08 Walter Lampl <walter.lampl@ cern.ch>
+	* remove CLHEPTransformToEigen when setting alignable transform delta
+	* tag InDetReadoutGeometry-02-00-12
+
+2013-11-28 Sabine Elles <Sabine.Elles -at- in2p3.fr>
+        * merge last IBL/pixel branch 01-44-08-11 with trunk 
+	* i.e. add DBM flag in SiDetectorElement and DBM modules in SiNumerology
+        * tagged as InDetReadoutGeometry-02-00-11
+
+2013-11-16 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * corrected BarrelBase element transform()
+        * tagged as InDetReadoutGeometry-02-00-10
+
+2013-09-29 Nick Styles <nicholas.styles -at- cern.ch>
+	* Added several functions with Amg input/return types at request of A. Morely and S. Roe
+	* tagged as InDetReadoutGeometry-02-00-09 
+
+2013-08-28 Andreas Salzburter < Andreas.salzburger -at- cern.ch >
+        * fast straw access
+        * tagged as InDetReadoutGeometry-02-00-07 & InDetReadoutGeometry-02-00-08
+
+2013-08-20 Andreas Salzburter < Andreas.salzburger -at- cern.ch >
+        * next round in INRG cleanup
+        * tagged as InDetReadoutGeometry-02-00-06
+
+2013-08-08 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+	* updated doxygen 
+	* tagged as InDetReadooutGeometry-02-00-05
+
+2013-08-07 Andreas Salzburger < Andreas.Salzburger -at- cern.ch >
+        * 2nd iteration on InDetReadoutGeometry
+        * Tagged as InDetReadoutGeometry-02-00-04
+
+2013-07-01  Nick Styles  <nicholas.styles -at- cern.ch>
+	* Fixed small bug in TRT_BaseElement
+	* Tagged as InDetReadoutGeometry-02-00-03
+
+2013-07-01  Nick Styles  <nicholas.styles -at- cern.ch>
+	* Migrate interfaces to tracking from CLHEP to Eigen
+
+----------------------------------------------------------------------------------------
+
+2012-07-07  Vakho Tsulaia  <tsulaia@mail.cern.ch>
+
+	* Migrate to CLHEP v21
+
+2012-05015 Oleg Fedin <Oleg.Fedin@cern.ch>
+        * changes from Andreas Korn
+        * better performance/behavior for 64 bit, due to avoidance of hash clashes 
+        * tag as InDetReadoutGeometry-01-44-07
+2012-01-18 Oleg Fedin <Oleg.Fedin@cern.ch>
+	* fix coverity requirements for PixelDetectorManager.cxx
+	* and SCT_DetectorManager.cxx
+	* tag as InDetReadoutGeometry-01-44-06
+2012-01-17 Oleg Fedin <Oleg.Fedin@cern.ch>
+	* fix coverity requirements for PixelDiodeMap.cxx
+	* SiDetectorElement.cxx and PixelDiodeMatrix.cxx
+	* tag as InDetReadoutGeometry-01-44-05
+2010-09-28 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* src/TRT_DetectorManager.cxx: Fix bug where cache for endcap straw
+	  transforms was not being invalidated when new fine alignments loaded. 
+	* Tag as InDetReadoutGeometry-01-44-04
+
+2010-04-25 John Alison <johnda@sas.upenn.edu>
+	* src/TRT_EndcapElement.cxx and InDetReadoutGeometry/TRT_EndcapElement.h: adding calculateLocalTransformation
+	  which allows reading in of L3 alignment in the Endcaps.
+	* Tag as InDetReadoutGeometry-01-44-03
+	
+2010-01-03  RD Schaffer  <R.D.Schaffer@cern.ch>
+
+	* src/PixelDetectorManager.cxx (InDetDD): removing implicit
+	conversion of identifier to unsigned.
+	* Tag as InDetReadoutGeometry-01-44-02
+
+2009-08-26 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* DetetectorManagers: Clean up use of message service
+	* PixelDetectorManager: getBarrelLayers() and getEndcapLayers()
+  	  use numerology 
+	* Tag as InDetReadoutGeometry-01-44-01
+	
+2009-08-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Add SiNumerology class and access to designs.
+	* Tag as InDetReadoutGeometry-01-44-00
+	
+2009-08-05 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: use wafer_hash rather than get_hash.
+	* Tag as InDetReadoutGeometry-01-43-09
+
+2009-06-22 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDetectorManager: Protection for wafer id for SLHC.
+	* Tag as InDetReadoutGeometry-01-43-08
+
+2009-06-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDetectorManager, SiDetectorElement: Fixes for SLHC
+	* Tag as InDetReadoutGeometry-01-43-07
+	
+2009-06-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDetectorManager: fix for 64-bit identifier
+	* Tag as InDetReadoutGeometry-01-43-06
+	
+2009-06-09 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Pixel,SCT design classed: And cellIdInRange method,
+	* Tag as InDetReadoutGeometry-01-43-05
+
+2009-05-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Add some documentation for PixelDiodeMatrix
+	* Tag as InDetReadoutGeometry-01-43-04
+	
+2009-05-02 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* getIdHelper method private again.
+
+2009-05-01 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Temporary version with getIdHelper public. Pass const pointer
+	  when setting TRT_ID.    	
+
+2009-04-22 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Back to getIdHelper method private version. Same as 
+	  InDetReadoutGeometry-01-43-00.
+	* Remove initializeHelper method.
+ 	
+2009-04-06 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Revert getIdHelper changes for time being.
+	* Add cleanReadout() methods to managers to delete readout geometry.
+
+2009-04-02 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Make getIdHelper method private.
+	* Also internally get Id helpers from detector store.
+
+2009-03-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* requirements: public/private Checkreq warnings
+	* SiDetectorElement: Put back caching of Lorentz angle quantities.
+
+2009-03-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: Add protection if siLorentzAngleSvc not
+	  present. Remove Lorentz angle related data members which are no
+	  longer used. Put back getTanLorentzAngle() method (returns same as 
+          getTanLorentzAnglePhi() method.)
+	  Remove G3 compatiblity code.
+	  Some small fixes to comments.
+	
+2009-03-06 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: Removed deprecated code related to conditions
+	  and silicon properties. 
+
+2009-02-20 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiCommonItems.h: Replace forward declaration of ISiLorentzAngleSvc
+	  with include.
+	* TRT_BarrelCode.h, TRT_EndcapCode.h: Define operator<< outside
+	  InDetDD namespace.
+
+2009-02-13 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiCommonItems: Pass lorentz angle service as a handle
+	  rather than the name. Remove obsolete code.
+	* SiDetectorElement, etc: Start removal of access to silicon
+	  properties (mobility, etc) and conditions (temperature, voltage)
+	* SiDetectorElement, SiCommonItems: Improved message handling (use
+	  of MsgStreamMember) 
+       
+2009-02-09 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Remove use of magnetic field service (not needed as Lorentz
+	  angle now comes from SiLorentzAngleSvc)
+
+2009-01-30 Andreas Salzburger < Andreas.Salzburger @ cern.ch >
+        SiDetectorElement: change private members to be protected
+        tag InDetReadoutGeometry-01-39-07
+
+2009-01-23 Igor Gavrilenko <Igor.Gavrilenko@cern.ch>
+	return to use log instead msg as InDetReadoutGeometry-01-39-04 
+        and tag as InDetReadoutGeometry-01-39-06
+
+2009-01-23 Igor Gavrilenko <Igor.Gavrilenko@cern.ch>
+	start use msg instead log
+        and tag as InDetReadoutGeometry-01-39-05
+
+2009-01-20 Igor Gavrilenko <Igor.Gavrilenko@cern.ch>
+        correct requirements and
+	TRT_Numerology.cxx
+        PixelDetectorManager.cxx
+	PixelDetectorManager.h
+	TRT_Numerology.h
+	TRT_Numerology.icc
+	against warnings seen with gcc 4.3
+        and tag as InDetReadoutGeometry-01-39-04
+
+2008-12-12 David Quarrie <David.Quarrie@cern.ch>
+	* InDetReadoutGeometry/PixelDetectorManager.h: )
+ 	* InDetReadoutGeometry/SCT_DetectorManager.h:  ) Fixes for gcc 4.3 and LCG_56 compatibility
+ 	* InDetReadoutGeometry/SiDetectorManager.h:    )
+ 	* InDetReadoutGeometry/TRT_DetectorManager.h:  ) 
+
+2008-11-24 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* InDetDetectorManager, TRT_DetectorManager: Suppress warning
+	  message about fine alignment during simulation.
+	  
+2008-11-13 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorDesign: Fix swapped phiTol, etaTol
+
+2008-09-23 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiCommonItems, SiDetectorElement: Get Lorentz angle quantities 
+	  from SiLorentzAngleSvc. 
+	
+2008-08-20 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_BaseElement.cxx: fix compiler warning.
+	
+2008-08-07 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* src/InDetDetectorManager.cxx: Fix DEBUG/VERBOSE message 
+	  level checks.	   
+	* src/InDetDetectorManager.cxx: Also return FATAL when the
+	  alignment container is retrieved but is empty.
+	* src/InDetDetectorManager.cxx: Return FATAL when alignments
+	  cannot be retrieved.
+	
+2008-06-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Remove deprecated code.
+	* SiDetectorElement.cxx: Remove unnecessary dynamic casts.
+	
+2008-06-12 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Add gangedCell method which is a more convenient alternative 
+	  to getting the ganged cell information.
+
+2008-06-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SCT_ModuleSideDesign.cxx, PixelModuleDesign.cxx: Return zero 
+	  pointer for invalid SiDiodes (for backward compatibilty).
+
+2008-06-02 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Replaced code that determines connected (ie ganged) pixels with
+	  simplified, more optimized version. 
+	* Replaced code that determines neighbours and intersection
+	  length with versions using SiCellId, plus more optimized version.
+	* Prepare for removal of deprecated code:
+	  - SiDiode and SiReadoutCell and related classes inherit from
+	    SiCellId and SiReadoutCellId. 
+	  - Removed underlying deprecated code that uses SiDiode and
+	    SiReadoutCell in all but Design classes. Deprecated methods in Design classes
+	    are now just wrappers around new methods. 
+	
+2008-05-29 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelReadoutScheme.cxx: Reserve space for vector to improve 
+	  multiple push_back calls.
+
+2007-09-13 David Quarrie
+	* SiDetectorElement.h: Comments out unimplemented function declarations.
+
+2006-12-20 Wouter Hulsbergen
+	* TRT_BaseElement.cxx: remove test on 'dxerr' since it was dangerous. add comment on meaning of dx1 and dx2.
+	* tagged as InDetReadoutGeometry-01-35-01
+
+2006-12-01 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_BaseElement.cxx: Add strawSurface method.
+	
+2006-11-29 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_EndcapElement.cxx: Make compatible with TRT_GeoModel changes
+	  which correct the phi positions of straws in the endcap.
+
+2006-11-23 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* InDetDetectorManager.cxx: Supress WARNING in cosmic layouts.
+	* SiDetectorManager, TRT_DetectorManager: Add protection against
+	  NULL pointers to detector elements.
+
+2006-11-15 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Add mechanism to process special alignments.
+        * Add TRT fine alignment code from Peter.
+	* Introduce mechanism to deal with the solenoid frame.  
+	  This is incomplete as it is not yet clear how we will deal with
+	  this issue. It is currently disabled.
+	
+2006-09-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Suppress WARNING message for Rome-Initial layout. 
+	  Only print out one warning message for other layouts.
+	
+2006-08-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Make updateAll() a virtual method in InDetDetectorManager.
+        * Add methods in the managers and detector elements to update all
+	  caches. 
+        * TRT_DetectorManager.cxx: Fix memory leak.
+		
+2006-08-14 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_EndcapElement.cxx: Rotate surface so that normal is in
+	  +ve z direction. Fix phi center calculation. 
+	* TRT_EndcapElement.cxx: Bug fix in calculation of alignment
+	  corrected element surface.
+	
+2006-08-13 Markus Elsing <Markus.Elsing@cern.ch>
+	* Revert TRT_EndcapElement.cxx changes to fix release 12.0.2 problems
+	
+2006-08-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_Numerology: Initialize everything to zero.
+	
+2006-06-29 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * TRT_BarrelElement.cxx, TRT_EndcapElement.cxx: Take into account
+	  misalignments when calculating element surfaces.
+	
+2006-04-20 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Only get magnetic field service if it is really needed.  This
+	  allows jobs such as simulation, that do not need the field
+	  service access in the detector elements, to run even if the field
+	  service is not initialized.
+	
+2006-04-03 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* gcc344 fix. 
+
+2006-03-30 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Add InDetDetectorManager files.
+	
+2006-03-22 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Create InDetDetectorMnager as a common base class for silicon
+	  and TRT. Mainly for common alignment code.
+	  Update TRT_DetectorManager for COOL.
+	
+2006-03-10 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Changes needed to allow alignment and alignment callback
+	  registering to be controlled by GeoModelSvc
+
+2006-03-04 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: Fix getTanLorentzAngleEta()
+		
+2006-03-03 Grant Gorfine <Grant.Gorfine@cern.ch>
+       	* SiDetectorElement: More methods for dealing with module frame
+	
+2006-03-02 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: Add localToModuleFrame and isModuleFrame
+	  methods.
+	
+2006-01-24 Thomas Kittelmann <kittel@nbi.dk>    
+        * The various TRT getelement methods now always return null if
+	requested element doesn't exist.
+
+2005-12-05 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added sanity checks in manage elements methods of TRT_DetectorManager.
+
+2005-11-12 Thomas Kittelmann <kittel@nbi.dk>    
+        * Removed TRT_DigSettings.
+
+2005-11-10 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added digversion info.
+
+2005-11-02 Thomas Kittelmann <kittel@nbi.dk>    
+        * Fixes for gcc4 compatibility.
+
+2005-10-28 Thomas Kittelmann <kittel@nbi.dk>    
+        * Updated parameters in TRT_DigSettings.
+
+2005-10-11 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Fix unchecked status codes.
+
+2005-09-22 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* Change TrkEventUtils -> TrkEventPrimitives
+	
+2005-09-02 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Changes from Richard Hawkings for alignment using COOL.
+	  Now only have one folder with several channels. Old scheme 
+	  is still supported though.
+	
+2005-08-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_BaseElement: strawXPos, strawYPos, strawZPos now uses
+	  strawCenter method and so return alignment corrected values.       
+	 	
+2005-08-18 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement, SCT_DetectorManager :
+	  Add possibility to align SCT at module level.  
+	
+2005-08-05 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added noise parameters to TRT_DigSettings.
+
+2005-07-05 Grant Gorfine <Grant.Gorfine@cern.ch>    
+        * Migration to CLHEP 1.9
+	
+2005-05-01 Grant Gorfine <Grant.Gorfine@cern.ch>    
+	* TRT_DetectorManager: Add methods to access whole TRT detector element collection.
+
+2005-04-28 Grant Gorfine <Grant.Gorfine@cern.ch>    
+        * Fix memory leak (delete bounds pointer)
+	
+2005-04-27 Grant Gorfine <Grant.Gorfine@cern.ch>    
+        * Remove obsolete SiTrackerDetectorManager.
+	
+2005-04-22 Grant Gorfine <Grant.Gorfine@cern.ch>    
+	* Update doxygen documentation. Add mainpage, document
+	  SiDetectorElement and SiCellId.
+	* Version: Add version tag (to store DD DB tag).
+	
+2005-04-06 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added a few parameters in TRT_DigSettings that were left out the
+	first time around.
+
+2005-04-03 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added TRT_DigSettings class, and adapted TRT_DetectorManager to
+	hold such an object.
+	
+2005-03-29 Grant Gorfine <Grant.Gorfine@cern.ch>    
+	* PixelDiodeMap, PixelDiodeMatrix: Make PixelDiodeMatrix reference
+ 	  counted in order to fix memory leak.
+	
+2005-03-14 Grant Gorfine <Grant.Gorfine@cern.ch>    
+	* TRT_DetectorManager: Add possibility to set a
+	  volume as the frame in which the alignment shifts are expressed.
+	* TRT_DetectorManager, TRT_BaseElement: Add Invalidation of cache
+	  when alignments change. 
+	* TRT_BaseElement, TRT_BarrelElement, TRT_EndcapElement: Add
+	  strawAxis and strawDirection methods.
+
+2005-01-28 Thomas Kittelmann <kittel@nbi.dk>    
+        * Added methods to TRT_DetectorManager with information about the
+	  active gas type.
+	
+2004-10-20 Grant Gorfine <Grant.Gorfine@cern.ch>    
+        * Add alignment infrastructure for TRT. Invalidation
+	  of cached values still needs to be done.
+	
+2004-08-31 Grant Gorfine <Grant.Gorfine@cern.ch>    
+	* PixelModuleDesign: Set swap readout direction to true.
+	* Pixel,SCT,TRT_DetectorManager.cxx: Make getDetectorElement/getElement methods
+	  work properly if a cell/straw id is given.
+	* SiDetectorElement, SiDetectorDesign and derived classes:
+	  Add mechanism to state which is the readout side.
+	
+2004-08-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_BaseElement.cxx: Fix memory leaks.
+
+2004-08-05 Davide Costanzo <DCostanzo@lbl.gov>
+	* cmt/requirements: CLHEP migration
+
+2004-08-03 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDetectorManager, SCT_DetectorManager: Fix memory leaks.
+
+2004-07-28 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorManager and related classes: Add support of alignment
+	  of SCT modules. Make more flexible with regards to the
+	  choice of global or local shift.
+
+2004-07-28 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* src/SiDetectorElement.cxx: delete m_surface 
+
+2004-07-27 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* TRT_BarrelElement.cxx, TRT_EndcapElement.cxx (surfaceCache): Bug
+	  fix in pointer test.
+	* TRT_BarrelElement.cxx (createElementSurface): bug fix in
+	  transform creation. 
+	
+2004-07-26 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Changes needed due to changes in TrkDetElementBase interface. 
+	  Cache straw transforms and centers. 
+        * Add surface of TRT elements (ie straw layers)
+
+2004-07-23 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * TRT_BaseElement.cxx: Initialization of m_surfaces pointer.
+	
+2004-07-13 Grant Gorfine <Grant.Gorfine@cern.ch>	
+	* SiDetectorElement.cxx: Re-enable use of magnetic field svc.
+	* SiDetectorElement.cxx: Remove runtime errors for unconventional
+	  orientations to allow for standalone testbeam setups.
+	
+2004-06-24 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* SiDetectorElement.cxx: Put -ve sign in sinStereoLocal method.
+	
+2004-06-08 Grant Gorfine <Grant.Gorfine@cern.ch>
+	* PixelDiodeMap.cxx: Added missing implementation of method.
+	
+2004-06-04 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Bug fix for cached center which caused it not get updated with
+	  alignment changes. 
+	
+2004-05-28 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Overhaul of PixelDiodeMap and PixelDiodeMatrix. Removed
+          PixelDiodeDescriptor1D.
+	
+2004-05-25 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * PixelModuleDesign: Fix initialization of bounds.
+	
+2004-05-19 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * TRT_EndcapElement: Fix id.
+        * TRT_BaseElement: Add missing implementation of identify and
+	  identifyHash. 
+        * Use TrkDetElementBase for TRT elements.
+	* SiDetectorElement: Fix isStereo to work with testbeam.
+        * Add missing implementation of bounds().
+	
+2004-05-18 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Replace TrkExSurfaces with TrkSurfaces.
+        * SiDetectorElement: Add sinStereoLocal method for angle of
+	  strip in local frame.
+        * SiDetectorElement and SiDetectorDesign: Add bounds() method.
+	
+2004-05-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Use TrkDetElementBase.
+	
+2004-05-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * PixelModuleDesign.cxx: Fix some missed phi,eta swapping.
+
+2004-05-14 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * PixelReadoutScheme.cxx: bug fix
+
+2004-05-12 Davide Costanzo <DCostanzo@lbl.gov>
+        * Replace PixelModulePosition with SiCellId
+
+2004-05-12 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * SiDetectorElement.cxx: Bug fix in isStereo.
+	* Pixel/SCT_DetectorManager.cxx: bug fix.
+	* TRT_DetectorManager.cxx: Protect against invalid id. 
+	* SiDetectorElement.h: add using Trk::LocalPosition.
+	
+2004-05-10 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * SiDetectorElement: Use MsgSvc. Make some warning messages DEBUG messages.
+        * Add defTransform method.
+	
+2004-05-06 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Use Trk::LocalPosition
+	* SiDetectorElement: Change local reconstruction frame from 
+	  (depth,phi,eta) to (phi,eta,depth).
+
+2004-05-06 Davide Costanzo <DCostanzo@lbl.gov>
+	* SiCelId: Add an ordering operator
+
+2004-05-06 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * SiDetectorElement: Bug fix in right-handed check.
+	
+2004-05-04 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * add bool isStereo() method.
+	* SiDetectorElement: Fix (again) sinStereo for TB. 
+        * If local frame is left handed swap depth axis so that it is
+	  right-handed.
+	
+2004-05-03 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * PixelDetectorManager and SCT_DetectorManager: Fix order
+	  phi_module, eta_module in getDetectorElement method. Make method
+	  const in SCT_DetectorManager
+        * SiDetectorElement: Fix sinStereo so that it works for
+	  TB (ie trapezoidal modules in barrel position).
+        * SiDetectorDesign: shape method.
+        * Suppress warning messages in alignment code.
+	
+2004-04-29 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Minor improvement to addAlignableTransform method. 
+	
+2004-04-27 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * SiDetectorManager, SCT_DetectorManager, PixelDetectorManager:
+	  Further developement of alignment support to allow feeding in
+	  alignment deltas that are in reconstruction local frame or 
+	  global frame.
+	
+2004-04-21 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * SiDetectorElement: Move common items to new class SiCommonItems.
+	* Disable use of Magnetic field Svc.
+	
+2004-04-17 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Make dependence on BField private.
+	
+2004-04-16 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Remove deprecated methods (they were private anyways).
+
+2004-04-15 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * Fix requirements file.
+	
+2004-04-13 Grant Gorfine <Grant.Gorfine@cern.ch>
+        * ref/unref top volumes in SCT and pixel.
+	* Add code to get magnetic field from mag field svc. 
+
+2004-04-12  Vakho Tsulaia  <Vakho.Tsulaia@cern.ch>
+
+	* Referencing tree top volumes
+
+2004-03-31 Grant Gorfine<Grant.Gorfine@cern.ch>
+        * TRT classes: Put in work around to avoid seg faults in
+	  getAbsoluteTransform(straw) method, rename
+	  getAbsoluteTransform(straw) as strawTransform(straw), 
+	  add strawLength() and nStraws() methods to TRT_BaseElement.	
+	
+2004-03-22 Grant Gorfine<Grant.Gorfine@cern.ch>
+        * Add get/set version methods to TRT_DetectorManager
+	
+2004-03-08 Grant Gorfine<Grant.Gorfine@cern.ch>
+        * Add Version class for more detailed version information.
+	* Get tag from id dict to detect initial layer.
+	
+2004-03-06 Grant Gorfine<Grant.Gorfine@cern.ch>
+	* SiDetectorManager, PixelDetectorManager, SCT_DetectorManager:
+	  Extend alignment implementation to include alignment of rest of
+	  pixel and SCT and allow alignment shifts of higher level nodes.
+	
+2004-02-29 Davide Costanzo<DCostanzo@lbl.gov>
+	* implement a missing method in SiliconProperties	
+
+2004-02-29 Vakho Tsulaia<Vakhtang.Tsulaia@cern.ch>
+	* Fixes for TRT_EndcapElement 
+
+2004-02-27 Grant Gorfine<Grant.Gorfine@cern.ch>
+	* PixelDetectorManager:	Inform element that cache is invalid when misaligned
+
+2004-02-25  Joe Boudreau
+	* PixelDetectorManager: Incorporate misalignments.
+	
+2004-02-19 Grant Gorfine<Grant.Gorfine@cern.ch>
+	* SiDetectorElement and Design classes: Add code to control whether
+	  axes can be flipped in order to prevent flipping the xEta axis
+	  of the trapezoid (only an issue in TB geometries).
+
+2004-02-18 Grant Gorfine<Grant.Gorfine@cern.ch>
+	* SiDetectorElement and Design classes: Add method to determine if
+	  readout direction is swapped.
+	* SiDetectorManager: Add get and set version methods.
+
+2004-01-24  Vakhtang Tsulaia  <tsulaia@lxplus026.cern.ch>
+
+	* Introducing phi granularity for TRT_EndcapElement
+
+2003-01-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* Check if the TRT_detectorManager owns the helper
+	  before deleting it
+
+2003-12-17 Grant Gorfine<Grant.Gorfine@cern.ch>
+        * Don't delete id helper since its now put in det store.
+	
+2003-12-16 Grant Gorfine<Grant.Gorfine@cern.ch>
+	* SiDetectorElement. Determine whether it is barrel-like or
+	  endcap-like from orientation to accomodated TB. Warning is
+	  issued if barrel/endcap orientation doesn't match identifier.
+
+2003-12-12 Davide Costanzo <DCostanzo@lbl.gov>
+	* PixelDetectorManager.cxx
+	  SCT_DetectorManager.cxx
+	  Pixel and SCT Id helpers in the det store
+
+2003-12-12  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* SiDetectorElement.cxx: swap normal in +ve endcap so that
+  	  reconstruction local frame is a right handed.
+	  Fix sin stereo calculations.
+	
+2003-12-08  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * TRT_DetectorManager: swap of identifier fields.
+        * SiCellId: Bug fix for -ve strips.
+	* Rename SiTrackerDetectorManager to SiDetectorManager. Can still
+	  use old one for now for backward compatibility.
+
+2003-11-25  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * TRT_DetectorManager.cxx: Bug fix in element vector resize.
+	
+2003-11-24  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* TRT_EndcapElement: make getConditionsData and getDescriptor const
+	* src/SiliconProperties: put constants at top of file. No
+ 	  functionality change.
+	* Managers: Regeneratre clid numbers with namespace.
+	* SCT_BarrelModuleSideDesign.cxx, SCT_ForwardModuleSideDesign.cxx:
+	  Bug fix positionFromStrip() method (this is a deprecated method). 
+	* SiDetectorElement: bug fix.
+	
+2003-11-22  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* SiDetectorElement: Add code to give option for elements to have
+	  G3 compatible orientation. Effects endcap pixels only.
+	
+2003-11-20 Davide Costanzo <DCostanzo@lbl.gov>
+	* PixelDetectorManager: add getBarrelLayers() and getEndcapLayers()
+	  to return the layers present in the geometry. 
+	  (always return 111, to be fixed when Initial layout is implemented
+	   in GeoModel)
+
+2003-10-31  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SCT Design classes: Change inActive test to allow no bondgap
+	  check. Position -> cellId methods no longer check if in bondgap.
+	* SiDetectorElement: Change sign of Lorentz correction. Change 
+	  members SiliconConditions and SiliconProperties to be copied
+	  rather than be pointers. 
+	* SiCellId: Add ostream method.
+
+2003-10-30  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement.h: Implement neighbour access methods.
+	* SiDetectorElement.cxx: Bug fix in cellIdFromIdentifier.
+	
+2003-10-29  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * PixelReadoutScheme: Bug fix - fixes pitch.
+	  SiDetectorElement: Added missing methods.
+	
+2003-10-27  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* Finished implementing methods associated with cell Identfier
+	  for pixel classes.
+	
+2003-10-24  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * TRT: namespace and identification scheme changes (Boudreau)
+	
+2003-10-23  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement and Design classes: Modified and partly
+	  implemented methods associated with cell Identfier. Added 
+	  cellId <-> Identifier methods.
+	* Added SiCellId class which replaces SiDiodeId. Modified
+	  SiReadoutCellId to inherit from SiCellId.
+	 
+2003-10-22  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SCT_ForwardModuleSideGeometry: Make inActiveArea() method and
+  	  others more efficient.
+
+2003-10-21  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * Implemented pitch methods.
+	* Implemented nearBondGap methods.
+	
+2003-10-20  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement and Design classes: width() now returns
+	  average width.  
+	* Design classes: Fix and simplify distanceToDetectorEdge
+	  calculations.
+	
+2003-10-17  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement and design classes: Implemented inDetector
+	  methods (intersection tests).  
+	* SiDetectorElement: Add localPosition method which
+	  transforms global->local
+
+2003-10-17  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * Put everything in namespace InDetDD
+
+2003-10-13  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* TRT manager and elements moved here. (Boudreau)
+	
+2003-10-09  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement: Reorganize header file. Not much
+	  functionality change. Added methods to set silicon conditions
+	  and silicon properties. Added more intersection test methods -
+	  not implemented yet.
+	* SiProperties.cxx: Fix value of eh pairs per deposited energy.
+	* Added SiIntersect class for intersection test.
+	* SiDetectorElement: Make two levels of caching.
+	
+2003-10-01  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * InDetReadoutGeometry/SiDetectorElement.h: Remove Identifiable
+	  inheritance.
+        * InDetReadoutGeometry/SiTrackerDetectorManager.h : Add clid.
+	* src/SiTrackerDetectorManager.cxx: Replace DataHandle with plain
+ 	  pointer and make the IdDictManager pointer const.
+
+2003-09-17  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * SiDetectorElement: Temporary fix for different units (cm vs
+	  mm). Implemented thickness(), width() and length() methods.
+	  		
+2003-09-12  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * Added SiliconProperties and SiliconConditions classes.  Modified
+	  code to use these. Implemented getExtent, sinTilt and sinStereo
+	  methods.	
+	
+2003-09-11  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* Create a base class for Pixel and SCT managers and move the
+	  Pixel and SCT detector managers to this package. The id helper
+	  is set to zero if it cannot be initialized.
+  	
+2003-09-01  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* SiDetectorElement.cxx, SiDetectorElement.h: Add methods for
+	  Lorentz angle and magnetic field.
+	
+2003-08-13  Grant Gorfine  <Grant.Gorfine@cern.ch>
+	* Introduce support for a local hit (simulation) frame which is
+	  intended to be the local frame in GeoModel/G4 and the hits.
+	  This frame has depth,phi,eta defined to always be along
+	  x,y,z. Included method (hitLocalToLocal) to convert between this
+	  and SiLocalPosition (they differ by some minus signs in the
+	  axes).  Implemented unit vector methods and a few others.
+        * Remove SiDetectorDesignCollection class as its not being used.
+	
+2003-07-22  Grant Gorfine  <Grant.Gorfine@cern.ch>
+        * Added SiDetectorDesignCollection for managing designs if needed.
+	
+2003-07-17  Grant Gorfine  <Grant.Gorfine@cern.ch>
+
+	* Added Calvet detector description classes. SiDetectorDesign
+	  classes mostly unchanged other than deriving it from
+	  RCBase. Started to play around with SiDetectorElement
+	  interface. SiDetectorCollection now a simple
+	  vector. SiDesignCollection removed - not really needed with
+	  reference counting approach.  Added new class SiReadoutCellId to
+	  eventually replace SiReadoutCell.
+
+2003-07-11  Grant Gorfine  <Grant.Gorfine@cern.ch>
+
+	* Creation of package
+
+
+	
