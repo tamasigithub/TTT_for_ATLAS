@@ -46,18 +46,28 @@ Sim_tf.py --conditionsTag 'default:OFLCOND-MC15c-SDR-14-03' --truthStrategy 'MC1
 
 echo starting Full Digi for standard geometry - no CMOS AMI=r9877
 #--AMI=r9877 # (without pileup)
+#--AMI=r9871 # (pileup = 200) 
+#--numberOfHighPtMinBias '0.725172' \
+#--numberOfLowPtMinBias '209.2692' \
 Reco_tf.py \
---AMI=r9871 \
+--geometryVersion 'default:ATLAS-P2-ITK-20-00-00' \
+--digiSteeringConf 'StandardInTimeOnlyTruth' \
+--conditionsTag 'default:OFLCOND-MC15c-SDR-14-03' \
 --inputLowPtMinbiasHitsFile $INPILEUPLOW1 \
 --inputHighPtMinbiasHitsFile $INPILEUPHIGH1 \
---numberOfHighPtMinBias '0.725172' \
---numberOfLowPtMinBias '209.2692' \
---jobNumber '1' \
+--numberOfHighPtMinBias '0.197251' \
+--numberOfLowPtMinBias '39.2692' \
+--preInclude 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py,InDetSLHC_Example/preInclude.SLHC_Calorimeter_mu200.py' 'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py,Digitization/ForceUseOfPileUpTools.py,SimulationJobOptions/preInclude.PileUpBunchTrains2012Config1_DigitConfig.py,RunDependentSimData/configLumi_muRange.py' 'default:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry_GMX.py' 'RDOMergeAthenaMP:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.NoTRT_NoBCM_NoDBM.py' 'POOLMergeAthenaMPAOD0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' 'POOLMergeAthenaMPDAODIDTRKVALID0:InDetSLHC_Example/preInclude.SLHC.NoTRT_NoBCM_NoDBM.Ana.py,InDetSLHC_Example/SLHC_Setup_Reco_Alpine.py' \
+--postInclude 'all:InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_lowthresh.py' 'RAWtoESD:InDetSLHC_Example/postInclude.DigitalClustering.py,InDetSLHC_Example/postInclude.NoJetPtFilter.py' \
+--postExec 'HITtoRDO:pixeldigi.EnableSpecialPixels=False; CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];' 'RAWtoESD:ToolSvc.InDetSCT_ClusteringTool.useRowInformation=True;' \
+--preExec 'all:from AthenaCommon.GlobalFlags import globalflags; globalflags.DataSource.set_Value_and_Lock("geant4"); userRunLumiOverride={"run":242006, "startmu":30.0, "endmu":49.0, "stepmu":1.0, "startlb":1, "timestamp":1412006000};from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags;SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption="InclinedDuals";' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout","PhysicsList"];' 'ESDtoDPD:rec.DPDMakerScripts.set_Value_and_Lock(["InDetPrepRawDataToxAOD/InDetDxAOD.py","PrimaryDPDMaker/PrimaryDPDMaker.py"]);' \
+--runNumber=309527 \
+--DataRunNumber=242000 \
 --maxEvents=$MAXEVENTS \
+--jobNumber '1' \
 --inputHITSFile HITS.Fullhh4b.pool.root \
 --outputRDOFile RDO.Fullhh4b.pool.root \
 --outputESDFile ESD.Fullhh4b.pool.root
-
 echo "Using hacked InstallArea for modified geometry."
 cd ..
 export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
@@ -88,18 +98,18 @@ Reco_tf.py \
 --digiSteeringConf 'StandardInTimeOnlyTruth' \
 --inputLowPtMinbiasHitsFile $INPILEUPLOW2 \
 --inputHighPtMinbiasHitsFile $INPILEUPHIGH2 \
---numberOfHighPtMinBias '0.725172' \
---numberOfLowPtMinBias '209.2692' \
+--numberOfHighPtMinBias '0.197251' \
+--numberOfLowPtMinBias '39.2692' \
 --preInclude 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py' \
 'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.SiliconOnly.py,SimulationJobOptions/preInclude.PileUpBunchTrains2012Config1_DigitConfig.py,RunDependentSimData/configLumi_muRange.py' \
 'default:InDetSLHC_Example/preInclude.SLHC.SiliconOnly.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry.py,InDetSLHC_Example/preInclude.RecoSmearedDigi_Pixel.py' \
 --postInclude 'all:PyJobTransforms/UseFrontier.py,InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_SmearedPixel.py' \
---preExec 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={"run":242000, "startmu":190.0, "endmu":210.0, "stepmu":1.0, "startlb":1, "timestamp":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]' \
+--preExec 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={"run":242000, "startmu":30.0, "endmu":49.0, "stepmu":1.0, "startlb":1, "timestamp":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]' \
 --postExec 'HITtoRDO:CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"] ' \
 --runNumber=309527 \
 --DataRunNumber=242000 \
 --maxEvents=$MAXEVENTS \
---jobNumber '1' \
+--jobNumber '2' \
 --inputHITSFile HITS.SiOnlyhh4b.pool.root \
 --outputRDOFile RDO.SiOnlyhh4b.pool.root 
 

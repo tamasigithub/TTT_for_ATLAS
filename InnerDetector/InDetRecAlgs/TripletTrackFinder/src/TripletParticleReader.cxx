@@ -20,8 +20,9 @@ TripletParticleReader::TripletParticleReader(const std::string& name, ISvcLocato
 //m_xaodout("InDetTrackParticles"),m_xauxout(""),
 m_event(0),
 /*m_rec("m_recTree")*/m_rec(0),nentries(0),
-d0(0),z0(0),phi(0),theta(0),qOverP(0),
-eventNo(0),M_dca(0),M_z0(0),M_phi(0),M_theta(0),M_p(0),M_charge(0)
+d0(0),z0(0),phi(0),theta(0),qOverP(0),eventNo(0),
+barcode(0),status(0),pdg(0),m_pt(0),m_p(0),m_theta(0),m_eta(0),m_phi(0),m_Vx(0),m_Vy(0),m_Vz(0),
+M_dca(0),M_z0(0),M_phi(0),M_theta(0),M_p(0),M_charge(0),MC_barcode(0),MC_status(0),MC_pdg(0),MC_pt(0),MC_p(0),MC_theta(0),MC_eta(0),MC_phi(0),MC_Vx(0),MC_Vy(0),MC_Vz(0)
 {
 
   // algorithm steering
@@ -103,13 +104,24 @@ StatusCode TripletParticleReader::initialize()
   //! testing if TChain works
   //m_rec.Add(m_inputFiles.c_str());
   // set the ROOT branch address 
-  m_rec->SetBranchAddress("event", &eventNo);
-  m_rec->SetBranchAddress("dca", &M_dca);
-  m_rec->SetBranchAddress("Z013", &M_z0);
-  m_rec->SetBranchAddress("Phi013", &M_phi);
-  m_rec->SetBranchAddress("Theta13", &M_theta);
-  m_rec->SetBranchAddress("P_n", &M_p);
-  m_rec->SetBranchAddress("Charge", &M_charge);
+  m_rec->SetBranchAddress("event", 	&eventNo);
+  m_rec->SetBranchAddress("dca", 	&M_dca);
+  m_rec->SetBranchAddress("Z013", 	&M_z0);
+  m_rec->SetBranchAddress("Phi013", 	&M_phi);
+  m_rec->SetBranchAddress("Theta13", 	&M_theta);
+  m_rec->SetBranchAddress("P_n", 	&M_p);
+  m_rec->SetBranchAddress("Charge", 	&M_charge);
+  m_rec->SetBranchAddress("M_barcode", 	&MC_barcode);
+  m_rec->SetBranchAddress("M_status", 	&MC_status);
+  m_rec->SetBranchAddress("M_pdg", 	&MC_pdg);
+  m_rec->SetBranchAddress("M_pt", 	&MC_pt);
+  m_rec->SetBranchAddress("M_p", 	&MC_p);
+  m_rec->SetBranchAddress("M_theta", 	&MC_theta);
+  m_rec->SetBranchAddress("M_eta", 	&MC_eta);
+  m_rec->SetBranchAddress("M_phi", 	&MC_phi);
+  m_rec->SetBranchAddress("M_Vx", 	&MC_Vx);
+  m_rec->SetBranchAddress("M_Vy", 	&MC_Vy);
+  m_rec->SetBranchAddress("M_Vz", 	&MC_Vz);
   
   nentries = m_rec->GetEntries();
   std::cout<<"TChain init, total number of entries are : " << nentries <<std::endl;
@@ -135,12 +147,34 @@ StatusCode TripletParticleReader::execute()
   theta=0;
   qOverP=0;
   eventNo=0;
+  barcode=0;
+  status=0; 	
+  pdg=0;	
+  m_pt=0; 	
+  m_p=0;	
+  m_theta=0;
+  m_eta=0;
+  m_phi=0;	
+  m_Vx=0;	
+  m_Vy=0;	
+  m_Vz=0;		
   M_dca->clear();
   M_z0->clear();
   M_phi->clear();
   M_theta->clear();
   M_p->clear();
   M_charge->clear();
+  MC_barcode->clear();
+  MC_status->clear();
+  MC_pdg->clear();
+  MC_pt->clear();
+  MC_p->clear();
+  MC_theta->clear();
+  MC_eta->clear();
+  MC_phi->clear();
+  MC_Vx->clear();
+  MC_Vy->clear();
+  MC_Vz->clear();
 
   //! Create new Track Particle Container
   xAOD::TrackParticleContainer *m_xaodout = new xAOD::TrackParticleContainer();
@@ -213,11 +247,22 @@ StatusCode TripletParticleReader::execute()
 	  if(M_p->size() < 1) break;
 	  for(size_t xi=0; xi<M_p->size(); ++xi )
 	  {
-		d0 = M_dca->at(xi);
-		z0 = M_z0->at(xi);
-		phi = angle_sym(M_phi->at(xi));
-		theta = M_theta->at(xi);
-		qOverP = M_charge->at(xi)/std::abs(M_p->at(xi));
+		d0 	= M_dca->at(xi);
+		z0 	= M_z0->at(xi);
+		phi 	= angle_sym(M_phi->at(xi));
+		theta 	= M_theta->at(xi);
+		qOverP 	= M_charge->at(xi)/std::abs(M_p->at(xi));
+		barcode = MC_barcode->at(xi);
+		status 	= MC_status->at(xi);
+		pdg 	= MC_pdg->at(xi);
+		m_pt 	= MC_pt->at(xi);
+		m_p 	= MC_p->at(xi);
+		m_theta = MC_theta->at(xi);
+		m_eta 	= MC_eta->at(xi);
+		m_phi 	= MC_phi->at(xi);
+		m_Vx 	= MC_Vx->at(xi);
+		m_Vy 	= MC_Vy->at(xi);
+		m_Vz 	= MC_Vz->at(xi);
 		std::cout<<"creating track particles with track parameters : d0, z0, phi, theta, qOverP : "<< d0 << ", " << z0 << ", " << phi << ", " << theta <<", " <<qOverP <<std::endl;
 		// Add one track particle to the container:
 		xAOD::TrackParticle* p = new xAOD::TrackParticle();
@@ -228,6 +273,31 @@ StatusCode TripletParticleReader::execute()
 		// Fill it with information:
 		fill( *p );
 		fill( *p1 );
+
+		//! add matched truth variables as decorations
+		p->auxdata<int>("m_barcode") 	= barcode;
+		p->auxdata<int>("m_status")	= status;
+		p->auxdata<int>("m_pdg")	= pdg;
+		p->auxdata<float>("m_pt")	= m_pt;
+		p->auxdata<float>("m_p")	= m_p;
+		p->auxdata<float>("m_theta")	= m_theta;
+		p->auxdata<float>("m_eta")	= m_eta;
+		p->auxdata<float>("m_phi")	= m_phi;
+		p->auxdata<float>("m_Vx")	= m_Vx;
+		p->auxdata<float>("m_Vy")	= m_Vy;
+		p->auxdata<float>("m_Vz")	= m_Vz;
+
+		p1->auxdata<int>("m_barcode") 	= barcode;
+		p1->auxdata<int>("m_status")	= status;
+		p1->auxdata<int>("m_pdg")	= pdg;
+		p1->auxdata<float>("m_pt")	= m_pt;
+		p1->auxdata<float>("m_p")	= m_p;
+		p1->auxdata<float>("m_theta")	= m_theta;
+		p1->auxdata<float>("m_eta")	= m_eta;
+		p1->auxdata<float>("m_phi")	= m_phi;
+		p1->auxdata<float>("m_Vx")	= m_Vx;
+		p1->auxdata<float>("m_Vy")	= m_Vy;
+		p1->auxdata<float>("m_Vz")	= m_Vz;
 
 		// Print the information:
 		//print( *p );
@@ -246,7 +316,7 @@ StatusCode TripletParticleReader::execute()
   
   //! Retrieve the Combined TrackParticleContainer m_combTPContainer 
   //! Print them to check if they are correctly recorded or not
-  /*const xAOD::TrackParticleContainer* tracks1 = 0;
+ /* const xAOD::TrackParticleContainer* tracks1 = 0;
   if(evtStore()->contains< xAOD::TrackParticleContainer >(m_combTPContainer))
   {
 	ATH_CHECK (evtStore()->retrieve(tracks1, m_combTPContainer));
@@ -290,6 +360,17 @@ StatusCode TripletParticleReader::execute()
 	//! print track particles after recording
 	ATH_MSG_INFO("printing track particles from the TTT container... ");
 	print( *particle2 );
+	std::cout<<"m_barcode in TTT :" << particle2->auxdata<int>("m_barcode") <<std::endl;
+	std::cout<<"m_status in TTT :" << particle2->auxdata<int>("m_status") <<std::endl;
+	std::cout<<"m_pdg in TTT :" << particle2->auxdata<int>("m_pdg") <<std::endl;
+	std::cout<<"m_pt in TTT :" << particle2->auxdata<float>("m_pt") <<std::endl;
+	std::cout<<"m_p in TTT :" << particle2->auxdata<float>("m_p") <<std::endl;
+	std::cout<<"m_theta in TTT :" << particle2->auxdata<float>("m_theta") <<std::endl;
+	std::cout<<"m_eta in TTT :" << particle2->auxdata<float>("m_eta") <<std::endl;
+	std::cout<<"m_phi in TTT :" << particle2->auxdata<float>("m_phi") <<std::endl;
+	std::cout<<"m_Vx in TTT :" << particle2->auxdata<float>("m_Vx") <<std::endl;
+	std::cout<<"m_Vy in TTT :" << particle2->auxdata<float>("m_Vy") <<std::endl;
+	std::cout<<"m_Vz in TTT :" << particle2->auxdata<float>("m_Vz") <<std::endl;
 
 	//m_xaodout->push_back( new xAOD::TrackParticle(**nextTrk) );
   }*/

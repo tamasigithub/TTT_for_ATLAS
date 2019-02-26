@@ -83,12 +83,34 @@ private:
 	float theta;
 	float qOverP;
 	unsigned int eventNo;
+	int barcode;
+	int status; 	
+	int pdg;	
+	float m_pt; 	
+	float m_p;	
+	float m_theta;
+	float m_eta;
+	float m_phi;	
+	float m_Vx;	
+	float m_Vy;	
+	float m_Vz;		
 	std::vector<double> *M_dca;
 	std::vector<double> *M_z0;
 	std::vector<double> *M_phi;
 	std::vector<double> *M_theta;
 	std::vector<double> *M_p;
 	std::vector<double> *M_charge;
+	std::vector<int> *MC_barcode;
+	std::vector<int> *MC_status;
+	std::vector<int> *MC_pdg;
+	std::vector<double> *MC_pt;
+	std::vector<double> *MC_p;
+	std::vector<double> *MC_theta;
+	std::vector<double> *MC_eta;
+	std::vector<double> *MC_phi;
+	std::vector<double> *MC_Vx;
+	std::vector<double> *MC_Vy;
+	std::vector<double> *MC_Vz;
 
 }; 
 #endif /*TRIPLETTRACKFINDER_TRIPLETPARTICLEREADER_H_*/
