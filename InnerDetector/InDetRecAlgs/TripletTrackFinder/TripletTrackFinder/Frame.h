@@ -53,7 +53,7 @@ public:
     //! Hit Final-Selection cuts(Applied after calculation of track parameters using beamline constraint)
     const double eta_max = 1.5; // longitudinal acceptance cut
     const double pt_min  = 2.0e3; // momentum acceptance cut
-    const double z0_max	= 100.0; //20 cm luminous region
+    const double z0_max	= 150.0; //20 cm luminous region
     //! kappa cut -> the constants below are calculated based on the Multiple scattering formula(Note: these constants are to be used with kappa in mm)
     //! The formula is detailed here -> https://arxiv.org/abs/1611.01671
     const double hit_const = 7.8125e-9;

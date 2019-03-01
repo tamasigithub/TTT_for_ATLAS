@@ -251,7 +251,7 @@ StatusCode TripletParticleReader::execute()
 		z0 	= M_z0->at(xi);
 		phi 	= angle_sym(M_phi->at(xi));
 		theta 	= M_theta->at(xi);
-		qOverP 	= M_charge->at(xi)/std::abs(M_p->at(xi));
+		qOverP 	= M_charge->at(xi)/std::fabs(M_p->at(xi));
 		barcode = MC_barcode->at(xi);
 		status 	= MC_status->at(xi);
 		pdg 	= MC_pdg->at(xi);
@@ -282,7 +282,7 @@ StatusCode TripletParticleReader::execute()
 		p->auxdata<float>("m_p")	= m_p;
 		p->auxdata<float>("m_theta")	= m_theta;
 		p->auxdata<float>("m_eta")	= m_eta;
-		p->auxdata<float>("m_phi")	= m_phi;
+		p->auxdata<float>("m_phi")	= angle_sym(m_phi);
 		p->auxdata<float>("m_Vx")	= m_Vx;
 		p->auxdata<float>("m_Vy")	= m_Vy;
 		p->auxdata<float>("m_Vz")	= m_Vz;
@@ -294,14 +294,14 @@ StatusCode TripletParticleReader::execute()
 		p1->auxdata<float>("m_p")	= m_p;
 		p1->auxdata<float>("m_theta")	= m_theta;
 		p1->auxdata<float>("m_eta")	= m_eta;
-		p1->auxdata<float>("m_phi")	= m_phi;
+		p1->auxdata<float>("m_phi")	= angle_sym(m_phi);
 		p1->auxdata<float>("m_Vx")	= m_Vx;
 		p1->auxdata<float>("m_Vy")	= m_Vy;
 		p1->auxdata<float>("m_Vz")	= m_Vz;
 
 		// Print the information:
 		//print( *p );
-		print( *p1 );
+		//print( *p1 );
 	  }
 	  break;
   }

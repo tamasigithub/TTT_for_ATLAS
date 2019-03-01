@@ -1131,7 +1131,7 @@ StatusCode ReadRDO::execute()
 		z0 = m_Z013[xi];
 		phi0 = m_Phi013[xi];
 		theta = m_Theta13[xi];
-		qOverP = m_Charge[xi]/std::abs(m_P_n[xi]);
+		qOverP = m_Charge[xi]/std::fabs(m_P_n[xi]);
 		// Add one track particle to the container:
 		xAOD::TrackParticle* p = new xAOD::TrackParticle();
 		m_xaodout->push_back( p );
@@ -1141,7 +1141,7 @@ StatusCode ReadRDO::execute()
 		fill( *p );
 
 		// Print the information:
-		print( *p );
+		//print( *p );
 	}
   } //end of SCT_Cluster
   

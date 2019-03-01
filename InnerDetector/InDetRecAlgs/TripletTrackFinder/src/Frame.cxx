@@ -90,11 +90,11 @@ using namespace NAME;
 			
 			//! check if this cluster in L1 lies in the same phi_module as the cluster in L3 else continue to the next cluster
 			Phi1_module = clusters_L1.phi_module;				ANA_MSG_DEBUG("Phi1_module: "<<Phi1_module);
-			//if(std::abs(Phi3_module - Phi1_module) > 1) continue;                                                              
+			//if(std::fabs(Phi3_module - Phi1_module) > 1) continue;                                                              
 			if(Phi3_module - Phi1_module != 0) continue;                                                                                                                 
 			//! check if this cluster in L1 lies in the same eta_module as the cluster in L3 else continue to the next cluster
 			Eta1_module = clusters_L1.eta_module;				ANA_MSG_DEBUG("Eta1_module: "<<Eta1_module);
-			if(std::abs(std::abs(Eta3_module) - std::abs(Eta1_module)) > 1) continue;                                                              
+			if(std::fabs(std::fabs(Eta3_module) - std::fabs(Eta1_module)) > 1) continue;                                                              
 			//  if(Eta3_module - Eta1_module != 0) continue;                                                                                                                  
 			hitCount = 2;                                                                                                      
 			phi1	  = clusters_L1.phi;					ANA_MSG_DEBUG("Phi1: "<<phi1 );
@@ -111,11 +111,11 @@ using namespace NAME;
 				ANA_MSG_DEBUG( "Iterating over the clusters in layer 2 of the triplet\n");
 				//! check if this cluster in L2 lies in the same or neighbouring phi_modules as the cluster in L1,L3 else continue to the next cluster
 				Phi2_module = clusters_L2.phi_module;			ANA_MSG_DEBUG("Phi2_module: "<<Phi2_module);
-				//if(std::abs(Phi2_module - Phi3_module) >  1) continue;
+				//if(std::fabs(Phi2_module - Phi3_module) >  1) continue;
 				if(Phi2_module - Phi3_module != 0) continue;
 				//! check if this cluster in L2 lies in the same phi_module as the cluster in L1,L3 else continue to the next cluster
 				Eta2_module = clusters_L2.eta_module;			ANA_MSG_DEBUG("Eta2_module: "<<Eta2_module);
-                        	if(std::abs(std::abs(Eta2_module) - std::abs(Eta3_module)) > 1) continue;
+                        	if(std::fabs(std::fabs(Eta2_module) - std::fabs(Eta3_module)) > 1) continue;
 				//if(Eta2_module - Eta3_module != 0) continue;
 				hitCount = 3;/*3 hits found*/				
 				if(hitCount == 3) isTriplet = true;	
@@ -133,7 +133,7 @@ using namespace NAME;
                                 else if(phi13 < (-1)*M_PI)      phi13 = phi13 + 2*M_PI; ANA_MSG_DEBUG("phi13: "<<phi13);
 				//! Narrow sector cuts
 				if (!angle_in_range(phi3, phi1, phi_barrel_cut)) continue; isPhi_barrel = true;
-				if (std::abs(z1 - z3) > z_barrel_cut) continue;
+				if (std::fabs(z1 - z3) > z_barrel_cut) continue;
 
 				ANA_MSG_DEBUG( "###### Triplet found for event number " << eventID << " ####### "); 
 				ntriplets +=1;
@@ -151,7 +151,7 @@ using namespace NAME;
 				cross0103 = y1*x3 - x1*y3;				ANA_MSG_DEBUG("Cross0103: "<<cross0103); 
 				R013 = (0.5*r13*r01*r03)/cross0103;			ANA_MSG_DEBUG("rad013: "<<R013);
 				k013 = cross0103/(0.5*r13*r01*r03);			ANA_MSG_DEBUG("kap013: "<<k013);
-				pt_n = Constant*B_field*std::abs(R013);			ANA_MSG_DEBUG("Pt_n: "<<pt_n); 
+				pt_n = Constant*B_field*std::fabs(R013);		ANA_MSG_DEBUG("Pt_n: "<<pt_n); 
 				
 				phi1_bend = 2*asin(cross0103/(r13*r03));		ANA_MSG_DEBUG("Phi1_bend: "<<phi1_bend);
 				phi3_bend = 2*asin(cross0103/(r13*r01));		ANA_MSG_DEBUG("Phi3_bend: "<<phi3_bend);
@@ -189,7 +189,7 @@ using namespace NAME;
 				kappa_bml	= (2*sin(tau_half_bml))/hypot(x3,y3);	ANA_MSG_DEBUG("Kappa_bml: "<<kappa_bml);
 				//radius_bml	= 1/kappa_bml;
 				radius_bml	= hypot(x3,y3)/(2*sin(tau_half_bml));	ANA_MSG_DEBUG("Radius_bml: "<<radius_bml);
-				pt_bml		= Constant*B_field*std::abs(radius_bml);	ANA_MSG_DEBUG("Pt_bml: "<<pt_bml);
+				pt_bml		= Constant*B_field*std::fabs(radius_bml);	ANA_MSG_DEBUG("Pt_bml: "<<pt_bml);
 				pt_inv_bml	= (kappa_bml)*Constant*B_field;		ANA_MSG_DEBUG("Pt_inv_bml: "<<pt_inv_bml);
 				
 				//! calculations in the longitudinal plane
@@ -213,14 +213,15 @@ using namespace NAME;
 				{dphi2 		= dphi2 + M_PI;}
 				else if(dphi2 >3.0) 
 				{dphi2 		= dphi2 - M_PI;}			ANA_MSG_DEBUG("Dphi2: "<<dphi2);
-				if(std::abs(dz2)>dz2_barrel_cut) continue;
-				if(std::abs(dphi2)>dphi2_barrel_cut) continue;
+				//! comment the 2 conditions below and the cut on kap_pull for wide cuts
+				if(std::fabs(dz2)>dz2_barrel_cut) continue;
+				if(std::fabs(dphi2)>dphi2_barrel_cut) continue;
 	
 				//! Hit Final selection cuts
 				//! longitudinal acceptance cut
-				if (std::abs(eta13)>eta_max) continue;//1.5
-				if (std::abs(pt_n)<pt_min) continue;//1.5 GeV/c
-				if (std::abs(z013)>z0_max) continue;//20cm			
+				if (std::fabs(eta13)>eta_max) continue;//1.5
+				if (std::fabs(pt_n)<pt_min) continue;//1.5 GeV/c
+				if (std::fabs(z013)>z0_max) continue;//20cm			
 				//! Calculate track parameters without beamline constraint
 				x12 = x2 - x1; x23 = x3 - x2;							ANA_MSG_DEBUG("X12; "<<x12 <<"  X23: "<<x23);
 				y12 = y2 - y1; y23 = y3 - y2;							ANA_MSG_DEBUG("Y12: "<<y12 <<"  Y23: "<<y23);
@@ -233,9 +234,9 @@ using namespace NAME;
             			kappa          	= 1 / radius;							ANA_MSG_DEBUG("Kappa: "<<kappa);
 				//! momentum consistency cut
 				kap_pull	= (kappa - k013)/sqrt(hit_const + MS_const * (1/sin(theta13)) * k013 * k013);
-				if(std::abs(kap_pull)>sigma_kmax) continue;
-				pt             	= Constant * B_field * (std::abs(radius));			ANA_MSG_DEBUG("Pt: "<<pt);
-				pt_inv         	= std::abs(kappa) / (Constant * B_field);			ANA_MSG_DEBUG("Pt_inv: "<<pt_inv);
+				if(std::fabs(kap_pull)>sigma_kmax) continue;
+				pt             	= Constant * B_field * (std::fabs(radius));			ANA_MSG_DEBUG("Pt: "<<pt);
+				pt_inv         	= std::fabs(kappa) / (Constant * B_field);			ANA_MSG_DEBUG("Pt_inv: "<<pt_inv);
 				det		= 2 * (x12 * y13 - y12 * x13);					ANA_MSG_DEBUG("Det: "<<det);
 				e		= x12*(x1+x2) + y12*(y1+y2);
 				f		= x13*(x1+x3) + y13*(y1+y3);
@@ -246,9 +247,9 @@ using namespace NAME;
 				//h		= ((y13 * d12 * d12) - (y12 * d13 * d13) )/det;	ANA_MSG_DEBUG("H: "<<h);
 				//k		= ((x12 * d13 * d13) - (x13 * d12 * d12))/det;	ANA_MSG_DEBUG("K: "<<k);
 				if(radius>0){
-				dca		= std::abs(radius) - hypot(h,k);				ANA_MSG_DEBUG("Dca: "<<dca);
+				dca		= std::fabs(radius) - hypot(h,k);				ANA_MSG_DEBUG("Dca: "<<dca);
 				}
-				else dca        = hypot(h,k) - std::abs(radius);
+				else dca        = hypot(h,k) - std::fabs(radius);
 				phi_dca        	= atan2(-h, k);							ANA_MSG_DEBUG("Phi_dca: "<<phi_dca);
 				chord_l        	= hypot((x3 - dca), (y3 - dca));				ANA_MSG_DEBUG("Chord_l: "<<chord_l);
 				tau_half       	= asin(0.5 * chord_l * kappa);					ANA_MSG_DEBUG("Tau_half: "<<tau_half);
