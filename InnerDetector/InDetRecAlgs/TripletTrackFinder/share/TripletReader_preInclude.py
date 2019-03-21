@@ -11,7 +11,9 @@ if rec.OutputFileNameForRecoStep=="ESDtoAOD":
   TPReader.TrackPcleContainerName = 'InDetTrackParticles'
   TPReader.TTTPcleContainerName = 'TTTParticles'
   TPReader.CombinedTPContainerName = 'InDetTTTParticles'
+  TPReader.TTTtruthTPContainerName = 'TTTtruthParticles'
   TPReader.InputFileName = 'TTTSiOnly.hh4b.root'
   TPReader.InputTreeName = 'm_recTree'
+  TPReader.InputTruthTreeName = 'm_truthTree'
   topSequence += TPReader
 

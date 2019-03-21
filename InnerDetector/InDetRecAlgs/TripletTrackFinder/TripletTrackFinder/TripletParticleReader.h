@@ -62,18 +62,22 @@ private:
 	std::string 	m_tpContainer;
 	std::string 	m_tttContainer;
 	std::string 	m_combTPContainer;
+	std::string 	m_TTTtruthTPContainer;
 	std::string 	m_infokey;
 	unsigned int 	m_event;
 	TFile* 	m_inputFile = nullptr;
 	std::string 	m_inputFileName;
 	std::string 	m_inputTreeName;
+	std::string 	m_inputTruthTreeName;
 	//std::string 	m_inputFiles = "/afs/cern.ch/work/t/tkar/testarea/20.20.10.7/user.tkar/*.root";
 	StoreGateSvc*  	m_sgSvc;
 	//SG::WriteHandle<xAOD::TrackParticleContainer> m_xaodout;
 	//SG::WriteHandle<xAOD::TrackParticleAuxContainer> m_xauxout;
 	//TChain 		m_rec;
 	TTree* m_rec;
+	TTree* m_truth;
 	Long64_t 	nentries;
+	Long64_t 	nTruthentries;
 
 	/// Add all the branches you need ... here
 	//! trackParticle attributes
@@ -111,6 +115,23 @@ private:
 	std::vector<double> *MC_Vx;
 	std::vector<double> *MC_Vy;
 	std::vector<double> *MC_Vz;
+	//! local variables for m_truthTree branches 
+	unsigned int TTTtrutheventNo;// in principle same as eventNo above.. remove it later if not needed..
+	std::vector<int> *TTTtruth_barcode;
+	std::vector<int> *TTTtruth_status;
+	std::vector<int> *TTTtruth_pdg;
+	std::vector<int> *TTTtruth_charge;
+	std::vector<double> *TTTtruth_pt;
+	std::vector<double> *TTTtruth_p;
+	std::vector<double> *TTTtruth_theta;
+	std::vector<double> *TTTtruth_eta;
+	std::vector<double> *TTTtruth_phi;
+	std::vector<double> *TTTtruth_Vx;
+	std::vector<double> *TTTtruth_Vy;
+	std::vector<double> *TTTtruth_Vz;
+	std::vector<double> *TTTtruth_rad;
+	std::vector<double> *TTTtruth_kap;
+	std::vector<double> *TTTtruth_dca;
 
 }; 
 #endif /*TRIPLETTRACKFINDER_TRIPLETPARTICLEREADER_H_*/

@@ -12,5 +12,7 @@ if rec.OutputFileNameForRecoStep=="ESDtoAOD":
   topSequence.StreamAOD.ItemList+=['xAOD::TrackParticleAuxContainer#'+'InDetTTTParticlesAux.']
   topSequence.StreamAOD.ItemList+=['xAOD::TrackParticleContainer#'+'TTTParticles']
   topSequence.StreamAOD.ItemList+=['xAOD::TrackParticleAuxContainer#'+'TTTParticlesAux.']
+  topSequence.StreamAOD.ItemList+=['xAOD::TrackParticleContainer#'+'TTTtruthParticles']
+  topSequence.StreamAOD.ItemList+=['xAOD::TrackParticleAuxContainer#'+'TTTtruthParticlesAux.']
   svcMgr.StoreGateSvc.Dump=True
   print(topSequence.StreamAOD.ItemList)

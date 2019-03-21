@@ -47,7 +47,7 @@ m_SCTHelper(0),
 m_selection_cuts(0),
 m_phiBarrel_cut(0),m_zBarrel_cut(0),m_dPhi2_cut(0),m_dZ2_cut(0),m_ptmin_cut(0),m_etamax_cut(0),m_zVtx_cut(0),m_hitConst(0),m_MSConst(0),m_sigmaKappaMax(0),
 m_truthTree(0),
-m_barcode(0),m_pdg(0),m_status(0),m_mass(0),m_ptT(0),m_pT(0),m_radT(0),m_kapT(0),m_thetaT(0),m_etaT(0),m_phiT(0),m_Vx(0),m_Vy(0),m_Vz(0),m_dcaT(0),
+m_barcode(0),m_pdg(0),m_charge(0),m_status(0),m_mass(0),m_ptT(0),m_pT(0),m_radT(0),m_kapT(0),m_thetaT(0),m_etaT(0),m_phiT(0),m_Vx(0),m_Vy(0),m_Vz(0),m_dcaT(0),
 f_heavyBaryon(0),f_heavyMeson(0),
 m_tid(0),m_x1(0),m_y1(0),m_z1(0),m_phi1(0),m_phi1Mod(0),m_eta1Mod(0),m_x2(0),m_y2(0),m_z2(0),m_phi2(0),m_phi2Mod(0),m_eta2Mod(0),m_x3(0),m_y3(0),m_z3(0),m_phi3(0),m_phi3Mod(0),m_eta3Mod(0),
 r_rad013(0),r_kap013(0),r_Pt_n(0),r_P_n(0),r_R01(0),r_R03(0),r_R13(0),r_Cross0103(0),r_Phi1_bend(0),r_Phi3_bend(0),
@@ -145,6 +145,7 @@ StatusCode ReadRDO::initialize()
   m_truthTree->Branch("eventNo", &m_event, "eventNo/i");
   m_truthTree->Branch("barcode", &m_barcode);
   m_truthTree->Branch("pdg", &m_pdg);
+  m_truthTree->Branch("charge", &m_charge);
   m_truthTree->Branch("status", &m_status);
   m_truthTree->Branch("mass", &m_mass);
   m_truthTree->Branch("pt", &m_ptT);
@@ -371,6 +372,7 @@ StatusCode ReadRDO::execute()
   //clear data
   m_barcode.clear();
   m_pdg.clear();
+  m_charge.clear();
   m_status.clear();
   m_mass.clear();
   m_ptT.clear();
@@ -730,6 +732,7 @@ StatusCode ReadRDO::execute()
 					frame.Tid[jrecoIdx] = (-1) * barcode_truth;
 					m_barcode.push_back(-1);
 					m_pdg.push_back(-1);
+					m_charge.push_back(-1);
 					m_status.push_back(-1);
 					m_mass.push_back(-1.0);
 					m_ptT.push_back(-1.0);
@@ -749,6 +752,7 @@ StatusCode ReadRDO::execute()
 				{
 					m_barcode.push_back(tracks.Barcode[jtruth]); 	ATH_MSG_DEBUG("M_barcode : " << tracks.Barcode[jtruth]);
 					m_pdg.push_back(tracks.Pdg[jtruth]);
+					m_charge.push_back(tracks.Charge[jtruth]);
 					m_status.push_back(tracks.Status[jtruth]);
 					m_mass.push_back(tracks.Mass[jtruth]);
 					m_ptT.push_back(tracks.Pt[jtruth]);		ATH_MSG_DEBUG("M_pt: " << tracks.Pt[jtruth]);
@@ -827,6 +831,7 @@ StatusCode ReadRDO::execute()
 			//! fill zero's
 			m_barcode.push_back(tracks.Barcode[jtruth]);
 			m_pdg.push_back(tracks.Pdg[jtruth]);
+			m_charge.push_back(tracks.Charge[jtruth]);
 			m_status.push_back(tracks.Status[jtruth]);
 			m_mass.push_back(tracks.Mass[jtruth]);
 			m_ptT.push_back(tracks.Pt[jtruth]);

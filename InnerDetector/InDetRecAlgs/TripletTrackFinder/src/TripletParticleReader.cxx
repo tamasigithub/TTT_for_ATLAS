@@ -19,10 +19,13 @@
 TripletParticleReader::TripletParticleReader(const std::string& name, ISvcLocator* pSvcLocator) : AthAlgorithm(name,pSvcLocator),
 //m_xaodout("InDetTrackParticles"),m_xauxout(""),
 m_event(0),
-/*m_rec("m_recTree")*/m_rec(0),nentries(0),
+/*m_rec("m_recTree")*/m_rec(0),m_truth(0),nentries(0),nTruthentries(0),
 d0(0),z0(0),phi(0),theta(0),qOverP(0),eventNo(0),
 barcode(0),status(0),pdg(0),m_pt(0),m_p(0),m_theta(0),m_eta(0),m_phi(0),m_Vx(0),m_Vy(0),m_Vz(0),
-M_dca(0),M_z0(0),M_phi(0),M_theta(0),M_p(0),M_charge(0),MC_barcode(0),MC_status(0),MC_pdg(0),MC_pt(0),MC_p(0),MC_theta(0),MC_eta(0),MC_phi(0),MC_Vx(0),MC_Vy(0),MC_Vz(0)
+M_dca(0),M_z0(0),M_phi(0),M_theta(0),M_p(0),M_charge(0),MC_barcode(0),MC_status(0),MC_pdg(0),MC_pt(0),MC_p(0),MC_theta(0),MC_eta(0),MC_phi(0),MC_Vx(0),MC_Vy(0),MC_Vz(0),
+TTTtrutheventNo(0),TTTtruth_barcode(0),TTTtruth_status(0),TTTtruth_pdg(0),TTTtruth_charge(0),TTTtruth_pt(0),TTTtruth_p(0),
+TTTtruth_theta(0),TTTtruth_eta(0),TTTtruth_phi(0),TTTtruth_Vx(0),TTTtruth_Vy(0),TTTtruth_Vz(0),
+TTTtruth_rad(0),TTTtruth_kap(0),TTTtruth_dca(0)
 {
 
   // algorithm steering
@@ -30,9 +33,11 @@ M_dca(0),M_z0(0),M_phi(0),M_theta(0),M_p(0),M_charge(0),MC_barcode(0),MC_status(
   declareProperty("TrackPcleContainerName"	,m_tpContainer= "InDetTrackParticles");
   declareProperty("TTTPcleContainerName"	,m_tttContainer= "TTTParticles");
   declareProperty("CombinedTPContainerName"	,m_combTPContainer= "InDetTTTParticles");
+  declareProperty("TTTtruthTPContainerName"	,m_TTTtruthTPContainer= "TTTtruthParticles");
   declareProperty("McEventInfoKey"		,m_infokey= "McEventInfo");
   declareProperty("InputFileName"     		,m_inputFileName);
   declareProperty("InputTreeName"       	,m_inputTreeName);
+  declareProperty("InputTruthTreeName"       	,m_inputTruthTreeName);
   //declareProperty("InputFiles"       	,m_inputFiles);
   //declareProperty("TripletParticleCollection", m_xaodout);
 
@@ -125,6 +130,29 @@ StatusCode TripletParticleReader::initialize()
   
   nentries = m_rec->GetEntries();
   std::cout<<"TChain init, total number of entries are : " << nentries <<std::endl;
+  m_truth = (TTree*)m_inputFile->Get(m_inputTruthTreeName.c_str());
+  //! testing if TChain works
+  //m_truth.Add(m_inputFiles.c_str());
+  // set the ROOT branch address 
+  m_truth->SetBranchAddress("eventNo", 	&TTTtrutheventNo);
+  m_truth->SetBranchAddress("barcode",	&TTTtruth_barcode);
+  m_truth->SetBranchAddress("status", 	&TTTtruth_status);
+  m_truth->SetBranchAddress("pdg", 	&TTTtruth_pdg);
+  m_truth->SetBranchAddress("charge", 	&TTTtruth_charge);
+  m_truth->SetBranchAddress("pt", 	&TTTtruth_pt);
+  m_truth->SetBranchAddress("p", 	&TTTtruth_p);
+  m_truth->SetBranchAddress("theta", 	&TTTtruth_theta);
+  m_truth->SetBranchAddress("eta", 	&TTTtruth_eta);
+  m_truth->SetBranchAddress("phi", 	&TTTtruth_phi);
+  m_truth->SetBranchAddress("Vx", 	&TTTtruth_Vx);
+  m_truth->SetBranchAddress("Vy", 	&TTTtruth_Vy);
+  m_truth->SetBranchAddress("Vz", 	&TTTtruth_Vz);
+  m_truth->SetBranchAddress("rad", 	&TTTtruth_rad);
+  m_truth->SetBranchAddress("kap", 	&TTTtruth_kap);
+  m_truth->SetBranchAddress("dca", 	&TTTtruth_dca);
+  
+  nTruthentries = m_truth->GetEntries();
+  std::cout<<"TChain init, total number of truth entries are : " << nTruthentries <<std::endl;
   return StatusCode::SUCCESS;
 }
 
@@ -175,7 +203,27 @@ StatusCode TripletParticleReader::execute()
   MC_Vx->clear();
   MC_Vy->clear();
   MC_Vz->clear();
+  TTTtrutheventNo = 0;
+  TTTtruth_barcode->clear();
+  TTTtruth_status->clear();
+  TTTtruth_pdg->clear();
+  TTTtruth_charge->clear();
+  TTTtruth_pt->clear();
+  TTTtruth_p->clear();
+  TTTtruth_theta->clear();
+  TTTtruth_eta->clear();
+  TTTtruth_phi->clear();
+  TTTtruth_Vx->clear();
+  TTTtruth_Vy->clear();
+  TTTtruth_Vz->clear();
+  TTTtruth_rad->clear();
+  TTTtruth_kap->clear();
+  TTTtruth_dca->clear();
 
+  //! Create new Track Particle Container for truth particles stored in my reconstruction(TTT reco)
+  xAOD::TrackParticleContainer *m_truthxaodout = new xAOD::TrackParticleContainer();
+  xAOD::TrackParticleAuxContainer *m_truthxauxout = new xAOD::TrackParticleAuxContainer();
+  m_truthxaodout->setStore(m_truthxauxout);
   //! Create new Track Particle Container
   xAOD::TrackParticleContainer *m_xaodout = new xAOD::TrackParticleContainer();
   xAOD::TrackParticleAuxContainer *m_xauxout = new xAOD::TrackParticleAuxContainer();
@@ -226,6 +274,65 @@ StatusCode TripletParticleReader::execute()
     ATH_MSG_INFO( " event: " << m_event );
   }
 
+  // Read the event from the truth Tree / NTuple - m_truthTree
+  for(int i = 0; i<nTruthentries; ++i)
+  {
+	m_truth->GetEntry(i);
+	if(TTTtrutheventNo == m_event) ATH_MSG_INFO(" matching event found for truth tree with event number : " << TTTtrutheventNo);
+	else  
+	{
+		ATH_MSG_INFO(" No matching event found for truth tree with event number : " << TTTtrutheventNo);
+		continue;
+	}
+
+	  // loop over the track paricle information, create one TrackParticle per info 
+	  /// push it into the collection
+	  std::cout<<"size of TTTtruth_p: " <<TTTtruth_p->size() <<std::endl;
+	  if(TTTtruth_p->size() < 1) break;
+	  for(size_t xi=0; xi<TTTtruth_p->size(); ++xi )
+	  {
+		d0 	= TTTtruth_dca->at(xi);
+		z0 	= TTTtruth_Vz->at(xi);
+		phi 	= angle_sym(TTTtruth_phi->at(xi));
+		theta 	= TTTtruth_theta->at(xi);
+		qOverP 	= TTTtruth_charge->at(xi)/std::fabs(TTTtruth_p->at(xi));
+		barcode = TTTtruth_barcode->at(xi);
+		status 	= TTTtruth_status->at(xi);
+		pdg 	= TTTtruth_pdg->at(xi);
+		m_pt 	= TTTtruth_pt->at(xi);
+		m_p 	= TTTtruth_p->at(xi);
+		m_theta = TTTtruth_theta->at(xi);
+		m_eta 	= TTTtruth_eta->at(xi);
+		m_phi 	= angle_sym(TTTtruth_phi->at(xi));
+		m_Vx 	= TTTtruth_Vx->at(xi);
+		m_Vy 	= TTTtruth_Vy->at(xi);
+		m_Vz 	= TTTtruth_Vz->at(xi);
+		std::cout<<"creating track particles with track parameters : d0, z0, phi, theta, qOverP : "<< d0 << ", " << z0 << ", " << phi << ", " << theta <<", " <<qOverP <<std::endl;
+		// Add one track particle to the container:
+		xAOD::TrackParticle* p = new xAOD::TrackParticle();
+		m_truthxaodout->push_back( p );
+		// Fill it with information:
+		fill( *p );
+
+		//! add matched truth variables as decorations
+		p->auxdata<int>("TTTtruth_barcode") 	= barcode;
+		p->auxdata<int>("TTTtruth_status")	= status;
+		p->auxdata<int>("TTTtruth_pdg")		= pdg;
+		p->auxdata<float>("TTTtruth_pt")	= m_pt;
+		p->auxdata<float>("TTTtruth_p")		= m_p;
+		p->auxdata<float>("TTTtruth_theta")	= m_theta;
+		p->auxdata<float>("TTTtruth_eta")	= m_eta;
+		p->auxdata<float>("TTTtruth_phi")	= m_phi;
+		p->auxdata<float>("TTTtruth_Vx")	= m_Vx;
+		p->auxdata<float>("TTTtruth_Vy")	= m_Vy;
+		p->auxdata<float>("TTTtruth_Vz")	= m_Vz;
+
+
+		// Print the information:
+		//print( *p );
+	  }
+	  break;
+  }
   // Read the event from the Tree / NTuple
   for(int i = 0; i<nentries; ++i)
   {
@@ -259,11 +366,11 @@ StatusCode TripletParticleReader::execute()
 		m_p 	= MC_p->at(xi);
 		m_theta = MC_theta->at(xi);
 		m_eta 	= MC_eta->at(xi);
-		m_phi 	= MC_phi->at(xi);
+		m_phi 	= angle_sym(MC_phi->at(xi));
 		m_Vx 	= MC_Vx->at(xi);
 		m_Vy 	= MC_Vy->at(xi);
 		m_Vz 	= MC_Vz->at(xi);
-		std::cout<<"creating track particles with track parameters : d0, z0, phi, theta, qOverP : "<< d0 << ", " << z0 << ", " << phi << ", " << theta <<", " <<qOverP <<std::endl;
+		//std::cout<<"creating track particles with track parameters : d0, z0, phi, theta, qOverP : "<< d0 << ", " << z0 << ", " << phi << ", " << theta <<", " <<qOverP <<std::endl;
 		// Add one track particle to the container:
 		xAOD::TrackParticle* p = new xAOD::TrackParticle();
 		m_xaodout->push_back( p );
@@ -282,7 +389,7 @@ StatusCode TripletParticleReader::execute()
 		p->auxdata<float>("m_p")	= m_p;
 		p->auxdata<float>("m_theta")	= m_theta;
 		p->auxdata<float>("m_eta")	= m_eta;
-		p->auxdata<float>("m_phi")	= angle_sym(m_phi);
+		p->auxdata<float>("m_phi")	= m_phi;
 		p->auxdata<float>("m_Vx")	= m_Vx;
 		p->auxdata<float>("m_Vy")	= m_Vy;
 		p->auxdata<float>("m_Vz")	= m_Vz;
@@ -294,7 +401,7 @@ StatusCode TripletParticleReader::execute()
 		p1->auxdata<float>("m_p")	= m_p;
 		p1->auxdata<float>("m_theta")	= m_theta;
 		p1->auxdata<float>("m_eta")	= m_eta;
-		p1->auxdata<float>("m_phi")	= angle_sym(m_phi);
+		p1->auxdata<float>("m_phi")	= m_phi;
 		p1->auxdata<float>("m_Vx")	= m_Vx;
 		p1->auxdata<float>("m_Vy")	= m_Vy;
 		p1->auxdata<float>("m_Vz")	= m_Vz;
@@ -307,6 +414,8 @@ StatusCode TripletParticleReader::execute()
   }
   
   //! Record to store gate
+  CHECK(m_sgSvc->record(m_truthxaodout,m_TTTtruthTPContainer,false));
+  CHECK(m_sgSvc->record(m_truthxauxout,m_TTTtruthTPContainer+"Aux.",false));
   CHECK(m_sgSvc->record(m_xaodout,m_combTPContainer,false));
   CHECK(m_sgSvc->record(m_xauxout,m_combTPContainer+"Aux.",false));
   CHECK(m_sgSvc->record(mttt_xaodout,m_tttContainer,false));

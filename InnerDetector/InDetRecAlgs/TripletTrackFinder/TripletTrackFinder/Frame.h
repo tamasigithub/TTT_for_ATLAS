@@ -51,7 +51,7 @@ public:
     const double dz2_barrel_cut	 = 9e-2;//0.4;//7e-5;//7e-5
 
     //! Hit Final-Selection cuts(Applied after calculation of track parameters using beamline constraint)
-    const double eta_max = 1.5; // longitudinal acceptance cut
+    const double eta_max = 1.35; // longitudinal acceptance cut
     const double pt_min  = 2.0e3; // momentum acceptance cut
     const double z0_max	= 150.0; //20 cm luminous region
     //! kappa cut -> the constants below are calculated based on the Multiple scattering formula(Note: these constants are to be used with kappa in mm)

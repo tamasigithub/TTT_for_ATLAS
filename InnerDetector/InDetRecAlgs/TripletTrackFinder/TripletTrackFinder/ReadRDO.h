@@ -56,6 +56,7 @@ private:
   TTree*	 m_truthTree;
   std::vector<int>	m_barcode;
   std::vector<int>	m_pdg;
+  std::vector<int>	m_charge;
   std::vector<int>	m_status;
   std::vector<double>	m_mass;
   std::vector<double>	m_ptT;

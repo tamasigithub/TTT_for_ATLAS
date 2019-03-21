@@ -31,9 +31,9 @@ using namespace TRACK_;
 
 					int barrel  = SCTHelper->barrel_ec(clusterId);
 					int layer   = SCTHelper->layer_disk(clusterId);
-                                        //if(barrel!=0) {ANA_MSG_DEBUG( "Not barrel! "); continue;}
+                                        if(barrel!=0) {ANA_MSG_DEBUG( "Not barrel! "); continue;}
 					//if(layer < 4) {ANA_MSG_DEBUG( "Not in triplet layer! "); continue;}					
-					//if(layer != 6) {ANA_MSG_DEBUG( "Particle did not pass the outermost triplet layer! "); continue;}					
+					if(layer != 6) {ANA_MSG_DEBUG( "Particle did not pass the outermost triplet layer! "); continue;}					
 					if ( HMPL.isValid())
                                         {
 						 ANA_MSG_DEBUG( "Loop 3 HMPL valid loop ");
@@ -70,6 +70,7 @@ using namespace TRACK_;
                                                         track.Vz.push_back(genVertex->position().z());*/
 							Barcode.push_back(HMPL.barcode());
                                                         Pdg.push_back(pid);
+                                                        Charge.push_back(charge);
                                                         Status.push_back(genParticle->status());
                                                         Mass.push_back(genParticle->momentum().m());
                                                         Pt.push_back(genParticle->momentum().perp());
