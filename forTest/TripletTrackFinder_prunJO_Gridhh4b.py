@@ -65,7 +65,7 @@ job.TripletTrackFinder.OutputLevel = INFO
 # Event related parameters
 #--------------------------------------------------------------
 # Number of events to be processed (default is 10)
-theApp.EvtMax =100
+theApp.EvtMax =10
 # For convenience, get a reference to the ReadRDO Algorithm
 # named "Readref" in the job
 Readref = job.TripletTrackFinder

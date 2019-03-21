@@ -121,6 +121,19 @@ source $ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh
 asetup 20.20.10.7,here
 cd ${this_dir}
 
+echo "Test area: $TestArea"
+echo "List of testarea:"
+ls -lha $TestArea
+echo "Full current path:"
+pwd
+echo "env"
+env
+echo "Running TTT"
+
+athena.py TripletTrackFinder_prunJO_Gridhh4b.py
+echo DONE SiOnly Sim,digi,reco!
+echo RUNNING the MERGING STEP
+
 echo "Interlude 2 -- moving to .7"
 echo "List current directory"
 ls -lha
@@ -144,7 +157,7 @@ Reco_tf.py \
 --DataRunNumber '242000' \
 --postExec 'HITtoRDO:pixeldigi.EnableSpecialPixels=False; CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];' 'RAWtoESD:ToolSvc.InDetSCT_ClusteringTool.useRowInformation=True;' \
 --geometryVersion 'default:ATLAS-P2-ITK-20-00-00' \
---maxEvents=100 \
+--maxEvents=10 \
 --inputESDFile ESD.Fullhh4b.pool.root \
 --outputAODFile OUT1.AOD.combinedhh4b.pool.root 
 
