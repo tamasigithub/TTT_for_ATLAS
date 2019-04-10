@@ -93,6 +93,14 @@ cd ${this_dir}
 #--skipEvents=$SKIPEVENTS \
 #--inputEVNTFile=${first_arg}
 #
+#--numberOfHighPtMinBias '0.097251' \
+#--numberOfLowPtMinBias '9.2692' \
+#--numberOfHighPtMinBias '0.725172' \
+#--numberOfLowPtMinBias '209.2692' \
+#--numberOfHighPtMinBias '0.241724' \
+#--numberOfLowPtMinBias '69.7564' \
+#--preExec 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={"run":242000, "startmu":190.0, "endmu":210.0, "stepmu":1.0, "startlb":1, "timestamp":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption="InclinedDuals";' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]' \
+#--postExec 'HITtoRDO:CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"];from PerfMonComps.PerfMonFlags import jobproperties as pmon_properties; pmon_properties.PerfMonFlags.doSemiDetailedMonitoringFullPrint=True ; from AthenaCommon.Constants import VERBOSE,DEBUG,INFO,WARNING,ERROR ; ServiceMgr.MessageSvc.OutputLevel = VERBOSE ' \
 echo starting Fast Digi for modified geometry with CMOS
 Reco_tf.py \
 --geometryVersion 'default:ATLAS-P2-ITK-20-00-00' \
@@ -100,20 +108,20 @@ Reco_tf.py \
 --digiSteeringConf 'StandardInTimeOnlyTruth' \
 --inputLowPtMinbiasHitsFile $INPILEUPLOW2 \
 --inputHighPtMinbiasHitsFile $INPILEUPHIGH2 \
---numberOfHighPtMinBias '0.097251' \
---numberOfLowPtMinBias '9.2692' \
+--numberOfHighPtMinBias '0.241724' \
+--numberOfLowPtMinBias '69.7564' \
 --preInclude 'all:InDetSLHC_Example/preInclude.SLHC_Setup_InclBrl_4.py,InDetSLHC_Example/preInclude.SLHC_Setup_Strip_GMX.py' \
-'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.SiliconOnly.py,SimulationJobOptions/preInclude.PileUpBunchTrains2012Config1_DigitConfig.py,RunDependentSimData/configLumi_muRange.py' \
+'HITtoRDO:InDetSLHC_Example/preInclude.SLHC.py,InDetSLHC_Example/preInclude.SiliconOnly.py,Digitization/ForceUseOfPileUpTools.py,SimulationJobOptions/preInclude.PileUpBunchTrains2012Config1_DigitConfig.py,RunDependentSimData/configLumi_muRange.py' \
 'default:InDetSLHC_Example/preInclude.SLHC.SiliconOnly.Reco.py,InDetSLHC_Example/SLHC_Setup_Reco_TrackingGeometry.py,InDetSLHC_Example/preInclude.RecoSmearedDigi_Pixel.py' \
 --postInclude 'all:PyJobTransforms/UseFrontier.py,InDetSLHC_Example/postInclude.SLHC_Setup_InclBrl_4.py' 'HITtoRDO:InDetSLHC_Example/postInclude.SLHC_Digitization_SmearedPixel.py' \
---preExec 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={"run":242000, "startmu":1.0, "endmu":19.0, "stepmu":1.0, "startlb":1, "timestamp":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True)' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]' \
---postExec 'HITtoRDO:CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"] ' \
+--preExec 'all:rec.doTrigger.set_Value_and_Lock(False); userRunLumiOverride={"run":242000, "startmu":49.0, "endmu":70.0, "stepmu":1.0, "startlb":1, "timestamp":1412020000}; from InDetSLHC_Example.SLHC_JobProperties import SLHC_Flags; SLHC_Flags.doGMX.set_Value_and_Lock(True);SLHC_Flags.LayoutOption="InclinedDuals";' 'HITtoRDO:from Digitization.DigitizationFlags import digitizationFlags; digitizationFlags.doInDetNoise.set_Value_and_Lock(False); digitizationFlags.overrideMetadata+=["SimLayout" , "PhysicsList"];digitizationFlags.experimentalDigi += ["doSmearedPixelDigi", "doSmearedSCT_Digi"]' \
+--postExec 'HITtoRDO:CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];from AthenaCommon.CfgGetter import getPublicTool;pixeldigi = getPublicTool("PixelSmearedDigitizationTool"); sctdigi= getPublicTool("SCT_SmearedDigitizationTool"); sctdigi.SigmaX=0.015; sctdigi.SigmaY=0.015; ServiceMgr.MessageSvc.enableSuppression = False; topSequence = AlgSequence();topSequence.StreamRDO.ItemList += ["InDet::SiClusterContainer#PixelClusters", "InDet::SiClusterContainer#SCT_Clusters"] ; topSequence.StreamRDO.ItemList += ["PRD_MultiTruthCollection#PRD_MultiTruthSCT", "xAOD::TruthParticleContainer#*"];from PerfMonComps.PerfMonFlags import jobproperties as pmon_properties; pmon_properties.PerfMonFlags.doSemiDetailedMonitoringFullPrint=True ; from AthenaCommon.Constants import VERBOSE,DEBUG,INFO,WARNING,ERROR ; ServiceMgr.MessageSvc.OutputLevel = VERBOSE ' \
 --runNumber=309527 \
 --DataRunNumber=242000 \
 --maxEvents=$MAXEVENTS \
 --jobNumber '2' \
 --inputHITSFile HITS.SiOnlyhh4b.pool.root \
---outputRDOFile RDO10.SiOnlyhh4b.pool.root 
+--outputRDOFile RDO60.SiOnlyhh4b.pool.root 
 
 echo starting to run Triplet Reconstruction
 echo "Running TTT"
@@ -132,8 +140,8 @@ Reco_tf.py \
 --postExec 'HITtoRDO:pixeldigi.EnableSpecialPixels=False; CfgMgr.MessageSvc().setError+=["HepMcParticleLink"];' 'RAWtoESD:ToolSvc.InDetSCT_ClusteringTool.useRowInformation=True;' \
 --geometryVersion 'default:ATLAS-P2-ITK-20-00-00' \
 --maxEvents=$MAXEVENTS \
---inputESDFile ESD10.Fullhh4b.pool.root \
---outputAODFile OUT10.AOD.combinedhh4b.pool.root 
+--inputESDFile ESD60.Fullhh4b.pool.root \
+--outputAODFile OUT60.AOD.combinedhh4b.pool.root 
 
 echo "End of the world"
 echo "List current directory"

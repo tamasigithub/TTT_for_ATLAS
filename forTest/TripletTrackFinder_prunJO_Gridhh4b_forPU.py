@@ -12,7 +12,7 @@ import AthenaPoolCnvSvc.ReadAthenaPool
 #--------------------------------------------------------------
 # Input options
 #--------------------------------------------------------------
-svcMgr.EventSelector.InputCollections=["RDO10.SiOnlyhh4b.pool.root"]
+svcMgr.EventSelector.InputCollections=["RDO60.SiOnlyhh4b.pool.root"]
 #--------------------------------------------------------------
 # Load Detector Description
 #--------------------------------------------------------------
